@@ -1,0 +1,34 @@
+// AB testing
+.ab-alternative {
+  display: none !important;
+
+  .hero & img {
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+
+    @media @sm {
+      left: -120px;
+      width: auto;
+      height: 100%;
+    }
+
+    @media @md {
+      left: 50%;
+    }
+
+    @media @xl {
+      width: 100%;
+      min-width: 1550px;
+      height: auto;
+    }
+  }
+
+  .home-section__consultation & {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain;
+    object-position: bottom;
+  }
+}

@@ -1,0 +1,43 @@
+.hero--referral {
+    background-color: @brand-primary;
+    overflow: hidden;
+
+    .hero__bg {
+        position: absolute;
+        bottom: -30px;
+        right: 50%;
+        width: 100%;
+        max-width: 400px;
+        transform: translateX(50%);
+
+        @media @md {
+            bottom: 0;
+            right: 0;
+            width: auto;
+            max-width: none;
+            height: 100%;
+            transform: none;
+        }
+    }
+
+    .row {
+        height: 580px;
+
+        @media @md {
+            height: 750px;
+        }
+
+        @media @md {
+            align-items: center;
+        }
+    }
+
+    .divider {
+        background-color: @brand-primary-black;
+    }
+}
+
+.page--referral .carousel--hiw img {
+    width: 95px;
+    height: 95px;
+}

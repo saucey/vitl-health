@@ -1,0 +1,31 @@
+<div class="pt-100 pt-md-150 pb-60">
+
+  <div class="container container--small text-center">
+
+    <div>
+
+      <h1 class="heading heading--small mb-30">Complete your account set up</h1>
+
+      <p class="copy mb-30">Please enter a password to gain access to your account</p>
+
+      <hr class="hr hr--primary mb-30">
+
+      <form class="mb-30" (ngSubmit)="submit()" #completeForm="ngForm">
+
+        <div class="mb-30">
+          <app-form-password name="password" placeholder="Enter your new password" ngModel password required></app-form-password>
+        </div>
+
+        <div class="mb-30">
+          <app-form-password name="password_confirm" placeholder="Confirm password" ngModel password required></app-form-password>
+        </div>
+
+        <button class="button button--fullWidth button--maxWidth button--primary">Submit</button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>

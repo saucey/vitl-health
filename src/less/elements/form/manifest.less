@@ -1,0 +1,54 @@
+@import 'input.less';
+@import 'selector.less';
+@import 'stripe.less';
+
+.form {
+
+  &__inline {
+
+    display: flex;
+    justify-content: space-around;
+    > * {
+      flex: 0 1 50%;
+      margin: 0 5px;
+      &:first-child {
+        margin-left: 0px;
+      }
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+
+    &-md {
+      @media @md {
+        display: flex;
+        justify-content: space-around;
+        > * {
+          flex: 0 1 50%;
+          margin: 0 5px;
+          &:first-child {
+            margin-left: 0px;
+          }
+          &:last-child {
+            margin-right: 0px;
+          }
+        }
+      }
+    }
+
+    &__item {
+
+      flex: 1;
+
+      &--button {
+        flex: 0;
+        .button {
+          min-width: 60px;
+        }
+      }
+
+    }
+
+  }
+
+}

@@ -1,0 +1,44 @@
+<h1 class="heading-2 mb-30">Rewards</h1>
+
+<div class="box box--white box--bordered mb-30 p-30">
+
+  <h3 class="heading-3 mb-15 text-center-md">Give a gift, Get {{currencySymbol}}5</h3>
+
+  <p class="text-center-md">
+    Share Vitl with a friend and they'll receive a 30-day trial of essential one vitamins. A single personalised daily multivitamin, tailor-made and providing just the right vitamins and minerals the body needs.
+    <br/><br/>
+    For every friend who signs up, you'll get £5 credited to your account to spend on a subscription product of your choice!
+  </p>
+
+</div>
+
+<h3 class="copy--mediumWeight text-left mb-15">Refer a friend</h3>
+
+<form class="form mb-30" (submit)="referFriend()" #referralForm="ngForm">
+
+  <div class="mb-15">
+
+    <app-form-text
+        name="email"
+        placeholder="Enter your friends email"
+        email
+        ngModel
+        required
+        whiteMd="true"
+    ></app-form-text>
+
+  </div>
+
+  <button class="button button--primary button--medium">Refer</button>
+
+</form>
+
+<h3 class="copy--mediumWeight text-left mb-15">Referral history</h3>
+
+<div class="box box--flex box--white-md mb-60">
+
+  <div class="box__item"><span class="copy--darkGrey">Sent:</span> {{user.referralsSent}}</div>
+  <div class="box__item"><span class="copy--darkGrey">Accepted:</span> {{user.referralsUsed}}</div>
+<!--  <div class="box__item"><span class="copy&#45;&#45;darkGrey">Earned:</span> {{user.referralCredit}}</div>-->
+
+</div>

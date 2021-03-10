@@ -1,0 +1,39 @@
+<section class="hero  hero--top hero--background hero--primary hero--backgroundRight pb-30 pb-md-0" [appImageBackground]="category.heroBackground" [height]="600">
+
+  <!--[style.backgroundImage]="'url('+category.heroBackground?.url+')'"-->
+
+  <div class="hero__container grid">
+    <div class="hero__item grid__item--6">
+      <h1 class="heading heading--reducedWidth-md heading--centered-md heading mb-40 text-center">
+        {{category.label}}
+      </h1>
+      <hr class="hr mb-40 visible-md visible-lg visible-xl" />
+      <h2 class="copy copy--reducedWidth-md copy--centered-md mb-40 mb-md-0 text-center">
+        {{category.description}}
+      </h2>
+    </div>
+    <div class="hero__item grid__item--6 text-center">
+      <img [appImage]="category.heroImageMobile" class="visible-xs-inline visible-sm-inline hero__image">
+      <img [appImage]="category.heroImageDesktop" [heightLg]="475" class="hidden-xs hidden-sm hero__image hero__image--medium-md">
+    </div>
+  </div>
+</section>
+
+<div class="pt-20 pt-md-40">
+  <app-category-preview *ngFor="let item of category.items; let i = index" [item]="item" [odd]="i % 2"></app-category-preview>
+</div>
+
+<div class="hero hero--cream hero--background ">
+  <img src="https://static.vitl.com/assets/images/a_great_day_bg_left@2x.png" class="hero--backgroundImageLeft hidden-xs hidden-sm" alt="">
+  <div class="container">
+    <div class="text-center center-block width-50--md pt-50  pb-50">
+      <h3 class="heading mb-30 font-md-44 font-36 mt-20 mt-md-0">A great day starts with you feeling your best</h3>
+      <hr class="hr hr--primary mb-30" />
+      <p class="copy mb-30 mb-md-60 font-16 font-md-20">We believe you need what's best for your health.
+        That's why we only recommend tailor-made vitamins
+        and supplements that suit your unique nutritional profile, to help you feel 100% more often.</p>
+      <a routerLink="/consultation" class="button button--primary button--medium">Start consultation</a>
+    </div>
+  </div>
+  <img src="https://static.vitl.com/assets/images/a_great_day_bg_right@2x.png" class="hero--backgroundImageRight hidden-xs hidden-sm" alt="">
+</div>

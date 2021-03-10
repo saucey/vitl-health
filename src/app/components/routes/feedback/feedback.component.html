@@ -1,0 +1,21 @@
+<h1 class="heading-2 mb-30">We value your feedback</h1>
+
+<p class="mb-30" *ngIf="!submitting">What could we do to make your experience of VITL better?</p>
+
+<div *ngIf="!submitting">
+
+  <app-form-text
+    placeholder="What would you like to tell us?"
+    [(ngModel)]="feedback"
+    whiteMd="true"
+    textarea="true"
+  ></app-form-text>
+
+  <button class="button button--primary mt-30" (click)="submitFeedback()">Send</button>
+
+</div>
+
+<div *ngIf="submitting">
+  <h3 class="copy copy--large pt-30">Thank you, your feedback has been submitted</h3>
+  <button class="button button--primary mt-40" (click)="submitting = !submitting">Send more feedback</button>
+</div>

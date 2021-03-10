@@ -1,0 +1,9 @@
+<div class="myvitl__content__screen pt-60" [appStyle]="screen.style">
+
+    <div class="text-left hidden-xs hidden-sm mb-15">
+        <a class="cursor arrow arrow--left" (click)="goBack()">Go back</a>
+    </div>
+
+    <app-content-section *ngFor="let section of screen.sections" [section]="section"></app-content-section>
+
+</div>

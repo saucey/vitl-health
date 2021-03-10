@@ -1,0 +1,22 @@
+<div class="hidden-xs">
+    <span *ngIf="order.nextInvoiceItem">
+        {{order.nextPackLabel}}
+        <span *ngIf="order.nextInvoiceItem?.discounted"
+            class="copy--grey copy--strikethrough">
+            {{order.nextInvoiceItem?.subtotalText}}
+        </span>
+        {{order.nextInvoiceItem?.totalText}}
+    </span>
+    <span *ngIf="order.nextInvoiceItem && order.status !== 'cancelled'"> | </span>
+    <span *ngIf="order.status !== 'cancelled'">
+    Delivered by: {{order.nextDeliveryDate | toDate}}</span>
+</div>
+
+<div class="visible-xs">
+    <p *ngIf="order.nextInvoiceItem" class="mb-10">
+        {{order.nextPackLabel}}
+        <span *ngIf="order.nextInvoiceItem?.discounted" class="copy--grey copy--strikethrough">{{order.nextInvoiceItem?.subtotalText}}</span>
+        {{order.nextInvoiceItem?.totalText}}
+    </p>
+    <p *ngIf="order.status !== 'cancelled'">Delivered by: {{order.nextDeliveryDate | toDate}}</p>
+</div>

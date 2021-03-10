@@ -1,0 +1,283 @@
+&__goals,
+&__recommendations{
+
+  &--borderBottom {
+    border-bottom: 2px solid @brand-primary-grey-cream;
+    @media @md {
+      border-bottom: 0px;
+    }
+  }
+
+  &--borderless {
+    border-top: 0px;
+    .myvitl__goalPreview {
+      border-bottom: 0px;
+      outline: 0px !important;
+    }
+  }
+
+  &--shadowless {
+    .myvitl__goalPreview {
+      box-shadow: none;
+    }
+  }
+
+  &--center {
+    .myvitl__goalPreview {
+      @media @md {
+        width: 50%;
+        margin: 0 auto;
+      }
+    }
+  }
+
+}
+
+&__goalPreview {
+  overflow: hidden;
+  &--inactive {
+    background: @brand-primary-white-grey;
+  }
+  @media @md {
+    &:hover {
+      outline-style: solid;
+      outline-width: 2px;
+    }
+  }
+}
+
+&__goalPreview,
+&__recommendation {
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 90px;
+  padding: 0px 10px;
+  padding-right: 20px;
+  border-bottom: 2px solid @brand-primary-grey-cream;
+  cursor: pointer;
+
+  &:last-child {
+    border-bottom: 0px;
+  }
+
+  &--accountStyle {
+
+    background: @brand-primary-cream;
+    box-shadow: 0px 8px 15px fade(@brand-primary-black, 5%);
+    border-bottom: 0px;
+    margin-bottom: 30px;
+    padding: 0px;
+
+    .myvitl__goalPreview__icon {
+      margin-left: 15px;
+      @media @md {
+        margin-left: 0px;
+      }
+    }
+
+    .myvitl__goalPreview__bar {
+      display: block;
+      height: 90px;
+      @media @sm {
+        height: 120px;
+      }
+    }
+
+  }
+
+  @media @md {
+    background: @brand-primary-white;
+    box-shadow: 0px 8px 15px fade(@brand-primary-really-light-grey, 5%);
+    height: 120px;
+    margin-bottom: 30px;
+    padding: 0px;
+    border-bottom: 0px;
+    &:after {
+      display: none;
+    }
+    &:before {
+      display: none;
+    }
+  }
+
+  &__bar {
+
+    height: 120px;
+    width: 15px;
+    display: none;
+
+    @media @md {
+      display: block;
+    }
+
+    &--smallHeight {
+      height: 60px;
+    }
+
+  }
+
+  &__icon {
+    flex: 0 0 50px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--shakey {
+      animation: shakey 0.2s infinite;
+    }
+
+    @media @md {
+      margin-right: 0px;
+      width: 140px;
+      flex: 0 0 140px;
+    }
+
+  }
+
+  &__label {
+
+    text-align: left;
+    flex: 1;
+    margin-right: 15px;
+
+  }
+
+  &__name {
+    font-size: @font-size-base * (20 / @font-size-base);
+    font-family: @font-family-medium;
+    margin-bottom: 10px;
+    @media @md {
+      font-size: @font-size-base * (24 / @font-size-base);
+      font-family: @font-family-semi-bold;
+    }
+    &--small {
+      font-size: @font-size-base * (16 / @font-size-base);
+    }
+  }
+
+  &__tagline {
+    font-size: @font-size-base * (14 / @font-size-base);
+    @media @md {
+      font-size: @font-size-base * (18 / @font-size-base);
+    }
+  }
+
+  &__score {
+    display: block;
+  }
+
+  &__scoreLine {
+    height: 5px;
+    width: 100%;
+    display: block;
+  }
+
+  &__explore {
+
+    @media @md {
+      flex: 0 0 200px;
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      font-size: @font-size-base * (24 / @font-size-base);
+      font-family: @font-family-semi-bold;
+      padding-right: 50px;
+      position: relative;
+      &:after {
+        content: "";
+        margin-left: 15px;
+        top: 50%;
+        margin-top: -8px;
+        border-top: 3px solid @brand-primary-black;
+        border-right: 3px solid @brand-primary-black;
+        transform: rotate(45deg);
+        transform-origin: 0% 50%;
+        width: 16px;
+        height: 16px;
+      }
+      &--iconOnly {
+        flex-basis: auto;
+        &:after {
+          display: none;
+        }
+      }
+      &--smallHeight {
+          padding-right: 15px;
+      }
+    }
+
+  }
+
+  &--small {
+
+    @media @md {
+      padding-left: 15px;
+      height: auto;
+      box-shadow: none;
+      background: none;
+      outline: 0px !important;
+      overflow: visible;
+    }
+
+  }
+
+  &--smallHeight {
+
+    @media @md {
+      height: 60px;
+    }
+
+  }
+
+  &--tinyHeight {
+
+    height: 60px;
+    border-bottom: 0px;
+    cursor: default;
+
+    .myvitl__goalPreview__name {
+      margin-bottom: 0px;
+    }
+
+    @media @md {
+      margin-bottom: 0px;
+    }
+
+  }
+
+}
+
+&__recommendation {
+
+  @media @md {
+
+    background: none;
+    box-shadow: none !important;
+    display: block;
+    height: auto;
+    &__icon {
+      width: auto;
+      margin-bottom: 15px;
+    }
+    &__label {
+      text-align: center;
+    }
+    &__name {
+      font-size: @font-size-base * (20 / @font-size-base);
+    }
+    &:last-child {
+      margin-bottom: 0px;
+    }
+
+  }
+
+}
+
+@keyframes shakey {
+  0%   { transform: rotate(0deg); }
+  50% { transform: rotate(-10deg); }
+}

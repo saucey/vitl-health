@@ -1,0 +1,76 @@
+<script>obApi('track', ‘Purchase');</script>
+<section class="confirmation hero--top pt-75 pt-md-125 text-center">
+
+  <div class="container container--small">
+
+    <div class="confirmation__complete mb-40">
+
+      <div class="mb-10">
+        <lottie-animation-view [options]="lottieConfig" [width]="75" [height]="75" (animCreated)="handleAnimation($event)"></lottie-animation-view>
+      </div>
+
+      <h1 class="copy copy--semiBold font-18 mb-10">Thank you for your order!</h1>
+
+      <p class="copy copy--mediumWeight copy--darkGrey font-16">Your order <a class="highlighted active" routerLink="/myvitl/account/orders">{{confirmation.id}}</a> is being processed - we'll send a receipt to your inbox</p>
+
+    </div>
+
+    <div class="hidden" [class.show]="recommendationsReady">
+
+      <div class="mb-100" *ngIf="referralCode && showReferral">
+
+        <h2 class="heading heading--small mb-25">Know someone else that would love Vitl?</h2>
+
+        <div class="confirmation__bottle mb-30">
+          <span>{{bottleName}}</span>
+          <img appImage category="theone" key="bottle" [height]="250" />
+        </div>
+
+        <p class="copy copy--mediumWeight font-14 mb-30">Give a free trial of the Essential One to friends of family</p>
+
+        <p class="copy copy--mediumWeight copy--darkGrey font-14 mb-15">Share now:</p>
+
+        <div class="mb-30">
+          <app-social-share
+                [url]="'https://vitl.com/s/' + referralCode"
+                subject="The gift of great health"
+                description="I just ordered my Essential One, the first ever personalised multivitamin - have a free trial on me: vitl.com/s/{{referralCode}}"
+          ></app-social-share>
+        </div>
+
+        <p class="copy copy--mediumWeight copy--darkGrey font-14 mb-15">Or copy your unique link:</p>
+
+        <div class="label label--white">
+          <span (click)="copyReferralCode()">vitl.com/s/{{referralCode}}</span>
+          <input value="https://vitl.com/s/{{referralCode}}" #referralCodeInput />
+        </div>
+
+      </div>
+
+      <div *ngIf="recommendedProduct && !showReferral">
+
+        <h2 class="copy copy--semiBold font-24 mb-25">Also recommended for you</h2>
+
+        <hr class="hr hr--primary mb-30" />
+
+        <div class="confirmation__recommendation mb-20 mb-md-100">
+
+          <div class="confirmation__recommendation__image">
+            <img [appImage]="recommendedProduct.image" [height]="100" [heightLg]="120" />
+          </div>
+
+          <div class="confirmation__recommendation__text">
+            <h3 class="copy copy--semiBold font-20 mb-15">{{recommendedProduct.title}}</h3>
+            <p class="copy copy--mediumWeight font-14 mb-15">{{recommendedProduct.description}}</p>
+            <a class="button button--primary" *ngFor="let button of recommendedProduct.buttons" [appAction]="button.action">{{button.title}}</a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

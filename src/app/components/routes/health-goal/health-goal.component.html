@@ -1,0 +1,133 @@
+<div class="new-UI">
+  <section class="hero hero--health-goal" [style.backgroundColor]="content.hero.bgColor">
+    <div class="section-visual-inner">
+      <img class="visible-xs" src="{{content.hero.imgUrlMobile}}?v=0&compress=1" alt="{{ content.hero.title }} - {{ content.hero.tagline }}" />
+      <img class="visible-sm visible-md visible-lg visible-xl"
+        srcset="
+          {{content.hero.imgUrl}}?v=1&compress=1 2x,
+          {{content.hero.imgUrl}}?v=1&width=1920&compress=1 1x"
+        src="{{content.hero.imgUrl}}?v=1&compress=1"
+        alt="{{ content.hero.title }} - {{ content.hero.tagline }}"/>
+    </div>
+    <div class="container pb-30 pb-md-0 text-center text-sm-left">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-sm-offset-6 col-md-offset-7">
+          <h1 class="heading-1 pt-80 pt-sm-40 pt-md-0">{{ content.hero.title }}</h1>
+          <p class="pt-15"><strong>{{ content.hero.tagline }}</strong></p>
+          <div class="divider"></div>
+          <p class="mb-25 mb-sm-45">{{ content.hero.description }}</p>
+          <div class="ab-original">
+            <app-plan-selector [product]="product"></app-plan-selector>
+          </div>
+          <div class="ab-alternative">
+            <app-plan-selector [product]="productOneOffOnly"></app-plan-selector>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="">
+    <div class="container pt-40 pt-sm-100 pb-40 pb-sm-100 text-center">
+      <div class="row">
+        <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+          <h2 class="heading-2">What you’ll get</h2>
+          <div class="divider"></div>
+          <p>{{ content.benefits.description }}</p>
+        </div>
+      </div>
+      <div class="carousel carousel--benefits mt-75 mt-md-100">
+        <swiper [config]="carouselConfigBenefits">
+          <div *ngFor="let item of content.benefits.items" class="carousel__slide">
+            <img width="95" height="95" [src]="item.iconUrl" alt="" />
+            <h3 class="heading-3 mt-10 mt-sm-20">{{ item.label }}</h3>
+            <div class="divider"></div>
+            <p class="text--small" [innerHTML]="item.description"></p>
+          </div>
+        </swiper>
+        <div class="carousel-dots carousel-dots--benefits"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="background--cream">
+    <div class="container pt-40 pt-sm-75 pb-40 pb-sm-75">
+      <div class="text-center">
+        <h2 class="heading-2">Ingredients</h2>
+        <div class="divider"></div>
+      </div>
+      <app-vitamins-list [vitamins]="content.ingredients.items"></app-vitamins-list>
+    </div>
+  </section>
+
+  <section class="">
+    <div class="container pt-40 pt-sm-100 pb-40 pb-sm-100 text-center">
+      <h2 class="heading-2">Why we’re different</h2>
+      <div class="divider"></div>
+      <ul class="tab-navigation mb-25">
+        <li *ngFor="let fact of content.facts.items; let i = index">
+          <a [class.is-active]="selectedTab === fact.category" (click)="toggleTab(i)">{{ fact.category }}</a>
+        </li>
+      </ul>
+      <div class="compare-panels">
+        <div class="compare-panels__item background--cream">
+          <h3 class="heading-5">Vitl</h3>
+          <img class="mt-15 mb-20" width="16" height="16" src="https://static.vitl.com/images/icons/icon-compare-check.svg" />
+          <p>{{ selectedTabContent.us.description }}</p>
+          <ul *ngIf="selectedTabContent.us.icons.length > 0"
+              class="boxed-icons mt-20">
+            <li *ngFor="let icon of selectedTabContent.us.icons">
+              <img width="45" height="45" [src]="icon.url" alt="" />
+              <p>{{ icon.name }}</p>
+            </li>
+          </ul>
+        </div>
+        <div class="compare-panels__item background--gray-lightest">
+          <h3 class="heading-5">Others</h3>
+          <img class="mt-15 mb-20" width="16" height="16" src="https://static.vitl.com/images/icons/icon-compare-cross.svg" alt="" />
+          <p>{{ selectedTabContent.others.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="">
+    <div class="section-visual-inner">
+      <img class="lazyload visible-sm" data-src="{{content.footer.imgUrlTablet}}?v=4&compress=1" alt="{{ content.hero.title }} - {{ content.hero.tagline }}" />
+      <img class="lazyload visible-md visible-lg"
+        data-srcset="
+          {{content.footer.imgUrl}}?v=4&compress=1 2x,
+          {{content.footer.imgUrl}}?v=4&width=1920&compress=1 1x"
+        data-src="{{content.footer.imgUrl}}?v=4&compress=1"
+        alt="{{ content.hero.title }} - {{ content.hero.tagline }}"/>
+    </div>
+    <div class="section-visual visible-xs">
+      <img class="lazyload"
+        data-src="{{content.footer.imgUrlMobile}}?v=4&compress=1"
+        alt="{{ content.hero.title }} - {{ content.hero.tagline }}"/>
+    </div>
+    <div class="container pt-40 pt-sm-100 pb-40 pb-sm-100 text-center text-sm-left">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-sm-offset-6 col-md-offset-7">
+          <h2 class="heading-2">{{ content.hero.title }}</h2>
+          <p class="pt-15"><strong>{{ content.hero.tagline }}</strong></p>
+          <div class="divider"></div>
+          <div class="ab-original">
+            <app-plan-selector [product]="product"></app-plan-selector>
+          </div>
+          <div class="ab-alternative">
+            <app-plan-selector [product]="productOneOffOnly"></app-plan-selector>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="">
+    <div class="container pt-40 pt-sm-100 pb-40 pb-sm-100 text-center">
+      <h2 class="heading-2">More Goal Products</h2>
+      <div class="divider"></div>
+      <app-products-carousel type="custom" [productIDs]="content.recommendedProductIDs"></app-products-carousel>
+    </div>
+  </section>
+</div>

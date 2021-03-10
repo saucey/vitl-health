@@ -1,0 +1,43 @@
+<div class="pt-100 pt-md-150 pb-60">
+
+  <div class="container container--tiny text-center">
+
+    <h1 class="heading heading--small mb-30">Register for a Vitl account</h1>
+
+    <hr class="hr hr--primary mb-30">
+
+    <form class="mb-30"  (ngSubmit)="register()" #registerForm="ngForm">
+
+      <div class="mb-30">
+        <app-form-text name="firstName" placeholder="First name" ngModel required></app-form-text>
+      </div>
+      <div class="mb-30">
+        <app-form-text name="email" placeholder="Email address" ngModel email required></app-form-text>
+      </div>
+      <div class="mb-15">
+        <app-form-password name="password" placeholder="Password" ngModel password required></app-form-password>
+      </div>
+
+      <div class="input input--radio input--checkbox mb-40" [class.input--active]="accept" (click)="accept = !accept">
+        <div class="input__holder">
+          <span class="input__tick">✓</span>
+          <input class="input__control" type="radio" name="accept" [(ngModel)]="accept" required />
+        </div>
+        <div class="input__placeholder">
+          <span>I have read and accept the <a href="/terms" target="_blank" (click)="$event.stopPropagation()">Terms of Service</a></span>
+        </div>
+      </div>
+
+      <button class="button button--fullWidth button--maxWidth mb-30">Register</button>
+
+    </form>
+
+    <hr class="hr mb-30" />
+
+    <h1 class="heading heading--small mb-30">Already have an account?</h1>
+
+    <a class="button button--fullWidth button--maxWidth button--primary mb-30" routerLink="/login">Login here</a>
+
+  </div>
+
+</div>

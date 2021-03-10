@@ -1,0 +1,25 @@
+<div class="outsourced">
+
+  <!-- contact us section 1 -->
+  <section class="container-fluid pP-section1-fluid">
+    <div class="container cUs-section1 p-relative z-index-1">
+      <h2 class="h2">{{page.title}}</h2>
+      <div class="divider divider--mb30"></div>
+      <div class="cst-max-width">
+        <p class="p">
+          {{page.description}}
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- contact us section 2 -->
+  <section class="container-fluid pP-section2-fluid">
+    <div class="container pP-section2">
+      <div class="cst-max-width article" [innerHtml]="page.content"></div>
+    </div>
+  </section>
+
+</div>

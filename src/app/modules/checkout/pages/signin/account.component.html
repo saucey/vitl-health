@@ -1,0 +1,53 @@
+<div *ngIf="user; else notLoggedInHeader">
+    <h1>Logged in</h1>
+    <h2>Check that your account details are correct</h2>
+</div>
+
+<ng-template #notLoggedInHeader>
+    <h1>Sign in</h1>
+    <h2>If you have an account, enter your details</h2>
+</ng-template>
+
+<div class="container container--tiny">
+
+    <div *ngIf="user && user.type === 'user'; else notLoggedIn">
+
+        <p class="mb-30">Logged in as: {{user.email}}</p>
+
+        <button class="button button--primary button--fullWidth mb-30" (click)="continue()">Continue</button>
+
+        <p class="mb-30">Not you?</p>
+
+        <button class="button button--fullWidth" (click)="logout()">Logout</button>
+
+    </div>
+
+    <ng-template #notLoggedIn>
+
+        <form class="form mb-30" (ngSubmit)="signIn()" #loginForm="ngForm">
+
+            <div class="mb-10">
+                <app-form-text name="email" placeholder="Email address" ngModel email required #emailInput></app-form-text>
+            </div>
+
+            <div class="mb-30">
+                <app-form-password name="password" placeholder="Password" ngModel password required></app-form-password>
+            </div>
+
+            <button class="button button--primary button--fullWidth">Sign in</button>
+
+        </form>
+
+        <p class="mb-30">or</p>
+
+        <a class="button button--fullWidth mb-30" routerLink="/checkout/guest">Continue as guest</a>
+
+        <hr class="hr hr--medium hr--grey mb-30" />
+
+        <p class="font-14">
+            <a routerLink="/forgot">Forgot password?</a>
+        </p>
+
+    </ng-template>
+
+</div>

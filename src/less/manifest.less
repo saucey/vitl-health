@@ -1,0 +1,50 @@
+@import 'reset.less';
+@import 'utilities.less';
+
+body {
+  background: @brand-primary-white;
+  font-size: @font-size-base;
+  font-family: @font-family-regular;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: @brand-primary-black;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.header {
+  z-index: 50;
+}
+
+#intercom-container {
+  position: relative;
+  z-index: 100;
+}
+
+.modal2,
+.popup-wrapper {
+  z-index: 110;
+}
+
+.cdk-overlay-container {
+  z-index: 150;
+}
+
+.intercom-lightweight-app {
+  z-index: 1000 !important;
+}
+
+.cookie-popup {
+  z-index: 1500;
+}
+
+
+.loader {
+  z-index: 9999;
+}
+
+@import 'typography.less';
+@import 'elements/manifest.less';
+@import 'elements-new/manifest.less';
+
+@import 'variables.less';

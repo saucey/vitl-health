@@ -1,0 +1,38 @@
+<div class="buttons-wrapper">
+  <div class="button button--small button--fullWidth button--maxWidth button--hasMenu"
+    *ngIf="order.type == 'subscription' && order.allowManage && !expanded"
+  (click)="manage()"
+  >Manage
+      <ul class="button__menu hidden-xs">
+          <li class="button__menu__item text-center" *ngIf="order.allowCancellation" (click)="cancel()">Cancel subscription</li>
+          <li class="button__menu__item text-center" *ngIf="order.allowDeliveryAddressUpdate" (click)="updateDeliveryAddress()">Update delivery address</li>
+      </ul>
+  </div>
+
+  <button class="button button--small button--primary button--fullWidth button--maxWidth"
+    *ngIf="order.type == 'one_off' && order.allowReorder"
+    (click)="reorder()"
+  >Reorder</button>
+
+  <button class="button button--small button--primary button--fullWidth button--maxWidth"
+    *ngIf="order.type == 'subscription' && order.allowPause"
+    (click)="pause()"
+  >Pause subscription</button>
+
+  <button class="button button--small button--primary button--fullWidth button--maxWidth"
+    *ngIf="order.type == 'subscription' && order.allowReactivation"
+    (click)="restart()"
+  >Restart subscription</button>
+
+  <button class="button button--small button--fullWidth button--maxWidth"
+          *ngIf="order.type == 'subscription' && order.allowDeliveryAddressUpdate && expanded"
+          (click)="updateDeliveryAddress()"
+  >Update delivery address</button>
+
+  <button class="button button--small button--fullWidth button--maxWidth visible-xs"
+          *ngIf="order.allowCancellation"
+          (click)="cancel()"
+  >Cancel subscription</button>
+</div>
+
+<p class="copy copy--small copy--darkGrey" *ngIf="order.type == 'subscription' && order.allowReactivation">If you would like to amend your pause period, please contact us at <a class="link" href="mailto:info@vitl.com">info@vitl.com</a></p>

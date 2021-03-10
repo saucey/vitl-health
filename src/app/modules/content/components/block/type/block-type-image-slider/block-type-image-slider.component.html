@@ -1,0 +1,7 @@
+<div class="myvitl__content__block__imageSlider">
+  <swiper [config]="swiperConfig">
+    <div *ngFor="let image of block.images">
+      <img [appImage]="image" [height]="250" />
+    </div>
+  </swiper>
+</div>

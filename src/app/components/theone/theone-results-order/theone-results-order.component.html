@@ -1,0 +1,42 @@
+<div class="results__order">
+
+  <div class="container">
+
+    <div class="grid">
+
+      <div class="grid__item--6 hidden-xs hidden-sm">
+        <app-theone-results-bottle [user]="user"></app-theone-results-bottle>
+      </div>
+
+      <div class="grid__item--6">
+
+        <h3 class="mb-15">Start today</h3>
+
+        <h4 class="mb-30" *ngIf="freeTrial">with your free 30-day trial</h4>
+
+        <p class="copy copy--moreSpacing font-16 font-md-18 mb-30" *ngIf="!freeTrial">Get your tailor-made daily vitamins
+          <br/>for {{plan?.rrp}} per month<span *ngIf="freeDelivery"> with FREE delivery</span>.</p>
+
+        <hr class="hr hr--medium hidden-xs hidden-sm mb-30" />
+
+        <div class="visible-xs visible-sm mb-30">
+          <app-theone-results-bottle [user]="user"></app-theone-results-bottle>
+        </div>
+
+        <button class="button button--white mb-30" (click)="addToBasket()">
+          <span *ngIf="freeTrial">Start free trial</span>
+          <span *ngIf="!freeTrial">Buy now</span>
+        </button>
+
+        <p class="font-14 mb-15">Pause or cancel anytime.</p>
+
+        <p class="font-14" *ngIf="freeTrial">{{plan?.postagePrice}} postage.</p>
+        <p class="font-14" *ngIf="!freeTrial && freeDelivery">Free delivery.</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

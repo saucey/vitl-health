@@ -1,0 +1,66 @@
+<div class="kit-registration--account-details">
+    <form (ngSubmit)="onUserDetailsSubmit()" #userDetailsForm="ngForm">
+
+        <div class="mb-30 mt-40">
+
+            <h2 class="copy copy--large mb-30 text-center">Your details</h2>
+
+            <div class="form__inline mb-15">
+
+                <app-form-text class="form__inline__item" name="firstName" placeholder="First name" ngModel
+                               required></app-form-text>
+
+            </div>
+
+            <div class="form__inline mb-15">
+                <app-form-text class="form__inline__item" name="lastName" placeholder="Last name" ngModel
+                               required></app-form-text>
+            </div>
+
+            <div class="mb-30 mt-30 form__inline">
+                <label>Gender</label>
+                <div class="form__inline__item--small">
+                    <input class="mr-10" id="gender-male" type="radio" name="gender" value="m"
+                           [ngModel]="userDetailsForm.gender" required>
+                    <label for="gender-male">Male</label>
+
+                </div>
+                <div class="form__inline__item--small">
+                    <input class="mr-10" id="gender-female" type="radio" name="gender" value="f"
+                           [ngModel]="userDetailsForm.gender" required>
+                    <label for="gender-female">Female</label>
+
+                </div>
+            </div>
+
+            <div class="form__inline">
+
+                <app-form-text class="form__inline__item" name="phone" placeholder="Phone" ngModel
+                               required></app-form-text>
+
+            </div>
+
+        </div>
+
+        <div class="mb-30">
+
+            <app-form-date placeholder="Date of birth" name="dob" manual="true" ngModel required></app-form-date>
+
+        </div>
+
+        <div class="input input--radio input--checkbox mb-20" [class.input--active]="termsAccepted"
+             (click)="termsAccepted = !termsAccepted">
+            <div class="input__holder">
+                <span class="input__tick">✓</span>
+                <input class="input__control" type="radio" name="termsAccepted" [(ngModel)]="termsAccepted" required/>
+            </div>
+            <div class="input__placeholder">
+        <span>I accept the <a
+                (click)="viewSummary(); $event.stopPropagation()">informed consent document</a>
+        </span>
+            </div>
+        </div>
+        <button class="button button--primary button--large button--fullWidth mb-30 mb-md-90">Register kit</button>
+
+    </form>
+</div>

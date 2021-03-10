@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38.97 85.14">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #ffd326;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 4px;
+      }
+
+      .cls-2 {
+        fill: #ffd326;
+      }
+    </style>
+  </defs>
+  <title>asdAsset 1</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_2-2" data-name="Layer 2">
+      <path class="cls-1" d="M2.33,59.86v6A17.32,17.32,0,0,0,19.65,83.14h0A17.31,17.31,0,0,0,37,65.82V19.32A17.31,17.31,0,0,0,19.65,2h0A17.32,17.32,0,0,0,2.33,19.32V44.57h25"/>
+      <circle class="cls-2" cx="2.33" cy="51.63" r="2.33"/>
+    </g>
+  </g>
+</svg>

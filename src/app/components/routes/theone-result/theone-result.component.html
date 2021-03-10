@@ -1,0 +1,93 @@
+<div class="result__essentialone">
+
+  <section *ngIf="!hasOnlyDigestionGoal" class="result__hero result__hero--primary result__hero--top">
+    <div>
+      <app-theone-results-loader
+       [user]="user"
+       [product]="product"
+       [pill]="pill"
+       [goals]="topGoals"
+       [resultsVisible]="resultsVisible"
+       [hasDigestionGoal]="digestionGoal !== null"
+       (navigateToPersonalised)="navigateToPersonalised()"
+       (showClicked)="resultsVisible = !resultsVisible"
+       (gummyClicked)="selectGummy()"></app-theone-results-loader>
+    </div>
+  </section>
+
+  <div *ngIf="!hasOnlyDigestionGoal && resultsLoaded && resultsVisible">
+
+    <section class="result__hero result__hero--cream">
+      <div>
+        <h3 class="mb-25">Made for you</h3>
+
+        <hr class="hr hr--primary hr--medium mb-25" />
+
+        <p class="mb-25 mb-md-40">One daily vitamin, fully personalised<br />to help you reach your goals</p>
+
+        <div class="mb-50">
+          <app-theone-results-goals [goals]="topGoals" [product]="product" [nutrients]="nutrients" [claims]="claims"></app-theone-results-goals>
+        </div>
+
+        <div *ngIf="allGoals.length">
+          <p class="mb-20">Also supports</p>
+          <app-theone-results-goals [goals]="allGoals" [minimized]="true" [product]="product" [nutrients]="nutrients" [claims]="claims"></app-theone-results-goals>
+        </div>
+      </div>
+    </section>
+
+    <section class="result__hero">
+      <div>
+        <h3 class="mb-25">What you'll get</h3>
+
+        <hr class="hr hr--primary hr--medium mb-25" />
+
+        <p class="mb-50">Our experts have carefully selected these<br />nutrients to help you feel your best</p>
+
+        <app-theone-results-pill [product]="product" [goals]="topGoals" [gummy]="gummy"></app-theone-results-pill>
+      </div>
+    </section>
+
+    <section class="result__hero result__hero--cream">
+      <div>
+
+        <h3 class="mb-25">Why Vitl?</h3>
+
+        <app-theone-results-testimonials></app-theone-results-testimonials>
+
+      </div>
+    </section>
+
+    <section class="result__hero result__hero--primary result__hero--background result__hero--backgroundOffsetMd" appImageBackground category="theone" key="bottle-dots" [height]="753">
+      <div>
+
+        <app-theone-results-order [user]="user" [product]="product" [partnership]="this.partnership" [freeTrial]="isFreeTrial()"></app-theone-results-order>
+
+        <div class="result__footer pt-40">
+
+          &copy; Vitl {{getYear()}} | <a routerLink="/terms">Terms</a> | <a routerLink="/privacy">Privacy</a>
+
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <div *ngIf="hasOnlyDigestionGoal" class="new-UI">
+    <div class="results__loader background--primary"
+      appImageBackground
+      category="theone"
+      key="dots">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+            <h1 class="heading-2 mb-45">No luck this time</h1>
+            <p class="mb-25">Essential One nutrients don’t currently support digestion - luckily your Personalised Pack does!</p>
+            <a class="button button--white" routerLink="/consultation/result">See my Personalised Pack</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

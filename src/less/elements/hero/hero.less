@@ -1,0 +1,314 @@
+/*
+ Hero block
+ */
+
+.hero {
+
+  text-align: center;
+  width: 100%;
+  position: relative;
+
+  &--top {
+
+    padding-top: 80px;
+
+    @media @md {
+      padding-top: 100px;
+    }
+
+  }
+
+  &--primary {
+
+    background-color: @brand-primary-yellow;
+
+  }
+
+  &--cream {
+
+    background-color: @brand-primary-slightly-off-cream;
+
+  }
+
+  &--creamDarker {
+
+    background-color: @brand-primary-cream-darker;
+
+  }
+
+  &--beige {
+
+    background-color: @brand-primary-beige;
+
+  }
+
+  &--background {
+
+    @media screen and (max-width: @breakpoint-md) {
+      background-image: none !important;
+    }
+
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center;
+
+    &Small {
+      background-position: bottom;
+      background-size: auto 90%;
+    }
+
+    &Offset {
+      background-position: ~"calc(50% + 300px)" bottom;
+      background-size: auto 85%;
+    }
+
+    &OffsetLeft {
+      background-position: ~"calc(50% - 200px)" 0%;
+    }
+
+    &ScaleOffBottom {
+      background-size: auto 120%;
+      background-position-y: 0px;
+      background-position-x: ~"calc(50% - 50px)";
+    }
+
+    &Left {
+      background-position: left;
+    }
+
+    &Right {
+      background-position: right;
+    }
+
+    &Cover {
+      background-size: cover;
+    }
+
+    &Overlay {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      img {
+        display: none;
+        @media @md {
+          display: block;
+          position: absolute;
+          top: 0px;
+          right: 0px;
+          height: 90%;
+          opacity: 0.6;
+          -webkit-transform: scaleX(-1);
+          -moz-transform: scaleX(-1);
+          -ms-transform: scaleX(-1);
+          -o-transform: scaleX(-1);
+          transform: scaleX(-1);
+        }
+      }
+    }
+
+
+    &ImageLeft {
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-height: 100%;
+    }
+
+    &ImageRight {
+      position: absolute;
+      top: 0;
+      right: 0;
+      max-height: 100%;
+    }
+  }
+
+  &__container {
+
+    padding: 0px 30px;
+
+    @media @md {
+      padding: 0px;
+      width: @breakpoint-md;
+      margin: 0 auto;
+      min-height: 600px;
+    }
+
+    @media @lg {
+      width: @breakpoint-lg;
+    }
+
+    @media @xl {
+      width: @breakpoint-xl;
+    }
+
+    &--medium {
+      @media @md {
+        min-height: ~"calc(90vh - 100px)";
+      }
+    }
+
+    &--large {
+      @media @md {
+        min-height: ~"calc(100vh - 100px)";
+      }
+    }
+
+    &--reverseFlex {
+      @media screen and (max-width: @breakpoint-md) {
+        display: flex;
+        flex-flow: column-reverse;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        align-content: center;
+      }
+    }
+
+    &--bgPatternOffset {
+      position: absolute;
+      right: -14%;
+      top: 0;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.6;
+    }
+  }
+
+  &__item {
+
+    @media @md {
+      text-align: left;
+    }
+
+    &--top {
+      align-self: flex-start;
+      @media @md {
+        &-md {
+          align-self: flex-start;
+        }
+      }
+    }
+
+    &--bottom {
+      line-height: 0;
+      //align-self: flex-end;
+      @media @md {
+        &-md {
+          align-self: flex-end;
+        }
+      }
+    }
+
+  }
+
+  &__image {
+
+    width: 100%;
+    max-width: 425px;
+
+    @media @md {
+      width: auto;
+      max-width: none;
+      height: 500px;
+      &--fullWidth {
+        width: 100%;
+        height: auto;
+      }
+
+      &--small-md {
+        height: 375px;
+      }
+
+      &--medium-md {
+        height: 375px;
+      }
+
+    }
+
+    @media @lg {
+
+      width: auto;
+      max-width: none;
+      height: 600px;
+
+      &--small-md {
+        height: 375px;
+      }
+
+      &--medium-md {
+        height: 475px;
+      }
+
+    }
+
+    &--overSized {
+      transform: scale(2);
+      transform-origin: 30% 100%;
+      @media @md {
+        &-md {
+          transform: scale(2);
+          transform-origin: 30% 100%;
+        }
+      }
+
+    }
+
+    &--overflow {
+
+      width: auto;
+      max-width: none;
+      transform: scale(1.15);
+      transform-origin: 50% 50%;
+      @media @md {
+        &-md {
+          width: auto;
+          max-width: none;
+          transform: scale(1.15);
+          transform-origin: 100% 50%;
+        }
+      }
+
+      &Up {
+
+        width: auto;
+        max-width: none;
+        transform: scale(1.15);
+        transform-origin: 50% 100%;
+
+        @media @md {
+          &-md {
+            width: auto;
+            max-width: none;
+            transform: scale(1.15);
+            transform-origin: 50% 100%;
+          }
+        }
+
+      }
+
+      &Down {
+
+        width: auto;
+        max-width: none;
+        transform: scale(1.15);
+        transform-origin: 50% 0%;
+
+        @media @md {
+          &-md {
+            width: auto;
+            max-width: none;
+            transform: scale(1.15);
+            transform-origin: 50% 0%;
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+}

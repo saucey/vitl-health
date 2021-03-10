@@ -1,0 +1,89 @@
+.confirmation {
+
+  &__complete {
+
+    border: 1px solid #EAE8DB;
+    padding: 25px;
+
+    a {
+      color: #919191 !important;
+    }
+
+  }
+
+  &__bottle {
+
+    position: relative;
+    height: 250px;
+    width: 144px;
+    margin: 0 auto;
+
+    img {
+      height: 250px;
+      width: 144px;
+    }
+
+    span {
+      position: absolute;
+      top: 139px;
+      left: 28px;
+      font-family: @font-family-header;
+      font-size: 14px;
+      opacity: 0.9;
+      text-align: left;
+      width: 96px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: clip;
+    }
+
+  }
+
+  &__recommendation {
+
+    background: @brand-primary-cream;
+
+    @media @md {
+      background: none;
+      display: flex;
+    }
+
+    &__image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      padding-bottom: 0px;
+      img {
+        height: 100px;
+        width: 100px;
+        object-fit: contain;
+      }
+      @media @md {
+        background: @brand-primary-cream;
+        margin-right: 5px;
+        padding-bottom: 20px;
+        img {
+          height: 120px;
+          width: 120px;
+          object-fit: contain;
+        }
+      }
+    }
+
+    &__text {
+      text-align: center;
+      padding: 20px;
+      p {
+        opacity: 0.8;
+        line-height: 20px;
+      }
+      @media @md {
+        background: @brand-primary-cream;
+        text-align: left;
+      }
+    }
+
+  }
+
+}

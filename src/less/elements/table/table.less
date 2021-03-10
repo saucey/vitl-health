@@ -1,0 +1,36 @@
+/*
+ Table block
+ */
+
+.table {
+
+  width: 100%;
+
+  &__row {
+
+    font-size: @font-size-base * (16 / @font-size-base);
+    line-height: @font-size-base * (24 / @font-size-base);
+
+    &--heading {
+      color: @brand-primary-dark-grey;
+      font-family: @font-family-medium;
+      font-size: @font-size-base * (18 / @font-size-base);
+      line-height: @font-size-base * (32 / @font-size-base);
+    }
+
+  }
+
+  &__column {
+
+    &--halfWidth {
+      width: 50%;
+      font-family: @font-family-medium;
+    }
+
+    &--quarterWidth {
+      width: 25%;
+    }
+
+  }
+
+}

@@ -1,0 +1,46 @@
+<div class="kit-registration--confirmation pt-100 pt-md-120 ">
+    <div class="text-center">
+        <div class="lottie--wrapper mb-30">
+            <lottie-animation-view [options]="lottieConfig" [width]="85" [height]="85"
+                                   (animCreated)="handleAnimation($event)"></lottie-animation-view>
+        </div>
+
+        <h2 class="heading heading--small text-center">Thank you, {{firstName}}!</h2>
+
+        <hr class="hr mt-30 mb-30 hr--primary"/>
+
+        <p class="copy copy--small color--dark-cream">You have successfully registered
+            your {{kit.confirmationLabel}}</p>
+
+        <hr class="hr hr--medium hr--darkCream mt-40 mb-35"/>
+
+        <h4 class="copy copy--large pb-50">Next steps</h4>
+    </div>
+
+    <div class="container container--small container--center-content">
+        <ul class="list mb-40 text-left">
+            <li class="list__item list__item--ticked list__item--tickedOne mb-50">
+                <p class="list__copy">Follow the rest of the instructions in your kit very carefully</p>
+            </li>
+            <li class="list__item list__item--ticked list__item--tickedTwo mb-50">
+                <p class="list__copy">Return your sample via a postbox in the prepaid envelope provided</p>
+            </li>
+            <li class="list__item list__item--ticked list__item--tickedThree">
+                <p class="list__copy">We’ll email you when your results are ready</p>
+            </li>
+        </ul>
+    </div>
+
+    <hr class="hr hr--medium hr--darkCream mb-35"/>
+
+    <p class="copy copy--tiny color--dark-cream text-center pb-15" *ngIf="kit.code == 'blood'">Your results will be
+        ready within 24 hours of the lab receiving your sample.</p>
+    <p class="copy copy--tiny color--dark-cream text-center pb-15" *ngIf="kit.code == 'dna'">Your results will be ready
+        approximately 3 weeks after the lab receives your sample..</p>
+    <p class="copy copy--tiny color--dark-cream text-center pb-30">Check your kit status at any time in your
+        dashboard.</p>
+
+    <div class="text-center mb-60">
+        <a class="button button--primary button--maxWidth" routerLink="/myvitl">Go to dashboard</a>
+    </div>
+</div>

@@ -1,0 +1,4 @@
+<div class="myvitl__content__block__header" [class.myvitl__content__block__header--hasImage]="block.image" [appStyle]="block.style">
+    <img class="image" *ngIf="block.image" [appImage]="block.image" [height]="25" [heightLg]="35" />
+    {{block.text}}
+</div>

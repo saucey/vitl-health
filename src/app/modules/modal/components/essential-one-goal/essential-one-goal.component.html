@@ -1,0 +1,27 @@
+<div>
+
+  <img [appImage]="data.goal.icon" [height]="60" [colorize]="data.goal.color" [truecolor]="true" />
+
+  <h5>{{data.goal.pillar}}</h5>
+
+  <p class="copy copy--mediumWeight mb-30">{{data.goal.description}}</p>
+
+  <hr class="hr hr--grey mb-30" />
+
+  <div class="pill_claims mb-30">
+
+    <div class="pill_claim mb-30" *ngFor="let claim of claims">
+
+      <span class="copy copy--mediumWeight pull-right font-12">{{claim.ingredient.quantity}}</span>
+
+      <h6 class="copy copy--bold font-14 mb-10 text-left">{{claim.ingredient.name}} ({{claim.ingredient.rda}}%)</h6>
+
+      <p class="copy copy--mediumWeight font-14 text-left">{{claim.claim.phrase}}</p>
+
+    </div>
+
+  </div>
+
+  <hr class="hr hr--grey" />
+
+</div>

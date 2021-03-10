@@ -1,0 +1,73 @@
+&__offers {
+
+  @media @md {
+    padding: 0 80px;
+  }
+
+}
+
+&__offer {
+
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px 10px;
+    min-height: 120px;
+  }
+
+  @media @md {
+    &__wrapper {
+      padding: 20px 40px;
+      min-height: 140px;
+    }
+  }
+
+  &:hover {
+    outline: 2px solid fade(@brand-primary-yellow, 50%);
+  }
+
+  &--selected {
+    outline: 2px solid @brand-primary-yellow !important;
+  }
+
+  &__image {
+
+    flex: 0 0 75px;
+    text-align: center;
+    margin-right: 10px;
+
+    @media @md {
+      margin-right: 20px;
+    }
+
+  }
+
+  &__details {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: stretch;
+    text-align: left;
+    font-size: @font-size-base * (16 / @font-size-base);
+    line-height: 22px;
+
+  }
+
+  &__label {
+    font-family: @font-family-semi-bold;
+  }
+
+  &__discount {
+    font-family: @font-family-semi-bold;
+    color: @brand-secondary-green;
+  }
+
+}

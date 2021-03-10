@@ -1,0 +1,60 @@
+<div class="results__loader"
+ [class.results__loader--resultsLoaded]="resultsLoaded"
+ [class.results__loader--resultsVisible]="resultsVisible"
+ [class.results__loader--resultsReady]="resultsReady"
+ appImageBackground category="theone" key="dots"
+>
+    <div *ngIf="user">
+
+        <object class="halo" data="https://static.vitl.com/2.0/assets/images/hero-halo-mobile.svg" type="image/svg+xml"></object>
+
+        <h1 class="">{{user.firstNamePlural}}</h1>
+
+        <h2 class="">Essential One</h2>
+
+        <div class="mb-45">
+            <app-theone-results-loader-pill [user]="user" [gummy]="gummy"></app-theone-results-loader-pill>
+        </div>
+
+        <div class="display__initial" [class.display__initial--active]="!resultsVisible">
+
+            <p class="mb-25 anim__3 copy--semiBold">The one supplement for the one you</p>
+
+            <div class="mb-50">
+                <ul>
+                    <li class="anim__4">Personalised to you</li>
+                    <li class="anim__5">Highly absorbable</li>
+                    <li class="anim__6">No nasties</li>
+                </ul>
+            </div>
+
+            <button class="button button--white anim__7" (click)="onShowClicked()">Show me</button>
+
+        </div>
+
+        <div class="display__second" [class.display__second--active]="resultsVisible">
+
+            <p class="mb-30">Formulated based on your answers <br class="visible-sm visible-md" />to support:</p>
+
+            <div class="loader__goals">
+                <div class="loader__goal" *ngFor="let goal of goals">
+                    <div class="loader__goal__icon">
+                        <img class="goal__icon__main" [appImage]="goal.icon" [height]="32" colorize="#333333" truecolor="true" />
+                    </div>
+                    <div class="loader__goal__text">{{goal.pillar}}</div>
+                </div>
+            </div>
+
+            <div *ngIf="hasDigestionGoal" class="new-UI">
+                <div class="row">
+                    <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+                        <p class="mt-45 text--xsmall">We noticed that your digestion could also do with some support. We're unable to include nutrients in your personalised Essential One formula to support digestion right now, but we can in your <a class="link link--inverted" (click)="handleNavigation()">Personalised Pack</a> instead!</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

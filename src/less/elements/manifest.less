@@ -1,0 +1,309 @@
+@import 'global/manifest.less';
+@import 'button/button.less';
+@import 'icon/icon.less';
+@import 'nav/nav.less';
+@import 'grid/grid.less';
+@import 'list/list.less';
+@import 'modal/modal.less';
+@import 'modal/modal2.less';
+@import 'hero/hero.less';
+@import 'form/manifest.less';
+@import 'basket/basket.less';
+@import 'checkout/checkout.less';
+@import 'checkout/confirmation.less';
+@import 'table/table.less';
+@import 'outsourced/manifest.less';
+@import 'result/walkthrough.less';
+@import 'result/pillar.less';
+@import 'result/essentialone.less';
+@import 'blog/article.less';
+@import 'myvitl/manifest.less';
+@import 'account/manifest.less';
+@import 'store/category.less';
+@import 'kit/status.less';
+@import 'kit/kit.less';
+
+.birthday__banner {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  z-index: 99999;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s all ease;
+
+  &--active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    max-width: 400px;
+    transform: translateX(-50%) translateY(-50%);
+    overflow-y: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.11);
+    background: #FFFFFF;
+    max-height: 90vh;
+
+    width: 90%;
+    @media @sm {
+      width: 80%;
+    }
+  }
+
+  &__heading {
+    font-family: @font-family-header;
+    text-align: center;
+    margin: 0 auto;
+    font-weight: bold;
+
+    font-size: 15px;
+
+    @media @ss {
+      font-size: 19px;
+      line-height: 26px;
+    }
+    @media @sm {
+      font-size: 25px;
+      line-height: 35px;
+    }
+
+    @media @md {
+      font-size: 22px;
+      line-height: 30px;
+    }
+
+
+    &--small {
+      font-size: 14px;
+      line-height: 22px;
+
+      @media @xs {
+        font-size: 16px;
+        line-height: 22px;
+      }
+
+      @media @sm {
+        font-size: 20px;
+        line-height: 28px;
+      }
+
+      @media @md {
+        font-size: 18px;
+        line-height: 25px;
+      }
+    }
+  }
+
+  &__copy {
+    font-family: @font-family-regular;
+    font-size: 12px;
+    line-height: 16px;
+
+    @media @sm {
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    @media @md {
+      font-size: 14px;
+      line-height: 19px;
+    }
+
+    & > a {
+      border-bottom: 1px solid @brand-primary-black;
+
+      &:hover {
+        color: @brand-primary-black !important;
+      }
+    }
+  }
+
+  &__row {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    img {
+      align-self: center;
+    }
+
+    &_1 {
+      img {
+        width: 50%;
+      }
+    }
+
+    &_2 {
+      text-align: center;
+      padding: 20px 25px;
+
+      @media screen and (min-width: 372px) {
+        padding: 20px 35px;
+      }
+      @media @sm {
+        padding: 30px 50px;
+      }
+    }
+
+    &_3 {
+      flex-direction: row;
+      position: relative;
+      display: flex;
+
+      &__text {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        background: @brand-primary-yellow;
+        padding: 10px;
+      }
+
+      .birthday__banner__copy {
+        padding: 5px;
+        @media @sm {
+          padding-top: 10px;
+          padding-right: 12px;
+          padding-left: 12px;
+        }
+      }
+
+      img {
+        height: 100%;
+        width: 50%;
+
+        @media @sm {
+          width: 30%;
+        }
+      }
+    }
+
+    &_4 {
+      display: flex;
+      flex-direction: row;
+
+      &__text {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        background: #5BCFC6;
+        padding: 10px;
+      }
+
+      .birthday__banner__copy {
+        padding: 5px;
+        @media @sm {
+          padding: 10px 20px;
+        }
+      }
+    }
+  }
+
+  &__close {
+
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-family: @font-family-header;
+    text-align: center;
+
+  }
+
+  &__hero {
+    width: 100%;
+  }
+
+  &__logo {
+    width: auto !important;
+    margin-bottom: 30px;
+  }
+
+  &__text {
+
+    padding: 20px;
+
+    h3 {
+      font-family: @font-family-header;
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+
+    .hr {
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 30px;
+      font-family: @font-family-medium;
+      color: @brand-primary-evil-black;
+      line-height: 22px;
+
+      strong {
+        font-family: @font-family-bold;
+      }
+
+      span {
+        position: relative;
+        font-family: @font-family-bold;
+        font-size: 20px;
+        color: @brand-secondary-green;
+
+        &:after {
+          content: "";
+          position: absolute;
+          left: 4px;
+          bottom: -3px;
+          height: 2px;
+          width: ~"calc(100% - 8px)";
+          background: @brand-secondary-green;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+  }
+
+  .button {
+    margin-bottom: 17px;
+  }
+
+  &__coupon {
+    height: 50px;
+    width: 160px;
+    font-size: 22px;
+    font-family: @font-family-medium;
+    line-height: 48px;
+    background: #FEF6DC;
+    border: 1px solid #F3EFD4;
+    margin: -10px auto 17px;
+  }
+
+  &__small {
+    padding-top: 15px;
+    font-size: 14px !important;
+    color: #707070 !important;
+
+    a {
+      text-decoration: underline !important;
+
+    }
+  }
+
+}

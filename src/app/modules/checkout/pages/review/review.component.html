@@ -1,0 +1,76 @@
+<h1>Checkout</h1>
+
+<h2>Please review your order</h2>
+
+<div class="container container--medium">
+
+    <section class="grid grid--alignTop">
+
+        <div class="grid__item--7">
+
+            <section class="checkout__reviewBox">
+                <a class="cursor checkout__reviewBox__edit primaryBorder" (click)="editDeliveryAddress()">Change</a>
+                <h3>Delivery address</h3>
+                <div *ngIf="cart?.deliveryAddress || !cart; else noDeliveryAddress">
+                    <p>
+                        {{cart?.deliveryAddress.firstName}} {{cart?.deliveryAddress.lastName}}<br />
+                        {{cart?.deliveryAddress.address}}<br />
+                        {{cart?.deliveryAddress.town}}<br />
+                        {{cart?.deliveryAddress.postcode}}<br />
+                        {{cart?.deliveryAddress.country | toCountry}}
+                    </p>
+                    <h3>Estimated delivery</h3>
+                    <p class="mb-5">{{cart?.estimatedDelivery | toDate}}</p>
+                </div>
+                <ng-template #noDeliveryAddress>
+                    <p class="copy--danger">Please add a delivery address</p>
+                </ng-template>
+            </section>
+
+            <section class="checkout__reviewBox">
+                <a class="cursor checkout__reviewBox__edit primaryBorder" (click)="editPaymentMethod()">Change</a>
+                <h3>Payment method</h3>
+                <div *ngIf="cart?.paymentMethod || !cart; else noPaymentMethod">
+                    <div class="checkout__cardPreview">
+                        <span><img [appImage]="cart?.paymentMethod.icon" width="50" height="32" /></span>
+                        <span>{{cart?.paymentMethod.description}}</span>
+                        <span>{{cart?.paymentMethod.last4}}</span>
+                    </div>
+                </div>
+                <ng-template #noPaymentMethod>
+                    <p class="copy--danger">Please add a payment method</p>
+                </ng-template>
+            </section>
+
+        </div>
+
+        <div class="grid__item--4 grid__item--start-9">
+
+            <section class="checkout__reviewBox checkout__reviewBox--summary">
+                <h3>Order summary</h3>
+                <ul class="list">
+                    <li class="list__item" *ngIf="cart?.discount">
+                        <span>Promo discount</span>
+                        <span>{{cart?.discount.discountText}}</span>
+                    </li>
+                    <li class="list__item">
+                        <span>Subtotal</span>
+                        <span>{{cart?.subtotalText}}</span>
+                    </li>
+                    <li class="list__item">
+                        <span>Delivery</span>
+                        <span>{{cart?.shippingCostText}}</span>
+                    </li>
+                    <li class="list__item list__item--bold">
+                        <span>Total</span>
+                        <span>{{cart?.totalText}}</span>
+                    </li>
+                </ul>
+                <button class="button button--primary button--fullWidth" (click)="pay()" [disabled]="!canPay">Pay</button>
+            </section>
+
+        </div>
+
+    </section>
+
+</div>

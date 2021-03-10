@@ -1,0 +1,239 @@
+.checkout {
+
+  padding: 75px 0px 15px;
+  text-align: center;
+  position: relative;
+
+  h1 {
+    font-size: 30px;
+    font-family: @font-family-header;
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    font-size: 14px;
+    font-family: @font-family-medium;
+    color: @brand-primary-faded-cream;
+    line-height: 1.2em;
+    margin-bottom: 30px;
+  }
+
+  &__progress {
+
+    display: flex;
+    height: 30px;
+    width: 100%;
+    border-radius: 15px;
+
+    .progress__section {
+
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 10px;
+      border: 1px solid @brand-primary-faded-cream;
+      border-right: 0px;
+      font-family: @font-family-semi-bold;
+      color: @brand-primary-faded-cream;
+      cursor: default;
+
+      span {
+        line-height: 15px;
+      }
+
+      @media @xs {
+        font-size: 12px;
+      }
+
+      @media @md {
+        font-size: 14px;
+      }
+
+      img {
+        margin-left: 10px;
+        display: none;
+      }
+
+      &:first-child {
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+      }
+
+      &:last-child {
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        border-right: 1px solid @brand-primary-faded-cream;
+      }
+
+      &--active {
+        color: @brand-primary-black;
+        border: 1px solid @brand-primary-black;
+        font-family: @font-family-bold;
+        &:last-child {
+          border-right: 1px solid @brand-primary-black;
+        }
+        & + .progress__section {
+          border-left: 0px;
+        }
+      }
+
+      &--visited {
+        cursor: pointer;
+        transition: 0.3s all ease;
+        &:hover {
+          color: @brand-primary-black;
+          background: fade(@brand-primary-black, 10%);
+        }
+        img {
+          display: inline;
+        }
+      }
+
+    }
+
+  }
+
+  &__reviewBox {
+
+    position: relative;
+    border: 1px solid @brand-primary-faded-cream;
+    padding: 15px;
+    padding-right: 50px;
+    margin-bottom: 15px;
+    text-align: left;
+
+    h3 {
+      font-size: 14px;
+      font-family: @font-family-semi-bold;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      @media @md {
+        font-size: 16px;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      font-family: @font-family-medium;
+      margin-bottom: 20px;
+      line-height: 1.3em;
+      @media @md {
+        font-size: 16px;
+      }
+    }
+
+    &__edit {
+      position: absolute;
+      top: 20px;
+      right: 15px;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-family: @font-family-semi-bold;
+      @media @md {
+        font-size: 16px;
+      }
+    }
+
+    &--summary {
+
+      border: 0px;
+      padding-right: 15px;
+      background: @brand-primary-cream;
+
+      @media @md {
+        padding: 30px;
+      }
+
+      h3 {
+        margin-top: 0px;
+        font-size: 20px;
+        font-family: @font-family-semi-bold;
+        text-align: center;
+        @media @md {
+          font-size: 24px;
+          text-align: left;
+        }
+      }
+
+      .list {
+        margin-bottom: 10px;
+      }
+
+      .list__item {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid @brand-primary-grey-creamier;
+        &:last-child {
+          border-bottom: 0px;
+        }
+        &.list__item--bold {
+          span {
+            font-family: @font-family-bold;
+          }
+        }
+        span {
+          font-size: 14px;
+          font-family: @font-family-medium;
+          @media @md {
+            font-size: 16px;
+          }
+        }
+      }
+
+    }
+
+  }
+
+  &__cardPreview {
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    span {
+      font-size: 14px;
+      font-family: @font-family-medium;
+      margin-right: 15px;
+      @media @md {
+        font-size: 16px;
+      }
+      &:last-child {
+        margin-right: 0px;
+        margin-left: 30px;
+      }
+      img {
+        border: 1px solid @brand-primary-light-grey;
+        border-radius: 4px;
+      }
+    }
+
+  }
+
+  @media @md {
+
+    padding-top: 125px;
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 36px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 48px;
+    }
+
+    &__progress {
+
+      height: 35px;
+      border-radius: 18px;
+
+    }
+
+  }
+
+}

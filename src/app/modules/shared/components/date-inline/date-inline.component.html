@@ -1,0 +1,10 @@
+<div class="input input--date input--dateSelector" [ngClass]="{
+  'input--focussed': focussed,
+  'input--white': white,
+  'input--whiteMd': whiteMd,
+  'input--invalid': invalid
+}">
+
+    <my-date-picker [options]="datePickerOptions" [(ngModel)]="thisValue" required></my-date-picker>
+
+</div>

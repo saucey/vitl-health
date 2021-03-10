@@ -1,0 +1,324 @@
+body, html
+{	
+	font-family: sofia-pro, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 14px;
+	color: #333333;
+	margin: 0;
+	box-sizing: border-box;
+}
+div
+{
+	box-sizing: border-box;
+}
+.row
+{
+	width: 100%;
+	margin: 0 auto;
+}
+.row:after
+{
+	display: block;
+	clear: both;
+	float: none;
+	content: '';
+}
+h1, h3
+{
+	font-size: 2rem;
+	line-height: 2.6rem;
+}
+h2
+{
+	font-size: 1.1rem;
+	font-weight: 400;
+	line-height: 1.6rem;
+}
+h4
+{
+	font-size: 1.6rem;
+	line-height: 1.8rem;
+}
+h5
+{
+	font-size: 1.4rem;
+	line-height: 1.6rem;
+}
+a
+{
+	color: inherit;
+}
+.container
+{
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+#logo
+{
+	background-color: #fff6dd;
+	text-align: center;
+	padding: 15px 0 0;
+}
+#logo img
+{
+	width: 80px;
+	max-width: 20%;
+}
+#home
+{
+	margin-top: -40px;
+}   
+#home p
+{
+	margin: 20px 0;
+}
+.header
+{
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-color: #fff6dd;
+    padding-bottom: 30px;
+}
+#home .header
+{
+	background-image: url(image/crop/header1.png);
+}
+#home .header-container
+{
+	max-width: 600px;
+}
+#home p
+{
+	width: 60%;
+	max-width: 600px;
+	margin: 40px 20px 40px 25%;
+}
+#home button
+{
+	margin-left: 25%;
+}
+.header-container
+{
+	width: 60%;
+	max-width: 650px;
+	margin: 0 auto 0 25%;
+	padding-top: 8vh;
+}
+.separator
+{
+	border-top: 3px solid #ffd326;
+	width: 120px;
+	margin: 20px 0;
+}
+#questions, #results
+{
+	display: none;
+}
+#questions .header
+{
+	background-image: url(image/crop/header2.png);
+}
+button, input[type="submit"]
+{
+	font-size: 1.2rem;
+	background-color: #ffd326;
+	padding: 10px 50px 12px;
+	border: none;
+    box-shadow: 3px 3px 10px 1px #b9b9b9;
+    font-family: sofia-pro, sans-serif;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 50px;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+#main-form, #results-main
+{
+	width: 95%;
+	margin: 60px 2.5%;
+	text-align: center;
+}
+#main-form p
+{
+	margin: 2.2rem auto 2rem;
+}
+#main-form span
+{
+	font-weight: bold;
+}
+#question-2-options, .radio-buttons
+{
+	max-width: 100%;
+	width: 200px;
+	margin: 0 auto 10px;
+}
+#question-3-options, .radio-buttons.large
+{
+	max-width: 100%;
+	width: 550px;
+	margin: 0 auto 10px;
+}
+.radio-buttons
+{
+	text-align: left;
+    background: #fff6dd;
+    padding: 15px 10px;
+}
+.radio-buttons.active { 
+  background: #ffd326;
+}
+select
+{
+	background-color: #fff6dd;
+	border: none;
+	padding: 10px 20px;
+    margin: 2em 10px 0 5px;
+    font-size: 1rem;
+    box-shadow: 3px 3px 10px 1px #b9b9b9;
+    outline: none;
+}
+select.active
+{
+	background-color: #ffd326;
+}
+input[type="radio" i]
+{
+	margin: 3px 10px 0px 5px;
+}
+input[type="submit"]
+{
+	margin-top: 30px;
+	margin-bottom: 0;
+}
+#results .header
+{
+	background-image: url(image/crop/header3.png);
+	background-position: 70% center;
+}
+#results-main
+{
+	max-width: 800px;
+}
+#results-main .separator
+{
+	margin-left: auto;
+	margin-right: auto;
+}
+#results-main img
+{
+	width: 40%;
+	max-width: 30px;
+}
+#results-main p
+{
+	font-size: 1.3rem;
+}
+.yellow-text
+{
+	color: #ffd326;
+	font-weight: bold;
+}
+#results-main button
+{
+	margin-top: 30px;
+}
+#results-main #note
+{
+	font-size: .8rem;
+}
+.error
+{
+	display: none;
+	color: #ff0033;
+}
+@media screen and (min-width: 768px)
+{
+	body, html
+	{
+		font-size: 16px;
+	}
+	#home p
+	{
+		margin: 50px 20px 50px 25%;
+	}
+	.separator 
+	{
+	    margin: 30px 0;
+	}
+}
+@media screen and (min-width: 1024px)
+{
+	body, html
+	{
+		font-size: 18px;
+	}
+	h1, h3
+	{
+		font-size: 2.8em;
+    	line-height: 3rem;
+	}
+	h2, #home p
+	{
+		font-size: 1.2rem;
+	}
+	h4
+	{
+		font-size: 2.2em;
+    	line-height: 2.4rem;
+	}
+	h5
+	{
+		font-size: 2em;
+    	line-height: 2.2rem;
+	}
+	#home p
+	{
+		width: 680px;
+		margin: 50px auto 50px 25%;
+	}
+	#home button
+	{
+		margin-left: 25%;
+	}
+	.separator 
+	{
+	    margin: 40px 0;
+	}
+	#main-form
+	{
+		margin: 100px auto;
+	}
+	#results-main
+	{
+		margin: 100px auto;
+	}
+}
+@media only screen and (min-width: 1350px)
+{
+	body, html
+	{
+		font-size: 20px;
+	}
+	#header-home
+	{
+		max-height: 100%;
+	}
+	.header
+	{
+		padding-bottom: 40px;
+	}
+}
+@media only screen and (min-width: 1920px)
+{
+	.header-container 
+	{
+    	padding-top: 10vh;
+    }
+    .separator {
+	    margin: 60px 0;
+	}
+}

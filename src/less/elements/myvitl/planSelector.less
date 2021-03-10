@@ -1,0 +1,118 @@
+&__planSelector {
+
+  &__heading {
+
+    padding: 30px;
+    text-align: center;
+    background: @brand-primary-cream;
+    background: linear-gradient(to bottom, @brand-primary-cream 0%,@brand-primary-cream 60%,@brand-primary-slightly-off-cream 61%,@brand-primary-slightly-off-cream 100%);
+
+    @media @md {
+      background: none;
+    }
+
+  }
+
+  &__label {
+
+    padding: 20px;
+
+    @media @sm {
+      text-align: center;
+    }
+
+  }
+
+  &__plans {
+
+
+
+  }
+
+  &__plan {
+
+    position: relative;
+    height: 75px;
+    display: flex;
+    padding: 0px 30px;
+    padding-left: 60px;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    border-bottom: 1px solid @brand-primary-grey-creamier;
+
+    @media @md {
+      &:last-child {
+        border-bottom: 0px;
+      }
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 1px solid @brand-primary-grey;
+      border-radius: 100%;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 13px;
+      height: 13px;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%) translateX(5.8px);
+      background: fade(@brand-primary-yellow, 50%);
+      border-radius: 100%;
+      opacity: 0;
+      transition: 0.3s opacity;
+    }
+
+    &:hover {
+      &:after {
+        opacity: 1;
+      }
+    }
+
+    &--selected {
+      &:after {
+        opacity: 1;
+        background: fade(@brand-primary-yellow, 100%) !important;
+      }
+    }
+
+    &__name {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &__label {
+      font-size: @font-size-base * (18 / @font-size-base);
+      font-family: @font-family-semi-bold;
+      line-height: 22px;
+    }
+
+    &__tagline {
+      font-size: @font-size-base * (16 / @font-size-base);
+      font-family: @font-family-medium;
+      color: @brand-primary-grey;
+      line-height: 20px;
+    }
+
+    &__price {
+
+    }
+
+    &__amount {
+
+    }
+
+  }
+
+}

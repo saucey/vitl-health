@@ -1,0 +1,9 @@
+<app-header></app-header>
+<app-cookie-popup></app-cookie-popup>
+<main class="page">
+    <router-outlet></router-outlet>
+    <div class="loader" #loader>
+        <lottie-animation-view [options]="lottieConfig" [width]="100" [height]="100"></lottie-animation-view>
+    </div>
+</main>
+<app-footer></app-footer>

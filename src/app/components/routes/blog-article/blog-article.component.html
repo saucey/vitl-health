@@ -1,0 +1,97 @@
+<div class="outsourced">
+
+
+
+
+
+  <!-- blog article section 1 -->
+  <section class="container-fluid bArt-section1-fluid">
+    <div class="container bArt-section1 p-relative z-index-1">
+      <h1 class="h1" [innerHtml]="article.title"></h1>
+      <p class="article__main-footer article__main-footer--mb30"><span *ngIf="article.expert">{{article.expert.name}}<span class="copy--primary"> / </span></span>{{article.datePublished | toDate}}</p>
+      <div class="p-relative z-index-1 bArt-section1__img-wrapper">
+        <img class="bArt-section1__img" [appImage]="article.mainImage" [width]="1210" [height]="590" [contain]="true" />
+        <img class="bArt-section1__img2" [appImage]="article.mainImage" [width]="540" />
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- blog article section 3 -->
+  <section class="container-fluid bArt-section3-fluid">
+    <div class="container bArt-section3">
+      <div class="row">
+
+        <div class="row__content1 row__content1--v2">
+
+          <p class="article__heading1">{{article.summary}}</p>
+
+          <div class="divider divider--mb40"></div>
+
+
+          <p class="socials-heading">Share:</p>
+          <div class="new-UI">
+            <a href="https://www.twitter.com/share?url=https://vitl.com/blog/article/{{article.slug}}" class="social-link mb-40">
+              <img src="https://static.vitl.com/assets/images/twitter.svg" class="social-link__img">
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://vitl.com/blog/article/{{article.slug}}" class="social-link mb-40">
+              <img src="https://static.vitl.com/assets/images/facebook.svg" class="social-link__img">
+            </a>
+          </div>
+
+          <div class="article" [innerHtml]="article.content | bypassSecurity"></div>
+
+          <div class="article-footer" *ngIf="article.expert">
+            <div class="article-footer__avatar-wrap">
+              <img class="article-footer__avatar" [appImage]="article.expert.image" [width]="90" />
+            </div>
+            <div class="article-footer__name-wrap">
+              <p class="article-footer__name">{{article.expert.name}}</p>
+              <p class="article-footer__pos">{{article.expert.professionalTitle}}</p>
+              <div class="new-UI">
+                <a href="{{article.expert.urlTwitter}}" class="social-link social-link--small social-link--black" *ngIf="article.expert.urlTwitter">
+                  <img src="https://static.vitl.com/assets/images/twitter2.svg" class="social-link__img">
+                </a>
+                <a href="{{article.expert.urlFacebook}}" class="social-link social-link--small social-link--black" *ngIf="article.expert.urlFacebook">
+                  <img src="https://static.vitl.com/assets/images/facebook2.svg" class="social-link__img">
+                </a>
+                <a href="{{article.expert.urlInstagram}}" class="social-link social-link--small social-link--black" *ngIf="article.expert.urlInstagram">
+                  <img src="https://static.vitl.com/assets/images/instagram2.svg" class="social-link__img">
+                </a>
+              </div>
+            </div>
+            <div class="article-footer__copy-wrap">
+              <p class="article-footer__copy">{{article.expert.shortBio}}</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row__sidebar1 row__sidebar1--v2">
+
+          <div *ngIf="article.relatedArticles.length">
+            <p class="col-heading1 col-heading1--v2">Related articles</p>
+
+            <div class="side-article" *ngFor="let article of article.relatedArticles">
+              <div class="side-article__img-wrap">
+                <img class="side-article__img" [appImage]="article.thumbnailImage" [width]="100" [height]="100" [contain]="true" />
+              </div>
+              <div class="side-article__copy">
+                <div>
+                  <a routerLink="/blog/article/{{article.slug}}" class="side-article__link" [innerHtml]="article.title"></a>
+                </div>
+                <p class="side-article__footer"><span *ngIf="article.expert">{{article.expert.name}}<span class="copy--primary"> / </span></span>{{article.datePublished | toDate}}</p>
+              </div>
+            </div>
+          </div>
+
+          <img src="https://static.vitl.com/assets/images/bArt-sidebar1-banner.jpg" class="img-responsive cursor" (click)="registerNewsletter()">
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>

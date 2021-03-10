@@ -1,0 +1,7 @@
+<div class="account__subscription">
+
+  <p class="copy copy--medium mb-30">When would you like your subscription to restart?</p>
+  <app-form-date-inline name="date" placeholder="Date" [(ngModel)]="data.restartDate" required></app-form-date-inline>
+  <p class="copy copy--medium copy--darkGrey mt-30 mb-30">Your subscription will restart on {{data.restartDate | toDate}}</p>
+
+</div>

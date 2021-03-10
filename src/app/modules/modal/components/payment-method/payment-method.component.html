@@ -1,0 +1,48 @@
+<div *ngIf="data.mode === 'update'">
+
+  <div class="mb-15">
+    <app-form-text name="postcode" placeholder="Postcode" [(ngModel)]="data.postcode"></app-form-text>
+  </div>
+
+  <div class="mb-15">
+    <app-form-radio name="setDefault" placeholder="Set as default" checkbox="true" [(ngModel)]="data.setDefault"></app-form-radio>
+  </div>
+
+</div>
+
+<div *ngIf="data.mode === 'add'">
+
+  <form class="form" #cardForm="ngForm">
+
+    <fieldset>
+
+      <div class="mb-10">
+        <app-form-text name="name" placeholder="Name on card" ngModel required></app-form-text>
+      </div>
+
+      <div class="mb-10">
+        <div id="card-info" #cardInfo></div>
+      </div>
+
+      <div class="mb-10">
+        <app-form-text name="postcode" placeholder="Billing postcode" ngModel required></app-form-text>
+      </div>
+
+      <div class="mb-30">
+        <app-form-radio name="setDefault" placeholder="Set as default" checkbox="true" ngModel></app-form-radio>
+      </div>
+
+    </fieldset>
+
+  </form>
+
+  <div class="modal2__ctas modal2__ctas--grid">
+    <button class="button button--primary button--fullWidth modal2__ctas__cta" (click)="addPaymentMethod()">
+      <span>Add</span>
+    </button>
+    <button class="button button--fullWidth modal2__ctas__cta" (click)="cancel()">
+      <span>Cancel</span>
+    </button>
+  </div>
+
+</div>

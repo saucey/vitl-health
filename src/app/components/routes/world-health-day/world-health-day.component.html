@@ -1,0 +1,114 @@
+<div class="outsourced outsourced_world-health-day">
+    <section class="hero hero--top hero--background hero--backgroundOffset whd-lp-s0"
+             appImageBackground
+             category="worldHealthDay"
+             key="hero-desktop"
+             [height]="800"
+             compress=1>
+
+        <div class="hero hero--backgroundOverlay hero--cream">
+            <img appImage category="worldHealthDay" key="hero-gradient" background="#FEF6DC"/>
+        </div>
+
+        <div class="hero__container grid">
+            <div class="hero__item grid__item--6 mb-30 mb-md-0 mt-40 mt-md-0">
+                <h1 class="heading heading--reducedWidth-md heading--centered-md mb-md-40 mb-30 text-center font-38 font-md-50">
+                    World Health Day with Vitl
+                </h1>
+                <hr class="hr hr--primary mb-md-40 mb-30"/>
+                <h2 class="copy copy--reducedWidth-md font-18 font-md-22 copy--centered-md mb-40 text-center">
+                    We believe the best way to take care of your health is to take a personalised approach. Find out how
+                    we can help you reach your personal health goals in just 5 minutes.
+                </h2>
+                <div class="text-center">
+                    <a routerLink="/consultation" class="button button--primary">Get started</a>
+                </div>
+            </div>
+            <div class="hero__item grid__item--6 hero__item--bottom">
+                <img class="visible-xs-inline visible-sm-inline hero--mobileImage" appImage category="worldHealthDay"
+                     key="hero-mobile" [height]="500" compress=1/>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero hero--white pt-30 pt-md-0 pb-30 pb-md-0">
+
+        <div class="hero__container hero__container--medium grid">
+
+            <div class="grid__item--4">
+
+                <div class="whd--wrap pt-md-0 pt-30">
+                    <img class="whd--image pt-md-0 pt-40" appImage category="worldHealthDay" key="section1-left" [width]="400"
+                         background="#fffef8"/>
+                    <p class="whd--copy copy font-md-20">
+                        <span class="copy--bold">World Health Day</span> is a global initiative that encourages people
+                        everywhere to take care of their health.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid__item--5 grid__item--start-7 text-left-md">
+                <h3 class="h3 text-center pt-70 pt-md-0">What's your health goal?</h3>
+                <div class="goals--container grid--alignTop">
+                    <div class="goal" *ngFor="let goal of goals">
+                        <img src="{{goal.src}}" alt="">
+                        <p class="copy">{{goal.name}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="hero hero--white pt-30 pt-md-0 pb-30 pb-md-0 whd-lp-s2">
+
+        <div class="hero__container hero__container--medium grid">
+
+            <div class="grid__item--3 pl-0 pl-md-50 center-block whd-lp-s2-left">
+                <div class="personalisation--header pt-80 pt-md-0">
+                    <h3 class="h3">Rebecca's <br> health goals</h3>
+                    <img class="personalisation--header--image" appImage category="worldHealthDay" key="section2-left-header" [height]="102" />
+                </div>
+                <hr class="hr hr--primary mt-40 mb-40" />
+                <img class="whd-lp-s2-left-image-desktop" appImage category="worldHealthDay" key="section2-left-content" [width]="150">
+                <img class="whd-lp-s2-left-image-mobile" appImage category="worldHealthDay" key="section2-left-content-mobile">
+            </div>
+
+            <div class="grid__item--6 grid__item--start-7 text-left-md whd-lp-s2-right">
+                <h3 class="h3 text-center pt-70 pt-md-10 pb-50">Rebecca’s recommendations</h3>
+                <img class="pb-md-0 pb-40" appImage category="worldHealthDay" key="section2-right" background="#FFFEF8">
+            </div>
+        </div>
+
+    </section>
+
+    <section class="hero hero--background hero--backgroundOffsetLeft whd-lp-s3"
+             appImageBackground
+             category="worldHealthDay"
+             key="section3-left"
+             [height]="800"
+             compress=1
+    >
+        <div class="hero hero--backgroundOverlay hero--cream">
+            <img appImage category="homepage" key="hero-gradient" [height]="600" background="#FEF6DC" colorize="#F3EFD4"/>
+        </div>
+
+        <div class="hero__container grid">
+            <div class="hero__item grid__item--6 grid__item--order-2 ">
+                <h2 class="heading heading--reducedWidth heading--centered pt-100 pt-md-0 mb-md-40 mb-40 text-center font-25 font-md-35">
+                    Take your free <br> consultation today
+                </h2>
+
+                <hr class="hr hr--primary mb-40" />
+
+                <div class="text-center">
+                    <a routerLink="/consultation" class="button button--primary">Start now</a>
+                </div>
+            </div>
+            <div class="hero__item grid__item--6 hero__item--bottom grid__item--order-1">
+                <img class="visible-xs-inline visible-sm-inline hero__image" appImage category="worldHealthDay"
+                     key="section3-left" [height]="400" compress=1 />
+            </div>
+        </div>
+    </section>
+</div>

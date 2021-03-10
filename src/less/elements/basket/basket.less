@@ -1,0 +1,255 @@
+/*
+Basket
+ */
+
+ .basket {
+
+  @media @md {
+    padding: 15px;
+  }
+
+  &__currency {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 10px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 19px;
+    font-family: @font-family-header;
+    text-align: center;
+    color: @brand-primary-black;
+    cursor: pointer;
+    @media @md {
+      top: 20px;
+      left: 40px;
+    }
+    &:after {
+      position: absolute;
+      content: "";
+      border-right: 2px solid @brand-primary-faded-cream;
+      border-bottom: 2px solid @brand-primary-faded-cream;
+      transform: translateY(-50%) rotate(45deg);
+      transform-origin: 75% 50%;
+      width: 5px;
+      height: 5px;
+      right: 0px;
+      top: 50%;
+    }
+  }
+
+  &__items {
+    margin-bottom: 20px;
+  }
+
+  &__item {
+
+    display: flex;
+    margin-bottom: 20px;
+    position: relative;
+
+    @media @md {
+      min-height: 150px;
+    }
+
+    &__delete {
+
+      font-size: 20px;
+      font-family: @font-family-header;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: @brand-primary-faded-cream;
+      transition: 0.3s color ease;
+      &:hover {
+        color: @brand-primary-black;
+      }
+
+    }
+
+    &__image {
+
+      flex: 0 1 75px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: @brand-primary-cream;
+      margin-right: 2px;
+
+      img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+      }
+
+      @media @md {
+        flex: 0 1 150px;
+        img {
+          width: 120px;
+          height: 120px;
+          object-fit: contain;
+        }
+      }
+
+    }
+
+    &__details {
+      flex: 1;
+      padding: 14px 13px 7px;
+      text-align: left;
+      font-family: @font-family-medium;
+      line-height: 1.2em;
+      background: @brand-primary-cream;
+      display: flex;
+      flex-direction: column;
+      @media @md {
+        padding: 26px 15px 16px 21px;
+      }
+    }
+
+    &__title {
+      font-family: @font-family-semi-bold;
+      font-size: 14px;
+      @media @md {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+    }
+
+    &__subtitles {
+      margin-bottom: 10px;
+    }
+
+    &__subtitle {
+      font-size: 12px;
+      @media @md {
+        font-size: 14px;
+      }
+    }
+
+    &__description {
+      @media @md {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    &__quantity {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @media @md {
+        flex-direction: column;
+        align-items: flex-end;
+        align-self: flex-end;
+      }
+    }
+
+    &__total {
+      font-size: 14px;
+      font-family: @font-family-semi-bold;
+      white-space: nowrap;
+      @media @md {
+        font-size: 16px;
+      }
+
+      &__rrp {
+        color: #707070;
+        text-decoration: line-through;
+        padding-right: 10px;
+      }
+    }
+
+    &__control {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      background: white;
+      @media @md {
+        margin-bottom: 25px;
+      }
+      div {
+        flex: 0 0 30px;
+        height: 30px;
+        width: 30px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        @media @md {
+          font-size: 16px;
+          flex: 0 0 40px;
+          height: 40px;
+          width: 40px;
+        }
+      }
+    }
+
+  }
+
+  &__totals {
+    margin-bottom: 20px;
+  }
+
+  &__total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    font-size: 14px;
+    font-family: @font-family-medium;
+    border-bottom: 2px solid @brand-primary-cream;
+    &--bold {
+      font-family: @font-family-semi-bold;
+    }
+    &:last-child {
+      border-bottom: 0px;
+    }
+    @media @md {
+      font-size: 16px;
+    }
+  }
+
+  &__ctas {
+    
+    &--disabled {
+      opacity: 0.5 !important;
+      pointer-events: none !important;
+    }
+
+    .button {
+      font-size: 20px;
+      font-family: @font-family-medium;
+    }
+
+    > * {
+      margin-bottom: 15px;
+      overflow: hidden;
+    }
+
+    @media @md {
+      display: flex;
+      justify-content: space-around;
+      > * {
+        flex: 0 1 50%;
+        margin: 0 10px;
+        &:first-child {
+          margin-left: 0px;
+        }
+        &:last-child {
+          margin-right: 0px;
+        }
+      }
+    }
+
+  }
+
+}

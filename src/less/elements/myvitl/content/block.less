@@ -1,0 +1,31 @@
+&__block {
+
+  margin-bottom: 15px;
+  transition: 0.3s background;
+
+  &.hasAction {
+    &:hover {
+      background: fade(@brand-primary-grey, 10%);
+    }
+  }
+
+  @import 'block/title.less';
+  @import 'block/header.less';
+  @import 'block/text.less';
+  @import 'block/html.less';
+  @import 'block/spacer.less';
+  @import 'block/horizontalRule.less';
+  @import 'block/buttons.less';
+  @import 'block/image.less';
+  @import 'block/imageSlider.less';
+  @import 'block/itemList.less';
+  @import 'block/iconGrid.less';
+
+  @import 'block/carousel.less';
+
+  @import 'block/formField.less';
+  @import 'block/productOptions.less';
+  @import 'block/biomarkerResults.less';
+  @import 'block/dnaTraitMarker.less';
+
+}

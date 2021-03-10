@@ -1,0 +1,89 @@
+.result__essentialone {
+
+  text-align: center;
+  line-height: 1.2em;
+  font-family: @font-family-medium;
+  font-size: 16px;
+
+  .result__footer {
+    font-size: 14px;
+    color: fade(#000000, 50%);
+    a {
+      color: fade(#000000, 50%) !important;
+    }
+    padding-bottom: 30px;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+  }
+
+  h3 {
+    font-family: @font-family-header;
+    font-size: 30px;
+  }
+
+  h4 {
+    font-family: @font-family-header;
+    font-size: 16px;
+  }
+
+  @import 'essentialone/loader.less';
+  @import 'essentialone/goals.less';
+  @import 'essentialone/pill.less';
+  @import 'essentialone/testimonials.less';
+  @import 'essentialone/order.less';
+
+  .result__hero {
+
+    position: relative;
+    min-height: ~"calc(90vh - 60px)";
+    padding-top: 70px;
+    padding-bottom: 70px;
+
+    @media @md {
+      min-height: ~"calc(90vh - 100px)";
+    }
+
+    &--top {
+      min-height: initial;
+      padding: 0px;
+    }
+
+    &--primary {
+      background-color: @brand-primary-yellow;
+    }
+
+    &--cream {
+      background-color: @brand-primary-cream;
+    }
+
+    &--background {
+      background-repeat: no-repeat;
+      background-size: 667px;
+      background-position: top center;
+      &OffsetMd {
+        @media @md {
+          background-size: 950px;
+          background-position: ~"calc(50% - 245px)" center;
+        }
+        @media @lg {
+          background-position: ~"calc(50% - 300px)" center;
+        }
+        @media @xl {
+          background-position: ~"calc(50% - 360px)" center;
+        }
+      }
+    }
+
+    > * {
+      flex: 1;
+    }
+
+    @media @sm {
+      display: flex;
+      align-items: center;
+    }
+
+  }
+
+}

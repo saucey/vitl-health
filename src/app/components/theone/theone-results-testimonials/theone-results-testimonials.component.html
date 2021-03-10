@@ -1,0 +1,33 @@
+<div class="results__testimonials">
+
+  <div class="container">
+
+    <swiper [config]="carouselConfig">
+
+      <div class="results__testimonial" *ngFor="let testimonial of testimonials">
+
+        <div class="testimonial__quote">
+          "{{testimonial.quote}}"
+        </div>
+
+        <img appImage category="theone" [key]="testimonial.image" [width]="45" />
+
+        <p class="mb-20">{{testimonial.name}}</p>
+
+        <ul>
+          <li><img appImage category="theone" key="star-rating" [width]="32" /></li>
+          <li><img appImage category="theone" key="star-rating" [width]="32" /></li>
+          <li><img appImage category="theone" key="star-rating" [width]="32" /></li>
+          <li><img appImage category="theone" key="star-rating" [width]="32" /></li>
+          <li><img appImage category="theone" key="star-rating" [width]="32" /></li>
+        </ul>
+
+      </div>
+
+    </swiper>
+
+    <div class="expert-carousel__dots-wrap"></div>
+
+  </div>
+
+</div>

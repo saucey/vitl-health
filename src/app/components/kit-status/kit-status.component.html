@@ -1,0 +1,15 @@
+<div class="kitStatus">
+  <h2>{{status.label}}</h2>
+  <ul class="kitStatus__list" [class.kitStatus__list--start]="isStart()" [class.kitStatus__list--end]="isEnd()" [class.kitStatus__list--last]="isLast()">
+    <li class="kitStatus__item kitStatus__item--current" *ngIf="current">
+      <img class="kitStatus__item__image" [appImage]="current.icon" [appAction]="isLast() ? current.action : null" />
+      <p class="kitStatus__item__title" [appAction]="current.action">{{current.label}}</p>
+      <p class="kitStatus__item__description">{{current.description}}</p>
+    </li>
+    <li class="kitStatus__item" *ngIf="next">
+      <img class="kitStatus__item__image" [appImage]="next.icon" />
+      <p class="kitStatus__item__title">{{next.label}}</p>
+      <p class="kitStatus__item__description">{{next.description}}</p>
+    </li>
+  </ul>
+</div>

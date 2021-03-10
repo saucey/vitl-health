@@ -1,0 +1,43 @@
+<div class="pt-100 pt-md-120 kit-registration">
+
+    <h1 class="heading heading--medium mb-30 text-center">Register your kit</h1>
+
+    <hr class="hr hr--primary mb-30">
+
+    <div class="container container--tiny  completed-steps">
+
+        <div class="step" *ngIf="kit">
+            <div class="left-side">
+                <img class="icon lazyload mr-10"
+                     data-src="{{kit['icon']}}" />
+                <div class="copy">{{kit['label']}}</div>
+            </div>
+            <a class="change" routerLink="/kit">Change</a>
+        </div>
+
+        <div class="step" *ngIf="barcode">
+            <div class="left-side">
+                <img class="icon lazyload mr-10"
+                     data-src="https://static.vitl.com/assets/images/kit-register/barcode.png" />
+                <div class="copy">{{barcode}}</div>
+            </div>
+            <a class="change" routerLink="/kit/barcode">Change</a>
+        </div>
+
+        <div class="step" *ngIf="email">
+            <div class="left-side">
+                <img class="icon lazyload mr-10"
+                     data-src="https://static.vitl.com/assets/images/kit-register/userAccount.png" />
+                <div class="copy">{{email}}</div>
+            </div>
+            <a class="change" routerLink="/kit/account/confirmation">Change</a>
+        </div>
+
+    </div>
+
+    <div class="container container--tiny">
+        <div class="mb-30">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

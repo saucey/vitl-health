@@ -1,0 +1,15 @@
+<h1>Delivery</h1>
+
+<h2>Please select your shipping address</h2>
+
+<div class="container container--tiny pb-20">
+
+    <ul class="mb-30 list list--selectable list--constrained list--constrainedCheckout list--borderedBottom">
+        <li class="list__item" *ngFor="let address of user?.deliveryAddresses" (click)="selectAddress(address)">
+            {{address.summary}}
+        </li>
+    </ul>
+
+    <a class="copy copy--mediumWeight font-14 font-md-16 primaryBorder" routerLink="/checkout/delivery">Add new address</a>
+
+</div>

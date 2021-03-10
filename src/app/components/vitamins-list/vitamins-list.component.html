@@ -1,0 +1,47 @@
+<div class="row vitamins">
+  <div class="col-xs-12 col-sm-8 vitamins__list"
+    [ngClass]="{
+      'col-md-3': vitamins.length <= 8,
+      'col-md-7 columns': vitamins.length > 8,
+      'columns--2': (vitamins.length > 8 && vitamins.length <= 12),
+      'columns--3': vitamins.length > 12,
+      'mobile-show-all-vitamins': showAllVitamins
+    }">
+    <div *ngFor="let vitamin of vitamins; let i = index"
+      class="expand-content expand-content--pill expand-content--vitamin"
+      [class.is-active]="activeExpandItem === i">
+      <div class="expand-content__header" (click)="toggleExpand(i)">
+        <h3>{{vitamin.name}}</h3>
+      </div>
+      <div class="expand-content__body hidden-md hidden-lg hidden-xl">
+        <p>
+          <span [innerHtml]="vitamin.description"></span>
+          <sup *ngFor="let source of vitamin.sources; let i = index">
+            <a [href]="source.url" target="_blank">{{ source.id }}</a>{{ i < vitamin.sources.length - 1 ? ',' : '' }}
+          </sup>
+        </p>
+        <p *ngIf="vitamin.amount" class="text-right">{{ vitamin.amount }}</p>
+        <img [src]="vitamin.imgUrl" alt="{{ vitamin.name }}" />
+      </div>
+    </div>
+    <div *ngIf="!showAllVitamins" class="mt-25 text-center hidden-md hidden-lg hidden-xl">
+      <a class="link cursor" (click)="toggleShowVitamins(true)">More vitamins</a>
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-5 vitamins__content-desktop">
+    <div class="expand-content expand-content--pill expand-content--vitamin is-active display-flex">
+      <div class="expand-content__body display-flex">
+        <p class="heading-3 mt-15">{{ vitamins[activeExpandItem].name }}</p>
+        <div class="divider mt-10 mb-15"></div>
+        <p>
+          <span [innerHtml]="vitamins[activeExpandItem].description"></span>
+          <sup *ngFor="let source of vitamins[activeExpandItem].sources; let i = index">
+            <a [href]="source.url" target="_blank">{{ source.id }}</a>{{ i < vitamins[activeExpandItem].sources.length - 1 ? ',' : '' }}
+          </sup>
+        </p>
+        <p *ngIf="vitamins[activeExpandItem].amount" class="mt-10 text-right">{{ vitamins[activeExpandItem].amount }}</p>
+        <img [src]="vitamins[activeExpandItem].imgUrl" alt="{{ vitamins[activeExpandItem].name }}" />
+      </div>
+    </div>
+  </div>
+</div>

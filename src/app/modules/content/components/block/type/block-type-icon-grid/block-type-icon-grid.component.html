@@ -1,0 +1,23 @@
+<div class="myvitl__content__block__iconGrid myvitl__content__block__iconGrid--{{block.style?.item_size}} text-center"
+     [class.equal_four]="block.list.length === 4"
+     [class.greater_four]="block.list.length > 4"
+     [class.greater_five]="block.list.length > 5"
+>
+
+  <ul>
+
+    <li *ngFor="let item of block.list" class="size_{{item.style?.item_size}}">
+
+      <div class="image_wrapper">
+        <div class="image" [appStyle]="item.style">
+          <img [appImage]="item.image" [width]="getIconWidth(item.style?.item_size)" />
+          <span *ngIf="!item.image">{{item.icon_text}}</span>
+        </div>
+      </div>
+      <div class="text" *ngIf="item.title">{{item.title}}</div>
+
+    </li>
+
+  </ul>
+
+</div>

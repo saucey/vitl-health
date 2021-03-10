@@ -1,0 +1,244 @@
+&__iconGrid {
+
+  padding: 10px 20px;
+
+  &.equal_four {
+
+    ul {
+
+      li {
+
+        flex: 1 0 50%;
+
+      }
+
+    }
+
+  }
+
+  ul {
+
+    display: flex;
+    flex-wrap: wrap;
+
+    @media @lg {
+      padding-top: 15px;
+      width: 75%;
+      margin: 0 auto;
+      margin-bottom: -15px;
+    }
+
+    li {
+
+      flex: 1 0 33%;
+
+      .text {
+
+        font-weight: bold;
+        font-size: 1em;
+        height: 30px;
+        line-height: 30px;
+        margin-bottom: 15px;
+
+        @media @lg {
+          margin-bottom: 30px;
+        }
+
+      }
+
+      .image_wrapper {
+
+        max-width: 84px;
+        margin: 0 auto;
+        padding: 2px;
+
+        .image {
+
+          width: 80px;
+          height: 80px;
+          border-radius: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .block_image {
+            width: 100%;
+            height: 100%;
+          }
+
+        }
+
+      }
+
+      /*
+       * Extra small
+       */
+
+      &.size_x-small {
+
+        .image_wrapper {
+
+          max-width: 34px;
+
+          .image {
+
+            max-width: 30px;
+            max-height: 30px;
+
+          }
+
+        }
+
+      }
+
+      /*
+       * Small
+       */
+
+      &.size_small {
+
+        .image_wrapper {
+
+          max-width: 64px;
+
+          .image {
+
+            max-width: 60px;
+            max-height: 60px;
+
+          }
+
+        }
+
+      }
+
+      /*
+       * Large
+       */
+
+      &.size_large {
+
+        .image_wrapper {
+
+          max-width: 164px;
+
+          .image {
+
+            max-width: 160px;
+            max-height: 160px;
+
+          }
+
+        }
+
+      }
+
+      /*
+       * Extra large
+       */
+
+      &.size_x-large {
+
+        .image_wrapper {
+
+          max-width: 324px;
+
+          .image {
+
+            max-width: 320px;
+            max-height: 320px;
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+  /*
+   * Extra small
+   */
+
+  &--x-small {
+
+    ul {
+
+      li {
+
+        flex: 1 0 20%;
+
+      }
+
+    }
+
+    &.greater_five {
+
+      ul {
+
+        li {
+
+          flex: 1 0 25%;
+
+        }
+
+      }
+
+    }
+
+  }
+
+  /*
+   * Small
+   */
+
+  &--small {
+
+    ul {
+
+      li {
+
+        flex: 1 0 25%;
+
+      }
+
+    }
+
+    &.greater_four {
+
+      ul {
+
+        li {
+
+          flex: 1 0 33%;
+
+        }
+
+      }
+
+    }
+
+  }
+
+  /*
+   * Large
+   */
+
+  &--large,
+  &--x-large {
+
+    ul {
+
+      li {
+
+        flex: 1 0 100%;
+
+      }
+
+    }
+
+  }
+
+}

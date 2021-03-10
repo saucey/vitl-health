@@ -1,0 +1,369 @@
+.results__loader {
+  //* {
+  //  opacity: 1 !important;
+  //  visibility: visible !important;
+  //}
+
+  background-size: auto 460px;
+  background-position: center 72px;
+  background-repeat: no-repeat;
+  position: relative;
+  padding-top: 120px;
+  padding-bottom: 30px;
+  min-height: 100vh;
+  transition: 1s min-height ease;
+  transition-delay: 1.5s;
+
+  @media @md {
+    padding-top: 150px;
+    background-size: auto 750px;
+    background-position: center -46px;
+  }
+
+  .halo {
+    position: absolute;
+    width: 375px;
+    height: 375px;
+    left: 50%;
+    margin-left: -187.5px;
+    opacity: 0;
+    animation: appearAndGrow 0.15s cubic-bezier(1, 0, 1, 1) forwards;
+    animation-delay: 10.75s;
+  }
+
+  h1 {
+    font-family: @font-family-header;
+    font-size: 34px;
+    line-height: 34px;
+    margin-bottom: 9px;
+    transition: 1s transform ease;
+    @media @md {
+      font-size: 38px;
+      line-height: 38px;
+      margin-bottom: 11px;
+    }
+  }
+
+  h2 {
+    font-family: @font-family-header;
+    font-size: 24px;
+    line-height: 24px;
+    transition: 1s transform ease;
+    margin-bottom: 56px;
+    @media @md {
+      font-size: 26px;
+      line-height: 26px;
+    }
+  }
+
+  ul {
+    display: inline-block;
+
+    li {
+      position: relative;
+      text-align: left;
+      font-size: 14px;
+      font-family: @font-family-medium;
+      padding-left: 28px;
+      line-height: 18px;
+      margin-bottom: 12px;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 18px;
+        height: 18px;
+        background: url(https://static-prod.vitl.com/new/images/source/1547724671-tick-full-3x@1x.png?width=18)
+          no-repeat center;
+      }
+    }
+  }
+
+  .display__second,
+  .display__initial {
+    opacity: 0;
+    visibility: hidden;
+    transition: 1s all ease;
+    pointer-events: none;
+
+    &--active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+  }
+
+  .display__initial {
+    max-height: 0px;
+    &--active {
+      max-height: 140px;
+    }
+  }
+
+  .display__second {
+    transition-delay: 0.75s;
+  }
+
+  .pill__loader {
+    position: relative;
+    border: 2px solid white;
+    width: 37px;
+    height: 97px;
+    border-radius: 48px;
+    margin: 0 auto;
+    animation: loadingPillJump 0.4s cubic-bezier(0.13, 0.58, 0.43, 1) 10.25s,
+      loadingPillSlam 0.15s cubic-bezier(1, 0, 1, 1) 10.7s;
+    animation-fill-mode: forwards;
+
+    &__progress {
+      position: absolute;
+      background: white;
+      bottom: 2px;
+      left: 2px;
+      right: 2px;
+      border-bottom-left-radius: 46px;
+      border-bottom-right-radius: 46px;
+      transform: translateZ(0);
+      animation: pillLoadingBarAnimation 10s linear,
+        disappear 0.15s linear 10.65s;
+      animation-fill-mode: forwards;
+    }
+
+    &__pill {
+      position: relative;
+      width: 33px;
+      height: 93px;
+      opacity: 0;
+      animation: appear 0.15s linear 10.65s;
+      animation-fill-mode: forwards;
+      img {
+        width: 33px;
+        height: 93px;
+      }
+    }
+
+    &--gummy {
+      width: 97px;
+      .pill__loader__pill {
+        width: 93px;
+      }
+      img {
+        width: 93px;
+      }
+    }
+  }
+
+  .loader__goals {
+    display: flex;
+    justify-content: space-around;
+    width: 280px;
+    margin: 0 auto;
+    padding: 0px;
+
+    @media @sm {
+      width: 320px;
+    }
+
+    .loader__goal {
+      position: relative;
+      height: 60px;
+      width: 60px;
+      &__icon {
+        border: 1px solid @brand-primary-black;
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 8px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &__text {
+        position: absolute;
+        top: 65px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: @brand-primary-black !important;
+        font-size: 14px;
+        font-family: @font-family-bold;
+        text-align: center;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .text__loader {
+    position: relative;
+
+    span {
+      position: absolute;
+      width: 100%;
+      top: 0px;
+      left: 0px;
+      opacity: 0;
+      animation: fadeInFadeOut 2s forwards;
+
+      &:first-child {
+        animation-delay: 0.5s;
+        & + span {
+          animation-delay: 2.5s;
+          & + span {
+            animation-delay: 4.5s;
+            & + span {
+              animation-delay: 6.5s;
+              & + span {
+                animation-delay: 8.5s;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .anim__1,
+  .anim__2,
+  .anim__3,
+  .anim__4,
+  .anim__5,
+  .anim__6,
+  .anim__7 {
+    opacity: 0;
+    visibility: hidden;
+    animation: appearAndGrow 0.5s linear 0s forwards;
+  }
+
+  .anim__3,
+  .anim__7 {
+    animation: appear 0.5s linear 11s forwards;
+  }
+
+  .anim__1 {
+    animation-delay: 11.4s;
+  }
+  .anim__2 {
+    animation-delay: 12s;
+  }
+  .anim__3 {
+    animation-delay: 13.5s;
+  }
+  .anim__4 {
+    animation-delay: 15.5s;
+  }
+  .anim__5 {
+    animation-delay: 16.2s;
+  }
+  .anim__6 {
+    animation-delay: 16.9s;
+  }
+  .anim__7 {
+    animation-delay: 17.7s;
+    animation-duration: 1s;
+  }
+
+  &--resultsVisible {
+    min-height: 573px;
+    padding-bottom: 60px;
+
+    @media @md {
+      padding-bottom: 120px;
+    }
+
+    h1,
+    h2 {
+      transform: scale(1.2);
+      animation: none !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+  }
+
+  &--resultsReady {
+  }
+}
+
+@keyframes pillLoadingBarAnimation {
+  0% {
+    top: 80px;
+  }
+  5% {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+  95% {
+    top: 10px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+  100% {
+    top: 1px;
+    border-top-left-radius: 46px;
+    border-top-right-radius: 46px;
+  }
+}
+
+@keyframes loadingPillJump {
+  from {
+    box-shadow: none;
+  }
+  to {
+    transform: scale(1.8);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.07);
+    border: 2px solid transparent;
+  }
+}
+
+@keyframes loadingPillSlam {
+  from {
+    transform: scale(1.8);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.07);
+    border: 2px solid transparent;
+  }
+  to {
+    transform: scale(1);
+    box-shadow: none;
+    border: 2px solid transparent;
+  }
+}
+
+@keyframes disappear {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInFadeOut {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  85% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes appearAndGrow {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+}

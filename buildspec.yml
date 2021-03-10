@@ -1,0 +1,50 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      # Download and Install NodeJS 8.0
+      # - curl -sL https://deb.nodesource.com/setup_8.x | -E bash -
+      # - apt-get install -y nodejs
+      - echo Installing source NPM dependencies...
+      # Install http drivers for node
+      - apt-get update -y
+      - apt-get install -y apt-transport-https
+      # Install Yarn Package Manager (Replace the commands below if you using NPM).
+      - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+      - echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+      - apt-get update -y
+      - apt-get install -y yarn
+      # Install Angular CLI, If you are not using Angular 6, install angular/cli@1.7.0 or lower, confirm by running ng -v inside your project folder
+      - yarn global add @angular/cli@6.0.8
+      # Install node dependancies.
+      #- yarn install
+  pre_build:
+    commands:
+      - echo Running pre build
+      - REPOSITORY_URI=909183459035.dkr.ecr.eu-west-1.amazonaws.com/service-web
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - IMAGE_TAG=${COMMIT_HASH:=latest}
+      - docker version
+      - $(aws ecr get-login --no-include-email)
+      - docker pull $REPOSITORY_URI:$WORKSPACE_ENV || true
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Installing node modules
+      - npm install
+      - echo Building the angular application
+      - ng build -c $WORKSPACE_ENV --deploy-url https://$WORKSPACE_ENV-assets.vitl.com/
+      - bash ./cdn-upload.sh $WORKSPACE_ENV
+      - ng run service-web:server:$WORKSPACE_ENV
+      - npm run webpack:server
+      - echo Building the Docker Image...
+      - docker login -u vitlmakan -p 04792ab6-f70a-462f-9975-42b1d8d7dea8
+      - docker build --cache-from $REPOSITORY_URI:$WORKSPACE_ENV --tag $REPOSITORY_URI:$IMAGE_TAG --tag $REPOSITORY_URI:$WORKSPACE_ENV .
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker images...
+      - docker push $REPOSITORY_URI:$IMAGE_TAG
+      - docker push $REPOSITORY_URI:$WORKSPACE_ENV
+      - aws ecs update-service --force-new-deployment --cluster $WORKSPACE_ENV --service service-web

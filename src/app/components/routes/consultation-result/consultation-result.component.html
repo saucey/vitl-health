@@ -1,0 +1,159 @@
+<div class="result__walkthrough">
+
+  <div class="container container--medium pt-100 pb-100 text-center">
+
+    <div class="pt-30 pt-md-0" *ngIf="slide === 'good-news'">
+
+      <h1 class="heading mb-20">Good news</h1>
+
+      <hr class="hr mb-20">
+
+      <h2 class="copy mb-45">You appear to be doing well in the following areas</h2>
+
+      <div class="container container--tiny">
+
+        <ul class="list list--grid mb-45 mb-md-60">
+
+          <li class="list__item" *ngFor="let pillar of result.positivePillars">
+            <figure class="icon icon--bordered icon--medium">
+              <div class="icon__caption icon__caption--bottom">
+                <span>{{pillar.label}}</span>
+              </div>
+              <img class="icon__image" [appImage]="pillar.icon" [width]="45"/>
+            </figure>
+          </li>
+
+        </ul>
+
+        <a class="button button--white mb-30 mb-md-0" (click)="nextSlide()">Next</a>
+
+      </div>
+
+    </div>
+
+    <div class="pt-30 pt-md-0" *ngIf="slide === 'bad-news'">
+
+      <h1 class="heading mb-20">Areas to focus on</h1>
+
+      <hr class="hr mb-20">
+
+      <h2 class="copy mb-30">Your consultation has pinpointed the following areas</h2>
+
+      <div class="container container--small">
+
+        <ul class="mb-md-60">
+          <li class="result__pillar" *ngFor="let pillar of result.negativePillars">
+            <div class="result__pillar__captions">
+              <img class="result__pillar__icon" [appImage]="pillar.icon" [height]="20" [heightLg]="30"/>
+              <span class="result__pillar__label">{{pillar.label}}</span>
+              <span class="result__pillar__grade" *ngIf="pillar.scoreLabel">{{pillar.scoreLabel}}</span>
+            </div>
+            <!-- <div class="result__pillar__score" *ngIf="pillar.showProgress">
+              <span class="result__pillar__circle" *ngFor="let circle of circles"></span>
+              <div class="result__pillar__fill" [style.width]="(pillar.score * 100) + '%'"></div>
+            </div> -->
+          </li>
+        </ul>
+
+      </div>
+
+      <a class="button button--white mb-30 mb-md-0" (click)="nextSlide()">Next</a>
+
+    </div>
+
+    <div class="pt-30 pt-md-0" *ngIf="slide === 'next-steps'">
+
+      <h1 class="heading mb-20">{{result.nextSteps.title}}</h1>
+
+      <hr class="hr mb-20">
+
+      <div class="container container--small">
+
+        <h2 class="copy mb-30">{{result.nextSteps.subtitle}}</h2>
+
+        <div class="mb-30">
+          <img
+            width="310"
+            srcset="
+            {{result.nextSteps.image.url}}?compress=1 2x,
+            {{result.nextSteps.image.url}}?width=310&compress=1 1x"
+            src="{{result.nextSteps.image.url}}" alt=""/>
+        </div>
+
+        <div *ngIf="warningScreen">
+          <a class="button button--white mb-30 mb-md-0" (click)="nextSlide()">Next</a>
+        </div>
+
+        <div *ngIf="!warningScreen">
+          <div class="list list--horizontal-md mb-30 mb-md-0">
+            <a class="button button--white" routerLink="/myvitl/result">Continue</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- <div class="pt-30 pt-md-100 free-trial-slide" *ngIf="slide === 'next-steps' && (isFreeTrial || isSave50)">
+
+      <h1 class="heading mb-20">Your personalised daily vitamins</h1>
+
+      <hr class="hr mb-30 mt-30">
+
+      <div class="container container--medium">
+
+        <p class="copy mb-30">
+          Our experts recommend the following 4 personalised supplements based on your
+          results and health goals:
+        </p>
+
+        <div class="pills-wrapper">
+          <div *ngFor="let pill of pills; let i = index" class="pill" (click)="showNutritionModal(i)">
+            <img src="{{pill.icon.url}}?height=100" alt="">
+            <div class="pill--right-side">
+              <h3 class="heading-3">{{pill.label}}</h3>
+              <p class="copy">{{pill.longDescription}}</p>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="warningScreen">
+          <a class="button button--white mb-30 mb-md-0" (click)="nextSlide()">Next</a>
+        </div>
+
+        <div *ngIf="!warningScreen" class="free-trial-slide--cta">
+          <h3 class="heading--3 copy--bold pb-10">Get started today</h3>
+          <p class="copy pb-30">
+            Your 4 personalised daily supplements are 100% free from fillers, artificial colours and
+            preservatives, and will come in handy daily strips, perfect for those on the go!
+          </p>
+          <p class="copy" *ngIf="isFreeTrial">
+            Order your free 2-week trial today for just £3.95 P&P and start feeling your best more often.
+          </p>
+
+          <p class="copy" *ngIf="isSave50">
+            Save 50% today and get your first month for just £12.47 to help you start feeling your best more often.
+          </p>
+          <a class="button button--white mb-20 mt-40" *ngIf="isFreeTrial" (click)="claimFreeTrial()">Claim free trial</a>
+          <a class="button button--white mb-20 mt-40" *ngIf="isSave50" (click)="claimSave50()">Buy now</a>
+          <p class="copy--small text-center mb-40">Pause or cancel anytime</p>
+        </div>
+
+      </div>
+
+    </div> -->
+
+
+    <div *ngIf="slide === 'warning-screen'">
+
+      <div class="pb-30 pb-md-0">
+        <app-content-screen [screen]="warningScreen"></app-content-screen>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!--<div class="carousel2__dots-wrap"></div>-->
+
+</div>

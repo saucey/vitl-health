@@ -1,0 +1,280 @@
+<div class="outsourced">
+
+
+    <section class="hero hero--top hero--beige hero--background"
+             style="background-image:url(https://static.vitl.com/assets/images/dna-hero-back.png);">
+
+        <div class="hero__container grid">
+
+            <div class="grid__item--7">
+
+                <div class="label visible-xs visible-sm">
+                    <span>Already got your kit? <a routerLink="/kit">Register here</a></span>
+                </div>
+
+                <img class="hero__image hero__image--medium-md p-15 p-md-0" [appImage]="product.image" [height]="500"/>
+
+            </div>
+
+            <div class="grid__item--5">
+
+                <h2 class="h2">{{product.label}}</h2>
+
+                <div class="divider"></div>
+
+                <h4 class="h4">Track your key nutrient levels from the comfort of your own home</h4>
+
+                <app-plan-selector [product]="product"></app-plan-selector>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- section 2 -->
+    <section class="container-fluid pPer-section4-fluid">
+        <div class="container pPer-section4 p-relative z-index-1">
+            <div class="row pPer-s4">
+                <div class="row__col-12 row__col-md-6 pPer-s4-col1">
+                    <div class="pPer-s4-inner text-center text-left-md">
+                        <h2 class="h2">What you'll discover</h2>
+                        <div class="divider divider--mb30"></div>
+                        <p class="p text-left">From a <span class="copy--bold">simple finger-prick blood test</span>
+                            you’ll get a thorough analysis of
+                            the key nutrients that have the greatest impact on wellbeing and long-term health.
+                            <br/>
+                            <br/>
+                            You'll also get <span class="copy--bold">detailed, personalised dietary and lifestyle recommendations</span>
+                            from a
+                            qualified nutritionist, and we can even formulate a
+                            <a routerLink="/product/personalised" class="underline-link--initial">bespoke pack of vitamins</a>
+                            tailored to your results
+                        </p>
+                    </div>
+                </div>
+                <div class="row__col-12 row__col-md-6 pPer-s4-col2">
+                    <img src="https://static-prod.vitl.com/assets/images/blood-results.png?compress=1"
+                         class="pPer-s4-img1">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- section -->
+    <section class="container-fluid pBl-section1-fluid">
+        <div class="container pBl-section1">
+            <div class="row">
+                <div class="row__col-12 row__col-md-6 pBl-s1-col1 text-center">
+
+                    <h3 class="h3">Check your vitamin levels</h3>
+                    <div class="divider divider--mb30"></div>
+                    <div class="pBl-s1-inner">
+                        <div class="card-ico">
+                            <img src="https://static.vitl.com/assets/images/blood/D.png" class="card-ico__img">
+                            <div class="card-ico__copy">
+                                <p class="card-ico__h">Vitamin D</p>
+                                <p class="card-ico__p">Healthy bones & immune system</p>
+                            </div>
+                        </div>
+
+                        <div class="card-ico">
+                            <img src="https://static.vitl.com/assets/images/blood/Fe.png" class="card-ico__img">
+                            <div class="card-ico__copy">
+                                <p class="card-ico__h">Ferritin (Iron)</p>
+                                <p class="card-ico__p">Red blood cell production</p>
+                            </div>
+                        </div>
+
+                        <div class="card-ico">
+                            <img src="https://static.vitl.com/assets/images/blood/Zn.png" class="card-ico__img">
+                            <div class="card-ico__copy">
+                                <p class="card-ico__h">Zinc</p>
+                                <p class="card-ico__p">Energy and hormone support</p>
+                            </div>
+                        </div>
+
+                        <div class="card-ico">
+                            <img src="https://static.vitl.com/assets/images/blood/B12.png" class="card-ico__img">
+                            <div class="card-ico__copy">
+                                <p class="card-ico__h">Active B12</p>
+                                <p class="card-ico__p">Energy and nervous systems</p>
+                            </div>
+                        </div>
+
+                        <div class="card-ico">
+                            <img src="https://static.vitl.com/assets/images/blood/B9.png" class="card-ico__img">
+                            <div class="card-ico__copy">
+                                <p class="card-ico__h">Folate</p>
+                                <p class="card-ico__p">Red blood cell production</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="row__col-12 row__col-md-6 pBl-s1-col2 text-center">
+
+                    <h3 class="h3">Measure your cholesterol</h3>
+                    <div class="divider divider--mb30"></div>
+                    <div class="pBl-s1-inner">
+
+                        <div class="card-ico">
+                            <img src="https://static.vitl.com/assets/images/blood/TG.png" class="card-ico__img">
+                            <div class="card-ico__copy">
+                                <p class="card-ico__h">Triglycerides</p>
+                            </div>
+                        </div>
+
+                        <div class="card-ico">
+                            <img src="https://static.vitl.com/assets/images/blood/TC.png" class="card-ico__img">
+                            <div class="card-ico__copy">
+                                <p class="card-ico__h">Total Cholesterol</p>
+                            </div>
+                        </div>
+
+                        <div class="card-ico">
+                            <img src="https://static.vitl.com/assets/images/blood/HDL.png" class="card-ico__img">
+                            <div class="card-ico__copy">
+                                <p class="card-ico__h">HDL Cholesterol</p>
+                            </div>
+                        </div>
+
+                        <div class="card-ico">
+                            <img src="https://static.vitl.com/assets/images/blood/LDL.png" class="card-ico__img">
+                            <div class="card-ico__copy">
+                                <p class="card-ico__h">LDL Cholesterol</p>
+                            </div>
+                        </div>
+
+                        <div class="card-ico">
+                            <img src="https://static.vitl.com/assets/images/blood/HDL_LDL.png" class="card-ico__img">
+                            <div class="card-ico__copy">
+                                <p class="card-ico__h">Cholesterol Ratio</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- section -->
+    <section class="container-fluid pBl-section2-fluid">
+        <div class="container pBl-section2 text-center">
+            <h2 class="h2">How it works</h2>
+            <div class="divider divider--mb40"></div>
+            <div class="row">
+                <div class="row__col-12 row__col-md-4">
+                    <div class="pBl-s2-card">
+                        <img src="https://static-prod.vitl.com/assets/images/order.png"
+                             class="img-responsive mx-auto pBl-s2-card-img p-20">
+                        <p class="pBl-s2-card-p">Order your kit</p>
+                        <p class="pBl-s2-card-p2">Once you’ve purchased your blood test online, we'll deliver it through
+                            your door within 2 days for free.</p>
+                    </div>
+                </div>
+                <div class="row__col-12 row__col-md-4">
+                    <div class="pBl-s2-card">
+                        <img src="https://static-prod.vitl.com/assets/images/blood_test.png"
+                             class="img-responsive mx-auto pBl-s2-card-img p-20">
+                        <p class="pBl-s2-card-p">Take your test</p>
+                        <p class="pBl-s2-card-p2">Follow the instructions provided to take your quick finger-prick
+                            sample, then pop it into the prepaid postage bag back to our accredited lab.</p>
+                    </div>
+                </div>
+                <div class="row__col-12 row__col-md-4">
+                    <div class="pBl-s2-card">
+                        <img src="https://static-prod.vitl.com/assets/images/result.png"
+                             class="img-responsive mx-auto pBl-s2-card-img p-20">
+                        <p class="pBl-s2-card-p">View your results</p>
+                        <p class="pBl-s2-card-p2">Our in-house nutritionists will review your results and give
+                            personalised dietary and lifestyle reccomendations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--Customer testimonials-->
+    <section class="hero hero--primary hero--background hero--backgroundSmall"
+             style="background-image:url(https://static.vitl.com/assets/images/dna-s7-bg.png)">
+
+        <div class="hero__container hero__container--medium grid pt-50 pt-md-0">
+
+            <div class="grid__item--12">
+
+                <h3 class="heading font-md-44 font-36 pb-60 pb-md-120">Testimonials</h3>
+
+                <div class="grid grid--alignTop">
+
+                    <div class="grid__item--4 testimonial mr-50 ml-50">
+
+                        <p class="testimonial__quote copy mb-30 mb-md-45 p-20 font-16 font-md-18">"Such a simple and
+                            straightforward
+                            process. It took me less than 10 minutes and was pretty painless. The packaging was also a
+                            really nice
+                            touch. Would happily recommend."</p>
+
+                        <div class="testimonial__author mb-60 mb-md-0">
+                            <img class="testimonial__image" src="https://static.vitl.com/assets/images/david.png"/>
+                            <p class="testimonial__author copy copy--small copy--semiBold pl-10">David, London</p>
+                        </div>
+
+                    </div>
+
+                    <div class="grid__item--4 testimonial mr-50 ml-50">
+
+                        <p class="testimonial__quote copy copy--medium mb-30 mb-md-45 p-20 font-16 font-md-18">"The Vitl
+                            blood test was so fast and easy and the results were surprising.
+                            Thanks to my tailored Vitl vitamins and diet suggestions I now feel great!"</p>
+                        <div class="testimonial__author mb-60 mb-md-0">
+                            <img class="testimonial__image" src="https://static.vitl.com/assets/images/jodie.jpeg"/>
+                            <p class="testimonial__author copy copy--small copy--semiBold pl-10">Jodie, Hull</p>
+                        </div>
+
+                    </div>
+
+                    <div class="grid__item--4 testimonial mr-50 ml-50">
+
+                        <p class="testimonial__quote copy copy--medium mb-30 mb-md-45 p-20 font-16 font-md-18">"I found
+                            the blood
+                            test instructions clear and easy to follow. The results gave me a great idea of where my
+                            health is at
+                            present."</p>
+
+                        <div class="testimonial__author mb-60 mb-md-0">
+                            <img class="testimonial__image" src="https://static.vitl.com/assets/images/james.jpg"/>
+                            <p class="testimonial__author copy copy--small copy--semiBold pl-10">James, Worcester</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- section -->
+    <div class="container-fluid dna-section6-fluid pb-60">
+        <div class="dna-section6 text-center">
+            <img src="https://static.vitl.com/assets/images/dna-s6-img1.svg" class="img-responsive mx-auto dna-s6-img1">
+            <h2 class="h2">Your health data</h2>
+            <div class="divider divider--mb30"></div>
+            <p class="p">We are committed to ensuring you have absolute control over your personal information, which is
+                why we adhere to the highest data security standards and use the latest encryption technology so you
+                never have to worry about your data</p>
+        </div>
+    </div>
+
+</div>

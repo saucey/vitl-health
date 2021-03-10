@@ -1,0 +1,24 @@
+<div class="input input--{{type}}" [ngClass]="{
+  'input--focussed': focussed,
+  'input--submit input--small input--white': submit,
+  'input--active': type === 'radio' && model === value
+}"
+     (click)="select()">
+
+  <div class="input__placeholder" [ngClass]="{'input__placeholder--minimized': minimizePlaceholder()}">{{placeholder}}</div>
+
+  <input *ngIf="type == 'password'" type="password" class="input__control" [(ngModel)]="model" (blur)="blur()" (focus)="focus()" />
+
+  <input *ngIf="type == 'input'" type="text" class="input__control" [(ngModel)]="model" (blur)="blur()" (focus)="focus()" />
+
+  <input *ngIf="type == 'email'" type="email" class="input__control" [(ngModel)]="model" (blur)="blur()" (focus)="focus()" email />
+
+  <select *ngIf="type == 'select'" class="input__control" [(ngModel)]="model" (blur)="blur()" (focus)="focus()">
+    <option *ngFor="let option of options" [ngValue]="option.code" [selected]="">{{option.label}}</option>
+  </select>
+
+  <input *ngIf="type == 'radio'" type="radio" class="input__control" [(ngModel)]="model" [value]="value" (blur)="blur()" (focus)="focus()" />
+
+  <button class="button button--active input__submit" *ngIf="submit"></button>
+
+</div>

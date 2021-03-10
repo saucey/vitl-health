@@ -1,0 +1,81 @@
+/*
+ Heading block
+ */
+
+.heading {
+
+  font-family: @font-family-header;
+  font-size: @font-size-base * (30 / @font-size-base);
+  font-weight: @font-weight-header;
+
+  &--medium {
+
+    font-size: @font-size-base * (22 / @font-size-base);
+
+  }
+
+  &--small {
+
+    font-size: @font-size-base * (20 / @font-size-base);
+
+  }
+
+  &--tiny {
+
+    font-size: @font-size-base * (18 / @font-size-base);
+
+  }
+
+  &--teenyTiny {
+
+    font-size: @font-size-base * (16 / @font-size-base);
+
+  }
+
+  @media @md {
+
+    font-family: @font-family-header;
+    font-size: @font-size-base * (60 / @font-size-base);
+    font-weight: @font-weight-header;
+
+    &--medium {
+
+      font-size: @font-size-base * (48 / @font-size-base);
+
+    }
+
+    &--small {
+
+      font-size: @font-size-base * (28 / @font-size-base);
+
+    }
+
+    &--tiny {
+
+      font-size: @font-size-base * (24 / @font-size-base);
+
+    }
+
+  }
+
+  &--reducedWidth {
+    max-width: 75%;
+    &-md {
+      @media @md {
+        max-width: 75%;
+      }
+    }
+  }
+
+  &--centered {
+    margin-left: auto;
+    margin-right: auto;
+    @media @md {
+      &-md {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+}

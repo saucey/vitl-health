@@ -1,0 +1,22 @@
+<div class="container pt-40">
+
+  <div class="grid category">
+    <div class="grid__item--6" [ngClass]="{'grid__item--order-2':odd, 'text-right-md':odd}">
+      <a [routerLink]="item.product ? ['/product',item.product.slug] : ['/products',item.slug]">
+        <img class="category__image" [appImage]="item.previewImage" [height]="600" />
+      </a>
+    </div>
+    <div class="grid__item--6" [ngClass]="{'grid__item--order-1':odd, 'grid__item--start-8':!odd}">
+      <h3 class="heading heading--large heading--reducedWidth-md mb-30 font-md-44 font-36">
+        <a [routerLink]="item.product ? ['/product',item.product.slug] : ['/products',item.slug]">{{item.label}}</a>
+      </h3>
+      <hr class="hr hr--primary hr--left-md mb-30" />
+      <p class="copy copy--reducedWidth-md mb-35 font-16 font-md-20" [innerHtml]="item.description | nl2br"></p>
+      <div class="list  list--horizontal-md list--horizontalLeft-md">
+        <a class="button button--primary mr-md-30" [routerLink]="item.product ? ['/product',item.product.slug] : ['/products',item.slug]">Find out more</a>
+        <a class="button" routerLink="/product/{{item.alternateProduct.slug}}" *ngIf="item.alternateProduct">Looking for vegan?</a>
+      </div>
+    </div>
+  </div>
+
+</div>

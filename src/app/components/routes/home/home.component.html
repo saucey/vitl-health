@@ -1,0 +1,375 @@
+<div class="new-UI page--home">
+
+  <section class="hero">
+    <div class="section-visual-inner">
+      <div class="visible-xs">
+        <img class="top-left"
+          src="https://static-prod.vitl.com/images/home/home-hero-bg-top-left-mobile.jpg?compress=1" />
+        <img class="top-right"
+          src="https://static-prod.vitl.com/images/home/home-hero-bg-top-right-mobile.jpg?compress=1" />
+        <img class="bottom-right"
+          src="https://static-prod.vitl.com/images/home/home-hero-bg-bottom-right-mobile.jpg?compress=1" />
+        <img class="bottom-left"
+          src="https://static-prod.vitl.com/images/home/home-hero-bg-bottom-left-mobile.jpg?compress=1" />
+      </div>
+      <img width="430" class="visible-sm"
+        src="https://static-prod.vitl.com/images/home/home-hero-bg-tablet.jpg?v=3&compress=1" />
+      <img class="visible-md visible-lg" srcset="
+          https://static-prod.vitl.com/images/home/home-hero-bg.jpg?v=6&compress=1 2x,
+          https://static-prod.vitl.com/images/home/home-hero-bg.jpg?v=6&width=1467&compress=1 1x"
+        src="https://static-prod.vitl.com/images/home/home-hero-bg.jpg?v=6&width=1467&compress=1" />
+    </div>
+    <div class="container text-center text-sm-left">
+      <div class="row">
+        <div class="col-sm-9 col-md-5 col-md-offset-1">
+          <h1 class="heading-1">Live life better with personalised nutrition</h1>
+          <div class="divider"></div>
+          <p class="text--large mb-25 mb-sm-50">Tailor-made supplements and at&#8209;home nutrition tests.</p>
+          <a id="gaTakeConsultation" class="button button--primary" (click)="openConsultation()">Take consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="">
+    <div class="container pt-40 pt-sm-75 pb-55 pb-sm-100">
+      <h2 class="heading-2 mb-25 mb-sm-75 text-center">How it works</h2>
+      <div class="row">
+        <div class="col-xs-12 col-lg-10 col-lg-offset-1">
+          <div class="carousel carousel--hiw">
+            <swiper [config]="carouselConfig">
+              <div class="carousel__slide text-center">
+                <img src="https://static.vitl.com/images/icons/icon-chat.svg" />
+                <h3 class="heading-3 mt-10 mt-sm-20">Take your free consultation</h3>
+                <div class="divider"></div>
+                <p class="text--small">
+                  It only takes 5 minutes and we’ll ask questions about your diet, lifestyle and health goals to help us
+                  create a plan especially for you.
+                </p>
+              </div>
+              <div class="carousel__slide text-center">
+                <img src="https://static.vitl.com/images/icons/icon-pill.svg" />
+                <h3 class="heading-3 mt-10 mt-sm-20">Order your personalised vitamins</h3>
+                <div class="divider"></div>
+                <p class="text--small">
+                  Tailor-made for you using the cleanest, most-absorbable ingredients and delivered each month so you
+                  never
+                  have to worry about running out.
+                </p>
+              </div>
+              <div class="carousel__slide text-center">
+                <img src="https://static.vitl.com/images/icons/icon-heart.svg" />
+                <h3 class="heading-3 mt-10 mt-sm-20 pl-md-40 pr-md-40">Unlock further&nbsp;insights</h3>
+                <div class="divider"></div>
+                <p class="text--small">
+                  Further personalise your recommendations with the option to take our easy, at-home DNA Nutrition and
+                  Vitamin Blood Tests.
+                </p>
+              </div>
+            </swiper>
+            <div class="carousel-dots carousel-dots--hiw"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section__benefits">
+    <div class="section-visual-inner">
+      <img class="lazyload visible-md visible-lg" width="660" data-srcset="
+            https://static-prod.vitl.com/images/home/benefits-bg.jpg?v=1&compress=1 2x,
+            https://static-prod.vitl.com/images/home/benefits-bg.jpg?v=1&width=660&compress=1 1x"
+        data-src="https://static-prod.vitl.com/images/home/benefits-bg.jpg?v=1&width=660&compress=1" />
+      <img class="lazyload visible-sm" data-srcset="
+            https://static-prod.vitl.com/images/home/benefits-tablet-bg.jpg?compress=1 2x,
+            https://static-prod.vitl.com/images/home/benefits-tablet-bg.jpg?width=370&compress=1 1x"
+        data-src="https://static-prod.vitl.com/images/home/benefits-tablet-bg.jpg?width=370&compress=1" />
+    </div>
+    <div class="container pt-85 pt-sm-75 pb-15 pb-md-90 text-center">
+      <div class="row">
+        <div class="col-xs-12 col-md-4 col-md-offset-4">
+          <h2 class="heading-2">A complete view of your health</h2>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="row">
+        <div class="col-xs-12 col-md-6 col-md-offset-3">
+          <p>By taking your diet and lifestyle into account alongside your genetic predispositions and
+            actual blood test
+            results, we can work out what your body really needs.
+          </p>
+        </div>
+      </div>
+      <div class="carousel carousel--benefits mt-15 mt-sm-90">
+        <swiper [config]="carouselConfigBenefits">
+          <div class="carousel__slide">
+            <img class="lazyload visible-xs"
+              data-src="https://static-prod.vitl.com/images/home/benefits-slide-1.jpg?v=2&compress=1" />
+            <div class="divider divider--cap visible-xs"></div>
+            <h3 class="heading-3">Free consultation</h3>
+            <div class="divider divider--cap hidden-xs"></div>
+            <div class="divider visible-xs"></div>
+            <p class="mb-15">
+              To get your personalised diet & supplement recommendations.
+            </p>
+            <a class="text--small link" (click)="openConsultation()">Take consultation</a>
+          </div>
+          <div class="carousel__slide">
+            <img class="lazyload visible-xs"
+              data-src="https://static-prod.vitl.com/images/home/benefits-slide-2.jpg?v=2&compress=1" />
+            <div class="divider divider--cap visible-xs"></div>
+            <h3 class="heading-3">Personalised Vitamins</h3>
+            <div class="divider divider--cap hidden-xs"></div>
+            <div class="divider visible-xs"></div>
+            <p class="mb-15">
+              Tailor-made for you to help you reach your health goals.
+            </p>
+            <a routerLink="/products/vitamins" class="text--small link">Find out more</a>
+          </div>
+          <div class="carousel__slide">
+            <img class="lazyload visible-xs"
+              data-src="https://static-prod.vitl.com/images/home/benefits-slide-3.jpg?v=2&compress=1" />
+            <div class="divider divider--cap visible-xs"></div>
+            <h3 class="heading-3">DNA Test</h3>
+            <div class="divider divider--cap hidden-xs"></div>
+            <div class="divider visible-xs"></div>
+            <p class="mb-15">
+              Optimise your health using your genetic preferences.
+            </p>
+            <a routerLink="/products/dna" class="text--small link">Find out more</a>
+          </div>
+          <div class="carousel__slide">
+            <img class="lazyload visible-xs"
+              data-src="https://static-prod.vitl.com/images/home/benefits-slide-4.jpg?v=2&compress=1" />
+            <div class="divider divider--cap visible-xs"></div>
+            <h3 class="heading-3">Vitamin Blood Test</h3>
+            <div class="divider divider--cap hidden-xs"></div>
+            <div class="divider visible-xs"></div>
+            <p class="mb-15">
+              Check and monitor your vitamin & cholesterol levels.
+            </p>
+            <a routerLink="/product/blood" class="text--small link">Find out more</a>
+          </div>
+        </swiper>
+        <div class="carousel-dots carousel-dots--benefits"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section__ingredients">
+    <div class="section-visual-inner">
+      <img class="lazyload visible-sm visible-md"
+        data-src="https://static-prod.vitl.com/images/home/ingredients-bg-tablet.jpg?v=0&compress=1" />
+      <img class="lazyload visible-lg"
+        data-src="https://static-prod.vitl.com/images/home/ingredients-bg.jpg?compress=1" />
+    </div>
+    <img class="lazyload visible-xs"
+      data-src="https://static-prod.vitl.com/images/home/ingredients-bg-mobile.jpg?v=1&compress=1" />
+    <div class="container pt-45 pb-45 pt-sm-75 pb-sm-150 pt-md-95">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-5 col-sm-offset-6">
+          <h2 class="heading-2">Ingredient integrity</h2>
+          <div class="divider"></div>
+          <p class="mb-30">To get the best out of you, you’ve got to put the best into you. That’s why we go the
+            extra mile to source the <strong>most bioavailable</strong> form of each base nutrient, such as
+            <strong>methylated folate</strong> instead
+            of standard folic acid, or <strong>sustainably-harvested</strong> krill oil instead of cod liver oil, to
+            ensure you’re really
+            absorbing all that goodness.</p>
+          <p>All of our formulations are non-GMO and 100% free from synthetic fillers, bulking agents,
+            sugar, gluten, artificial colours and preservatives, and if you’re vegan or vegetarian, we’ll make sure your
+            vitamins are too.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section__experts">
+    <img class="lazyload section-overlap visible-xs"
+      data-src="https://static-prod.vitl.com/images/home/expert-lemon.png?compress=1" />
+    <div class="container pt-60 text-center">
+      <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-6 col-sm-offset-1 col-md-offset-3">
+          <h2 class="heading-2">Expert approval</h2>
+          <div class="divider"></div>
+          <p>With specialists from various, distinct areas of wellbeing, our medical advisory
+            board ensures all recommendations and formulations reflect the latest scientific studies and highest GMP
+            manufacturing standards.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+          <div class="carousel carousel--experts mt-40 mt-sm-55">
+            <swiper [config]="carouselConfigExperts">
+              <div class="carousel__slide">
+                <img class="lazyload" data-srcset="
+                        https://static-prod.vitl.com/images/home/experts-Christina.jpg?compress=1 2x,
+                        https://static-prod.vitl.com/images/home/experts-Christina.jpg?width=224&compress=1 1x"
+                  data-src="https://static-prod.vitl.com/images/home/experts-Christina.jpg?compress=1"
+                  alt="Christina Mamada" />
+                <div class="carousel__slide__content">
+                  <h4 class="heading-4">Christina Mamada</h4>
+                  <p class="text--small"><strong>Nutrition Associate</strong></p>
+                  <p class="text--xsmall">MSc Nutrition, BSc Biology</p>
+                </div>
+              </div>
+              <div class="carousel__slide">
+                <img class="lazyload" data-srcset="
+                        https://static-prod.vitl.com/images/home/experts-Monika.jpg?compress=1 2x,
+                        https://static-prod.vitl.com/images/home/experts-Monika.jpg?width=224&compress=1 1x"
+                  data-src="https://static-prod.vitl.com/images/home/experts-Monika.jpg?compress=1"
+                  alt="Dr Monika Mozere" />
+                <div class="carousel__slide__content">
+                  <h4 class="heading-4">Dr Monika Mozere</h4>
+                  <p class="text--small"><strong>Geneticist</strong></p>
+                  <p class="text--xsmall">PhD, Genetics & Bioinformatics, UCL</p>
+                </div>
+              </div>
+              <div class="carousel__slide">
+                <img class="lazyload" data-srcset="
+                        https://static-prod.vitl.com/images/home/experts-Monal.jpg?compress=1 2x,
+                        https://static-prod.vitl.com/images/home/experts-Monal.jpg?width=224&compress=1 1x"
+                  data-src="https://static-prod.vitl.com/images/home/experts-Monal.jpg?width=224&compress=1"
+                  alt="Dr Monal Wadhera" />
+                <div class="carousel__slide__content">
+                  <h4 class="heading-4">Dr Monal Wadhera</h4>
+                  <p class="text--small"><strong>Medical Director</strong></p>
+                  <p class="text--xsmall">BSc MBBS MRCP MRCGP</p>
+                </div>
+              </div>
+              <div class="carousel__slide">
+                <img class="lazyload" data-srcset="
+                        https://static-prod.vitl.com/images/home/experts-Roxane.jpg?compress=1 2x,
+                        https://static-prod.vitl.com/images/home/experts-Roxane.jpg?width=224&compress=1 1x"
+                  data-src="https://static-prod.vitl.com/images/home/experts-Roxane.jpg?compress=1"
+                  alt="Roxane Bakker" />
+                <div class="carousel__slide__content">
+                  <h4 class="heading-4">Roxane Bakker</h4>
+                  <p class="text--small"><strong>Dietitian</strong></p>
+                  <p class="text--xsmall">BSc. Nutrition & Dietetics</p>
+                </div>
+              </div>
+            </swiper>
+            <div class="carousel-dots carousel-dots--experts"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section__reliability">
+    <img class="lazyload section-overlap"
+      data-src="https://static-prod.vitl.com/images/home/reliability-pill.jpg?compress=1" />
+    <div class="container pt-80 pt-sm-90 pb-70 text-center">
+      <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-6 col-sm-offset-1 col-md-offset-3">
+          <h2 class="heading-2">Reliability commitment</h2>
+          <div class="divider"></div>
+          <p>Convenience should never come at the expense of accuracy and reliability. That’s why we
+            partner with the most reputable laboratory partners, including our UKAS-accredited and CQC-registered blood
+            testing facility here in the UK, as well as Illumina CSPro-Certified Service Provider in Europe and the USA
+            to carry out our DNA testing. We’re advocates for stricter regulation in the supplement industry, and until
+            it improves, we’ll lead the way by setting the example.</p>
+          <div class="display-flex flex-center mt-35">
+            <img class="lazyload" width="162"
+              data-srcset="
+                    https://static-prod.vitl.com/images/home/logo-care-quality-comission.png?v=1&324&compress=1 2x,
+                    https://static-prod.vitl.com/images/home/logo-care-quality-comission.png?v=1&width=162&compress=1 1x"
+              data-src="https://static-prod.vitl.com/images/dna/dna-hero-box-new.png?v=3&width=162&compress=1"
+              alt="Care Quality Commission" />
+            <img class="lazyload" width="62" data-srcset="
+                    https://static-prod.vitl.com/images/home/logo-ukas.png?v=1&width=124&compress=1 2x,
+                    https://static-prod.vitl.com/images/home/logo-ukas.png?v=1&width=62&compress=1 1x"
+              data-src="https://static-prod.vitl.com/images/home/logo-ukas.png?v=1&width=62&compress=1" alt="UKAS" />
+            <img class="lazyload" width="166" data-srcset="
+                    https://static-prod.vitl.com/images/home/logo-illumina-cs-pro.png?v=1&width=332&compress=1 2x,
+                    https://static-prod.vitl.com/images/home/logo-illumina-cs-pro.png?v=1&width=166&compress=1 1x"
+              data-src="https://static-prod.vitl.com/images/home/logo-illumina-cs-pro.png?v=1&width=166&compress=1"
+              alt="Illumina CS Pro" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section__reviews">
+    <div class="container pt-80 pt-sm-90 pb-70 text-center">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4 col-sm-offset-2 col-md-offset-3 col-lg-offset-4">
+          <h2 class="heading-2">What our customers are saying</h2>
+          <div class="divider mb-35"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-lg-10 col-lg-offset-1">
+          <div class="carousel carousel--reviews">
+            <swiper [config]="carouselConfigReviews">
+              <div class="carousel__slide center-block text-center">
+                <img class="lazyload user-img" data-srcset="
+                      https://static-prod.vitl.com/images/home/review-by-Dustin.jpg?width=160&compress=1 2x,
+                      https://static-prod.vitl.com/images/home/review-by-Dustin.jpg?width=80&compress=1 1x"
+                  data-src="https://static-prod.vitl.com/images/home/review-by-Dustin.jpg?width=80&compress=1"
+                  alt="Dustin C." />
+                <img appImage category="dna" key="dna-s5-trustpilot" [width]="105" />
+                <p class="text--large mt-10 mb-30"><strong>Dustin C.</strong></p>
+                <p>
+                  &ldquo;After using Vitl I can honestly say that this is the only way. I have wasted so much money and
+                  all you need is this subscription. You can really feel the difference.&rdquo;
+                </p>
+              </div>
+
+              <div class="carousel__slide center-block text-center">
+                <img class="lazyload user-img" data-srcset="
+                      https://static-prod.vitl.com/images/home/review-by-Diane.jpg?width=160&compress=1 2x,
+                      https://static-prod.vitl.com/images/home/review-by-Diane.jpg?width=80&compress=1 1x"
+                  data-src="https://static-prod.vitl.com/images/home/review-by-Diane.jpg?width=80&compress=1"
+                  alt="Diane C." />
+                <img appImage category="dna" key="dna-s5-trustpilot" [width]="105" />
+                <p class="text--large mt-10 mb-30"><strong>Diane C.</strong></p>
+                <p>
+                  &ldquo;Vitl is different. Vitamins tailored to me. The vitamins come in a very handy strip and are
+                  reasonably priced. Excellent service and I highly recommend it.&rdquo;
+                </p>
+              </div>
+
+              <div class="carousel__slide center-block text-center">
+                <img class="lazyload user-img" data-srcset="
+                      https://static-prod.vitl.com/images/home/review-by-Rachel.jpg?width=160&compress=1 2x,
+                      https://static-prod.vitl.com/images/home/review-by-Rachel.jpg?width=80&compress=1 1x"
+                  data-src="https://static-prod.vitl.com/images/home/review-by-Rachel.jpg?width=80&compress=1"
+                  alt="Rachel M." />
+                <img appImage category="dna" key="dna-s5-trustpilot" [width]="105" />
+                <p class="text--large mt-10 mb-30"><strong>Rachel M.</strong></p>
+                <p>
+                  &ldquo;I’m very happy with the quality of products and I think it’s so helpful to be able to target
+                  specific health concerns. I love how the blood
+                  tests and DNA automatically feed into my pack recommendations.&rdquo;
+                </p>
+              </div>
+            </swiper>
+            <div class="carousel-dots carousel-dots--reviews"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section__consultation">
+    <div class="container text-center">
+      <div class="row">
+        <div class="section-content pt-90 pt-sm-40 pb-sm-40 col-xs-12 col-sm-6 col-md-4 col-md-offset-1">
+          <h2 class="heading-1">Feel more you</h2>
+          <div class="divider divider--black"></div>
+          <p class="mb-25">Get started today and discover what life is like with a new standard of wellbeing.</p>
+          <a class="button button--white" (click)="openConsultation()">Take consultation</a>
+        </div>
+        <div class="section-visual col-xs-12 col-sm-6 col-md-5 col-md-offset-1 mt-50 mt-sm-20">
+          <img class="lazyload" data-srcset="
+                https://static-prod.vitl.com/images/home/feel-more-bg.png?v=0&width=600&compress=1 2x,
+                https://static-prod.vitl.com/images/home/feel-more-bg.png?v=0&width=300&compress=1 1x"
+            data-src="https://static-prod.vitl.com/images/home/feel-more-bg.png?v=0&width=300&compress=1" alt="" />
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

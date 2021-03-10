@@ -1,0 +1,13 @@
+<div class="container">
+
+  <div class="results__goals" [class.results__goals--minimized]="minimized">
+
+    <div class="mb-15" *ngFor="let goal of goals">
+
+      <app-theone-results-goal [goal]="goal" [minimized]="minimized" [product]="product" [nutrients]="nutrients" [claims]="claims"></app-theone-results-goal>
+
+    </div>
+
+  </div>
+
+</div>

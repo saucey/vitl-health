@@ -1,0 +1,40 @@
+<form class="form" (ngSubmit)="update()" #addressForm="ngForm">
+
+  <div class="form__inline-md mb-10">
+
+    <div class="form__inline__item mb-10 mb-md-0">
+      <app-form-text name="firstName" placeholder="First name" ngModel required></app-form-text>
+    </div>
+
+    <div class="form__inline__item">
+      <app-form-text name="lastName" placeholder="Last name" ngModel required></app-form-text>
+    </div>
+
+  </div>
+
+  <div class="mb-10">
+    <app-form-text name="address" placeholder="Address" ngModel required></app-form-text>
+  </div>
+
+  <div class="mb-10">
+    <app-form-text name="town" placeholder="Town / City" ngModel required></app-form-text>
+  </div>
+
+  <div class="mb-10">
+    <app-form-text name="postcode" placeholder="Postcode" ngModel required></app-form-text>
+  </div>
+
+  <div class="mb-20">
+    <app-form-select name="country" placeholder="Country" [options]="countries" ngModel required></app-form-select>
+  </div>
+
+</form>
+
+<div class="modal2__ctas modal2__ctas--grid">
+  <button class="button button--primary button--fullWidth modal2__ctas__cta" (click)="update()">
+    <span>Update</span>
+  </button>
+  <button class="button button--fullWidth modal2__ctas__cta" (click)="cancel()">
+    <span>Cancel</span>
+  </button>
+</div>

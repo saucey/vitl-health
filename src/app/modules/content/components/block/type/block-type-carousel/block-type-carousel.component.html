@@ -1,0 +1,7 @@
+<div class="myvitl__content__block__carousel" >
+  <swiper [config]="swiperConfig">
+    <div *ngFor="let slide of block.slides">
+      <app-content-section *ngFor="let section of slide.sections" [section]="section"></app-content-section>
+    </div>
+  </swiper>
+</div>

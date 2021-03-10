@@ -1,0 +1,409 @@
+/*
+ Input
+ */
+
+.input {
+
+  display: block;
+  position: relative;
+  width: 100%;
+  background: @brand-primary-input-cream;
+  height: 60px;
+  font-family: @font-family-regular;
+  font-size: @font-size-base * (18 / @font-size-base);
+  color: @brand-primary-black;
+  border: 1px solid @brand-gray-lighter;
+  transition: 0.2s all @custom-easing;
+
+  &--small {
+    height: 55px;
+  }
+
+  &--white {
+    background: @brand-primary-white;
+  }
+
+  &--whiteMd {
+    @media @md {
+      background: @brand-primary-white;
+    }
+  }
+
+  &--disabled {
+    opacity: 0.8;
+  }
+
+  &--submit {
+    //display: flex;
+    padding-right: 55px;
+    &.input--focussed {
+      border-color: @brand-primary-input-cream;
+    }
+  }
+
+  &--focussed {
+    border-color: @brand-primary-black;
+  }
+
+  &--invalid {
+    border-color: @brand-secondary-red;
+  }
+
+  &--textarea {
+    height: 200px;
+    .input__placeholder {
+      height: 60px;
+    }
+  }
+
+  &--date {
+
+  }
+
+  &--dateSelector {
+    height: auto;
+    background: none;
+    border: 0px;
+    text-align: center;
+    .selector {
+      margin: 0 auto !important;
+    }
+  }
+
+  &--select {
+
+    select {
+      appearance: none;
+      text-indent: 0.01px;
+      text-overflow: '';
+      cursor: pointer;
+      background: @brand-primary-input-cream;
+      padding-top: 24px;
+      padding-bottom: 9px;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      border-radius: 100%;
+      background: url(https://static.vitl.com/assets/images/arrow-down-small.png) no-repeat center;
+      background-size: 14px;
+      pointer-events: none;
+    }
+
+  }
+
+  &--radio {
+
+    background: none;
+    border: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+
+    .input__holder {
+      width: 30px;
+      height: 30px;
+      border: 1px solid @brand-primary-black;
+      border-radius: 100%;
+      box-shadow: 0 0 0 4px @brand-primary-white inset;
+      transition: 0.2s background @custom-easing;
+      margin-right: 15px;
+    }
+
+    .input__control {
+      width: 30px;
+      height: 30px;
+      margin: 0px;
+      padding: 0px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .input__placeholder {
+      position: relative;
+      padding-left: 0px;
+      height: auto !important;
+      font-size: @font-size-base * (16 / @font-size-base) !important;
+      line-height: 1.2em;
+      pointer-events: initial;
+      text-align: left;
+      color: @brand-primary-black;
+      user-select: none;
+      span {
+        display: block;
+        margin-bottom: 2px;
+      }
+      a {
+        padding-bottom: 2px;
+        border-bottom: 1px solid @brand-primary-yellow;
+      }
+    }
+
+    &:hover {
+      .input__holder {
+        background: fade(@brand-primary-yellow, 50%);
+      }
+    }
+
+    &.input--disabled {
+      cursor: default;
+      .input__holder {
+        background: @brand-primary-grey;
+      }
+      &:hover {
+        .input__holder {
+          background: @brand-primary-grey !important;
+        }
+      }
+    }
+
+  }
+
+  &--checkbox {
+
+    .input__holder {
+      border-radius: 0px;
+      box-shadow: none;
+      position: relative;
+      .input__tick {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 20px;
+        font-family: @font-family-header;
+      }
+    }
+
+    &:hover {
+      .input__holder {
+        background: fade(@brand-primary-black, 10%);
+      }
+    }
+
+  }
+
+  &--active {
+    .input__holder {
+      background: @brand-primary-yellow !important;
+    }
+    &.input--checkbox {
+      .input__holder {
+        background: @brand-primary-black !important;
+        color: white;
+      }
+    }
+    //&.input--checkbox {
+    //  &:after {
+    //    background: @brand-primary-black;
+    //    color: white;
+    //    content: "✓";
+    //    line-height: 28px;
+    //  }
+    //  &:hover {
+    //    &:after {
+    //      background: fade(@brand-primary-black, 90%);
+    //    }
+    //  }
+    //  &.input--disabled {
+    //    &:hover {
+    //      &:after {
+    //        background: @brand-primary-black;
+    //      }
+    //    }
+    //  }
+    //}
+  }
+
+  &__placeholder {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    padding-left: 15px;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    transition: 0.2s all @custom-easing;
+    color: @brand-primary-faded-cream;
+    font-size: 16px;
+    font-family: @font-family-medium;
+
+    &--minimized {
+      height: 30px !important;
+      font-size: @font-size-base * (10 / @font-size-base);
+    }
+
+  }
+
+  &__submit {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 55px;
+    width: 55px;
+    //flex: 0 1 55px;
+    border: 0px;
+    margin-top: -1px;
+    margin-right: -1px;
+    min-width: auto;
+    box-shadow: none;
+    background-image: url('https://static.vitl.com/assets/images/arrow-right-small.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10px;
+  }
+
+  &__control,
+  &__value {
+  
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: 0px;
+    outline: 0px;
+    padding: 13px;
+    padding-top: 28px;
+    font-family: @font-family-regular;
+    font-size: @font-size-base * (16 / @font-size-base);
+    color: @brand-primary-black;
+    transition: 0.2s all @custom-easing;
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:focus {
+      box-shadow: 0 0 0 1000px @brand-primary-cream inset;
+      -webkit-text-fill-color: @brand-secondary-green;
+      font-family: @font-family-bold;
+      border: 1px solid @brand-primary-yellow;
+    }
+
+  }
+
+  &__dateInputs {
+    position: relative;
+    display: flex;
+
+    .selectfield {
+      position: relative;
+      display: block;
+      width: 75px;
+      height: 50px;
+      line-height: 15px;
+      overflow: hidden;
+      margin-right: 10px;
+      padding-left: 10px;
+      border: 1px solid @brand-gray-lighter;
+
+      background: @brand-primary-cream-darker none;
+
+      @media @md {
+        background: @brand-primary-white none;
+      }
+
+      &.month {
+        width: 90px;
+      }
+
+      &.year {
+        width: 100px;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        border-right: 2px solid @brand-primary-black;
+        border-bottom: 2px solid @brand-primary-black;
+        width: 8px;
+        height: 8px;
+        transform: translateY(-50%) scaleY(0.9) rotate(45deg);
+        transition: 0.2s all @custom-easing;
+      }
+
+      &:hover::after {
+        color: #f39c12;
+      }
+
+      &::after {
+        transition: 0.2s all @custom-easing;
+      }
+
+      select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+        outline: 0;
+        box-shadow: none;
+        border: 0 !important;
+        background: @brand-primary-cream-darker none;
+
+        @media @md {
+          background: @brand-primary-white none;
+        }
+
+        width: 95%;
+        height: 90%;
+        margin: 3px 0 0;
+        padding: 0 0 0 .5em;
+        color: @brand-primary-black;
+        font-size: 14px;
+        cursor: pointer;
+
+        &::-ms-expand {
+          display: none;
+        }
+      }
+    }
+  }
+
+
+
+  &__textarea {
+    resize: none;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+  }
+
+  &__value {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    text-align: left;
+    pointer-events: none;
+  }
+
+}
+
+/*
+ * Angular specifics
+ */
+
+.ng-invalid {
+  &.ng-touched:not(form) {
+    .input {
+      box-shadow: 0 0 0 1px @brand-secondary-red inset;
+    }
+  }
+}

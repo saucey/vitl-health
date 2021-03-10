@@ -1,0 +1,19 @@
+<h1>Payment</h1>
+
+<h2>Please select your payment method</h2>
+
+<div class="container container--tiny pb-20">
+
+    <ul class="mb-30 list list--selectable list--constrained list--constrainedCheckout list--borderedBottom">
+        <li class="list__item" *ngFor="let method of user?.paymentMethods" (click)="selectPaymentMethod(method)">
+            <div class="checkout__cardPreview">
+                <span><img [appImage]="method.icon" width="50" height="32" /></span>
+                <span>{{method.description}}</span>
+                <span>{{method.expMonth}}/{{method.expYear}}</span>
+            </div>
+        </li>
+    </ul>
+
+    <a class="copy copy--mediumWeight font-14 font-md-16 primaryBorder" routerLink="/checkout/payment">Add new card</a>
+
+</div>

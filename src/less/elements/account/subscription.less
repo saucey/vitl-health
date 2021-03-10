@@ -1,0 +1,43 @@
+&__subscription {
+
+  @media @md {
+    padding: 0 80px;
+  }
+
+  &__preview {
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    @media @md {
+      justify-content: center;
+    }
+
+  }
+
+  &__image {
+    flex: 0 0 100px;
+    text-align: center;
+    @media @md {
+      flex: 1;
+      text-align: right;
+      transform: translateX(-30px);
+    }
+  }
+
+  &__details {
+    flex: 1;
+    text-align: left;
+  }
+
+  &__product {
+    font-size: @font-size-base * (16 / @font-size-base);
+    font-family: @font-family-semi-bold;
+  }
+
+  &__plan {
+    font-size: @font-size-base * (16 / @font-size-base);
+  }
+
+}

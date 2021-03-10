@@ -1,0 +1,72 @@
+&__dnaTraitMarker {
+
+  position: relative;
+  padding: 10px 20px;
+
+  @media @sm {
+    padding: 10px 40px;
+  }
+
+  @media @md {
+    padding: 20px 0 30px;
+  }
+
+  .ranges {
+
+    .range {
+
+      margin-bottom: 20px;
+      height: 8px;
+      width: 100%;
+      background: #e2e2e2;
+      border-radius: 5px;
+      padding: 0px 3px;
+
+      @media @md {
+        height: 10px;
+      }
+
+      .marker_track {
+
+        position: relative;
+
+        .marker {
+
+          position: absolute;
+          top:-6px;
+          width: 4px;
+          height: 20px;
+          margin-left: -2px;
+          background: @brand-primary-black;
+          border-radius: 2px;
+
+          @media @md {
+            top:-10px;
+            height: 30px;
+            width: 6px;
+            margin-left: -3px;
+            border-radius: 3px;
+          }
+
+        }
+
+      }
+
+    }
+
+    .labels {
+
+      display: flex;
+      justify-content: space-between;
+
+      span {
+
+        color: @brand-primary-black;
+
+      }
+
+    }
+
+  }
+
+}

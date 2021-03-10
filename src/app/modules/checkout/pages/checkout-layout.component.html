@@ -1,0 +1,30 @@
+<div class="checkout">
+
+    <div class="container container--small mb-30">
+        <div class="checkout__progress">
+            <span class="progress__section" appCheckoutProgress [progress]="1" route="signin">
+                <span>Sign-in</span>
+                <img appImage category="icons" key="tick" width="15" />
+            </span>
+            <span class="progress__section" appCheckoutProgress [progress]="2" route="delivery">
+                <span>Delivery</span>
+                <img appImage category="icons" key="tick" width="15" />
+            </span>
+            <span class="progress__section" appCheckoutProgress [progress]="3" route="payment">
+                <span>Payment</span>
+                <img appImage category="icons" key="tick" width="15" />
+            </span>
+            <span class="progress__section" appCheckoutProgress [progress]="4" route="review">
+                <span>Checkout</span>
+                <img appImage category="icons" key="tick" width="15" />
+            </span>
+        </div>
+    </div>
+
+    <div class="checkout__inner">
+
+        <router-outlet></router-outlet>
+
+    </div>
+
+</div>

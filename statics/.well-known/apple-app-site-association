@@ -1,0 +1,26 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "UVSK986PYD.com.vitl.VITL",
+                "paths": [ 
+                    "/app/consultation",
+                    "/app/personalised",
+                    "/app/personalised/*",
+                    "/app/articles",
+                    "/app/articles/*",
+                    "/app/health",
+                    "/app/health/*",
+                    "/app/store",
+                    "/app/store/*",
+                    "/app/basket",
+                    "/app/profile",
+                    "/app/profile/*",
+                    "/app/modal/*",
+                    "/app/magic/*"
+                ]
+            }
+        ]
+    }
+}

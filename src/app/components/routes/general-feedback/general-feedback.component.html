@@ -1,0 +1,33 @@
+<section class="hero hero--top">
+
+  <div class="container text-left-md pt-md-90">
+
+    <h1 class="heading mb-30">Thanks for your feedback</h1>
+
+    <p class="copy mb-30">What could we do to make your experience of VITL better?</p>
+
+    <div *ngIf="!submitting">
+
+      <div class="grid">
+
+        <div class="grid__item--6">
+
+          <app-form-text
+              placeholder="Please enter your answer here"
+              [(ngModel)]="feedback"
+              textarea="true"
+          ></app-form-text>
+
+          <div class="text-right-md pt-30">
+            <button class="button button--primary" (click)="submitFeedback()">Submit</button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

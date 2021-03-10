@@ -1,0 +1,765 @@
+.blood {
+  .flex-grid {
+    display: block;
+    @media @md {
+      display: flex;
+    }
+
+    .flex-col {
+      flex: 1;
+      padding: 15px;
+    }
+  }
+
+  .heading {
+    .heading() {
+      font-family: @font-family-header;
+      text-align: center;
+      margin: 0 auto;
+      font-weight: bold;
+
+      width: 80%;
+      @media @md {
+        width: 70%;
+      }
+    }
+
+    &-1 {
+      .heading();
+      font-size: 28px;
+      line-height: 39px;
+      @media @sm {
+        font-size: 30px;
+        line-height: 39px;
+      }
+      @media @md {
+        font-size: 33px;
+        line-height: 46px;
+      }
+
+      @media @xl {
+        line-height: 51px;
+        font-size: 36px;
+      }
+    }
+
+    &-2 {
+      .heading();
+      font-size: 24px;
+      line-height: 33px;
+      @media @sm {
+        font-size: 33px;
+        line-height: 46px;
+      }
+      @media @md {
+        font-size: 28px;
+        line-height: 39px;
+      }
+
+      @media @xl {
+        line-height: 42px;
+        font-size: 30px;
+      }
+    }
+
+    &-3 {
+      .heading();
+      font-size: 19px;
+      line-height: 26px;
+      @media @sm {
+        font-size: 25px;
+        line-height: 35px;
+      }
+
+      @media @md {
+        font-size: 22px;
+        line-height: 30px;
+      }
+    }
+  }
+
+  .copy {
+    font-size: 14px;
+    line-height: 19px;
+
+    @media @sm {
+      font-size: 18px;
+      line-height: 25px;
+    }
+
+    @media @md {
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    &--big {
+      font-size: 16px;
+      line-height: 22px;
+
+      @media @sm {
+        font-size: 20px;
+        line-height: 28px;
+      }
+
+      @media @md {
+        font-size: 18px;
+        line-height: 25px;
+      }
+    }
+
+    &--small {
+      font-size: 12px;
+      line-height: 16px;
+
+      @media @sm {
+        font-size: 16px;
+        line-height: 22px;
+      }
+
+      @media @md {
+        font-size: 14px;
+        line-height: 19px;
+      }
+    }
+
+    &--link {
+      border-bottom: 1px solid @brand-primary-yellow;
+    }
+
+    &--price {
+      font-family: @font-family-semi-bold;
+      font-size: 19px;
+      line-height: 26px;
+      @media @sm {
+        font-size: 25px;
+        line-height: 35px;
+      }
+
+      @media @md {
+        font-size: 22px;
+        line-height: 30px;
+      }
+    }
+  }
+
+  .button {
+    width: 200px;
+    height: 50px;
+    font-family: @font-family-medium;
+    background-color: @brand-primary-yellow;
+    border: none;
+    padding-top: 3px;
+
+    font-size: 16px;
+    @media @sm {
+      font-size: 20px;
+    }
+    @media @md {
+      font-size: 18px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background: rgba(255, 211, 38, 0.75);;
+    }
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+
+  .divider {
+    width: 70px;
+  }
+
+
+  &-s1 {
+    min-height: 80vh;
+
+    background-image: url("https://static-prod.vitl.com/assets/images/dna-hero-bg.png?background=%fff9e0");
+    background-size: 60%;
+    background-position: -10% 50%;
+    background-color: @brand-primary-cream;
+
+    @media @lg {
+      background-size: 50%;
+      background-position: 10% 0;
+    }
+
+
+    @media @md {
+      display: flex;
+    }
+
+    &-heading {
+      margin: 0 auto;
+      // padding-top: 60px;
+
+      @media @sm {
+        width: 500px;
+      }
+
+      @media @md {
+        width: 100%;
+        margin: initial;
+        padding-top: initial;
+      }
+    }
+
+    &-copy {
+      width: 80%;
+      text-align: center;
+      margin: 0 auto;
+      padding-bottom: 30px;
+
+      @media @sm {
+        width: 500px;
+      }
+
+      @media @md {
+        width: 380px;
+      }
+    }
+
+    &-corner-img {
+      display: none;
+      @media @sm {
+        left: -200px;
+      }
+
+      @media @md {
+        display: block;
+        position: absolute;
+        max-width: 670px;
+        left: -300px;
+        top: 5px;
+        transform: rotate(80deg);
+      }
+
+      @media @lg {
+        left: -190px;
+        top: 0;
+        max-width: 100%;
+        transform: none;
+
+      }
+
+      @media @xl {
+        width: 850px;
+      }
+    }
+
+    .app-blood {
+      margin: 0 auto;
+      max-height: 420px;
+
+      @media @sm {
+        width: 500px;
+        max-height: 430px;
+        height: auto;
+      }
+
+      @media @md {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 26%;
+        width: 350px;
+        max-height: 360px;
+        height: auto;
+      }
+
+      @media @lg {
+        width: 410px;
+        max-height: 360px;
+        left: 33%;
+      }
+
+      img {
+        max-height: 420px;
+        max-width: 130%;
+        width: auto;
+        bottom: 0;
+        @media @md {
+          width: auto;
+          max-width: 100%;
+        }
+      }
+
+      .mobile {
+        display: block;
+        @media @md {
+          display: none;
+        }
+      }
+
+      .desktop {
+        margin-top: -13px;
+
+        display: none;
+        @media @md {
+          display: block;
+        }
+      }
+    }
+  }
+
+
+  &-s2 {
+    background-color: @brand-primary-white;
+    min-height: 110vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &-container {
+      margin-bottom: 70px;
+
+      @media @md {
+        padding-bottom: 0;
+      }
+    }
+
+    &-heading {
+      padding-top: 70px;
+      @media @sm {
+        padding-top: 100px;
+      }
+      @media @md {
+        padding-top: 0;
+      }
+      padding-bottom: 70px;
+    }
+
+
+    &-col-wrapper {
+      &:first-child {
+        margin-bottom: 50px;
+        @media @md {
+          margin-bottom: 0;
+        }
+      }
+
+      //padding-bottom: 10px;
+      background-color: @brand-primary-cream;
+      cursor: pointer;
+      max-width: 500px;
+      margin: 0 auto;
+
+      span {
+        display: flex;
+        justify-content: space-between;
+        height: 50px;
+        align-items: center;
+
+        .copy {
+          padding-left: 15px;
+        }
+
+        .blood-s2--plus {
+          width: 30px;
+          height: 30px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  &-s3 {
+    background-color: @brand-primary-cream;
+    min-height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-bottom: 70px;
+
+    @media @md {
+      padding-bottom: 0;
+    }
+
+    .container {
+      @media @sm {
+        width: 500px;
+      }
+      @media @md {
+        width: auto;
+      }
+    }
+
+    &--r {
+      display: flex;
+      justify-content: space-around;
+      padding-top: 80px;
+
+      @media @md {
+        padding-top: 0;
+        grid-column-start: 7;
+      }
+
+      &-wrapper {
+        text-align: center;
+
+        p {
+          font-size: 16px;
+          @media @md {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
+    &-img {
+      border-radius: 50%;
+      width: 100px;
+
+
+      @media @sm {
+        width: 130px;
+      }
+
+      @media @md {
+        width: 170px;
+      }
+    }
+  }
+
+  &-s4 {
+    background-color: @brand-primary-white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media @md {
+      min-height: 100vh;
+    }
+
+    &-heading {
+      padding-bottom: 50px;
+      padding-top: 100px;
+      @media @sm {
+        //padding-bottom: 10px;
+      }
+      @media @md {
+        //padding-top: 0;
+        padding-bottom: 50px;
+      }
+    }
+
+    &-carousel {
+      width: 80%;
+
+      &-slide {
+        .copy {
+          width: 250px;
+          margin: 0 auto;
+          @media @sm {
+            width: 315px;
+          }
+          @media @md {
+            width: 250px;
+          }
+        }
+
+        &:first-child {
+          img {
+            padding-bottom: 70px;
+          }
+        }
+
+        &:nth-child(2) {
+          img {
+            padding-bottom: 50px;
+          }
+        }
+
+        &:nth-child(3) {
+          img {
+            padding-bottom: 75px;
+          }
+        }
+
+        &-dots {
+          width: 100%;
+          padding-top: 50px;
+          padding-bottom: 40px;
+          z-index: 100;
+          display: flex;
+          justify-content: center;
+
+          @media @sm {
+            padding-top: 110px;
+          }
+          @media @md {
+            display: none;
+          }
+
+          .carousel-dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin: 0 5px;
+            background: @brand-primary-grey;
+            border-radius: 100%;
+            cursor: pointer;
+            transition: background-color .2s linear;
+            outline: 0 !important;
+
+            &.is-active {
+              background: @brand-primary-dark-grey;
+            }
+          }
+        }
+      }
+    }
+
+    &--instructions {
+      position: relative;
+      width: 70%;
+      margin: 0 auto;
+      padding-top: 100px;
+      padding-bottom: 100px;
+
+      .copy {
+        text-align: center;
+        padding-bottom: 40px;
+      }
+
+      .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  &-s5 {
+    background-color: @brand-primary-cream;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media @md {
+      min-height: 80vh;
+    }
+
+    &-heading {
+      padding-top: 83px;
+      @media @md {
+        padding-top: 0;
+      }
+    }
+
+    &-carousel-slide {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .trustpilot {
+        padding-bottom: 30px;
+      }
+
+      img:nth-child(2) {
+        padding-bottom: 5px;
+      }
+
+      .copy {
+        max-width: 300px;
+        margin: 0 auto;
+        //padding-bottom: 50px;
+        @media @sm {
+          max-width: 500px;
+        }
+        @media @md {
+          width: 300px;
+        }
+      }
+
+      &-dots {
+        width: 100%;
+        padding-top: 100px;
+        padding-bottom: 40px;
+        z-index: 100;
+        display: flex;
+        justify-content: center;
+        @media @md {
+          display: none;
+        }
+
+        .carousel-dot {
+          display: inline-block;
+          width: 12px;
+          height: 12px;
+          margin: 0 5px;
+          background: @brand-primary-grey;
+          border-radius: 100%;
+          cursor: pointer;
+          transition: background-color .2s linear;
+          outline: 0 !important;
+
+          &.is-active {
+            background: @brand-primary-dark-grey;
+          }
+        }
+      }
+
+      &--content {
+        min-height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
+  }
+
+
+  &-s6 {
+    background-color: @brand-primary-white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    .copy {
+      width: 100%;
+
+      @media @sm {
+        margin: 0 auto;
+        width: 430px;
+      }
+
+      @media @md {
+        width: 385px;
+      }
+    }
+
+    &-r-img {
+      width: 100%;
+
+      @media @sm {
+        max-width: 500px;
+      }
+      @media @md {
+        width: auto;
+        max-width: none;
+
+      }
+    }
+  }
+
+  &-s7 {
+    background-color: @brand-primary-cream;
+    //min-height: 80vh;
+    line-height: 0;
+
+    &--copy {
+      padding-top: 8px;
+    }
+
+    &--r {
+      padding: 40px 0;
+      @media @sm {
+        max-width: 480px;
+        margin: 0 auto;
+        padding-top: 140px;
+        padding-bottom: 0;
+      }
+      @media @md {
+        max-width: none;
+        padding: 0;
+      }
+    }
+
+    &-left {
+      @media @md {
+        background-image: url("https://static-prod.vitl.com/assets/images/dna-hero-bg.png?background=%fff9e0");
+        background-size: cover;
+      }
+    }
+
+    &--img {
+      &-desktop {
+        display: none;
+        max-width: 700px;
+        width: 100%;
+
+        @media @md {
+          display: block;
+        }
+      }
+
+      &-mobile {
+        display: block;
+        //max-width: 400px;
+        width: 100%;
+        margin: 0 auto;
+
+        @media screen and (min-width: 450px) {
+          display: none;
+        }
+      }
+
+      &-tablet {
+        max-width: 700px;
+        width: 100%;
+        margin: 0 auto;
+        display: none;
+        @media screen and (min-width: 450px) {
+          display: block;
+        }
+
+        @media @md {
+          display: none;
+        }
+      }
+    }
+
+    .copy {
+      width: 90%;
+      padding-bottom: 57px;
+      margin: 0 auto;
+      @media @md {
+        width: 385px;
+      }
+    }
+  }
+}
+
+
+.bloodtestguide--center {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+
+  .bloodtestguide--wrapper {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    height: 0;
+    padding-bottom: 56.25%;
+
+    @media @sm {
+      min-height: 405px;
+      padding-bottom: 0;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

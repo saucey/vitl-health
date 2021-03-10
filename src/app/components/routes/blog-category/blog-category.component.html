@@ -1,0 +1,110 @@
+
+<div class="outsourced">
+
+
+
+  <!-- blog category section 1 -->
+  <section class="container-fluid bCat-section1-fluid">
+    <div class="container bCat-section1 p-relative z-index-1">
+      <h1 class="h1">Blog</h1>
+    </div>
+    <img src="https://static.vitl.com/assets/images/bCat-section1-bg1.png" class="bCat-section1__img">
+  </section>
+
+  <!-- blog category section 2 -->
+  <section class="container-fluid bCat-section2-fluid">
+    <div class="container bCat-section2">
+      <div class="filter-labels">
+
+        <div class="filter-labels__item">
+          <a class="button" routerLink="/blog">
+            All articles
+          </a>
+        </div>
+
+        <div *ngFor="let c of categories" class="filter-labels__item">
+          <a class="button" routerLink="/blog/{{c.slug}}" [class.button--primary]="category.slug === c.slug">
+            {{c.label}}
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <!-- blog category section 3 -->
+  <section class="container-fluid bCat-section3-fluid">
+    <div class="container bCat-section3">
+      <div class="row">
+
+        <div class="row__content1">
+          <p class="col-heading1">Latest article</p>
+
+          <div *ngFor="let article of articles; let i = index">
+
+            <div *ngIf="i === 0">
+
+              <a routerLink="/blog/article/{{article.slug}}">
+                <img class="article__img1" [appImage]="article.previewImage" [width]="785" [height]="495" [contain]="true" />
+              </a>
+              <a routerLink="/blog/article/{{article.slug}}" class="article__main-link" [innerHtml]="article.title"></a>
+              <p class="article__main-desc">{{article.summary}}</p>
+              <p class="article__main-footer"><span *ngIf="article.expert">{{article.expert.name}}<span class="copy--primary"> / </span></span>{{article.datePublished | toDate}}</p>
+
+            </div>
+
+            <div *ngIf="i > 0" class="sec-article">
+
+              <div class="sec-article__img-wrap">
+                <a routerLink="/blog/article/{{article.slug}}">
+                  <img class="sec-article__img" [appImage]="article.previewImage" [width]="372" [height]="265" [contain]="true" />
+                </a>
+              </div>
+              <div class="sec-article__copy">
+                <div>
+                  <a routerLink="/blog/article/{{article.slug}}" class="sec-article__link" [innerHtml]="article.title"></a>
+                  <p class="sec-article__desc">{{article.summary}}</p>
+                </div>
+                <p class="sec-article__footer" role="button"><span *ngIf="article.expert">{{article.expert.name}}<span class="copy--primary"> / </span></span>{{article.datePublished | toDate}}</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="load-more-wrap" *ngIf="hasNext">
+            <a class="button button--medium button--primary button--loader" [appButtonLoader]="loadingMore" (click)="loadMore()">Load more</a>
+          </div>
+
+        </div>
+
+        <div class="row__sidebar1">
+          <p class="col-heading1">Top articles</p>
+
+          <div class="side-article" *ngFor="let article of top">
+            <div class="side-article__img-wrap">
+              <img class="side-article__img" [appImage]="article.thumbnailImage" [width]="100" [height]="100" [contain]="true" />
+            </div>
+            <div class="side-article__copy">
+              <div>
+                <a routerLink="/blog/article/{{article.slug}}" class="side-article__link" [innerHtml]="article.title"></a>
+              </div>
+              <p class="side-article__footer"><span *ngIf="article.expert">{{article.expert.name}}<span class="copy--primary"> / </span></span>{{article.datePublished | toDate}}</p>
+            </div>
+          </div>
+
+          <a routerLink="/consultation">
+            <img src="https://static.vitl.com/assets/images/bCat-sidebar1-banner.jpg" class="img-responsive">
+          </a>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>

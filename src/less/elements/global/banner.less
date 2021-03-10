@@ -1,0 +1,40 @@
+.label {
+
+  text-align: center;
+
+  span {
+    width: 100%;
+    padding: 10px;
+    @media @md {
+      width: auto;
+      padding: 10px 20px;
+    }
+    display: inline-block;
+    background: #f4ecd7;
+    border: 1px solid #e9dec8;
+    font-size: 14px;
+    color: #ada080;
+    line-height: 20px;
+    a {
+      font-family: @font-family-medium;
+      color: #ada080 !important;
+      text-decoration: underline !important;
+    }
+  }
+
+  &--white {
+    span {
+      width: auto;
+      padding: 10px 20px;
+      border-radius: 4px;
+      border: 1px solid #EAE8DB;
+      background: #F8F8F2;
+      cursor: copy;
+    }
+    input {
+      position: absolute;
+      margin-left: -5000px;
+    }
+  }
+
+}

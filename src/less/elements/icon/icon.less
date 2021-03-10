@@ -1,0 +1,161 @@
+/*
+ Icon block
+ */
+
+.icon {
+
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  user-select: none;
+
+  &--bordered {
+
+    border: 1.7px solid @brand-primary-black;
+
+  }
+
+  &--roundedBorder {
+
+    border-radius: 100%;
+
+  }
+
+  &--primaryBorder {
+
+    border-color: @brand-primary-yellow;
+
+  }
+
+  &--secondaryBorder {
+
+    border-color: @brand-primary-off-black;
+
+  }
+
+  &--whiteBorder {
+
+    border-color: @brand-primary-white;
+
+  }
+
+  &--primaryFilled {
+
+    background: @brand-primary-yellow;
+
+  }
+
+  &--secondaryFilled {
+
+    background: @brand-primary-off-black;
+
+  }
+
+  &--action {
+
+    cursor: pointer;
+    transition: 0.2s background ease, 0.2s border ease;
+
+    &.icon--secondary {
+
+      &:hover {
+
+        background: @brand-primary-dark-grey;
+        border-color: @brand-primary-dark-grey;
+
+      }
+
+    }
+
+    &:hover {
+
+      background: @brand-primary-cream;
+
+    }
+
+    &White {
+
+      &:hover {
+        background: @brand-primary-dark-grey;
+      }
+
+    }
+
+  }
+
+  &__image {
+
+    display: flex;
+    max-width: 100%;
+    max-height: 100%;
+    align-items: center;
+    justify-content: center;
+
+    &--offset {
+      transform: translate3d(27px, 27px, 0px);
+      transform-origin: 50%;
+    }
+
+  }
+
+  &--small {
+
+    width: 90px;
+    height: 90px;
+
+  }
+
+  &--medium {
+
+    width: 75px;
+    height: 75px;
+
+  }
+
+  &--tiny {
+
+    width: 47px;
+    height: 47px;
+
+    .icon__image {
+      img {
+        width: 17px;
+        height: 17px;
+        object-fit: contain;
+      }
+    }
+
+  }
+
+  &--teenyTiny {
+
+    width: 32px;
+    height: 32px;
+
+  }
+
+  &__caption {
+
+    position: absolute;
+    bottom: 100%;
+    font-size: @font-size-base * (14 / @font-size-base);
+    color: @brand-primary-black;
+    height: 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: @font-family-medium;
+
+    &--bottom {
+      bottom: auto;
+      top: 100%;
+    }
+
+  }
+
+}

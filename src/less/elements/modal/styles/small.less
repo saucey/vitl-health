@@ -1,0 +1,36 @@
+&--small {
+
+  .modal2__close {
+    width: 40px;
+    height: 40px;
+  }
+
+  .modal2__inner {
+
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+
+    @media @xs {
+      width: 90%;
+      left: 5%;
+    }
+
+    @media @md {
+      left: 50%;
+      width: 475px;
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+  }
+
+  .modal2__title {
+    .modal2__title__text {
+      font-size: 22px;
+      @media @md {
+        font-size: 26px;
+      }
+    }
+  }
+
+}

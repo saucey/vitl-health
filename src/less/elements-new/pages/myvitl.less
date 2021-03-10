@@ -1,0 +1,328 @@
+.product-list {
+    margin-left: -15px;
+    margin-right: -15px;
+
+    @media @md {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    &__item {
+        position: relative;
+        display: flex;
+    }
+
+    &__content {
+
+        .product-list--card & {
+            padding: 20px;
+            text-align: center;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+    }
+
+    &__image {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__actions {
+        margin-top: auto;
+    }
+}
+
+.personalised-products {
+    position: relative;
+    margin-bottom: 6px;
+
+    &--reverse {
+
+        .personalised-products__item:first-child {
+            order: 2;
+        }
+
+        .personalised-products__divider {
+            order: 1;
+        }
+
+    }
+
+    &__item {
+        position: relative;
+
+        @media @md {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
+
+    &__divider {
+        position: relative;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);;
+        top: -3px;
+        width: 100vw;
+        height: 6px;
+        background-color: white;
+
+        @media @md {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            right: -3px;
+            margin-left: 0;
+            margin-right: 0;
+            width: 6px;
+            height: auto;
+        }
+    }
+}
+
+.personalised-pills {
+    text-align: left;
+
+    li {
+        .arrowPlaceholder;
+
+        position: relative;
+        padding-right: 40px;
+        border-bottom: 1px solid fade(@brand-gray-lighter, 25%);
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+
+        &:first-child {
+            border-top: 1px solid fade(@brand-gray-lighter, 25%);
+        }
+    }
+}
+
+.goal-header {
+
+    @media @sm {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.goal-issues {
+    display: flex;
+    justify-content: center;
+
+    @media @sm {
+        justify-content: start;
+    }
+
+    li {
+        position: relative;
+        padding: 0 15px;
+
+        flex: 0 0 33.333%;
+
+        & + li:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -1px;
+            width: 2px;
+            background-color: @brand-primary;
+        }
+    }
+}
+
+.goal-pills {
+
+
+    &__item {
+        position: relative;
+        background-color: white;
+
+        display: flex;
+        align-items: center;
+
+        // no common ingredients
+        &.col-xs-12 {
+            
+            &:first-child {
+                margin-bottom: 5px;
+
+                @media @sm {
+                    margin-bottom: 0;
+                }
+            }
+
+            &:last-child {
+
+                &:after {
+
+                    @media @sm {
+                        content: '';
+                        position: absolute;
+                        background-color: @brand-gray-lightest;
+                        top: 0;
+                        bottom: 0;
+                        left: -3px;
+                        width: 6px;
+                        transform: none;
+                    }
+                }
+            }
+        }
+
+        // one common ingredient
+        &.col-xs-6:last-child {
+
+            &:after {
+                content: '';
+                position: absolute;
+                background-color: @brand-gray-lightest;
+                top: 0;
+                bottom: 0;
+                left: -3px;
+                width: 6px;
+                transform: none;
+            }
+        }
+    }
+
+    &__actions {
+        margin-top: auto;
+
+        align-self: stretch;
+    }
+}
+
+.goal-pills-list {
+    padding: 20px;
+    background-color: white;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 0 0 30%;
+
+        @media screen and (max-width: @breakpoint-sm) {
+            flex-basis: calc(50% - 10px);
+            order: -1;
+
+            &:first-child {
+                margin-right: auto;
+            }
+        }
+    }
+
+    &__ingredients {
+        padding-left: 20px;
+        padding-right: 20px;
+        flex: 1 1 0;
+
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (max-width: @breakpoint-sm) {
+            margin-top: 15px;
+
+            flex-basis: 100%;
+        }
+
+        .ingredient-status {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            div {
+                width: 16px;
+                height: 16px;
+            }
+
+            p {
+                padding-left: 10px;
+                padding-left: 10px;
+
+                @media screen and (max-width: @breakpoint-md) {
+                    font-size: @font-size-small;
+                }
+            }
+        }
+    }
+
+    &__actions {
+        margin-top: auto;
+    }
+}
+
+.boxed-nutrients {
+    width: 310px;
+    margin: 0 auto;    
+
+    display: flex;
+    flex-wrap: wrap;
+
+    @media @sm {
+        margin: -25px;
+    }
+
+    &__item {
+        position: relative;
+        width: 105px;
+        height: 105px;
+        margin: 25px;
+        border: 2px solid @brand-gray;
+        text-align: center;
+        line-height: 1.1;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            position: relative;
+            top: -25px;
+            right: -25px;
+        }
+
+        p {
+            position: absolute;
+            bottom: 10px;
+        }
+    }
+
+    &__item--action {
+        cursor: pointer;
+        background-color: transparent;
+        transition: background-color .3s @custom-easing;
+
+        &:hover {
+            background-color: @brand-primary;
+        }
+    }
+}
+
+.outside-left {
+    position: absolute;
+    left: -10px;
+    transform: translateX(-100%);
+
+    @media @sm {
+        left: -20px;
+    }
+}

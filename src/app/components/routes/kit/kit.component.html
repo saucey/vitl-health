@@ -1,0 +1,129 @@
+<div class="pt-100 pt-md-120">
+
+  <h1 class="heading heading--medium mb-30 text-center">Register your kit</h1>
+
+  <hr class="hr hr--primary mb-30">
+
+  <div class="container container--small" [hidden]="kitRegistered">
+
+    <form (ngSubmit)="registerKit()" #kitForm="ngForm">
+
+      <div class="mb-30">
+
+        <h2 class="heading heading--small mb-15">Kit details</h2>
+
+        <div class="mb-15">
+          <app-form-select name="type" placeholder="Kit type" [options]="kitTypes" ngModel required></app-form-select>
+        </div>
+
+        <div class="form__inline">
+
+          <app-form-text class="form__inline__item" name="barcode" placeholder="Barcode" ngModel required></app-form-text>
+
+          <div class="form__inline__item form__inline__item--button">
+            <a class="button button--fullWidth button--largeText" (click)="explainBarcode()">?</a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="mb-30">
+
+        <h2 class="heading heading--small mb-15">Your details</h2>
+
+        <div class="form__inline-md mb-15">
+
+          <app-form-text class="form__inline__item" name="firstName" placeholder="First name" ngModel required></app-form-text>
+
+          <app-form-text class="form__inline__item" name="lastName" placeholder="Last name" ngModel required></app-form-text>
+
+        </div>
+
+        <div class="mb-15">
+          <app-form-select name="gender" placeholder="Gender" [options]="genders" ngModel required></app-form-select>
+        </div>
+
+        <div class="form__inline">
+
+          <app-form-text class="form__inline__item" name="phone" placeholder="Phone" ngModel required></app-form-text>
+
+          <div class="form__inline__item form__inline__item--button">
+            <a class="button button--fullWidth button--largeText" (click)="explainPhone()">?</a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="mb-30">
+
+        <h2 class="heading heading--small mb-15">Date of birth</h2>
+
+        <app-form-date placeholder="Date of birth" name="dob" manual="true" ngModel required></app-form-date>
+
+      </div>
+
+      <div class="mb-15" *ngIf="kitForm.controls['type'].value">
+
+        <div class="input input--radio input--checkbox" [class.input--active]="accept" (click)="accept = !accept">
+          <div class="input__holder">
+            <span class="input__tick">✓</span>
+            <input class="input__control" type="radio" name="accept" [(ngModel)]="accept" required />
+          </div>
+          <div class="input__placeholder">
+            <span *ngIf="kitForm.controls['type'].value === 'blood'">I have read and accept the <a (click)="viewSummary(); $event.stopPropagation()">Vitl blood test informed consent document</a></span>
+            <span *ngIf="kitForm.controls['type'].value === 'dna'">I have read and accept the <a (click)="viewSummary(); $event.stopPropagation()">Vitl DNA informed consent document</a></span>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="hr mb-30" />
+
+      <button class="button button--primary button--large button--fullWidth mb-30 mb-md-90">Register kit</button>
+
+    </form>
+
+  </div>
+
+  <div class="container container--small">
+
+    <div *ngIf="kitRegistered">
+
+      <div class="mb-30">
+        <lottie-animation-view [options]="lottieConfig" [width]="150" [height]="150" (animCreated)="handleAnimation($event)"></lottie-animation-view>
+      </div>
+
+      <p class="copy copy--semiBold copy--large text-center mb-30">Thank you {{kitRegistered.firstName}}</p>
+
+      <p class="copy text-center mb-30">You have successfully registered your {{kitRegistered.typeLabel}} kit!</p>
+
+      <hr class="hr mb-30">
+
+      <ul class="list mb-90">
+        <li class="list__item list__item--ticked list__item--tickedOne mb-30">
+          <p class="list__heading">Doing your {{kitRegistered.typeLabel}} test</p>
+          <span class="list__copy">Follow the rest of your instructions in your kit carefully, put your sample in the postage bag provided and send it off in the post to our lab</span>
+        </li>
+        <li class="list__item list__item--ticked list__item--tickedTwo mb-30">
+          <p class="list__heading">Processing your sample</p>
+          <span class="list__copy" *ngIf="kitRegistered.type === 'dna'">
+            You'll be notified when your sample is being processed, as well as when your results and our nutritionist's analysis are ready for you to view
+          </span>
+          <span class="list__copy" *ngIf="kitRegistered.type === 'blood'">
+            You'll be notified when your results and our nutritionist's analysis are ready for you to view
+          </span>
+        </li>
+        <li class="list__item list__item--ticked list__item--tickedThree m
+        b-30">
+          <p class="list__heading">Getting your results</p>
+          <span class="list__copy">Review your health report and choose to update your tailor-made supplements and nutrition plans to reflect the results of your {{kitRegistered.typeLabel}} test</span>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</div>

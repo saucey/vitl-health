@@ -1,0 +1,41 @@
+<h1 class="heading-2">Payment methods</h1>
+
+<ul class="account__orders pt-30 pb-50" *ngIf="paymentMethods; else noPaymentMethods">
+
+  <li *ngFor="let method of paymentMethods" class="account__order">
+
+    <div class="account__order__image account__order__image--small">
+      <img src="{{ getImageSource(method.cardIssuer) }}" />
+    </div>
+
+    <div class="account__order__details">
+
+      <div class="account__order__description">
+        <h3 class="account__order__product">{{method.description}}</h3>
+        <div class="account__order__plan hidden-xs">{{method.name}} | {{method.postcode}} | Expires {{method.expMonth}}/{{method.expYear}}
+          <span *ngIf="method.default">| <span style="color: #46BC8F">Default</span></span>
+        </div>
+      </div>
+
+      <div class="account__order__manage" style="display: block;">
+        <div class="buttons-wrapper">
+
+          <button class="button button--small button--primary button--fullWidth button--maxWidth" (click)="updatePaymentMethod(method)">Edit</button>
+
+          <button class="button button--small button--fullWidth button--maxWidth" (click)="deletePaymentMethod(method)">Delete</button>
+        </div>
+      </div>
+
+    </div>
+
+  </li>
+
+</ul>
+
+<ng-template #noPaymentMethods>
+  <p class="copy pt-30">You don't have any payment methods</p>
+</ng-template>
+
+<div class="text-right mb-30">
+  <button class="button button--primary button--fullWidth button--maxWidth" (click)="addNewCard()">Add new card</button>
+</div>

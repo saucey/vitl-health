@@ -1,0 +1,7 @@
+<div class="myvitl__content__block__buttons">
+  <ul>
+    <li *ngFor="let button of block.buttons">
+      <div class="button button--primary" [appStyle]="button.style" [appAction]="button.action">{{button.title}}</div>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,52 @@
+<div class="new-UI">
+
+  <section class="background-gradient--cream">
+    <div class="container container--full-mobile pt-80 pt-sm-60 pb-sm-60 text-center">
+      <h1 class="heading-1">Find your perfect fit</h1>
+      <div class="divider"></div>
+      <p>Discover the unique benefits of each of our nutritional solutions.</p>
+      <div class="row mt-40 mt-md-60">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+          <div class="section-visual">
+            <img class="lazyload" data-src="https://static-prod.vitl.com/images/results/compare-products.png?compress=1" />
+          </div>
+        </div>
+      </div>
+
+      <div class="background--white pt-50 pr-20 pb-50 pl-20 text-left">
+        <div class="row">
+          <div class="col-xs-6 position-relative">
+            <div class="label-popular label-popular--compare">Most popular</div>
+            <h2 class="heading-3">Personalised Plus</h2>
+            <div class="divider"></div>
+          </div>
+          <div class="col-xs-6">
+            <h2 class="heading-3">Personalised Essential One</h2>
+            <div class="divider"></div>
+          </div>
+        </div>
+        <div *ngFor="let row of content" class="row pt-20 pb-20 border-bottom--cream">
+          <div class="col-xs-6 display-flex direction-row">
+            <img class="mt-5 mr-15" width="15" height="15" src="https://static.vitl.com/images/icons/icon-compare-check-circle.svg" style="flex: 0 0 auto"/>
+            <p class="text--small">{{ row.pp }}</p>
+          </div>
+          <div class="col-xs-6 display-flex direction-row">
+            <img class="mt-5 mr-15" width="15" height="15" src="https://static.vitl.com/images/icons/icon-compare-check-circle.svg" style="flex: 0 0 auto"/>
+            <p class="text--small">{{ row.teo }}</p>
+          </div>
+        </div>
+        <div class="row mt-40">
+          <div class="col-xs-6">
+            <app-plan-selector *ngIf="personalisedPlus" [product]="personalisedPlus"></app-plan-selector>
+            <a *ngIf="!personalisedPlus" class="button button--ghost button--small" routerLink="/product/personalised">Learn more</a>
+          </div>
+          <div class="col-xs-6">
+            <app-plan-selector *ngIf="essentialOne" [product]="essentialOne"></app-plan-selector>
+            <a *ngIf="!essentialOne" class="button button--ghost button--small" routerLink="/product/essential-one">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>

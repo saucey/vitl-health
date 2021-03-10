@@ -1,0 +1,8 @@
+<ul class="list list--horizontal list--horizontalSpaceAround">
+  <li class="list__item list__item--alignCenter" *ngFor="let currency of data.currencies">
+    <a class="cursor" [class.active]="currency.code === data.currency" (click)="selectCurrency(currency.code)">
+      <div class="copy copy--small mb-5">{{currency.code}}</div>
+      <div class="heading">{{currency.symbol}}</div>
+    </a>
+  </li>
+</ul>

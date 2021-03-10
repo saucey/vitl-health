@@ -1,0 +1,80 @@
+&__quote {
+
+  &__bubble {
+
+    position: relative;
+    background: @brand-primary-grey-creamier;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: @font-size-base * (16 / @font-size-base);
+    line-height: @font-size-base * (20 / @font-size-base);
+    font-family: @font-family-medium;
+    margin-bottom: 20px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 12px 9px 0 9px;
+      border-color: @brand-primary-grey-creamier transparent transparent transparent;
+    }
+
+  }
+
+  &__author {
+
+    &__image {
+      width: 35px;
+      height: 35px;
+      margin: 0 auto;
+      border-radius: 100%;
+      overflow: hidden;
+      margin-bottom: 10px;
+      @media @md {
+        width: 45px;
+        height: 45px;
+      }
+    }
+
+    &__name {
+      font-size: @font-size-base * (16 / @font-size-base);
+      font-family: @font-family-medium;
+      text-align: center;
+    }
+
+  }
+
+  @media @md {
+
+    &--right {
+
+      display: flex;
+      align-items: center;
+
+      .myvitl__quote__bubble {
+        flex: 1;
+        margin-right: 30px;
+        margin-bottom: 0px;
+        &:after {
+          top: 50%;
+          left: 100%;
+          transform: translateY(-50%);
+          border-width: 9px 0 9px 12px;
+          border-color: transparent transparent transparent @brand-primary-grey-creamier;
+        }
+      }
+
+      .myvitl__quote__author {
+        flex: 0 1 100px;
+      }
+
+    }
+
+  }
+
+}

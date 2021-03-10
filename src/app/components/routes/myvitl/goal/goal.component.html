@@ -1,0 +1,223 @@
+<div class="new-UI">
+  <section class="background--cream">
+    <div class="container goal-header pt-100 pt-md-120 pb-40 pb-md-60 text-center text-sm-left">
+      <img class="mr-sm-30 mb-25 mb-sm-0" [appImage]="goal.icon" [height]="70" [colorize]="goal.color" [truecolor]="true" />
+      <div>
+        <h1 class="heading-1 mb-10">{{ goal.label }}</h1>
+        <p>{{ goal.tagline }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container pt-35 pb-35">
+      <div class="row">
+        <div class="col-xs-12 col-md-10 col-md-offset-1">
+          <p *ngIf="goal.issues" class="mb-30 mb-md-60 text-center text-sm-left">Your health report identified:</p>
+          <div class="row">
+            <div *ngIf="goal.issues" class="col-xs-12 col-sm-6 mb-40 mb-md-0">
+                <ul class="goal-issues text-center">
+                  <li *ngFor="let issue of goal.issues">
+                    <img *ngIf="issue.icon" [appImage]="issue.icon" [height]="30" [truecolor]="true" />
+                    <img *ngIf="!issue.icon" appImage category="icons" key="alert" [height]="30" [truecolor]="true" />
+                    <p class="mt-10 mt-md-20 text--small">{{ issue.label }}</p>
+                  </li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-6"
+              [ngClass]="{'display-flex flex-center col-sm-offset-3': !goal.issues}">
+              <p class="mb-15" [class.text-center]="!goal.issues">
+                <strong>
+                  <span class="quote quote--open">&ldquo;</span>
+                  {{ goal.quote.comment }}
+                </strong>
+              </p>
+              <div class="display-flex flex-end">
+                <img class="mr-15 background--cream" width="60" [src]="goal.quote.expert.image.url" alt="{{ goal.quote.expert.name }}" />
+                <p>
+                  <strong>{{ goal.quote.expert.name }}</strong><br />
+                  <span class="text--small">{{ goal.quote.expert.professionalTitle }}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="background--cream">
+    <div class="container pt-40 pt-sm-75 pb-40 pb-sm-75">
+      <div class="text-center">
+        <h2 class="heading-2">Healthy eating</h2>
+        <div class="divider mb-sm-50"></div>
+      </div>
+      <div class="row text-center text-sm-left">
+        <div class="col-xs-12 col-sm-5 col-sm-offset-1 col-md-4 mb-30 mb-md-0">
+          <h3 class="heading-3 mb-20 mb-sm-30 hidden-xs">Dietary advice</h3>
+          <p *ngFor="let advice of goal.dietAdvice">
+            {{ advice.label }}
+          </p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-5 col-md-offset-2">
+          <h3 class="heading-3 mb-20 mb-sm-30">High-nutrient foods</h3>
+          <ul class="boxed-nutrients">
+            <li *ngFor="let food of goal.foods"
+              class="boxed-nutrients__item"
+              [class.boxed-nutrients__item--action]="food.description"
+              (click)="showFoodModal(food)">
+                <img [appImage]="food.icon" [height]="90" />
+                <p class="text--small">{{ food.label }}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div *ngIf="mealPlan" class="row mt-60 mt-md-100 text-center text-sm-left">
+        <div class="col-xs-12 col-sm-5 col-sm-offset-1 col-md-4 mb-30 mb-md-0">
+          <div class="divider mt-0 hidden-sm hidden-md hidden-lg hidden-xl"></div>
+          <h3 class="heading-3 mb-20 mb-sm-30">Meal plans</h3>
+          <p *ngIf="!isProUser">
+            As a Vitl Pro member, you get access to delicious and healthy recipes with step-by-step instructions to help you make nutritionally-balanced meals throughout the week.
+          </p>
+          <p *ngIf="isProUser">
+            {{ mealPlan.content[2].text }}
+          </p>
+          <a class="button button--small button--ghost mt-30 mt-lg-40 hidden-xs" routerLink="/myvitl/{{mealPlan.action.value}}">View recipies</a>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2 col-lg-3">
+          <p><strong>Recommended for you:</strong></p>
+          <p class="mb-20">{{ mealPlan.content[1].text }}</p>
+          <img class="width--full" [appImage]="mealPlan.content[0].image" [height]="220" />
+          <a class="button button--small button--ghost mt-30 hidden-sm hidden-md hidden-lg hidden-xl" routerLink="/myvitl/{{mealPlan.action.value}}">View recipies</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section *ngIf="pills.length > 0" class="background--gray-lightest pt-40 pt-sm-75 pb-40 pb-sm-75">
+    <div class="container text-center">
+      <h2 class="heading-2">Supplementing your diet</h2>
+      <div class="divider mb-sm-50"></div>
+      <div *ngIf="sharedIngredients.length === 1" class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+          <h3 class="heading-3">{{ sharedIngredients[0].name }}</h3>
+          <p class="mt-25 mb-25">{{ sharedIngredients[0].description }}</p>
+        </div>
+      </div>
+      <div *ngIf="sharedIngredients.length === 0 || sharedIngredients.length === 1" class="row">
+        <div class="col-xs-12 col-md-10 col-md-offset-1">
+          <div *ngIf="sharedIngredients.length === 1" class="row pt-20 pb-20 mb-5 background--white">
+            <p class="col-xs-12">We included {{ sharedIngredients[0].name }} in your recommendations:</p>
+          </div>
+          <ul class="goal-pills row justify-center">
+            <li *ngFor="let pill of pills; let i = index"
+              class="goal-pills__item pt-20 pr-20 pb-20 pl-20"
+              [ngClass]="{
+                'col-xs-12 col-sm-6': sharedIngredients.length !== 1,
+                'col-xs-6': sharedIngredients.length === 1
+              }">
+              <p class="mb-10"><strong>{{ pill.label }}</strong></p>
+              <p class="text--xsmall">
+                {{ i === 0 ? 'Included in your personalised pack' : 'Take one daily' }}
+              </p>
+              <img class="mt-30 mt-md-50 mb-40" height="90" src="{{ pill.icon.url }}" alt="pill.label" />
+              <!-- <p *ngIf="sharedIngredients.length === 0" class="mb-40">{{ pill.longDescription }}</p> -->
+              <p *ngIf="sharedIngredients.length !== 1" class="mt-30 mb-40">{{ pill.longDescription }}</p>
+              <div class="goal-pills__actions row">
+                <div class="col-xs-12 col-md-6 ab-original">
+                  <a class="button button--small button--ghost width--full mb-15 mb-md-0" (click)="handleScrollToElementId(i === 0 ? 'personalised-pp' : 'personalised-eo')">Learn more</a>
+                </div>
+                <div class="col-xs-12 col-md-6 ab-original">
+                  <button class="button button--small button--primary width--full" (click)="addToBasket(i === 0 ? products.personalisedPlus : products.essentialOne)">Add to basket</button>
+                </div>
+
+                <div class="col-xs-12 col-md-6 col-md-offset-3 ab-alternative">
+                  <a class="button button--small button--ghost width--full mb-15" [routerLink]="i === 0 ? '/myvitl/personalised' : '/myvitl/essential-one'">Learn more</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div *ngIf="sharedIngredients.length > 1" class="goal-pills-list">
+        <div class="goal-pills-list__item">
+          <p class="mb-10"><strong>{{ pills[0].label }}</strong></p>
+          <p class="text--xsmall">
+            Included in your personalised pack
+          </p>
+          <img class="mt-30 mt-md-80 mb-md-80" height="90" src="{{ pills[0].icon.url }}" alt="pills[0].label" />
+          <div class="goal-pills-list__actions hidden-xs">
+            <a class="button button--small button--ghost width--full mb-15 ab-original" (click)="handleScrollToElementId('personalised-pp')">Learn more</a>
+            <button class="button button--small button--primary width--full ab-original" (click)="addToBasket(products.personalisedPlus)">Add to basket</button>
+            
+            <a class="button button--small button--ghost width--full mb-15 ab-alternative" routerLink="/myvitl/personalised">Learn more</a>
+          </div>
+        </div>
+        <div class="goal-pills-list__ingredients mt-md-60">
+          <div *ngFor="let ingredient of sharedIngredients" class="ingredient-status">
+            <div><img width="16" height="16" src="https://static.vitl.com/images/icons/icon-compare-check.svg" /></div>
+            <p>{{ ingredient.name }}</p>
+            <div><img width="16" height="16" src="https://static.vitl.com/images/icons/icon-compare-check.svg" /></div>
+          </div>
+          <div *ngFor="let ingredient of nonSharedIngredients" class="ingredient-status">
+            <div><img width="16" height="16" src="https://static.vitl.com/images/icons/icon-compare-check.svg" /></div>
+            <p>{{ ingredient.name }}</p>
+            <div></div>
+          </div>
+        </div>
+        <div class="goal-pills-list__item">
+          <p class="mb-10"><strong>{{ pills[1].label }}</strong></p>
+          <p class="text--xsmall">
+            Take one daily
+          </p>
+          <img class="mt-30 mt-md-80 mb-md-80" height="90" src="{{ pills[1].icon.url }}" alt="pills[1].label" />
+          <div class="goal-pills-list__actions hidden-xs">
+            <a class="button button--small button--ghost width--full mb-15 ab-original" (click)="handleScrollToElementId('personalised-eo')">Learn more</a>
+            <button class="button button--small button--primary width--full ab-original" (click)="addToBasket(products.essentialOne)">Add to basket</button>
+
+            <a class="button button--small button--ghost width--full mb-15 ab-alternative" routerLink="/myvitl/essential-one">Learn more</a>
+          </div>
+        </div>
+        <div class="row mt-30 hidden-sm hidden-md hidden-lg hidden-xxl" style="flex-basis: 100%;">
+          <div class="col-xs-6 goal-pills-list__actions">
+            <a class="button button--small button--ghost width--full mb-15 ab-original" (click)="handleScrollToElementId('personalised-pp')">Learn more</a>
+            <button class="button button--small button--primary width--full ab-original" (click)="addToBasket(products.personalisedPlus)">Add to basket</button>
+
+            <a class="button button--small button--ghost width--full mb-15 ab-alternative" routerLink="/myvitl/personalised">Learn more</a>
+          </div>
+          <div class="col-xs-6 goal-pills-list__actions">
+            <a class="button button--small button--ghost width--full mb-15 ab-original" (click)="handleScrollToElementId('personalised-eo')">Learn more</a>
+            <button class="button button--small button--primary width--full ab-original" (click)="addToBasket(products.essentialOne)">Add to basket</button>
+
+            <a class="button button--small button--ghost width--full mb-15 ab-alternative" routerLink="/myvitl/essential-one">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container pt-40 pt-sm-75 pb-40 pb-sm-75">
+      <div class="text-center">
+        <h2 class="heading-2">Lifestyle</h2>
+        <div class="divider mb-sm-50"></div>
+      </div>
+      <div class="row">
+        <ul class="col-xs-11 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+          <li *ngFor="let advice of goal.lifestyleAdvice" class="position-relative mb-40">
+            <img class="outside-left" [appImage]="goal.icon" [height]="30" [colorize]="'#FFD326'" [truecolor]="true" />
+            <span *ngIf="advice.label">
+              {{ advice.label }}
+          </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section *ngIf="personalisedProducts.length > 0">
+    <app-personalised-products [products]="personalisedProducts"></app-personalised-products>
+  </section>
+</div>

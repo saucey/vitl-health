@@ -1,0 +1,64 @@
+<!-- <div class="account">
+
+  <div class="container">
+
+    <div class="grid grid--alignTop">
+
+      <div class="grid__item--2">
+
+        <div class="account__sidebar hidden-xs hidden-sm">
+
+          <h1 class="heading heading--small mb-45"><a routerLink="/myvitl">My account</a></h1>
+
+          <nav class="account__nav">
+
+            <a class="account__navItem" routerLink="/myvitl/account/details" routerLinkActive="active">Personal details</a>
+
+            <a class="account__navItem" routerLink="/myvitl/account/orders" routerLinkActive="active">Orders</a>
+
+            <a class="account__navItem" routerLink="/myvitl/account/payment" routerLinkActive="active">Payment methods</a>
+
+            <a class="account__navItem cursor" (click)="addCoupon()">Use promo code</a>
+
+            <a class="account__navItem" routerLink="/myvitl/account/referral" routerLinkActive="active">Referral rewards</a>
+
+            <a class="account__navItem" routerLink="/kit" routerLinkActive="active">Register kit</a>
+
+            <a class="account__navItem" routerLink="/myvitl/account/feedback" routerLinkActive="active">Feedback</a>
+
+            <a class="account__navItem" routerLink="/myvitl/help" routerLinkActive="active">Help</a>
+
+            <a class="account__navItem cursor" (click)="logout()">Logout</a>
+
+          </nav>
+
+        </div>
+
+      </div>
+
+      <div class="grid__item--10">
+
+        <div class="account__body">
+
+          <router-outlet></router-outlet>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div> -->
+
+
+<div class="new-UI account">
+  <div class="container pt-120 pb-60">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

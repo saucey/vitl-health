@@ -1,0 +1,21 @@
+<li class="myvitl__goalPreview"
+    [class.myvitl__goalPreview--inactive]="!goal"
+    [style.outline-color]="(goal ? goal.color : '#333')"
+    (click)="toggleGoal()"
+>
+  <div class="myvitl__goalPreview__bar" [style.background]="(goal ? goal.color : '#333')"></div>
+  <div class="myvitl__goalPreview__icon myvitl__goalPreview__icon--shakey">
+    <img [appImage]="goal.icon" [height]="40" [heightLg]="55" [colorize]="goal.color" [truecolor]="true" *ngIf="goal" />
+  </div>
+  <div class="myvitl__goalPreview__label" *ngIf="goal">
+    <div class="myvitl__goalPreview__name">{{goal.label}}</div>
+    <div class="myvitl__goalPreview__tagline">{{goal.tagline}}</div>
+  </div>
+  <div class="myvitl__goalPreview__label" *ngIf="!goal">
+    <div class="myvitl__goalPreview__name">Add goal</div>
+  </div>
+  <div class="myvitl__goalPreview__explore myvitl__goalPreview__explore--iconOnly">
+    <img appImage category="icons" key="remove" [width]="30" [widthLg]="43" colorize="#FFD326" [truecolor]="true" *ngIf="goal" />
+    <img appImage category="icons" key="add" [width]="30" [widthLg]="43" colorize="#46BC8F" [truecolor]="true" *ngIf="!goal" />
+  </div>
+</li>

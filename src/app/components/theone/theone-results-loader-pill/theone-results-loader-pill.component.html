@@ -1,0 +1,17 @@
+<div class="pill__loader mb-15" [class.pill__loader--gummy]="gummy">
+
+  <div class="pill__loader__progress"></div>
+
+  <div class="pill__loader__pill">
+    <img appImage category="theone" key="pill" [height]="93" *ngIf="!gummy" />
+    <img appImage category="theone" key="gummy" [height]="93" *ngIf="gummy" />
+  </div>
+
+</div>
+<div class="text__loader">
+  <span class="text__loader__message">Analysing health goals</span>
+  <span class="text__loader__message">Analysing diet</span>
+  <span class="text__loader__message">Analysing lifestyle</span>
+  <span class="text__loader__message">Sourcing best nutrients</span>
+  <span class="text__loader__message">Tailoring vitamins to {{user.firstName}}</span>
+</div>

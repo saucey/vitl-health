@@ -1,0 +1,28 @@
+<div class="myvitl__content__block__biomarkerResults">
+
+  <ul>
+
+    <li *ngFor="let result of block.results" [appAction]="result.action">
+
+      <p class="biomarker_score" [style.color]="result.description_color">{{result.description}}</p>
+      <p class="biomarker_name">{{result.title}}</p>
+      <div class="ranges">
+        <div class="range" *ngFor="let range of result.ranges"
+             [style.background]="range.color"
+             [style.width]="getRangeWidth(result, range)"
+             [style.left]="getRangeOffset(result, range)"
+             [class.inactive]="range.color === '#e2e2e2'">
+        </div>
+        <div class="marker" [style.left]="getMarkerOffset(result)">
+          <span></span>
+        </div>
+      </div>
+      <div class="value_track">
+        <div class="value" [style.left]="getMarkerOffset(result)">{{result.value_text}}</div>
+      </div>
+
+    </li>
+
+  </ul>
+
+</div>

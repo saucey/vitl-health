@@ -1,0 +1,72 @@
+<div *ngIf="order">
+
+  <h1 class="heading-2 mb-30">Your order</h1>
+
+  <div class="account__order account__order--large" [class.account__order--disabled]="!order.allowManage">
+
+    <div class="account__order__image">
+      <img [appImage]="order.image" [width]="200" />
+    </div>
+
+    <div class="account__order__details">
+      <div class="account__order__description">
+        <h3 class="account__order__product">{{order.productName}}</h3>
+        <div class="account__order__plan hidden-xs">
+          <span *ngIf="order.planName">{{order.planName}} | </span>
+          <span [style.color]="order.statusColor">{{order.statusLabel}}</span>
+        </div>
+        <div *ngIf="order.planName" class="account__order__plan visible-xs">{{order.planName}}</div>
+        <div class="account__order__plan visible-xs" [style.color]="order.statusColor">{{order.statusLabel}}</div>
+        <app-order-details class="account__order__invoicing" [order]="order" *ngIf="order.allowManage"></app-order-details>
+      </div>
+      <app-order-manage class="account__order__manage account__order__manage--large hidden-xs" [order]="order" *ngIf="order.allowManage"></app-order-manage>
+    </div>
+
+  </div>
+
+  <app-order-manage class="account__order__manage account__order__manage--large visible-xs" [order]="order" *ngIf="order.allowManage" [expanded]="true"></app-order-manage>
+
+</div>
+
+<div *ngIf="!order">
+
+  <h1 class="heading-2">Your orders</h1>
+
+  <ul class="account__orders pt-30 pb-50" *ngIf="orders.length; else noOrders">
+
+    <li class="account__order" *ngFor="let order of orders"
+        [class.account__order--selected]="order.id == selectedOrderId"
+        [class.account__order--disabled]="!order.allowManage"
+        (click)="selectOrder(order)"
+    >
+
+      <div class="account__order__image">
+        <img [appImage]="order.image" [width]="60" [widthLg]="175" />
+      </div>
+
+      <div class="account__order__details">
+
+        <div class="account__order__description">
+          <h3 class="account__order__product">{{order.productName}}</h3>
+          <div class="account__order__plan hidden-xs">
+            <span *ngIf="order.planName">{{order.planName}} | </span>
+            <span [style.color]="order.statusColor">{{order.statusLabel}}</span>
+          </div>
+          <div *ngIf="order.planName" class="account__order__plan visible-xs">{{order.planName}}</div>
+          <div class="account__order__plan visible-xs" [style.color]="order.statusColor">{{order.statusLabel}}</div>
+          <app-order-details class="account__order__invoicing" [order]="order" *ngIf="order.allowManage"></app-order-details>
+        </div>
+
+        <app-order-manage class="account__order__manage" [order]="order" *ngIf="order.allowManage"></app-order-manage>
+
+      </div>
+
+    </li>
+
+  </ul>
+
+  <ng-template #noOrders>
+    <p class="copy pt-30">You don't have any orders yet</p>
+  </ng-template>
+
+</div>

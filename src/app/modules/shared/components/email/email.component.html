@@ -1,0 +1,17 @@
+<div class="input input--text" [ngClass]="{
+  'input--focussed': focussed,
+  'input--submit input--small input--white': submit,
+  'input--invalid': invalid,
+  'input--white': white,
+  'input--whiteMd': whiteMd,
+  'input--disabled': disabled,
+  'input--filled': thisValue
+}">
+
+    <div class="input__placeholder" [ngClass]="{'input__placeholder--minimized': minimizePlaceholder()}">{{placeholder}}</div>
+
+    <input type="email" [(ngModel)]="thisValue" class="input__control" (blur)="blur()" (focus)="focus()" [disabled]="disabled" #inputControl />
+
+    <button class="button button--active input__submit" *ngIf="submit"></button>
+
+</div>

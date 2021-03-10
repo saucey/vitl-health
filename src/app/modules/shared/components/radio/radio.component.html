@@ -1,0 +1,16 @@
+<div class="input input--radio" [ngClass]="{
+  'input--focussed': focussed,
+  'input--invalid': invalid,
+  'input--active': thisValue,
+  'input--checkbox': checkbox,
+  'input--disabled': disabled
+}" (click)="toggle()">
+
+  <div class="input__holder">
+    <span class="input__tick" *ngIf="checkbox">✓</span>
+    <input type="radio" [(ngModel)]="thisValue" class="input__control" (blur)="blur()" (focus)="focus()" [disabled]="disabled" #inputControl />
+  </div>
+
+  <div class="input__placeholder" [ngClass]="{'input__placeholder--minimized': minimizePlaceholder()}">{{placeholder}}</div>
+
+</div>

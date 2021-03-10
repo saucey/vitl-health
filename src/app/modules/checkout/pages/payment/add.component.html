@@ -1,0 +1,25 @@
+<h1>Payment</h1>
+
+<h2>Pay with card</h2>
+
+<div class="container container--tiny">
+
+    <form class="form" (ngSubmit)="addPaymentMethod()" #cardForm="ngForm">
+
+        <div class="mb-10">
+            <app-form-text name="name" placeholder="Name on card" ngModel required></app-form-text>
+        </div>
+
+        <div class="mb-10">
+            <div id="card-info" #cardInfo></div>
+        </div>
+
+        <div class="mb-20">
+            <app-form-text name="postcode" placeholder="Billing postcode" ngModel required></app-form-text>
+        </div>
+
+        <button class="button button--primary button--fullWidth">Continue</button>
+
+    </form>
+
+</div>

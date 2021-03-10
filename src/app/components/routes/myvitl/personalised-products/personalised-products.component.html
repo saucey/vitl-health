@@ -1,0 +1,63 @@
+<div *ngIf="dataLoaded" class="background--cream">
+  <div class="container text-center">
+    <div class="personalised-products row"
+    [class.personalised-products--reverse]="essentialOne.isFreeTrial">
+      <div *ngIf="personalisedPlus"
+        id="personalised-pp"
+        class="personalised-products__item col-xs-12 col-md-4 pt-40 pt-md-60 pb-40 pb-md-60"
+        [ngClass]="{
+          'col-md-offset-1': essentialOne && !essentialOne.isFreeTrial,
+          'col-md-offset-4': !essentialOne,
+          'col-md-offset-2': essentialOne && essentialOne.isFreeTrial}">
+        <div>
+          <div *ngIf="essentialOne && !essentialOne.isFreeTrial" class="label-popular label-popular--center">Most popular</div>
+          <div *ngIf="personalisedPlus.isFreeTrial" class="label-popular label-popular--center">Free trial!</div>
+          <h3 class="heading-3">{{ personalisedPlus.label }}</h3>
+          <div class="divider mt-20 mb-20"></div>
+          <p>A comprehensive combination of 4 personalised supplements in handy daily strips.</p>
+        </div>
+        <ul class="personalised-pills mt-30 mb-30">
+          <li *ngFor="let pill of personalisedPlus.pills" (click)="openPillPopup(pill)">
+            <img class="mt-5" height="60" src="{{ pill.icon.url }}" alt="pill.label" />
+            <div class="pt-10 pb-10">
+              <p><strong>{{ pill.label }}</strong></p>
+              <p class="text--small text--gray-light">{{ pill.shortDescription }}</p>
+            </div>
+          </li>
+        </ul>
+
+        <!-- <app-plan-selector *ngIf="personalisedPlus.action === 'buy'" [product]="personalisedPlus"></app-plan-selector>
+        <button *ngIf="personalisedPlus.action === 'update'" class="button button--primary" (click)="updatePack()">Update my pack</button>
+        <p *ngIf="personalisedPlus.action === 'none'">You are subscribed to this pack</p> -->
+        <app-plan-selector [product]="personalisedPlus" [isFreeTrial]="personalisedPlus.isFreeTrial"></app-plan-selector>
+      </div>
+      <div *ngIf="personalisedPlus && essentialOne" class="personalised-products__divider"></div>
+      <div *ngIf="essentialOne"
+        id="personalised-eo"
+        class="personalised-products__item col-xs-12 col-md-4 pt-40 pt-md-60 pb-40 pb-md-60"
+        [ngClass]="{
+          'col-md-offset-2': personalisedPlus && !essentialOne.isFreeTrial,
+          'col-md-offset-4': !personalisedPlus,
+          'col-md-offset-1': personalisedPlus && essentialOne.isFreeTrial}">
+        <div class="">
+          <div *ngIf="essentialOne.isFreeTrial" class="label-popular label-popular--center">Free trial!</div>
+          <h3 class="heading-3">{{ essentialOne.label }}</h3>
+          <div class="divider mt-20 mb-20"></div>
+          <p>A personalised daily supplement covering your essential needs.</p>
+        </div>
+        <div>
+          <img class="mt-30 mt-md-0" height="90" src="{{ essentialOne.pills[0].icon.url }}" alt="essentialOne.pills[0].label" />
+          <ul class="personalised-pills mt-30 mb-30">
+            <li *ngFor="let pill of essentialOne.pills" (click)="openPillPopup(pill)">
+              <div class="pt-10 pb-10">
+                <p><strong>{{ pill.label }}</strong></p>
+                <p class="text--small text--gray-light">{{ pill.shortDescription }}</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <app-plan-selector [product]="essentialOne" [isFreeTrial]="essentialOne.isFreeTrial"></app-plan-selector>
+      </div>
+    </div>
+  </div>
+</div>

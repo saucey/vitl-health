@@ -1,0 +1,111 @@
+.myvitl {
+
+  &__heading {
+
+    padding: 45px 15px;
+    text-align: center;
+    margin-bottom: 0px;
+    font-size: @font-size-base * (34 / @font-size-base);
+
+    @media @md {
+      text-align: left;
+      padding: 0px;
+      margin-bottom: 30px;
+      font-size: @font-size-base * (30 / @font-size-base);
+      &--sidebar {
+        text-align: center;
+        font-size: @font-size-base * (24 / @font-size-base);
+      }
+    }
+
+    &--small {
+      font-size: @font-size-base * (25 / @font-size-base);
+      font-family: @font-family-medium;
+      @media @md {
+        font-size: @font-size-base * (30 / @font-size-base);
+        font-family: @font-family-header;
+      }
+    }
+
+  }
+
+  &__section {
+
+    padding: 30px 15px;
+
+    &--fluid {
+      padding: 0px;
+    }
+
+    @media @md {
+      background: @brand-primary-white;
+      padding: 60px;
+    }
+
+  }
+
+  &__content {
+
+    @media @md {
+      padding-top: 30px;
+    }
+
+  }
+
+  &__sectionDivider {
+    background: @brand-primary-grey;
+    height: 10px;
+    @media @md {
+      height: 1px;
+      background: @brand-primary-white;
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 1px;
+        width: 100%;
+        transform: scaleX(0.9);
+        background: @brand-primary-grey-cream;
+      }
+    }
+  }
+
+  &__dashboard {
+    background-color: #F9F8F4;
+
+    @media @md {
+      background-color: transparent;
+    }
+
+    .myvitl__goals {
+      width: 100%;
+      max-width: 375px;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-bottom: 45px;
+      margin: 0 auto;
+  
+      @media @md {
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+    
+  }
+
+  @import 'goals.less';
+  @import 'goal.less';
+  @import 'issues.less';
+  @import 'quote.less';
+  @import 'pill.less';
+  @import 'advice.less';
+  @import 'planSelector.less';
+
+  @import 'sidebar.less';
+
+  @import 'content/manifest.less';
+
+}

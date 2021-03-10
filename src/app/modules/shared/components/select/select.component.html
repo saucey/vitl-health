@@ -1,0 +1,11 @@
+<div class="input input--select" [ngClass]="{
+  'input--focussed': focussed
+}">
+
+  <div class="input__placeholder" [ngClass]="{'input__placeholder--minimized': minimizePlaceholder()}">{{placeholder}}</div>
+
+  <select class="input__control" [(ngModel)]="thisValue" (blur)="blur()" (focus)="focus()" #inputControl>
+    <option *ngFor="let option of options" [ngValue]="option.code">{{option.label}}</option>
+  </select>
+
+</div>

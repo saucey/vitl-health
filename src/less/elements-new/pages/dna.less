@@ -1,0 +1,298 @@
+.page--dna {
+  .carousel {
+    &--dna {
+      .carousel__slide {
+        img {
+          width: 128px;
+        }
+
+        .heading-4 {
+          width: 170px;
+        }
+      }
+
+      .carousel-dot {
+        background-color: #777777;
+
+        &.is-active {
+          background-color: white;
+        }
+      }
+    }
+  }
+
+  // override color
+  .copy--darkGrey {
+    color: @brand-primary-black !important;
+  }
+}
+
+.hero--dna {
+  background: linear-gradient(to bottom, #9ec8c4 85%, #37a4a1 100%);
+
+  .img-dna-box {
+    position: absolute;
+    bottom: -201px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media @sm {
+      bottom: -277px;
+    }
+
+    @media @md {
+      bottom: -325px;
+    }
+  }
+
+  .hero__content {
+    position: relative;
+  }
+
+  .hero__visual {
+    padding-bottom: 55px;
+
+    flex: 1 1 0;
+
+    display: flex;
+    justify-content: center;
+
+    @media @sm {
+      padding-bottom: 70px;
+    }
+
+    @media @md {
+      padding-bottom: 0;
+    }
+
+    img {
+      display: block;
+      width: 280px;
+      height: 100%;
+
+      @media @sm {
+        width: 360px;
+      }
+
+      @media @md {
+        width: 490px;
+      }
+    }
+  }
+}
+
+.dna__section--2 {
+  margin-top: 240px;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+
+  @media @sm {
+    margin-top: 280px;
+  }
+
+  @media @md {
+    margin-top: 140px;
+
+    display: flex;
+  }
+
+  .section-content {
+    text-align: center;
+
+    @media @md {
+      text-align: left;
+    }
+  }
+
+  .benefits {
+    font-size: 30px;
+    line-height: 35px;
+    font-family: @font-family-header;
+    font-weight: bold;
+
+    & > p:nth-child(1) {
+      color: #2ec7bc;
+    }
+
+    & > p:nth-child(2) {
+      color: #00adbb;
+    }
+
+    & > p:nth-child(3) {
+      color: #008893;
+    }
+  }
+
+  .app-dna {
+    position: relative;
+    display: block;
+    width: 395px;
+    left: -60px;
+    margin-bottom: -130px;
+
+    @media @sm {
+      left: -115px;
+      margin-bottom: -145px;
+    }
+
+    @media @md {
+      position: absolute;
+      top: 0;
+      left: auto;
+      right: -16px;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .mobile {
+      display: none;
+    }
+  }
+}
+
+.dna__section--3 {
+  background-color: @brand-primary-cream;
+
+  .section-visual {
+    @media @md {
+      height: 900px;
+    }
+  }
+
+  .section-visual-inner {
+    right: 0;
+    width: calc(60.8vw - 178px);
+  }
+
+  .section-content {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  .expand-content__body {
+    @media @sm {
+      max-height: 400px;
+      column-count: 2;
+      column-gap: 16px;
+      column-width: calc(50% - 8px);
+      column-fill: auto;
+    }
+  }
+}
+
+.dna__section--4 {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: @brand-primary;
+  text-align: center;
+
+  @media @md {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .iframe-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56%;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.dna__section--5 {
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  @media @md {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.dna__section--6 {
+  .section-content {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    text-align: center;
+
+    @media @md {
+      padding-top: 0;
+      padding-bottom: 0;
+      text-align: left;
+    }
+  }
+
+  .section-visual {
+    @media @md {
+      height: 480px;
+    }
+
+    @media @xl {
+      height: 60vh;
+    }
+  }
+
+  .section-visual-inner {
+    left: 0;
+  }
+}
+
+.dna__section--7 {
+  padding-top: 80px;
+  background-color: @brand-primary-cream;
+
+  @media @sm {
+    padding-bottom: 80px;
+  }
+
+  @media @md {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.dna__section--8 {
+  .section-visual {
+    @media @xl {
+      height: 66vh;
+    }
+  }
+
+  .section-visual-inner {
+    right: 0;
+  }
+}
+
+.dnatestguide--center {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 25px auto 50px;
+  &.no-margin {
+    margin-bottom: 0;
+  }
+  .dnatestguide--wrapper {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    height: 0;
+    min-height: 405px;
+    padding-bottom: 0;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.image {
+  max-width: 100%;
+}
+
+.imageTransition {
+
+  position: relative;
+
+  .dummyImg {
+    position: relative;
+  }
+
+  img {
+    margin-top: 0;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    //height: 275px;
+    transition: 0.5s all ease;
+    left: 50%;
+    transform: translateX(-50%);
+    @media @md {
+      bottom: 0;
+      left: 0;
+      transform: none;
+    }
+
+    //&:first-child {
+    //  position: relative;
+    //}
+
+    &.active {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+
+  &--recycling {
+    width: 100%;
+    padding-top: 20px;
+
+    @media @md {
+      //height: 440px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+
+      @media @md {
+        max-height: 100%;
+      }
+    }
+  }
+}

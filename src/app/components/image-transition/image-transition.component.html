@@ -1,0 +1,12 @@
+<div class="imageTransition mobile">
+  <img data-src="{{imagesMobile[0]}}" alt="" class="dummyImg">
+  <img data-src="{{img}}" class="lazyload"
+       [class.active]="pos === i" *ngFor="let img of imagesMobile; let i = index;" />
+</div>
+
+<div class="imageTransition desktop">
+  <img data-src="{{images[0]}}" alt="" class="dummyImg">
+  <img data-src="{{img}}" class="lazyload"
+       [class.active]="pos === i" *ngFor="let img of images; let i = index;"
+  >
+</div>

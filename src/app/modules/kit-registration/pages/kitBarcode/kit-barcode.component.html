@@ -1,0 +1,8 @@
+<h5 class="copy copy--large mb-15 mt-40 text-center">Find your barcode number</h5>
+<h5 class="copy copy--tiny mb-15 text-center">{{barcodeText}}</h5>
+<img src="{{barcodeImage}}" class="width-100 pt-30 pb-50" alt="">
+
+<form (ngSubmit)="onBarcodeSubmit()" #barcodeForm="ngForm">
+    <app-form-text class="form__inline__item" name="barcode" placeholder="Barcode" ngModel required></app-form-text>
+    <button class="button button--primary button--large button--fullWidth mt-30 mb-md-90">Continue</button>
+</form>

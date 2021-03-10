@@ -1,0 +1,46 @@
+<div class="new-UI myvitl__planSelector">
+
+  <div class="container container--fluid pt-60">
+
+    <h1 class="heading-2 pt-45 pt-md-60 pb-30 hidden-xs text-center">Choose your plan</h1>
+
+    <div class="myvitl__planSelector__heading">
+      <h1 class="heading-2 mb-30 visible-xs">Choose your plan</h1>
+      <img [appImage]="product.image" [height]="100" [heightLg]="150" />
+    </div>
+
+    <div class="myvitl__planSelector__label">
+      <h2 class="copy copy--medium font-md-24 copy--mediumWeight mb-15">{{product.label}}</h2>
+      <hr class="hr hr--primary hr--left-xs mb-15" />
+      <p class="copy copy--small">{{product.shortDescription}}</p>
+    </div>
+
+  </div>
+
+  <div class="myvitl__sectionDivider visible-xs"></div>
+
+  <div class="container container--small">
+
+    <ul class="myvitl__planSelector__plans">
+      <li class="myvitl__planSelector__plan" *ngFor="let plan of product.plans" [class.myvitl__planSelector__plan--selected]="selectedPlan == plan" (click)="setPlan(plan)">
+        <div class="myvitl__planSelector__plan__name">
+          <div class="myvitl__planSelector__plan__label">{{plan.label}}</div>
+          <div class="myvitl__planSelector__plan__tagline"></div>
+        </div>
+        <div class="myvitl__planSelector__plan__price">
+          <div class="myvitl__planSelector__plan__amount">
+            <span *ngIf="selectedPlan.offerPrice"><del>{{plan.rrp}}</del></span>
+            {{plan.offerPrice ? plan.offerPrice : plan.rrp}}
+            <span *ngIf="selectedPlan.priceLabel">{{plan.priceLabel}}</span>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <div class="p-45 p-md-0 pt-md-30 pb-md-45">
+      <button class="button button--primary button--fullWidth" (click)="addToBasket()">Add to basket</button>
+    </div>
+
+  </div>
+
+</div>

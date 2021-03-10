@@ -1,0 +1,97 @@
+<div class="basket">
+
+  <div *ngIf="cart && cart.count; else noItems">
+
+    <!-- div class="basket__currency" (click)="changeCurrency()">{{getCurrencySymbol()}}</div -->
+
+    <ul class="basket__items">
+
+      <li class="basket__item" *ngFor="let item of cart?.items">
+
+        <div class="basket__item__image">
+          <img [appImage]="item.image" [height]="60" [heightLg]="120" />
+        </div>
+
+        <div class="basket__item__details">
+
+          <div class="basket__item__delete" (click)="deleteItem(item)">×</div>
+
+          <p class="basket__item__title">{{item.label}}</p>
+
+          <div class="basket__item__description">
+            <div class="basket__item__subtitles">
+              <p class="basket__item__subtitle" *ngFor="let subtitle of item.subtitles">{{subtitle}}</p>
+            </div>
+            <div class="basket__item__quantity">
+              <div class="basket__item__control" *ngIf="item.allowQuantityChange">
+                <div class="cursor" (click)="decreaseQuantity(item)">-</div>
+                <div>{{item.quantity}}</div>
+                <div class="cursor" (click)="increaseQuantity(item)">+</div>
+              </div>
+              <div class="basket__item__total">
+                <span class="basket__item__total__rrp" *ngIf="item.rrp > 0"><del>{{item.rrpText}}</del></span>
+                {{item.subtotalText}}
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </li>
+
+    </ul>
+
+    <ul class="basket__totals">
+
+      <li class="basket__total" *ngIf="cart.discount"><span>Promo discount</span><span>{{cart?.discount.discountText}}</span></li>
+
+      <li class="basket__total" *ngIf="cart.credit"><span>{{cart.credit.discountLabel}}</span><span>{{cart?.credit.discountText}}</span></li>
+
+      <li class="basket__total" *ngIf="cart.shippingCost"><span>Postage</span><span>{{cart?.shippingCostText}}</span></li>
+
+      <li class="basket__total basket__total--bold"><span>Total</span><span>{{cart?.totalText}}</span></li>
+
+    </ul>
+
+    <div class="text-left mb-50" *ngIf="!cart.discount">
+      <a class="cursor copy copy--mediumWeight font-14 font-md-16 primaryBorder" (click)="addCoupon()">Have a coupon code?</a>
+    </div>
+
+    <div class="text-left" *ngIf="!user || user.type === 'lead'">
+      <div class="input input--radio input--checkbox mb-40" [class.input--active]="termsAccepted" (click)="termsAccepted = !termsAccepted">
+        <div class="input__holder">
+          <span class="input__tick">✓</span>
+          <input class="input__control" type="radio" name="accept" [(ngModel)]="accept" required />
+        </div>
+        <div class="input__placeholder">
+          <span>I have read and accept the <a href="/terms" target="_blank" (click)="$event.stopPropagation()">Terms of Service</a></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <ng-template #noItems>
+
+    <div *ngIf="!isLoading()">
+
+      <p class="copy font-14 mb-80">There are no items in your basket</p>
+
+      <div class="mb-30">
+        <a class="cursor text-left basket__promo bold copy--small" (click)="addCoupon()">Have a coupon code?</a>
+      </div>
+
+    </div>
+
+    <div *ngIf="isLoading()">
+      <lottie-animation-view [options]="lottieConfig" [width]="100" [height]="100"></lottie-animation-view>
+    </div>
+
+  </ng-template>
+
+  <div *ngIf="cart && cart.count" class="basket__ctas" [class.basket__ctas--disabled]="!termsAccepted">
+    <div class="button button--fullWidth button--primary button--smallHeight" (click)="goToCheckout()">{{getCheckoutCopy()}}</div>
+    <div id="payment-request" #mobilePayment></div>
+  </div>
+
+</div>

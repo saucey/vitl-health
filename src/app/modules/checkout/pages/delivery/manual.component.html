@@ -1,0 +1,41 @@
+<h1>Delivery</h1>
+
+<h2>Please enter your shipping address</h2>
+
+<div class="container container--tiny">
+
+    <form class="form" (ngSubmit)="addAddress()" #addressForm="ngForm">
+
+        <div class="mb-10">
+            <app-form-text name="firstName" placeholder="First name" [invalid]="formErrors.firstName" ngModel required></app-form-text>
+        </div>
+
+        <div class="mb-10">
+            <app-form-text name="lastName" placeholder="Last name" [invalid]="formErrors.lastName" ngModel required></app-form-text>
+        </div>
+
+        <div class="mb-10">
+            <app-form-text name="address" placeholder="Address" [invalid]="formErrors.address" ngModel required></app-form-text>
+        </div>
+
+        <div class="mb-10">
+            <app-form-text name="town" placeholder="Town / City" [invalid]="formErrors.town" ngModel required></app-form-text>
+        </div>
+
+        <div class="mb-10">
+            <app-form-text name="postcode" [placeholder]="country?.zipLabelOverride || 'Postcode'" [invalid]="formErrors.postcode" ngModel required></app-form-text>
+        </div>
+
+        <div class="hidden hiddenProper" [class.show]="country?.countyRequired" [class.mb-10]="country?.countyRequired">
+            <app-form-select name="county" [placeholder]="country?.countyLabelOverride || 'County'" [options]="country?.states" ngModel [required]="country?.countyRequired"></app-form-select>
+        </div>
+
+        <div class="mb-20">
+            <app-form-select name="country" placeholder="Country" [options]="countries" ngModel (ngModelChange)="setCountry($event)" required></app-form-select>
+        </div>
+
+        <button class="button button--primary button--fullWidth">Continue</button>
+
+    </form>
+
+</div>

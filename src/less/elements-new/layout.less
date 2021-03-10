@@ -1,0 +1,31 @@
+.container {
+    max-width: 375px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+
+    @media @sm {
+        max-width: 608px;
+        padding: 0;
+    }
+
+    @media @md {
+        max-width: 960px;
+    }
+
+    @media @lg {
+        max-width: 1124px;
+    }
+
+    &--full-mobile {
+        @media screen and (max-width: @breakpoint-sm) {
+            max-width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+section {
+    position: relative;
+}

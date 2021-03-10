@@ -1,0 +1,281 @@
+<div class="outsourced">
+
+  <div class="personalised">
+
+    <section class="hero hero--beige hero--background personalised-s1">
+      <div class="hero__container personalised-s1--container">
+
+        <div class="personalised-s1--right">
+          <h1 class="heading-1 personalised-s1--heading">Personalised vitamins <span *ngIf="freeTrial || save50">tailor-made for you</span>
+          </h1>
+          <div class="divider"></div>
+          <h3 *ngIf="!freeTrial && !save50" class="copy copy--big personalised-s1--copy">
+            Get your bespoke combination of 4 daily supplements in just a few minutes for
+            <span>{{priceText}}</span> a month
+          </h3>
+
+          <h3 *ngIf="freeTrial" class="copy copy--big personalised-s1--copy">
+            <span>Free 2-week trial</span> worth £12.95!<br/>
+            Get your bespoke combination of 4 daily supplements tailor-made for you in just a few minutes.
+          </h3>
+
+          <h3 *ngIf="save50" class="copy copy--big personalised-s1--copy">
+            <span>Save 50%</span> and get your 1st month <br/> for only £12.47. <br /> <br />
+            Get your bespoke combination of 4 daily supplements tailor-made for you in just a few minutes.
+          </h3>
+
+          <button class="button button--primary personalised-s1--button" (click)="openConsultation()">
+              Take consultation
+          </button>
+          <p *ngIf="!freeTrial" class="copy copy--small">Free delivery</p>
+          <p *ngIf="freeTrial" class="copy copy--small">Free delivery after your first order</p>
+          <p class="copy copy--small">Pause or cancel subscription any time</p>
+        </div>
+
+        <div class="personalised-s1--left">
+          <img src="https://static-prod.vitl.com/images/personalised/personalised-s1.png?width=600" alt="">
+          <div class="white-strip"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="container-fluid personalised-s2">
+      <h2 class="heading-2 personalised-s2--heading-2">How it works</h2>
+      <div class="container pb-100">
+        <div class="personalised-s2--carousel-container">
+          <img src="https://static-prod.vitl.com/images/dna/dna-s5--arrow.png?width=30"
+               class="personalised-s2--arrow"
+               id="personalised-s2--prev-el" alt=""/>
+          <swiper [config]="carouselConfig">
+            <div class="personalised-s2-carousel-slide center-block text-center">
+              <img src="https://static-prod.vitl.com/images/personalised/personalised-s2-1.png?width=105"/>
+              <h3 class="heading-3 personalised-s2--heading-3 pt-70">1. Complete your consultation</h3>
+              <div class="divider"></div>
+              <p class="copy personalised-s2-copy">
+                Answer questions from our experts on your diet and lifestyle to help us get a complete
+                understanding of
+                your wellbeing.
+              </p>
+            </div>
+            <div class="personalised-s2-carousel-slide center-block text-center">
+              <img src="https://static-prod.vitl.com/images/personalised/personalised-s2-2.png?width=92"/>
+              <h3 class="heading-3 personalised-s2--heading-3 text-center pt-70">
+                2. Review your recommendations
+              </h3>
+              <div class="divider"></div>
+              <p class="copy personalised-s2-copy">
+                See which vitamins our expert nutritionists recommend alongside personalised dietary
+                advice to help you live life better.
+              </p>
+            </div>
+            <div class="personalised-s2-carousel-slide center-block text-center">
+              <img src="https://static-prod.vitl.com/images/personalised/personalised-s2-3.png?width=106"/>
+              <h3 class="heading-3 personalised-s2--heading-3 pt-70">
+                3. Order your personalised plan
+              </h3>
+              <div class="divider"></div>
+              <p class="copy personalised-s2-copy">
+                Your personalised daily vitamin strips will be delivered every 28 days in
+                letterbox-friendly packaging, to ensure you never run out. Pause or cancel anytime.
+              </p>
+            </div>
+          </swiper>
+          <img src="https://static-prod.vitl.com/images/dna/dna-s5--arrow.png?width=30"
+               class="personalised-s2--arrow"
+               id="personalised-s2--next-el"
+               alt=""/>
+        </div>
+        <div class="personalised-s2-carousel-slide-dots">
+        </div>
+      </div>
+    </section>
+
+    <!-- Why choose Vitl? -->
+    <section class="container-fluid personalised-s3">
+      <h2 class="heading-2 personalised-s3--heading-2">Why choose Vitl?</h2>
+      <div class="divider"></div>
+      <p class="copy personalised-s3--copy">
+        Designed for you, based on your body’s needs and your personal health goals.
+      </p>
+      <div class="container personalised-s3--carousel-container">
+        <swiper [config]="carousel2Config">
+          <div class="personalised-s3--card">
+            <img src="https://static-prod.vitl.com/images/personalised/personalised-s3-1.png?width=477&compress=1"
+                 alt="">
+          </div>
+          <div class="personalised-s3--card">
+            <img src="https://static-prod.vitl.com/images/personalised/personalised-s3-2.png?width=477&compress=1"
+                 alt="">
+          </div>
+          <div class="personalised-s3--card">
+            <img src="https://static-prod.vitl.com/images/personalised/personalised-s3-3.png?width=477&compress=1"
+                 alt="">
+          </div>
+        </swiper>
+        <div class="personalised-s3--carousel-slide-dots"></div>
+      </div>
+    </section>
+
+    <!-- Quality ingredients -->
+    <section class="container-fluid personalised-s4">
+      <h2 class="heading-2 personalised-s4--heading-2">Quality ingredients</h2>
+      <div class="divider"></div>
+      <p class="copy personalised-s4--copy">
+        We use the most well-researched and bioavailable form of each nutrient to ensure you’re really absorbing
+        all that goodness. And if you’re vegan or vegetarian, we’ll make sure that your vitamins are too.
+      </p>
+
+      <div class="container personalised-s4--flex">
+        <img src="https://static-prod.vitl.com/images/personalised/personalised-s4-1.png?width=500" alt="">
+        <img src="https://static-prod.vitl.com/images/personalised/personalised-s4-2.png?width=430" alt="">
+      </div>
+    </section>
+
+    <!-- Expert approved -->
+    <section class="container-fluid personalised-s5">
+      <h2 class="heading-2 personalised-s5--heading-2">Expert approved</h2>
+      <div class="divider"></div>
+      <p class="copy personalised-s5--copy">
+        We combine the latest in nutritional science alongside your actual dietary and lifestyle data to create
+        the perfect combination of nutrients for your body.
+      </p>
+      <div class="container personalised-s5--flex">
+
+        <div class="personalised-s5--expert">
+          <img src="https://static-prod.vitl.com/images/personalised/personalised-s5-1.png?width=149" alt="">
+          <p class="copy expert-name">Georgie Murphy</p>
+          <p class="copy copy--small">Head of Nutrition</p>
+          <p class="copy copy--small">MSc ANutr</p>
+        </div>
+
+        <div class="personalised-s5--expert">
+          <img src="https://static-prod.vitl.com/images/personalised/personalised-s5-2.png?width=149" alt="">
+          <p class="copy expert-name">Dr Monal Wadhera</p>
+          <p class="copy copy--small">Medical Director</p>
+        </div>
+
+        <div class="personalised-s5--expert">
+          <img src="https://static-prod.vitl.com/images/personalised/personalised-s5-3.png?width=149" alt="">
+          <p class="copy expert-name">Kathryn Fielding</p>
+          <p class="copy copy--small">Nutritional Therapist</p>
+          <p class="copy copy--small">Dip ION mBANT CNHC</p>
+        </div>
+
+        <div class="personalised-s5--expert">
+          <img src="https://static-prod.vitl.com/images/personalised/personalised-s5-4.png?width=149" alt="">
+          <p class="copy expert-name">Alli Godbold</p>
+          <p class="copy copy--small">Nutritional Therapist</p>
+          <p class="copy copy--small">Dip ION mBANT CNHC</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What are people saying about us? -->
+    <section class="container-fluid personalised-s6">
+      <h2 class="heading-2 personalised-s6--heading-2">What are people saying about us?</h2>
+      <div class="divider"></div>
+      <div class="container">
+        <div class="personalised-s6--carousel-container">
+          <img src="https://static-prod.vitl.com/images/dna/dna-s5--arrow.png?width=30"
+               class="personalised-s2--arrow"
+               id="personalised-s6--prev-el" alt=""/>
+          <swiper [config]="carousel3Config">
+            <div class="dna-s4-carousel-slide center-block text-center">
+              <img appImage category="dna" key="dna-s5-trustpilot" [width]="105"
+                   class="dna-s5--trustpilot"/>
+              <div class="personalised-s6-content">
+                <p class="copy personalised-s6-quote">
+                  “After using Vitl I can honestly say that this is the only way. I have wasted so
+                  much
+                  money buying an assortment of multivitamins and supplements when all you need is
+                  this
+                  subscription. And you can really feel the difference.”
+                </p>
+                <div>
+                  <img src="https://static-prod.vitl.com/images/personalised/personalised-s6-1.png?width=68"/>
+                  <p class="copy personalised-s6--name">Dustin C.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="dna-s4-carousel-slide center-block text-center">
+              <img appImage category="dna" key="dna-s5-trustpilot" [width]="105"
+                   class="dna-s5--trustpilot"/>
+              <div class="personalised-s6-content">
+                <p class="copy personalised-s6-quote">
+                  “I started to feel and look better after the first week of taking them. I have now
+                  signed on to the monthly plan and continue feeling great!”
+                </p>
+                <div>
+                  <img src="https://static-prod.vitl.com/images/personalised/personalised-s6-2.png?width=68"/>
+                  <p class="copy personalised-s6--name ">Nicola B.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="dna-s4-carousel-slide center-block text-center">
+              <img appImage category="dna" key="dna-s5-trustpilot" [width]="105"
+                   class="dna-s5--trustpilot"/>
+              <div class="personalised-s6-content">
+                <p class="copy personalised-s6-quote">
+                  “I noticed a huge difference after 2 weeks of my tailored vitamin pack, the quality
+                  is
+                  excellent. Packaging is good, support and advice is all there. Fairly priced and
+                  very
+                  responsive team. Treat someone or yourself!”
+                </p>
+                <div>
+                  <img src="https://static-prod.vitl.com/images/personalised/personalised-s6-3.png?width=68"/>
+                  <p class="copy personalised-s6--name">Rebecca E.</p>
+                </div>
+              </div>
+            </div>
+
+          </swiper>
+          <img src="https://static-prod.vitl.com/images/dna/dna-s5--arrow.png?width=30"
+               class="personalised-s2--arrow"
+               id="personalised-s6--next-el"
+               alt=""/>
+        </div>
+        <div class="personalised-s6--carousel-slide-dots">
+        </div>
+      </div>
+    </section>
+
+    <!-- Feel your best more often -->
+    <section class="container-fluid personalised-s7">
+      <div class="personalised-s7--container">
+        <div class="personalised-s7--right">
+          <h2 class="heading-2 personalised-s7--heading-2 ">Feel your best more often</h2>
+          <div class="divider"></div>
+          <p *ngIf="!freeTrial && !save50" class="copy personalised-s7--copy">
+            Get your very own personalised pack of high-quality supplements for only
+            <span>{{priceText}}</span> today.
+          </p>
+          <p *ngIf="freeTrial" class="copy personalised-s7--copy">
+            Get your <span>free 2-week trial</span> of personalised daily vitamins today and discover what it feels like
+            to be you on a good day, every day.
+          </p>
+
+          <p *ngIf="save50" class="copy personalised-s7--copy">
+            <span>Save 50%</span> today and get your first month for just £12.47 to help you start feeling your best
+            more often.
+          </p>
+
+          <button class="personalised-s7--button" routerLink="/consultation">
+            Take consultation
+          </button>
+        </div>
+
+        <div class="personalised-s7--left">
+          <img src="https://static-prod.vitl.com/images/personalised/personalised-s7.jpg?height=480"
+               class="desktop"/>
+          <img src="https://static-prod.vitl.com/images/personalised/personalised-s7--mobile.jpeg?height=480"
+               class="mobile"/>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>

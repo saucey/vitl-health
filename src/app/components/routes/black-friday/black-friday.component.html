@@ -1,0 +1,79 @@
+<div class="outsourced">
+  <div class="black-friday">
+    <section class="hero hero--top hero--background hero--beige hero--backgroundRight pb-30 pb-md-0">
+      <div class="hero--container">
+        <div class="hero--left">
+          <h1 class="heading-1">
+            Feel fresh this festive season
+          </h1>
+          <h2 class="copy">
+            Get early access to our <span>Black Friday offers</span> and receive a <span>free nutritionist’s guide</span> to surviving silly
+            season with everything from healthy hangover cures to seasonal recipes.
+          </h2>
+          <button class="button button--primary mb-20" (click)="scroll()">Reveal offers</button>
+
+        </div>
+
+
+        <div class="hero--right">
+          <img src="https://static-prod.vitl.com/images/black-friday/black-friday-tablet.png"
+               class="bf-tablet">
+          <img src="https://static-prod.vitl.com/images/black-friday/black-friday-desktop.png"
+               class="bf-desktop">
+
+          <img src="https://static-prod.vitl.com/images/black-friday/hero-mobile.gif"
+               class="bf-gif-mobile">
+          <img src="https://static-prod.vitl.com/images/black-friday/hero-desktop-2.jpg"
+               class="bf-gif-desktop">
+        </div>
+      </div>
+    </section>
+    <section class="bf-section-2">
+      <h1 class="heading-1">
+        Sign up for early access!
+      </h1>
+      <div class="bf-section-2--row">
+        <div class="word-box pink">
+          <p>Vitamins</p>
+        </div>
+        <img src="https://static-prod.vitl.com/images/black-friday/bf-vitamins.gif" alt="" class="visible-desktop">
+        <img src="https://static-prod.vitl.com/images/black-friday/bf-vitamins-mobile.gif" class="visible-mobile">
+      </div>
+
+      <div class="bf-section-2--row">
+        <img src="https://static-prod.vitl.com/images/black-friday/bf-dna.gif" class="visible-desktop">
+        <img src="https://static-prod.vitl.com/images/black-friday/bf-dna-mobile.gif" class="visible-mobile">
+        <div class="word-box green">
+          <p>DNA<br/>Nutrition<br/>Test</p>
+        </div>
+      </div>
+      <h2 class="copy pt-40">
+        It’s not easy to live our healthiest in the lead up to Christmas, <span>but personalised vitamins can help support
+        your body</span> whilst you’re enjoying all the celebrations.
+      </h2>
+      <br/>
+      <h2 class="copy pb-60">
+        A <span>DNA Nutrition Test will help you get ahead of your
+        January health kick</span> so you’ve got all the information you need to help you maximise your health in 2020.
+      </h2>
+    </section>
+
+    <section class="bf-section-3">
+      <h3 class="bf-section-3--heading" id="formHeader">Subscribe with your email</h3>
+      <form class="mb-30" #emailForm="ngForm"  (ngSubmit)="submitForm()">
+        <app-form-text name="email" placeholder="Email address" ngModel email required></app-form-text>
+        <div class="input input--radio input--checkbox mb-20" [class.input--active]="accept" (click)="accept = !accept">
+          <div class="input__holder">
+            <span class="input__tick">✓</span>
+            <input class="input__control" type="radio" name="accept" [(ngModel)]="accept" required/>
+          </div>
+          <div class="input__placeholder">
+            <span class="copy--small">Please tick to confirm that you consent to receiving email marketing communications from Vitl.</span>
+          </div>
+        </div>
+
+        <button class="button button--primary">Reveal offers</button>
+      </form>
+    </section>
+  </div>
+</div>

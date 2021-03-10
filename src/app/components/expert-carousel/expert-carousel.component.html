@@ -1,0 +1,21 @@
+<div class="carousel">
+
+  <swiper [config]="expertCarouselConfig">
+
+    <div class="expert" *ngFor="let e of experts">
+      <div class="expert__image-wrapper mb-30">
+        <img class="expert__image lazyload" data-src="{{ e.image }}" />
+      </div>
+      <div class="expert__details">
+        <p class="copy copy--semiBold mb-10">{{ e.name }}</p>
+        <p class="copy copy--small mb-10">{{ e.title }}</p>
+        <p class="expert__details-field copy copy--small">{{ e.bio }}</p>
+      </div>
+    </div>
+
+  </swiper>
+
+  <div class="expert-carousel__dots-wrap">
+  </div>
+
+</div>

@@ -1,0 +1,17 @@
+<ul class="goals goals--top mt-40 mt-md-60 mb-40 mb-md-60 text-md-center">
+  <li *ngFor="let topGoal of topGoals">
+    <img class="mb-md-10" [appImage]="topGoal.icon" [height]="55" [colorize]="topGoal.color" [truecolor]="true" />
+    <div>
+      <p class="mb-10 mb-md-5"><strong>{{topGoal.label}}</strong></p>
+      <p class="mb-md-25 text--small">{{topGoal.tagline}}</p>
+    </div>
+    <button class="button button--small button--ghost hidden-xs hidden-sm" (click)="viewTopGoal(topGoal)">Find out more</button>
+    <button class="button-arrow hidden-md hidden-lg hidden-xl" (click)="viewTopGoal(topGoal)"></button>
+  </li>
+</ul>
+<div class="text-center">
+  <a class="link link--no-underline text--small" (click)="editTopGoals()">
+    <img class="mr-5" appImage category="icons" key="list" [width]="20" />
+    Change your goals
+  </a>
+</div>

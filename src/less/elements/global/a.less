@@ -1,0 +1,189 @@
+a {
+
+  position: relative;
+  color: @brand-primary-black;
+  text-decoration: none !important;
+  transition: 0.3s all;
+
+  &.white {
+    color: @brand-primary-white !important;
+  }
+
+  &.grey {
+    color: @brand-primary-grey !important;
+  }
+
+  &.active,
+  &:hover {
+    color: @brand-primary-yellow;
+  }
+
+  &.bold {
+
+    color: @brand-primary-black !important;
+    font-family: @font-family-semi-bold;
+    display: inline;
+    padding-bottom: 4px;
+
+    &:after {
+      content: "";
+      background: fade(@brand-primary-black, 75%);
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 2px;
+    }
+
+  }
+
+  &.primaryBorder {
+
+    &:after {
+      content: "";
+      background: fade(@brand-primary-yellow, 75%);
+      position: absolute;
+      top: ~"calc(100% + 4px)";
+      left: 0%;
+      width: 100%;
+      height: 2px;
+    }
+
+  }
+
+  &.highlighted {
+
+    color: @brand-primary-black !important;
+
+    &:after {
+      content: "";
+      background: fade(@brand-primary-yellow, 75%);
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 0%;
+      transition: 0.3s all;
+      height: 2px;
+    }
+
+    &:hover,
+    &.active {
+      &:after {
+        left: 0%;
+        width: 100%;
+      }
+    }
+
+    &.active {
+      &:after {
+        background: @brand-primary-yellow;
+      }
+    }
+
+    &--primary {
+
+      color: @brand-primary-yellow !important;
+
+      &:after {
+        background: fade(@brand-primary-yellow, 75%);
+      }
+
+      &.active {
+        &:after {
+          background: @brand-primary-yellow;
+        }
+      }
+
+    }
+
+    &--white {
+
+      color: @brand-primary-white !important;
+
+      &:after {
+        background: fade(@brand-primary-white, 75%);
+      }
+
+      &.active {
+        &:after {
+          background: @brand-primary-white;
+        }
+      }
+
+    }
+
+    &--grey {
+
+      color: @brand-primary-grey !important;
+
+      &:after {
+        background: fade(@brand-primary-grey, 75%);
+      }
+
+      &.active {
+        &:after {
+          background: @brand-primary-grey;
+        }
+      }
+
+    }
+
+    &--black {
+
+      color: @brand-primary-black !important;
+
+      &:after {
+        background: fade(@brand-primary-black, 75%);
+      }
+
+      &.active {
+        &:after {
+          background: @brand-primary-black;
+        }
+      }
+
+    }
+
+  }
+
+  &.arrow {
+    @media @md {
+      position:relative;
+      font-family: @font-family-medium;
+      font-size: 16px;
+      padding-left: 15px;
+      &:before {
+        content: "";
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        top: 50%;
+        margin-top: -3px;
+        border-top: 2px solid @brand-primary-black;
+        border-right: 2px solid @brand-primary-black;
+        transition: 0.3s border ease;
+      }
+      &--right {
+        padding-left: 0px;
+        padding-right: 15px;
+        &:before {
+          right: 0px;
+          transform: rotate(45deg);
+        }
+      }
+      &--left {
+        &:before {
+          left: 0px;
+          transform: rotate(-135deg);
+        }
+      }
+      &:hover {
+        &:before {
+          border-top: 2px solid @brand-primary-yellow;
+          border-right: 2px solid @brand-primary-yellow;
+        }
+      }
+    }
+  }
+
+}

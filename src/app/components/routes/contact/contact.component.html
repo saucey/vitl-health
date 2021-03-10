@@ -1,0 +1,82 @@
+<div class="new-UI page--contact">
+
+  <section class="pt-55">
+    <div class="container pt-55 pt-sm-75 pb-55 pb-sm-75 text-center">
+      <h1 class="heading-1">How can we help?</h1>
+      <div class="divider"></div>
+      <div class="row">
+        <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+          <p>
+            Our Frequently Asked Questions are the quickest way to get help, but if you can't find what you're looking for then drop us a line and someone in the team will be on hand to help. <br><br>
+            You can get hold of the VITL team Monday to Friday from 9.00am to 5.30pm  or visit our <a class="link" href="https://intercom.help/vitl/en" target="_blank">Help Centre</a> for more information.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="background--cream">
+    <div class="container pt-55 pt-sm-75 pb-55 pb-sm-75">
+      <div class="row">
+        <div class="col-xs-12 col-lg-10 col-lg-offset-1">
+
+          <h2 class="heading-2">FAQs</h2>
+          <div class="divider"></div>
+
+          <ul class="tab-navigation mb-25">
+            <li *ngFor="let category of faqCategories; let i = index">
+              <a [class.is-active]="selectedFAQCategory === category" (click)="toggleTab(category)">{{category}}</a>
+            </li>
+          </ul>
+
+          <div *ngFor="let faq of faqs[selectedFAQCategory]; let i = index"
+            class="expand-content expand-content--pill"
+            [class.is-active]="activeExpandItem === i">
+            <div class="expand-content__header" (click)="toggleExpand(i)">
+              <h3>{{faq.question}}</h3>
+            </div>
+            <div class="expand-content__body" [innerHtml]="faq.answer | nl2br"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container pt-55 pt-sm-75 pb-55 pb-sm-75 text-center text-md-left">
+      <div class="row">
+        <div class="col-xs-12 col-md-10 col-md-offset-1">
+          <h2 class="heading-2">Contact us</h2>
+          <div class="divider mb-55"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-3 col-md-offset-1 mb-45">
+          <a class="link" href="mailto:info@vitl.com">info@vitl.com</a>
+          <p class="mt-5">Email us with your query</p>
+        </div>
+
+        <div class="col-xs-12 col-md-3 col-md-offset-1 mb-45">
+          <a class="link" href="tel:4402034880747">+44 (0) 20 3488 0747</a>
+          <p class="mt-5">Phone to ask us anything at all</p>
+        </div>
+
+        <div class="col-xs-12 col-md-2 col-md-offset-1 mb-45">
+          <a class="mr-10" href="https://www.facebook.com/vitlhealth" target="_blank">
+            <img width="20" src="https://static.vitl.com/images/icons/icon-social-facebook.svg" />
+          </a>
+          <a class="mr-10" href="http://twitter.com/VITLhealth" target="_blank">
+            <img width="20" src="https://static.vitl.com/images/icons/icon-social-twitter.svg" />
+          </a>
+          <a class="mr-10" href="http://instagram.com/vitlhealth" target="_blank">
+            <img width="20" src="https://static.vitl.com/images/icons/icon-social-instagram.svg" />
+          </a>
+          <p class="mt-5">@VitlHealth</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>

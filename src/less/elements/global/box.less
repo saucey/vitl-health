@@ -1,0 +1,45 @@
+.box {
+
+  background: @brand-primary-input-cream;
+  min-height: 75px;
+
+  &--bordered {
+
+    border: 1px solid @brand-primary-black;
+
+  }
+
+  &--white {
+
+    background: @brand-primary-white;
+
+    @media @md {
+      &-md {
+        background: @brand-primary-white;
+      }
+    }
+
+  }
+
+  &--flex {
+
+    display: flex;
+    padding: 0px 30px;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @media @md {
+      flex-direction: row;
+    }
+
+  }
+
+  &__item {
+
+    min-height: 70px;
+    line-height: 70px;
+
+  }
+
+}

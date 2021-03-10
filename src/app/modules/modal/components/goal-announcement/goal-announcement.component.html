@@ -1,0 +1,10 @@
+<ul class="myvitl__goals myvitl__goals--borderless myvitl__goals--shadowless myvitl__goals--center mb-15">
+  <li class="myvitl__goalPreview myvitl__goalPreview--tinyHeight" *ngFor="let goal of data.goals" [style.outline-color]="goal.color">
+    <div class="myvitl__goalPreview__icon">
+      <img [appImage]="goal.icon" [height]="40" [colorize]="goal.color" />
+    </div>
+    <div class="myvitl__goalPreview__label">
+      <div class="myvitl__goalPreview__name myvitl__goalPreview__name--small">{{goal.label}}</div>
+    </div>
+  </li>
+</ul>

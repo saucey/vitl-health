@@ -1,0 +1,15 @@
+<div class="myvitl__content__block__dnaTraitMarker">
+
+  <div class="ranges">
+    <div class="range" [appGradientBars]="block.results.bar_colors">
+      <div class="marker_track">
+        <div class="marker" [style.left]="(block.results.value * 100) + '%'"></div>
+      </div>
+    </div>
+    <div class="labels">
+      <span [appStyle]="{ font_size: block.style?.font_size }">{{block.results.start_label}}</span>
+      <span [appStyle]="{ font_size: block.style?.font_size }">{{block.results.end_label}}</span>
+    </div>
+  </div>
+
+</div>

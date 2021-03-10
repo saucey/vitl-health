@@ -1,0 +1,41 @@
+<div class="pt-30 pb-60">
+
+    <div class="container container--tiny text-center">
+
+        <h1 class="copy copy--large">Create account</h1>
+
+        <p class="copy copy--tiny pb-25 pt-25">For the person <span class="copy--semiBold">taking</span> the test</p>
+
+        <form class="mb-30"  (ngSubmit)="register()" #registerForm="ngForm">
+
+            <div class="mb-30">
+                <app-form-text name="firstName" placeholder="First name" ngModel required></app-form-text>
+            </div>
+            <div class="mb-30">
+                <app-form-text name="email" placeholder="Email address" ngModel email required></app-form-text>
+            </div>
+            <div class="mb-15">
+                <app-form-password name="password" placeholder="Password" ngModel password required></app-form-password>
+            </div>
+
+            <div class="input input--radio input--checkbox mb-20" [class.input--active]="accept" (click)="accept = !accept">
+                <div class="input__holder">
+                    <span class="input__tick">✓</span>
+                    <input class="input__control" type="radio" name="accept" [(ngModel)]="accept" required />
+                </div>
+                <div class="input__placeholder">
+                    <span>I have read and accept the <a href="/terms" target="_blank" (click)="$event.stopPropagation()">Terms of Service</a></span>
+                </div>
+            </div>
+
+            <button class="button button--primary button--fullWidth">Continue</button>
+        </form>
+
+        <hr class="hr mt-40" />
+
+        <h2 class="copy copy--large copy--mediumWeight pt-30 pb-25">Already have an account?</h2>
+        <a class="button button--fullWidth button--blackBorder mb-30" routerLink="/kit/account/login">Login here</a>
+
+    </div>
+
+</div>

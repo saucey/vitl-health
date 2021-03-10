@@ -1,0 +1,20 @@
+<div class="kit-registration--account">
+    <div class="user--details text-center mt-30">
+        <p class="copy copy--tiny pt-20">Signed in as:</p>
+        <h3 class="copy copy--mediumWeight pt-20 userName">{{name}}</h3>
+        <p class="copy copy--tiny pt-5">({{email}})</p>
+        <p class="copy copy--tiny pt-10 pb-25 signout">Not you? <a routerLink="/kit/account" (click)="this.onSomeoneElseButtonPress()">Sign out</a></p>
+    </div>
+
+    <div>
+        <h2 class="copy copy--large text-center pt-40 pb-30">Who will be taking the test?</h2>
+        <div class="mb-15 form__inline-md">
+            <div class="form__inline__item text-center">
+                <div (click)="onMeButtonPress()" class="button button button--blackBorder mb-30 mb-md-0">Me ({{name}})</div>
+            </div>
+            <div class="form__inline__item text-center">
+                <div class="button button button--blackBorder" (click)="onSomeoneElseButtonPress()">Someone else</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,245 @@
+<!-- hero section -->
+
+<div class="new-UI">
+  <section class="hero hero--product background--cream">
+    <div class="container">
+      <div class="row">
+        <div class=" hero--product__wrapper col-xs-12 col-md-4 col-md-offset-1">
+          <div class="hero__content mt-md-75 mb-md-75">
+            <div class="hero__content__inner">
+              <h1 class="heading-2">{{ product.label }}</h1>
+              <div class="divider"></div>
+              <p *ngIf="product.longDescription" class="mb-25 mb-sm-45">{{ product.longDescription }}</p>
+              <app-plan-selector [product]="product"></app-plan-selector>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <div class="hero__visual">
+            <img class="hero__visual__bg hidden-xs hidden-sm"
+              src="https://static-prod.vitl.com/images/personalised/personalised-s1--bg.png?compress=1" />
+            <img class="hero__visual__product" srcset="
+                {{product.image.url}}?compress=1 2x,
+                {{product.image.url}}?width=450&compress=1 1x" src="{{product.image.url}}?compress=1"
+              alt="{{product.label}}" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<div class="outsourced">
+
+  <!-- section 2 -->
+  <section class="container-fluid section-2-fluid">
+    <div class="container section-2">
+      <div class="row">
+        <div class="row__col-12 row__col-md-6 xs-text-center">
+
+          <h2 class="h2">{{product.webBlockOneTitle}}</h2>
+
+          <div class="divider divider--left divider--mb30"></div>
+
+          <p class="p p--mb25" [innerHtml]="product.webBlockOneDescription | nl2br"></p>
+
+        </div>
+        <div class="row__col-12 row__col-md-6 vertical-center-flex">
+
+          <ul class="list list--grid list--grid--column list--grid--row-sm pl-50 pr-50">
+
+            <li class="list__item" *ngFor="let benefit of product.benefits">
+              <figure class="icon icon--bordered">
+                <div class="icon__caption icon__caption--bottom">
+                  <span>{{benefit.label}}</span>
+                </div>
+                <div class="icon__image">
+                  <img [appImage]="benefit.image" [width]="45" />
+                </div>
+              </figure>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- section 3 -->
+  <section class="container-fluid section-3-fluid" *ngIf="product.pills.length > 1">
+    <div class="container-fluid section-3">
+
+      <div class="section-3-copy-wrap">
+        <h2 class="h2">{{product.webBlockTwoTitle}}</h2>
+        <div class="divider divider--black divider--mb30"></div>
+        <p class="p" [innerHtml]="product.webBlockTwoDescription | nl2br"></p>
+      </div>
+
+      <div class="accordion1">
+
+        <div class="accordion1__item" *ngFor="let pill of product.pills; let i = index"
+          [class.is-active]="stripAccordionIndex == i" (click)="stripAccordionIndex = i">
+          <img [appImage]="pill.icon" [width]="140" class="accordion1__img" />
+          <p class="accordion1__heading">{{pill.label}}</p>
+          <img src="https://static.vitl.com/assets/images/accordion1-arr.png" class="accordion1__arrow">
+          <div class="accordion1__copy">
+            <span class="accordion1__divider"></span>
+            <p class="accordion1__p1">{{pill.description}}</p>
+            <p class="accordion1__p1 accordion1__p1--regular">{{pill.longDescription}}</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="container-fluid section-3-fluid pt-95 pb-110" *ngIf="product.pills.length === 1">
+    <div class="container section-2">
+      <div class="row">
+        <div class="row__col-12 row__col-md-6 xs-text-center">
+
+          <h2 class="h2">{{product.webBlockTwoTitle}}</h2>
+
+          <div class="divider divider--black divider--mb30"></div>
+
+          <p class="p" [innerHtml]="product.webBlockTwoDescription | nl2br"></p>
+
+        </div>
+        <div class="row__col-12 row__col-md-6 vertical-center-flex">
+          <div class="is-active text-center" *ngFor="let pill of product.pills">
+            <img [appImage]="pill.icon" [width]="140" class="center-block" />
+            <p class="copy copy--semiBold copy--large text-center">{{pill.label}}</p>
+            <div class="copy">
+              <span class="accordion1__divider"></span>
+              <p class="copy--small copy--semiBold">{{pill.description}}</p>
+              <p class="copy--small">{{pill.longDescription}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- section 4 -->
+  <section class="container-fluid section-4-fluid">
+    <div class="container section-4">
+      <div class="row">
+        <div class="row__col-12 row__col-md-6 vertical-center-flex">
+          <img class="section-4-img1" srcset="
+                {{product.webBlockThreeImage.url}}?compress=1 2x,
+                {{product.webBlockThreeImage.url}}?width=640&compress=1 1x"
+            src="{{product.webBlockThreeImage.url}}?compress=1" alt="" />
+        </div>
+        <div class="row__col-12 row__col-md-6 vertical-center-flex">
+          <div class="max-width-495-wrap">
+            <h2 class="h2">{{product.webBlockThreeTitle}}</h2>
+
+            <div class="divider divider--mb40"></div>
+
+            <p class="p p--mb25" [innerHtml]="product.webBlockThreeDescription | nl2br"></p>
+
+            <div class="accordion2">
+              <div class="accordion2__item" [class.is-active]="qualityAccordionIndex === 0"
+                (click)="qualityAccordionIndex = 0">
+                <div class="accordion2__inner">
+                  <p class="accordion2__p">{{product.webBlockThreeNoNastiesTitle}}</p>
+                  <img src="https://static.vitl.com/assets/images/accordion2-arr.png" class="accordion2__arr">
+                </div>
+                <div class="accordion2__copy">
+                  <p class="accordion2__copy-p">{{product.webBlockThreeNoNastiesDescription}}</p>
+                </div>
+              </div>
+
+              <div class="accordion2__item" [class.is-active]="qualityAccordionIndex === 1"
+                (click)="qualityAccordionIndex = 1">
+                <div class="accordion2__inner">
+                  <p class="accordion2__p">{{product.webBlockThreeDirectionsTitle}}</p>
+                  <img src="https://static.vitl.com/assets/images/accordion2-arr.png" class="accordion2__arr">
+                </div>
+                <div class="accordion2__copy">
+                  <p class="accordion2__copy-p">{{product.webBlockThreeDirectionsDescription}}</p>
+                </div>
+              </div>
+
+              <div class="accordion2__item" [class.is-active]="qualityAccordionIndex === 2"
+                (click)="qualityAccordionIndex = 2">
+                <div class="accordion2__inner">
+                  <p class="accordion2__p">{{product.webBlockThreeMaximumEfficacyTitle}}</p>
+                  <img src="https://static.vitl.com/assets/images/accordion2-arr.png" class="accordion2__arr">
+                </div>
+                <div class="accordion2__copy">
+                  <p class="accordion2__copy-p">{{product.webBlockThreeMaximumEfficacyDescription}}</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- section 5 -->
+  <section class="container-fluid section-5-fluid">
+    <div class="max-width-790-wrap">
+
+      <h2 class="h2">{{product.webBlockFourTitle}}</h2>
+
+      <div class="divider divider--mb40"></div>
+
+      <div class="accordion3">
+
+        <div class="accordion3__item" *ngFor="let pill of product.pills; let i = index"
+          [class.is-active]="pillAccordionIndex === i || (i ===  0 && product.pills.length == 1)"
+          (click)="pillAccordionIndex = i">
+          <div class="accordion3__inner">
+            <img [appImage]="pill.icon" [width]="90" class="accordion3__img">
+            <p class="accordion3__p">{{pill.label}}</p>
+            <img src="https://static.vitl.com/assets/images/accordion2-arr.png" class="accordion3__arr"
+              *ngIf="product.pills.length > 1">
+          </div>
+          <div class="accordion3__copy pt-30">
+            <p class="accordion3__copy-p mb-20">{{pill.longDescription}}</p>
+
+            <table class="table mb-30">
+              <tr class="table__row">
+                <td class="table__column table__column--halfWidth"></td>
+                <td class="table__column table__column--quarterWidth text-right">{{pill.per}}</td>
+                <td class="table__column table__column--quarterWidth text-right">% NRV</td>
+              </tr>
+              <tr class="table__row" [class.table__row--heading]="ingredient.type === 'heading'"
+                *ngFor="let ingredient of pill.ingredients">
+                <td class="table__column table__column--halfWidth">{{ingredient.name}}</td>
+                <td class="table__column table__column--quarterWidth text-right"
+                  *ngIf="ingredient.type === 'ingredient'">{{ingredient.quantity}}</td>
+                <td class="table__column table__column--quarterWidth text-right"
+                  *ngIf="ingredient.type === 'ingredient'">
+                  {{ingredient.rda > 0 ? ingredient.rda : ingredient.rda === '0' ? '' : '†'}}
+                </td>
+              </tr>
+            </table>
+
+            <p class="accordion3__copy-p mb-30">† NRV not established</p>
+
+            <p class="accordion3__copy-p">{{pill.ingredientsList}}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- section 6 -->
+  <section class="container-fluid section-6-fluid" *ngIf="showPopular">
+    <div class="section-6">
+      <h2 class="h2">Other customers also bought</h2>
+      <div class="divider divider--mb40"></div>
+
+      <app-products-carousel type="popular" [exclude]="product.id"></app-products-carousel>
+
+    </div>
+  </section>
+
+</div>

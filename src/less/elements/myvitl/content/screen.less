@@ -1,0 +1,27 @@
+&__screen {
+
+  background: none;
+  width: 100%;
+  word-break: break-word;
+  padding-top: 30px;
+  padding-bottom: 60px;
+
+  @media @md {
+    width: 768px;
+    margin: 0 auto;
+    padding-top: 0;
+  }
+
+  @media @lg {
+
+  }
+
+  > app-content-section {
+    &:last-child {
+      .myvitl__content__section {
+        border-bottom: 0px;
+      }
+    }
+  }
+
+}

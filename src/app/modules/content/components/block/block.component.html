@@ -1,0 +1,31 @@
+<div class="myvitl__content__block" [appStyle]="block.style" [appAction]="block.action">
+
+  <app-block-type-title *ngIf="block.type === 'title'" [block]="block"></app-block-type-title>
+
+  <app-block-type-header *ngIf="block.type === 'header'" [block]="block"></app-block-type-header>
+
+  <app-block-type-text *ngIf="block.type === 'text'" [block]="block"></app-block-type-text>
+
+  <app-block-type-image *ngIf="block.type === 'image'" [block]="block"></app-block-type-image>
+
+  <app-block-type-html *ngIf="block.type === 'html'" [block]="block"></app-block-type-html>
+
+  <app-block-type-spacer *ngIf="block.type === 'spacer'" [block]="block"></app-block-type-spacer>
+
+  <app-block-type-hr *ngIf="block.type === 'horizontalRule'" [block]="block"></app-block-type-hr>
+
+  <app-block-type-buttons *ngIf="block.type === 'buttons'" [block]="block"></app-block-type-buttons>
+
+  <app-block-type-image-slider *ngIf="block.type === 'imageSlider'" [block]="block"></app-block-type-image-slider>
+
+  <app-block-type-item-list *ngIf="block.type === 'itemList'" [block]="block"></app-block-type-item-list>
+
+  <app-block-type-icon-grid *ngIf="block.type === 'iconGrid'" [block]="block"></app-block-type-icon-grid>
+
+  <app-block-type-carousel *ngIf="block.type === 'carousel'" [block]="block"></app-block-type-carousel>
+
+  <app-block-type-biomarker-results *ngIf="block.type === 'biomarkerResults'" [block]="block"></app-block-type-biomarker-results>
+
+  <app-block-type-dna-trait-marker *ngIf="block.type === 'dnaTraitMarker'" [block]="block"></app-block-type-dna-trait-marker>
+
+</div>

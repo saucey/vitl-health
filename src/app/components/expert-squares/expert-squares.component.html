@@ -1,0 +1,13 @@
+<div class="expert-squares__wrapper">
+  <div class="expert-square" *ngFor="let e of experts; let i = index" [ngClass]="">
+    <img src="{{ e.image }}" alt="">
+    <div class="expert-square__overlay" *ngIf="e.name">
+      <div class="expert__details">
+        <div class="vertically-centered">
+          <p class="name">{{e.name}}</p>
+          <p class="position">{{e.position}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+@brand-primary:         #FFD326;
+@brand-cream:           #FEF6DC;
+@brand-cream-light:     #FFFBED;
+@brand-violet:          #4C384A;
+@brand-blue:            #06ADBB;
+@brand-teal:            #87D1C1;
+@brand-teal-light:      #ECF8F4;
+@brand-danger:          #E36480;
+@brand-primary-lightest:#FFFEF8;
+@brand-gray:            #333333;
+@brand-gray-light:      #79776B;
+@brand-gray-lighter:    #AEAA9A;
+@brand-gray-lightest:   #F9F8F4;
+@brand-success:         #46BC8F;
+
+@font-size-normal:      18px;
+@font-size-small:       16px;
+@font-size-xsmall:      14px;
+
+@border-radius-base:    3px;
+
+@custom-easing:         cubic-bezier(0.250, 0.460, 0.450, 0.940);
+
+
+
+.arrowPlaceholder {
+
+    &:before {
+      content: '';
+      position: absolute;
+      right: 0;
+      width: 25px;
+      height: 25px;
+      border-radius: 25px;
+      border: 2px solid @brand-gray-light;
+    }
+  
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      padding: 3px;
+      border: solid @brand-gray-light;
+      border-width: 0 2px 2px 0;
+      transform: translateY(calc(-50% - 1px)) rotate(-45deg);
+      transform-origin: 66.66% 66.66%;
+      transition: transform .3s @custom-easing;
+    }
+  }

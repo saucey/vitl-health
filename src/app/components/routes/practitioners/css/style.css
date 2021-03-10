@@ -1,0 +1,1060 @@
+/* display*/
+
+.no {
+  display: none;
+}
+
+.no-image {
+  display: none;
+}
+
+.yes-768 {
+  display: none;
+}
+
+.si-565 {
+  display: none;
+}
+
+.yes-360 {
+  display: none;
+}
+
+
+/* button */
+
+.vitl-btn {
+  background-color: #FFD326;
+  color: #333333;
+  border: none;
+  font-family: SofiaProSemiBold, SofiaProMedium, SofiaPro, Helvertica, Arial, Sans-Serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 25px;
+  padding: 0px 30px;
+  box-sizing: border-box;
+  width: 200px;
+  height: 50px;
+}
+
+/* image*/
+.header-image {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+}
+
+.footer-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* align */
+
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+/* position */
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+/* space */
+
+.space-10 {
+  height: 10px;
+}
+
+.space-20 {
+  height: 20px;
+}
+
+.space-40 {
+  height: 40px;
+}
+
+/* mods */
+
+.modPadding1 {
+  padding: 0 0 167px;
+}
+
+.modPadding2 {
+  padding: 0 0 49px;
+}
+
+.modPadding4 {
+  padding: 26px 0px 0px;
+}
+
+.modimg {
+  vertical-align: bottom;
+}
+
+.modimage-size {
+  width: 110px;
+  height: 90px;
+}
+
+.modimage-size2 {
+  width: 80px;
+  height: 90px;
+}
+
+.modUnderline {
+  font-family: SofiaProSemiBold, SofiaProMedium, SofiaPro, Helvertica, Arial, Sans-Serif;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 600;
+  text-decoration: underline;
+  color: #333333;
+  cursor: pointer;
+}
+
+.modUnderline:hover {
+  text-decoration: none;
+  color: #333333;
+}
+
+.modUnderline:focus {
+  text-decoration: none;
+  color: #333333;
+}
+
+.modInline {
+  display: inline-block;
+}
+
+/**class P4741**/
+
+.no-padding {
+  padding: 0px;
+}
+
+.textBox {
+  position: absolute;
+  width: 365px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20%;
+}
+
+.title-textBox {
+  font-family: Hurme, SofiaProBold, Helvetica, Arial, Sans-Serif;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  font-weight: 600;
+  padding: 0px;
+}
+
+.black-line {
+  margin: 0 auto;
+  width: 146px;
+  padding: 25px 0px 0;
+  border-bottom: 2px #000 solid;
+}
+
+.summary-textBox {
+  font-family: SofiaPro, Helvetica, Arial, Sans-Serif;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  font-weight: 300;
+  padding: 23px 10px 29px 10px;
+}
+
+.title-work {
+  font-family: Hurme, SofiaProBold, Helvetica, Arial, Sans-Serif;
+  font-size: 34px;
+  line-height: 42px;
+  text-align: center;
+  padding: 100px 0 0 0;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.title-item {
+  font-family: SofiaProBold, SofiaProMedium, SofiaPro, Helvetica, Arial, Sans-Serif;
+  font-size: 22px;
+  line-height: 30px;
+  text-align: center;
+  font-weight: 600;
+  padding: 67px 0px 0px;
+}
+
+.yellow-line2 {
+  margin: 0 auto;
+  width: 70px;
+  padding: 19.5px 0 0;
+  border-bottom: 2px #FFD326 solid;
+}
+
+.container-howithelps {
+  text-align: center;
+}
+
+.container-products {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1280px;
+  background-image: url(https://static.vitl.com/images/practitioners/products.jpg);
+  -webkit-background-size: cover;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: right center;
+  height: 720px;
+  text-align: left;
+}
+
+.container-products .product {
+  width: 100%;
+  position: absolute;
+}
+
+.container-products .product.personalized {
+  top: 130px;
+  left: 10%;
+}
+
+.container-products .product.personalized hr {
+  width: 51%;
+  margin: 0;
+}
+
+.container-products .product.bloodtest {
+  top: 350px;
+  left: 10%;
+}
+
+.container-products .product.bloodtest hr {
+  width: 33%;
+  margin: 0;
+}
+
+.container-products .product.dna {
+  top: 520px;
+  left: 10%;
+}
+
+.container-products .product.dna hr {
+  width: 62%;
+  margin: 0;
+}
+
+.container-products .product hr {
+  border: solid #FFD326;
+  border-width: 2px 0 0 0;
+  position: relative;
+  height: 6px;
+  overflow: visible;
+}
+
+.container-products .product hr:after {
+  content: ' ';
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  right: 0;
+  top: -100%;
+  background: #FFD326;
+  display: block;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  z-index: 999;
+}
+
+@media (max-width: 1200px) {
+  .container-products .product.personalized {
+    top: 100px;
+    left: 10%;
+  }
+
+  .container-products .product.bloodtest {
+    top: 320px;
+    left: 10%;
+  }
+
+  .container-products .product.dna {
+    top: 490px;
+    left: 10%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .container-products .product.personalized {
+    top: 80px;
+    left: 10%;
+  }
+
+  .container-products .product.bloodtest {
+    top: 300px;
+    left: 10%;
+  }
+
+  .container-products .product.dna {
+    top: 470px;
+    left: 10%;
+  }
+}
+
+.container-products .product h3 {
+  font-family: SofiaProBold, SofiaProMedium, SofiaPro, Helvetica, Arial, Sans-Serif;
+  font-size: 22px;
+  line-height: 36px;
+  text-align: left;
+  margin-bottom: 6px;
+}
+
+.container-products .product p {
+  font-family: SofiaPro, Helvetica, Arial, Sans-Serif;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: left;
+  max-width: 325px;
+}
+
+.item-howitworks {
+  display: inline-block;
+  margin: 0 auto;
+  width: 20%;
+  vertical-align: top;
+}
+
+.summary-item {
+  font-family: SofiaPro, Helvetica, Arial, Sans-Serif;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  font-weight: 300;
+  padding: 15px 0 0 0;
+  margin: 0 auto;
+  max-width: 196px;
+}
+
+.light-yellow {
+  background-color: #FEF6DC;
+}
+
+.faqs {
+  padding: 0px;
+  padding-top: 81px;
+  padding-bottom: 30px;
+}
+
+.questions {
+  font-family: Hurme, SofiaProBold, Helvetica, Arial, Sans-Serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 42px;
+  padding: 0px;
+}
+
+.yellow-line3 {
+  margin: 0 auto;
+  width: 70px;
+  padding: 0px;
+  padding-top: 29px;
+  border-bottom: 2px #FFD326 solid;
+}
+
+.contact {
+  font-family: SofiaPro, Helvetica, Arial, Sans-Serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+  padding: 0px;
+  padding-top: 25px;
+  padding-bottom: 68px;
+}
+
+.white-paragraph {
+  background-color: white;
+  padding: 0px;
+  padding-top: 39px;
+  padding-left: 66px;
+}
+
+.white-paragraph2 {
+  background-color: white;
+  padding: 0px;
+  margin-bottom: 11px;
+}
+
+.no-margin {
+  margin-bottom: 0px;
+}
+
+.questions2 {
+  font-family: SofiaProSemiBold, SofiaProMedium, SofiaPro, Helvertica, Arial, Sans-Serif;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 600;
+  padding: 0px;
+  padding-bottom: 32px;
+}
+
+.box-plus {
+  padding: 0px;
+  padding-top: 35px;
+}
+
+.plus {
+  font-size: 30px;
+  text-decoration: none;
+  color: #333333;
+  transform: translate(100%, 0);
+  margin-top: 5px;
+  margin-right: 0px;
+}
+
+.plus:hover {
+  text-decoration: none;
+  color: #333333;
+}
+
+.plus:focus {
+  text-decoration: none;
+  color: #333333;
+}
+
+.plus:before {
+  content: "-";
+  font-weight: 300;
+  font-family: SofiaPro, Helvetica, Arial, Sans-Serif;
+}
+
+.plus.collapsed:before {
+  content: "+";
+  font-weight: 300;
+  font-family: SofiaPro, Helvetica, Arial, Sans-Serif;
+}
+
+.answer-box {
+  font-family: SofiaPro, Helvetica, Arial, Sans-Serif;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 300;
+  padding: 0px;
+  padding-bottom: 19px;
+  padding-left: 52px;
+}
+
+.refer-box {
+  font-family: SofiaPro, Helvetica, Arial, Sans-Serif;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 300;
+  padding: 0px;
+  padding-top: 155px;
+}
+
+.left-15-percent-nomobile {
+  left: 15%;
+}
+
+.what-you-get {
+  /*padding-top: 100px;*/
+  padding-bottom: 100px;
+}
+
+.title-what-you-get {
+  font-family: Hurme, SofiaProBold, Helvetica, Arial, Sans-Serif;
+  font-size: 34px;
+  line-height: 42px;
+  text-align: center;
+  padding: 100px 0 90px 0;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.container-howitworks {
+  text-align: center;
+}
+
+.item-whatyouget {
+  width: 25%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.item-whatyouget img {
+  max-width: 88px;
+  width: 100%;
+}
+
+/*MEDIAQUERIES*/
+
+@media (min-width: 1281px) {
+  .text-right-min1280 {
+    text-align: right;
+  }
+}
+
+@media (max-width: 1280px) {
+  .no-1280 {
+    display: none;
+  }
+
+  .yes-1280 {
+    display: block;
+  }
+}
+
+.custom-hidden {
+  display: none;
+}
+
+.only-480 {
+  display: none !important;
+}
+
+.lets-help {
+  height: 400px;
+  background: url(https://static.vitl.com/images/practitioners/banner-desktop-big.jpg) no-repeat center top #FBD028;
+  position: relative;
+  background-size: cover;
+}
+
+.lets-help .content {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(20%, -50%);
+}
+
+.lets-help .content h2 {
+  font-family: Hurme, SofiaProBold, Helvetica, Arial, Sans-Serif;
+  font-size: 28px;
+  line-height: 36px;
+  text-align: left;
+  max-width: 376px;
+  padding-bottom: 25px;
+}
+
+.vitl-btn {
+  display: inline-block;
+  padding-top: 10px;
+  box-sizing: border-box;
+}
+
+.vitl-btn:hover, .vitl-btn:focus, .vitl-btn:visited {
+  text-decoration: none;
+  color: #333333;
+}
+
+.lets-help .content .btn-letshelp {
+  background: #fff;
+  font-family: SofiaPro, Helvetica, Arial, Sans-Serif;
+  width: auto;
+  font-size: 22px;
+  line-height: 25px;
+  height: 50px;
+  display: inline-block;
+  padding-top: 10px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1280px) {
+  .lets-help {
+    background: url(https://static.vitl.com/images/practitioners/banner-desktop.jpg) no-repeat center top #FBD028;
+  }
+}
+
+@media (max-width: 1023px) {
+  .show-less-1024 {
+    display: block !important;
+  }
+
+  .hide-less-1024 {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .textBox {
+    left: 10%;
+  }
+
+  .refer-box {
+    padding-top: 50px;
+  }
+
+  .light-yellow-mobile {
+    background: #FEF6DC;
+  }
+
+  .left-15-percent-nomobile {
+    left: 0;
+  }
+
+  .title-item {
+    font-size: 20px;
+  }
+
+  .container-howithelps {
+    padding: 0;
+  }
+
+  .item-howitworks {
+    width: 30%;
+    overflow: hidden;
+  }
+
+  .summary-item {
+    box-sizing: border-box;
+    width: auto;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 991px) {
+  .title-work {
+    padding-top: 86px;
+    padding-bottom: 68px;
+  }
+
+  .title-what-you-get {
+    padding-top: 86px;
+    padding-bottom: 68px;
+  }
+
+  .title-item {
+    padding-top: 20px;
+  }
+
+  .summary-item {
+    padding-top: 20px;
+    padding-bottom: 45px;
+  }
+
+  .modPadding1 {
+    padding-bottom: 0px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .lets-help {
+    height: 660px;
+    background: url(https://static.vitl.com/images/practitioners/banner-tablet.jpg) no-repeat center center #FBD028;
+    position: relative;
+    background-size: cover;
+  }
+
+  .lets-help .content {
+    padding-top: 80px;
+    position: static;
+    margin: 0 auto;
+    text-align: center;
+    transform: none;
+  }
+
+  .lets-help .content h2 {
+    font-size: 33px;
+    line-height: 46px;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 400px;
+  }
+
+  .item-whatyouget {
+    display: block;
+    width: 100%;
+    padding-bottom: 35px;
+  }
+
+  .item-whatyouget .summary-item {
+    width: 196px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .header-image-tablet {
+    background: url(https://static.vitl.com/images/practitioners/header-tablet.jpg) no-repeat center bottom;
+    -webkit-background-size: cover;
+    background-size: cover;
+    height: 800px;
+  }
+
+  .no-768 {
+    display: none;
+  }
+
+  .yes-768 {
+    display: block
+  }
+
+  .textBox {
+    top: 40%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+  }
+
+  .textBox .title-textBox {
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .textBox .summary-textBox {
+    font-size: 16px;
+    line-height: 22px;
+    padding: 20px 0 30px 0;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .title-work {
+    font-size: 40px;
+    line-height: 50px;
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  .title-what-you-get {
+    font-size: 40px;
+    line-height: 50px;
+    padding-right: 37px;
+    padding-left: 37px;
+  }
+
+  .owl-carousel .item p {
+    max-width: 400px;
+    margin: 0 auto;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .refer-box {
+    padding-top: 50px;
+  }
+
+  .light-yellow-mobile {
+    background: #FEF6DC;
+  }
+}
+
+@media (max-width: 480px) {
+  .lets-help {
+    height: 660px;
+    background: url(https://static.vitl.com/images/practitioners/banner-mobile.jpg) no-repeat center center #FBD028;
+    position: relative;
+    background-size: cover;
+  }
+
+  .lets-help .content {
+    padding-top: 50px;
+    position: static;
+    margin: 0 auto;
+    text-align: center;
+    transform: none;
+  }
+
+  .lets-help .content h2 {
+    font-size: 28px;
+    line-height: 36px;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 300px;
+  }
+
+  .only-480 {
+    display: block !important;
+  }
+
+  .title-work {
+    font-size: 28px;
+    line-height: 39px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 10px;
+  }
+
+  .title-what-you-get {
+    font-size: 28px;
+    line-height: 39px;
+    padding-left: 37px;
+    padding-right: 37px;
+    padding-bottom: 10px;
+  }
+
+  .what-you-get .black-line {
+    padding: 0;
+    margin: 18px auto;
+    border-width: 0 0 2px 0;
+  }
+
+  .owl-carousel .item {
+    width: 100%;
+  }
+
+  .owl-carousel .item p {
+    padding-right: 48px;
+    padding-left: 48px;
+  }
+
+  .header-image-mobile {
+    background: url(https://static.vitl.com/images/practitioners/header-B-mobile.jpg) no-repeat center bottom;
+    -webkit-background-size: cover;
+    background-size: cover;
+    height: 740px;
+  }
+
+  .no-480 {
+    display: none;
+  }
+
+  .yes-480 {
+    display: block;
+  }
+
+  .header-image {
+    height: 668px;
+  }
+
+  .summary-item {
+    width: 100%;
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+
+  .item-howitworks {
+    display: block;
+    width: 100%;
+  }
+
+  .plus {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    margin-top: -5px;
+    margin-right: -30px;
+    padding-left: 26px;
+  }
+
+  .light-yellow-mobile {
+    background: #FEF6DC;
+  }
+
+  .faqs {
+    padding-top: 47px;
+  }
+
+  .contact {
+    padding-bottom: 27px;
+  }
+
+  .answer-box {
+    font-size: 14px;
+    padding-left: 0px;
+  }
+
+  .questions {
+    font-size: 24px !important;
+    line-height: 33px !important;
+  }
+
+  .questions2 {
+    font-size: 16px;
+    position: relative;
+    width: 320px;
+    padding-left: 26px;
+  }
+
+  .footer-image {
+    height: auto;
+  }
+
+  .white-paragraph {
+    padding-top: 25px;
+    padding-left: 12px
+  }
+
+  .modPadding2 {
+    padding-bottom: 7px;
+  }
+
+  .textBox .title-textBox {
+    font-size: 28px;
+    line-height: 39px;
+  }
+}
+
+@media (max-width: 420px) {
+  .questions2 {
+    font-size: 16px;
+    position: relative;
+    width: 250px;
+  }
+
+  .padding-left-20-q375 {
+    padding-left: 20px;
+  }
+
+  .margin-top-30-q375 {
+    margin-top: 30px;
+  }
+
+  .margin-top-15-q375 {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 370px) {
+  .no-360 {
+    display: none;
+  }
+
+  .yes-360 {
+    display: block;
+  }
+
+  .modPadding3 {
+    padding: 0 0 10px;
+  }
+
+  .questions2 {
+    text-align: center;
+    width: 100%;
+    padding-left: 0px;
+  }
+
+  .answer-box {
+    text-align: center;
+  }
+}
+
+.float-right {
+  float: right;
+}
+
+@media (max-width: 767px) {
+  .padding-bottom-50 {
+    padding-bottom: 50px;
+  }
+}
+
+.how-vitl-help-section {
+  background-color: #F5EDD4;
+}
+
+.owl-carousel h4 {
+  font-family: SofiaProBold, SofiaProMedium, SofiaPro, Helvetica, Arial, Sans-Serif;
+  font-size: 22px;
+  line-height: 36px;
+  margin-bottom: 0;
+}
+
+.owl-carousel p {
+  font-family: SofiaPro, Helvetica, Arial, Sans-Serif;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.owl-carousel hr {
+  max-width: 130px;
+  border: solid 1px #FFD326;
+}
+
+:host ::ng-deep .owl-carousel figure img {
+  max-width: 375px;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+
+.owl-carousel .owl-nav {
+  overflow: visible;
+  position: relative;
+  margin: 0 auto;
+  width: 95%;
+}
+
+@media (max-width: 768px) {
+  .owl-carousel .owl-nav {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .owl-carousel .owl-nav {
+    width: 95%;
+  }
+}
+
+.owl-nav {
+  position: relative;
+  width: 100%;
+}
+
+.owl-nav .owl-prev {
+  position: absolute;
+  left: 0;
+  top: -100px;
+  outline: none;
+}
+
+.owl-nav .owl-next {
+  position: absolute;
+  right: 0;
+  top: -100px;
+  outline: none;
+}
+
+:host ::ng-deep .tns-nav {
+  padding-top: 20px;
+}
+
+:host ::ng-deep .tns-nav button {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  margin: 0 5px;
+  border-radius: 50%;
+  background: #ddd;
+  border: 0;
+}
+
+:host ::ng-deep .tns-nav > .tns-nav-active {
+  background: #999;
+}
+
+
+:host ::ng-deep .tns-liveregion {
+  display: none;
+}
+
+.how-vitl-help-section {
+  padding-bottom: 52px;
+}

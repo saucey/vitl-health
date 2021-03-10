@@ -1,0 +1,87 @@
+.heading {
+
+  &-1 {
+    font-family: @font-family-header;
+    font-size: 30px;
+    line-height: 36px;
+
+    @media @sm {
+      font-size: 40px;
+      line-height: 46px;
+    }
+  }
+
+  &-2 {
+    font-family: @font-family-header;
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  &-3 {
+    font-family: @font-family-bold;
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  &-4 {
+    font-family: @font-family-semi-bold;
+    font-size: 19px;
+    line-height: 23px;
+  }
+
+  &-5 {
+    font-family: @font-family-semi-bold;
+    font-size: @font-size-normal;
+    line-height: 23px;
+  }
+}
+
+.text--xxlarge {
+  font-size: 40px;
+}
+
+.text--large {
+  font-size: @font-size-normal;
+
+  @media @sm {
+    font-size: 19px;
+  }
+}
+
+.text--small {
+  font-size: @font-size-small !important;
+  line-height: 22px !important;
+}
+
+.text--xsmall {
+  font-size: 14px !important;
+  line-height: 23px !important;
+}
+
+.text--xxsmall {
+  font-size: 13px !important;
+  line-height: 19px !important;
+}
+
+.text--semiBold {
+  font-family: @font-family-semi-bold;
+}
+
+strong {
+  font-family: @font-family-semi-bold;
+}
+
+.quote {
+  position: relative;
+  display: inline-block;
+  transform: scale(2);
+
+  &--open {
+    margin-right: 5px;
+  }
+
+  &--close {
+    margin-left: 5px;
+    top: 10px;
+  }
+}

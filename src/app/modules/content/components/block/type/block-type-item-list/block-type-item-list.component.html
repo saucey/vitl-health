@@ -1,0 +1,25 @@
+<div class="myvitl__content__block__itemList myvitl__content__block__itemList--{{block.sub_type}}" [class.myvitl__content__block__itemList--default]="!block.sub_type">
+
+  <ul>
+
+    <li *ngFor="let item of block.list" [class.hasImage]="item.image" [appAction]="item.action" [appStyle]="item.style">
+
+      <div class="itemImage" *ngIf="item.image">
+        <img [appImage]="item.image" [height]="60" [heightLg]="85" />
+      </div>
+      <div class="text">
+        <div class="titles">
+          <span class="title" *ngIf="item.title">{{item.title}}</span>
+          <span class="subtitle" *ngIf="item.subtitle">{{item.subtitle}}</span>
+        </div>
+        <div class="infos">
+          <span class="info" [style.color]="item.style?.tint_color" *ngIf="item.info">{{item.info}}</span>
+          <span class="sub_info" [style.color]="item.style?.tint_color" *ngIf="item.sub_info">{{item.sub_info}}</span>
+        </div>
+      </div>
+
+    </li>
+
+  </ul>
+
+</div>

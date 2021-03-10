@@ -1,0 +1,12 @@
+<div class="container container--fluid">
+
+  <div class="myvitl__content pt-55">
+
+    <div class="myvitl__heading pt-55" *ngIf="screen.title">
+      <h1 class="heading font-md-38 mb-md-60 text-center">{{screen.title}}</h1>
+    </div>
+    <app-content-screen [screen]="screen"></app-content-screen>
+
+  </div>
+
+</div>

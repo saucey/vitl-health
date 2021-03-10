@@ -1,0 +1,24 @@
+<a class="bold" routerLink="/myvitl/account/details">
+  <span class="arrow arrow--left"></span>
+  Personal details
+</a>
+
+<h1 class="heading heading--small pt-30 mb-45">Communication preferences</h1>
+
+<h2 class="heading heading--tiny mb-30">Email preferences</h2>
+
+<div class="form">
+
+  <app-form-radio
+      *ngFor="let preference of preferences"
+      [placeholder]="preference.title"
+      [(ngModel)]="preference.subscribed"
+      (ngModelChange)="canUpdate = true"
+      checkbox="true"
+      [disabled]="!preference.allowUnsubscribe"></app-form-radio>
+
+</div>
+
+<div class="text-right hidden" [class.show]="canUpdate">
+  <button class="button button--primary button--fullWidth button--maxWidth" (click)="savePreferences()">Save</button>
+</div>

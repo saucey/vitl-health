@@ -1,0 +1,95 @@
+&__goal {
+
+  text-align: center;
+
+  @media @md {
+    text-align: left;
+  }
+
+  &__heading {
+
+    background: @brand-primary-yellow;
+    padding: 30px;
+    padding-top: 45px;
+
+    @media @md {
+
+      min-height: 260px;
+      padding: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+    }
+
+  }
+
+  &__label {
+
+    margin-bottom: 30px;
+
+    @media @md {
+      margin-bottom: 0px;
+      padding-left: 15px;
+      line-height: 28px;
+    }
+
+  }
+
+  &__title {
+
+    font-size: @font-size-base * (30 / @font-size-base);
+    font-family: @font-family-header;
+    line-height: 1;
+
+    @media @md {
+      font-size: @font-size-base * (50 / @font-size-base);
+      margin-bottom: 15px;
+    }
+
+  }
+
+  &__tagline {
+
+    font-size: @font-size-base * (20 / @font-size-base);
+    display: none;
+
+    @media @md {
+      display: block;
+    }
+
+  }
+
+  &__score {
+
+    position: relative;
+    flex: 0 0 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    text-align: center;
+
+  }
+
+  &__scoreCircle {
+
+    position: absolute;
+
+  }
+
+  &__percentage {
+
+    font-size: @font-size-base * (34 / @font-size-base);
+    font-family: @font-family-header;
+    margin-bottom: 4px;
+
+  }
+
+  &__rating {
+
+    font-size: @font-size-base * (16 / @font-size-base);
+
+  }
+
+}

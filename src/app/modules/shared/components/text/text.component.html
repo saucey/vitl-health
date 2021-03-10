@@ -1,0 +1,20 @@
+<div class="input input--text" [ngClass]="{
+  'input--focussed': focussed,
+  'input--submit input--small input--white': submit,
+  'input--invalid': invalid,
+  'input--textarea': textarea,
+  'input--white': white,
+  'input--whiteMd': whiteMd,
+  'input--disabled': disabled,
+  'input--filled': thisValue
+}">
+
+    <div class="input__placeholder" [ngClass]="{'input__placeholder--minimized': minimizePlaceholder()}">{{placeholder}}</div>
+
+    <input *ngIf="!textarea" type="text" [(ngModel)]="thisValue" class="input__control" (blur)="blur()" (focus)="focus()" [disabled]="disabled" #inputControl />
+
+    <textarea *ngIf="textarea" [(ngModel)]="thisValue" class="input__control input__textarea" (blur)="blur()" (focus)="focus()" [disabled]="disabled" ></textarea>
+
+    <button class="button button--active input__submit" *ngIf="submit"></button>
+
+</div>

@@ -1,0 +1,46 @@
+<div class="social">
+  <a class="social__mail" target="_blank" href="mailto:?body={{description}}&subject={{subject}}"
+     angulartics2On="click"
+     angularticsCategory="ShareOnSocial"
+     angularticsAction="click"
+     angularticsLabel="mail"
+  >
+    <img appImage category="icons" key="mail" [height]="20" />
+  </a>
+  <a class="social__whatsapp hidden-md hidden-lg hidden-xl" target="_blank" [href]="'whatsapp://send?text=' + description | bypassSecurityUrl" data-action="share/whatsapp/share"
+     angulartics2On="click"
+     angularticsCategory="ShareOnSocial"
+     angularticsAction="click"
+     angularticsLabel="whatsapp"
+  >
+    <img appImage category="icons" key="whatsapp" [height]="20" />
+  </a>
+  <a class="social__facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{url}}"
+     angulartics2On="click"
+     angularticsCategory="ShareOnSocial"
+     angularticsAction="click"
+     angularticsLabel="facebook"
+  >
+    <img appImage category="icons" key="facebook" [height]="20" />
+  </a>
+  <a class="social__twitter" target="_blank" href="https://www.twitter.com/share?url={{url}}"
+     angulartics2On="click"
+     angularticsCategory="ShareOnSocial"
+     angularticsAction="click"
+     angularticsLabel="twitter"
+  >
+    <img appImage category="icons" key="twitter" [height]="20" />
+  </a>
+  <!--<a class="social__pinterest" target="_blank" href="http://pinterest.com/pin/create/button/?url={{url}}&media={{image}}&description={{description}}">-->
+    <!--<img appImage category="icons" key="pinterest" [height]="20" />-->
+  <!--</a>-->
+  <a class="social__share" target="_blank" (click)="openShareSheet()" *ngIf="hasShareSheet()"
+     angulartics2On="click"
+     angularticsCategory="ShareOnSocial"
+     angularticsAction="click"
+     angularticsLabel="other"
+  >
+    <img appImage category="icons" key="share" [height]="20" *ngIf="!isMac()" />
+    <img appImage category="icons" key="share-apple" [height]="20" *ngIf="isMac()" />
+  </a>
+</div>

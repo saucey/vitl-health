@@ -1,0 +1,41 @@
+<div *ngIf="!dismissed()" class="banner">
+  <!-- <div class="banner__visual-left">
+    <img class="visible-xs" src="https://static.vitl.com/images/banner/banner_left_mobile_christmas.png" alt="" />
+    <img class="visible-sm visible-md" src="https://static.vitl.com/images/banner/banner_left_tablet_christmas.png"
+      alt="" />
+    <img class="visible-lg visible-xl" src="https://static.vitl.com/images/banner/banner_left_christmas.png" alt="" />
+  </div>
+  <div class="banner__visual-right">
+    <img class="visible-xs" src="https://static.vitl.com/images/banner/banner_right_mobile_christmas.png" alt="" />
+    <img class="visible-sm visible-md" src="https://static.vitl.com/images/banner/banner_right_tablet_christmas.png"
+      alt="" />
+    <img class="visible-lg visible-xl" src="https://static.vitl.com/images/banner/banner_right_christmas.png" alt="" />
+  </div> -->
+
+  <div class="container">
+    <div *ngIf="type === '4pp'" class="row flex-center">
+      <div class="col-sm-7 col-sm-offset-1 col-md-offset-2">
+        <p>Winter-proof your health with a free trial of personalised supplements</p>
+      </div>
+      <div class="col-sm-3 col-sm-offset-1 col-md-2">
+        <a routerLink="/personalised-free-trial" class="button button--primary button--xsmall" (click)="dismiss()">Get
+          started</a>
+      </div>
+    </div>
+
+    <div *ngIf="type === 'dna'" class="row flex-center">
+      <div class="col-sm-7 col-sm-offset-1">
+        <p><span class="banner__highlighted">Save 25% today</span> on a <u>DNA Nutrition Test</u> & discover how to live
+          life
+          better in 2021</p>
+      </div>
+      <div class="col-sm-4">
+        <a routerLink="/product/dna" class="button button--primary button--xsmall" (click)="dismiss()">Find out
+          more</a>
+      </div>
+    </div>
+  </div>
+  <div class="banner__dismiss" (click)="dismiss()">
+    <img width="16" height="16" src="https://static.vitl.com/images/icons/icon-cross-banner.svg" alt="" />
+  </div>
+</div>

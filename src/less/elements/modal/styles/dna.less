@@ -1,0 +1,113 @@
+&--dna {
+  background: rgba(256,256,256,0.5);
+  .modal2 {
+    &__inner {
+      padding: 0;
+      background: @brand-primary-white;
+
+      top: 50%;
+      right: auto;
+      bottom: auto;
+      transform: translateY(-50%);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+      width: 100%;
+      @media screen and (min-width: 475px) {
+        width: 475px;
+          left: 50%;
+          transform: translate(-50%, -50%);
+      }
+    }
+
+    &__close {
+      font-family: @font-family-regular;
+      height: 9px;
+      width: 9px;
+      right: 15px;
+      top: 15px;
+      font-size: 30px;
+      color: @brand-primary-black;
+    }
+
+    &__title {
+      padding: 20px 0;
+      background: @brand-primary-yellow;
+
+      &__text {
+        margin: 0;
+      }
+    }
+
+    &__dna_body {
+      width: 85%;
+      margin: 0 auto;
+      padding-top: 30px;
+      padding-bottom: 26px;
+
+      font-size: 14px;
+      line-height: 19px;
+
+      @media @sm {
+        font-size: 18px;
+        line-height: 25px;
+      }
+
+      @media @md {
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+
+    &__divider {
+      width: 85%;
+      background-color: rgba(#333333, 0.25);
+      height: 2px;
+      margin: 0 auto;
+    }
+
+    &__dna_list__wrapper {
+      display: flex;
+      padding-top: 26px;
+      width: 85%;
+      margin: 0 auto;
+      justify-content: space-evenly;
+
+      ul {
+        padding: 0 10px;
+        li {
+          padding-bottom: 10px;
+          display: flex;
+          align-items: flex-start;
+          color: @brand-primary-dark-grey;
+
+          &:before {
+            content: '■';
+            padding-top: 2px;
+            padding-right: 10px;
+            font-size: 14px;
+            color: @brand-primary-yellow;
+          }
+          p {
+            text-align: left;
+            font-size: 12px;
+            line-height: 16px;
+
+            @media @sm {
+              font-size: 16px;
+              line-height: 22px;
+            }
+
+            @media @md {
+              font-size: 14px;
+              line-height: 19px;
+            }
+          }
+        }
+      }
+    }
+
+    &__ctas {
+      background: @brand-primary-white;
+    }
+  }
+}

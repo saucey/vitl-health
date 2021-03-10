@@ -1,0 +1,11 @@
+<div class="article">
+  <div class="text-center pb-30" *ngIf="data.image">
+    <figure class="icon icon--bordered icon--small">
+      <div class="icon__image icon__image--offset">
+        <img [appImage]="data.image" [height]="data.imageHeight" />
+      </div>
+    </figure>
+  </div>
+  <p [innerHtml]="data.summary" *ngIf="data.summary"></p>
+  <div [innerHtml]="data.body" *ngIf="data.body"></div>
+</div>

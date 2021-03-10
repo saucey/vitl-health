@@ -1,0 +1,77 @@
+/*
+ Selector
+ */
+
+.selector {
+
+  &__option {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    padding-left: 30px;
+    font-size: @font-size-base * (16 / @font-size-base);
+    cursor: pointer;
+    text-align: left;
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 1px solid @brand-primary-black;
+      border-radius: 100%;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      left: 04px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: fade(@brand-primary-yellow, 50%);
+      border-radius: 100%;
+      opacity: 0;
+      transition: 0.3s opacity;
+    }
+
+    &--small {
+      font-size: @font-size-base * (14 / @font-size-base);
+
+      &:before {
+        width: 16px;
+        height: 16px;
+        border: 1px solid @brand-primary-grey;
+      }
+
+      &:after {
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+    &:hover {
+      &:after {
+        opacity: 1;
+      }
+    }
+
+    &--active {
+      &:after {
+        opacity: 1;
+        background: @brand-primary-yellow;
+      }
+    }
+
+    .price {
+      white-space: nowrap;
+    }
+  }
+
+}

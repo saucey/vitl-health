@@ -1,0 +1,247 @@
+<div class="pt-20">
+
+  <div *ngIf="screen === 'offers'">
+
+    <div class="heading heading--small mb-20">Maybe we can help?</div>
+
+    <hr class="hr hr--primary mb-20" />
+
+    <p class="copy copy--tiny">We know times are tough and we want to help to keep you healthy.</p>
+    <p class="copy copy--tiny mb-20">We hope one of these plans can suit your needs.</p>
+
+    <ul class="account__offers mb-40">
+
+      <li class="account__offer cursor" *ngFor="let offer of data.order.cancellationOffers"
+        [class.account__offer--selected]="offer == selectedOffer" (click)="selectedOffer = offer">
+        <div class="account__offer__wrapper">
+          <div class="account__offer__image"><img [appImage]="offer.image" [width]="50" [widthLg]="100" /></div>
+          <div class="account__offer__details">
+            <div>
+              <div class="account__offer__label">{{offer.label}}</div>
+              <div class="account__offer__tagline">{{offer.tagline}}</div>
+            </div>
+            <div>
+              <div class="account__offer__discount">{{offer.discount}}</div>
+              <div class="account__offer__price">{{offer.price}}</div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+
+    <div class="modal__buttons">
+      <button class="button" (click)="leaveFeedback()">I still want to cancel</button>
+      <button class="button button--primary" (click)="selectOffer()">Select offer</button>
+    </div>
+
+  </div>
+
+
+
+
+  <div *ngIf="screen === 'offer'">
+
+    <div class="heading heading--small mb-20">Maybe we can help?</div>
+
+    <hr class="hr hr--primary mb-35" />
+
+    <p class="copy copy--tiny">We know times are tough and we want to help to keep you healthy.</p>
+    <p class="copy copy--tiny mb-35">We hope one of these plans can suit your needs.</p>
+
+    <div class="account__offers mb-35">
+
+      <div class="account__offer account__offer--selected pl-30 pr-30 pb-30">
+
+        <div class="account__offer__wrapper">
+          <div class="account__offer__image"><img [appImage]="selectedOffer.image" [width]="50" [widthLg]="100" /></div>
+          <div class="account__offer__details">
+            <div>
+              <div class="account__offer__label">{{selectedOffer.label}}</div>
+              <div class="account__offer__tagline">{{selectedOffer.tagline}}</div>
+            </div>
+            <div>
+              <div class="account__offer__discount">{{selectedOffer.discount}}</div>
+              <div class="account__offer__price">{{selectedOffer.price}}</div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="hr hr--grey hr--onepixel hr--fullWidth mb-10" />
+
+        <!-- <ul class="selector pt-10 mb-10">
+
+          <li class="selector__option selector__option--small" [ngClass]="{'selector__option--active':offerType === 'now'}" (click)="offerType = 'now'">
+            <span>Start from today</span>
+          </li>
+
+          <li class="selector__option selector__option--small" [ngClass]="{'selector__option--active':offerType === 'later'}" (click)="offerType = 'later'">
+            <span>Start from my next subscription date</span>
+          </li>
+
+        </ul> -->
+
+        <p class="text-left copy copy--tiny copy--darkGrey">Note: discount will be applied from next renewal date and
+          <strong>will be marked as paused until then.</strong></p>
+
+      </div>
+
+    </div>
+
+    <div class="modal__buttons">
+      <button class="button button--primary" (click)="claimOffer()">Claim offer</button>
+    </div>
+
+  </div>
+
+
+
+
+  <div *ngIf="screen === 'feedback'">
+
+    <div class="heading heading--small mb-20">Cancel your subscription</div>
+
+    <hr class="hr hr--primary mb-20" />
+
+    <div class="account__subscription mt-30">
+
+      <div class="account__subscription__preview mb-30">
+        <div class="account__subscription__image"><img [appImage]="data.order.image" [width]="60" [widthLg]="100" />
+        </div>
+        <div class="account__subscription__details">
+          <div class="account__subscription__product">{{data.order.productName}}</div>
+          <div class="account__subscription__plan">{{data.order.planName}}</div>
+        </div>
+      </div>
+
+      <div class="pl-80 pr-80">
+        <hr class="hr hr--grey hr--onepixel hr--fullWidth" />
+      </div>
+
+      <div class="pt-30 mb-15 mb-md-30">
+        <p class="copy copy--medium mb-15">We're sorry to see you go, {{user.firstName}}</p>
+        <p class="copy copy--small">We're still a young business and would really appreciate it
+          if&nbsp;you&nbsp;could&nbsp;tell&nbsp;us&nbsp;why<br>(select all that apply)</p>
+      </div>
+
+      <form class="form" #feedbackForm="ngForm">
+
+        <div class="grid grid--alignTop mb-md-30">
+
+          <div class="grid__item--6">
+
+            <app-form-radio name="forgot" placeholder="I forgot to take them" checkbox="true" ngModel></app-form-radio>
+
+            <app-form-radio name="size" placeholder="They're too big/small" checkbox="true" ngModel></app-form-radio>
+
+            <app-form-radio name="taste" placeholder="I didn't like the taste" checkbox="true" ngModel></app-form-radio>
+
+            <app-form-radio name="price" placeholder="Too expensive" checkbox="true" ngModel></app-form-radio>
+
+          </div>
+
+          <div class="grid__item--6">
+
+            <app-form-radio name="need" placeholder="I no longer needed a subscription" checkbox="true" ngModel>
+            </app-form-radio>
+
+            <app-form-radio name="different" placeholder="I want something different" checkbox="true" ngModel>
+            </app-form-radio>
+
+            <app-form-radio name="found" placeholder="Found something else" checkbox="true" ngModel></app-form-radio>
+
+            <app-form-radio name="delivery" placeholder="Delivery issues" checkbox="true" ngModel></app-form-radio>
+
+          </div>
+
+          <div class="grid__item--6 mb-30 mb-md-0">
+
+            <app-form-radio name="other" placeholder="Other" checkbox="true" ngModel></app-form-radio>
+
+          </div>
+        </div>
+
+      </form>
+
+      <div class="pl-80 pr-80 mb-30">
+        <hr class="hr hr--grey hr--onepixel hr--fullWidth" />
+      </div>
+
+      <div class="modal__buttons">
+        <button class="button" (click)="setFeedback()">Next</button>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+  <div *ngIf="screen === 'cancel'">
+
+    <div class="heading heading--small mb-20">Cancel your subscription</div>
+
+    <hr class="hr hr--primary mb-20" />
+
+    <div class="account__subscription mt-30">
+
+      <div class="account__subscription__preview mb-30">
+        <div class="account__subscription__image"><img [appImage]="data.order.image" [width]="60" [widthLg]="100" />
+        </div>
+        <div class="account__subscription__details">
+          <div class="account__subscription__product">{{data.order.productName}}</div>
+          <div class="account__subscription__plan">{{data.order.planName}}</div>
+        </div>
+      </div>
+
+      <div class="pl-80 pr-80">
+        <hr class="hr hr--grey hr--onepixel hr--fullWidth" />
+      </div>
+
+      <div class="pt-30 mb-15 mb-md-30">
+        <p class="copy copy--medium mb-15">We're sorry to see you go, {{user.firstName}}</p>
+        <p class="copy copy--small">Is there anything we could have done to prevent&nbsp;you&nbsp;from&nbsp;cancelling?
+        </p>
+      </div>
+
+      <div class="mb-30">
+        <app-form-text [(ngModel)]="additionalFeedback" textarea="true" placeholder="What could we have done?">
+        </app-form-text>
+      </div>
+
+      <div class="pl-80 pr-80 mb-30">
+        <hr class="hr hr--grey hr--onepixel hr--fullWidth" />
+      </div>
+
+      <div class="modal__buttons">
+        <button class="button" (click)="cancelSubscription()">Cancel my subscription</button>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div *ngIf="screen === 'final'">
+
+    <div class="heading heading--small mb-20">We'll miss you</div>
+
+    <hr class="hr hr--primary mb-45" />
+
+    <p class="copy mb-30">Thanks for being a Vitl customer</p>
+
+    <p class="copy mb-30">We’ll take no further payments, but any deliveries already scheduled will still be delivered.
+    </p>
+
+    <p class="copy mb-30">You can restart your subscription at any time.</p>
+
+    <div class="modal__buttons">
+      <button class="button" (click)="closeModal()">Close</button>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,260 @@
+<div class="outsourced">
+
+  <div class="blood">
+
+    <!-- Blood hero -->
+    <section class="hero hero--top hero--beige hero--background blood-s1">
+
+      <div class="hero__container grid">
+
+        <div class="grid__item--4 order-md-2">
+
+          <h1 class="heading-1 blood-s1-heading">{{product.label}}</h1>
+
+          <div class="divider"></div>
+
+          <h3 class="copy copy--big blood-s1-copy">Track your key nutrient levels from the comfort of your own
+            home.</h3>
+
+          <app-plan-selector [product]="product"></app-plan-selector>
+
+        </div>
+
+        <div class="grid__item--7 order-md-1">
+
+          <img appImage category="blood" key="blood-hero-corner" class="blood-s1-corner-img" [width]="800"
+               compress="1"/>
+
+          <app-image-transition class="app-blood" [images]="transitionImages"
+                                [imagesMobile]="transitionImagesMobile"></app-image-transition>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+    <!-- Blood section 2 -->
+    <div class="container-fluid blood-s2">
+      <div>
+        <div class="container blood-s2-container">
+          <h3 class="heading-2 blood-s2-heading">What's tested?</h3>
+          <div class="flex-grid">
+            <div class="flex-col">
+              <div class="blood-s2-col-wrapper" (click)="openVitLevelsModal()">
+                <img appImage category="blood" key="blood-s2-1" [width]="600" class="width-100"/>
+                <span>
+                                    <p class="copy copy--small pb-5">5 result reports</p>
+                                    <img
+                                      src="https://static-prod.vitl.com/images/blood/blood-s2-plus.png?width=30&compress=1"
+                                      class="blood-s2--plus"/>
+                                </span>
+              </div>
+            </div>
+
+            <div class="flex-col">
+              <div class="blood-s2-col-wrapper" (click)="openCholesterolModal()">
+                <img appImage category="blood" key="blood-s2-2" [width]="600" class="width-100"/>
+                <span>
+                                    <p class="copy copy--small pb-5">5 result reports</p>
+                                    <img
+                                      src="https://static-prod.vitl.com/images/blood/blood-s2-plus.png?width=30&compress=1"
+                                      class="blood-s2--plus"/>
+                                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blood section 3 -->
+    <div class="container-fluid blood-s3">
+      <div>
+        <div class="container">
+          <div class="grid">
+            <div class="grid__item--5 text-center">
+              <h3 class="heading-2 pt-70 pt-md-0">Results you can trust</h3>
+              <div class="divider divider--mb30 center-block"></div>
+              <p class="copy blood-s3--copy pb-20">From a simple <span
+                class="copy--bold">finger-prick blood test</span> you’ll get a thorough
+                analysis of the key nutrients that have the greatest impact on wellbeing and long-term
+                health.
+              </p>
+              <p class="copy blood-s3--copy">
+                You’ll also get <span
+                class="copy--bold">detailed, personalised dietary and lifestyle recommendations</span>
+                from a qualified
+                nutritionist, and we can even formulate a <a class="copy--link"
+                                                             routerLink="/product/personalised">bespoke
+                pack of vitamins</a> tailored to your
+                results.
+              </p>
+            </div>
+
+            <div class="grid__item--7 blood-s3--r">
+              <div class="blood-s3--r-wrapper">
+                <img appImage category="blood" key="blood-s3-1" [width]="170" compress="1"
+                     class="blood-s3-img">
+                <p class="copy copy--semiBold">Georgie Murphy</p>
+                <p class="copy copy--small pt-10">Head of Nutrition</p>
+                <p class="copy copy--small">MSc ANutr</p>
+              </div>
+              <div class="blood-s3--r-wrapper">
+                <img appImage category="blood" key="blood-s3-2" [width]="170" compress="1"
+                     class="blood-s3-img">
+                <p class="copy copy--semiBold">Dr Monal Wadhera</p>
+                <p class="copy copy--small pt-10">Medical Director</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blood section 4 -->
+    <div class="container-fluid blood-s4">
+      <div>
+        <div class="container">
+          <h3 class="heading-2 blood-s4-heading">How it works</h3>
+          <swiper [config]="carouselConfig">
+            <div class="blood-s4-carousel-slide center-block text-center">
+              <img appImage category="blood" key="blood-s4-1" [width]="68"/>
+              <h5 class="heading-3">Order your kit</h5>
+              <div class="divider"></div>
+              <p class="copy">Once you’ve purchased your blood test online, we’ll deliver it
+                through your door within 2 days for free.</p>
+            </div>
+            <div class="blood-s4-carousel-slide center-block text-center pt-20">
+              <img appImage category="blood" key="blood-s4-2" [width]="66"/>
+              <h5 class="heading-3">Take your test</h5>
+              <div class="divider"></div>
+              <p class="copy">Follow the instructions provided to take your quick finger-prick sample,
+                then pop it into the prepaid postage bag back to our accredited lab.</p>
+            </div>
+            <div class="blood-s4-carousel-slide center-block text-center pt-20">
+              <img appImage category="blood" key="blood-s4-3" [width]="83"/>
+              <h5 class="heading-3">View your results</h5>
+              <div class="divider"></div>
+              <p class="copy">Our in-house nutritionists will review your results and give
+                personalised dietary and lifestyle recommendations.</p>
+            </div>
+          </swiper>
+          <div class="blood-s4-carousel-slide-dots">
+          </div>
+
+          <div class="blood-s4--instructions">
+            <p class="copy copy--big">
+              For more information, check out our 2-minute instruction video below.
+            </p>
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/vf7c2Fq9k3M?rel=0" frameborder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+              </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Blood section 5 -->
+    <div class="container-fluid blood-s5">
+      <div>
+        <div class="container text-center">
+          <h3 class="heading-2 blood-s5-heading">Testimonials</h3>
+          <div class="divider text-center mb-80 mt-30"></div>
+          <swiper [config]="carousel2Config">
+            <div class="blood-s5-carousel-slide center-block text-center">
+              <img appImage category="dna" key="dna-s5-trustpilot" class="trustpilot" [width]="116"/>
+              <div class="blood-s5-carousel-slide--content">
+                <p class="copy">“Such a simple and straightforward process. It took me less
+                  than 10 minutes and was pretty painless. The packaging was also a really nice touch.
+                  Would happily recommend.”</p>
+                <div>
+                  <img appImage category="blood" key="blood-s5-1" [width]="56"/>
+                  <p class="copy copy--semiBold pt-5">David</p>
+                </div>
+              </div>
+            </div>
+            <div class="blood-s5-carousel-slide center-block text-center">
+              <img appImage category="dna" key="dna-s5-trustpilot" class="trustpilot" [width]="116"/>
+              <div class="blood-s5-carousel-slide--content">
+                <p class="copy">“The Vitl blood test was so fast and easy and the results were
+                  surprising. Thanks to my tailored Vitl vitamins and diet suggestions I now feel
+                  great!”</p>
+                <div>
+                  <img appImage category="blood" key="blood-s5-2" [width]="56"/>
+                  <p class="copy copy--semiBold pt-5">Jodie</p>
+                </div>
+              </div>
+            </div>
+            <div class="blood-s5-carousel-slide center-block text-center">
+              <img appImage category="dna" key="dna-s5-trustpilot" class="trustpilot" [width]="116"/>
+              <div class="blood-s5-carousel-slide--content">
+                <p class="copy">“I found the blood test instructions clear and easy to follow. The
+                  results have me a great idea of where my health is at present.”</p>
+                <div>
+                  <img appImage category="blood" key="blood-s5-3" [width]="56"/>
+                  <p class="copy copy--semiBold pt-5">James</p>
+                </div>
+              </div>
+            </div>
+          </swiper>
+          <div class="blood-s5-carousel-slide-dots">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blood section 6 -->
+    <div class="container-fluid blood-s6">
+      <div>
+        <div class="container text-center grid">
+          <div class="grid__item--6 text-center">
+            <img appImage category="dna" key="dna-s6" [width]="40" class="pt-60 pb-40"/>
+
+            <h3 class="heading-2">Your health data</h3>
+            <div class="divider divider--mb30 mt-30 mb-30"></div>
+            <p class="copy">
+              We are committed to ensuring you have absolute control over your personal information, which
+              is why we adhere to the highest data security standards and use the latest encryption
+              technology so you never have to worry about your data.
+            </p>
+          </div>
+          <div class="grid__item--6">
+            <img appImage category="blood" key="blood-s6" [width]="560" compress="1"
+                 class="blood-s6-r-img"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blood section 7 -->
+    <div class="container-fluid blood-s7">
+      <div class="grid">
+        <div class="grid__item--5 text-center blood-s7--r order-md-2">
+          <h3 class="heading-2 blood-s7-heading">A great day starts with you feeling your best</h3>
+          <div class="divider divider--black"></div>
+          <p class="copy blood-s7--copy">Check your vitamin levels & measure your cholesterol for
+            <span *ngIf="product.plans[0].offerPrice"
+                  class="copy--bold">{{product.plans[0].offerPrice}}</span>
+            <span class="copy--bold copy--darkGrey" *ngIf="!product.plans[0].offerPrice">{{product.plans[0].rrp}}</span>
+            every three months
+          </p>
+          <button class="button" (click)="add()">
+            Add to basket
+          </button>
+        </div>
+        <div class="grid__item--6 blood-s7-left order-md-1">
+          <img appImage category="blood" key="blood-s7" [height]="700" compress="1"
+               class="blood-s7--img-desktop"/>
+          <img src="https://static-prod.vitl.com/images/blood/blood-s7-tablet.png?width=700&compress=1"
+               class="blood-s7--img-tablet"/>
+          <img src="https://static-prod.vitl.com/images/blood/blood-s7-mobile.png?width=800&compress=1"
+               class="blood-s7--img-mobile"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

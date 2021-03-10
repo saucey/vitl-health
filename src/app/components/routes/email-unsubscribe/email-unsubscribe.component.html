@@ -1,0 +1,31 @@
+<section class="hero hero--top">
+
+    <div class="container text-left-md pt-md-90">
+
+        <h1 class="heading mb-30">Thank you</h1>
+
+        <p class="copy mb-30">You've now been successfully removed from:</p>
+
+        <ul class="list list--unordered mb-60">
+            <li class="list__item">{{getUnsubscribedCategory()}}</li>
+        </ul>
+
+        <hr class="hr hr--grey hr--left-md mb-60" />
+
+        <div *ngIf="getSubscribedCategories().length">
+
+            <p class="copy mb-30">You will still receive the following emails:</p>
+
+            <ul class="list list--unordered mb-30">
+                <li class="list__item" *ngFor="let category of getSubscribedCategories()">{{category.title}}</li>
+            </ul>
+
+        </div>
+
+        <p class="copy">If you would like to update your email preferences, you can access your preferences
+            <a class="highlighted highlighted--primary" routerLink="/myvitl/account/communication">here</a>
+        </p>
+
+    </div>
+
+</section>

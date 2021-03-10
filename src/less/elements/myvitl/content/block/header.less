@@ -1,0 +1,40 @@
+&__header {
+
+  font-size: @font-size-base * (26 / @font-size-base);
+  line-height: 1.2em;
+  font-family: @font-family-semi-bold;
+  padding: 26px 20px 10px;
+
+  @media @sm {
+    padding: 26px 40px 10px;
+  }
+
+  @media @md {
+    font-size: @font-size-base * (32 / @font-size-base);
+    padding: 26px 0 15px;
+    border-bottom: 1px solid @brand-primary-grey-creamier;
+  }
+
+  &--hasImage {
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .image {
+
+      width: 25px;
+      height: 25px;
+      object-fit: contain;
+      margin-right: 10px;
+
+      @media @md {
+        width: 35px;
+        height: 35px;
+      }
+
+    }
+
+  }
+
+}

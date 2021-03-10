@@ -1,0 +1,29 @@
+<div class="new-UI">
+  <ul class="goals goals--top goals--edit mt-45 mb-30 text-md-center">
+    <li *ngFor="let topGoal of topGoals">
+      <button
+        class="button-remove"
+        [disabled]="topGoals.length === 1"
+        (click)="removeGoal(topGoal)">
+      </button>
+      <img class="mb-md-10" [appImage]="topGoal.icon" [height]="45" [colorize]="topGoal.color" [truecolor]="true" />
+      <div>
+        <p><strong>{{topGoal.label}}</strong></p>
+      </div>
+    </li>
+  </ul>
+
+  <ul class="goals goals--inactive mt-30 text-md-center">
+    <li *ngFor="let goal of inactiveGoals">
+      <button
+      class="button-add"
+      [disabled]="topGoals.length >= 3"
+      (click)="addGoal(goal)">
+    </button>
+      <img [appImage]="goal.icon" [height]="45" [colorize]="goal.color" [truecolor]="true" />
+      <div>
+        <p><strong>{{goal.label}}</strong></p>
+      </div>
+    </li>
+  </ul>
+</div>

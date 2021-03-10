@@ -1,0 +1,237 @@
+.results__goals {
+
+  padding: 0 10px;
+
+  @media @sm {
+    display: flex;
+    justify-content: center;
+  }
+
+  > p {
+
+    font-size: 14px;
+    font-family: @font-family-medium;
+    text-align: center;
+    margin-bottom: 30px;
+
+  }
+
+  .results__goal {
+
+    position: relative;
+    border: 1px solid #F3EFD4;
+    background: #ffffff;
+    margin: 0 auto;
+    box-shadow: 0px 0px 10px fade(#DDD8BB, 30%);
+    max-width: 320px;
+    padding: 20px;
+    cursor: pointer;
+    transition: 0.5s all ease;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+
+    @media @sm {
+      width: auto;
+      flex: 1;
+      margin: 0 15px !important;
+      max-width: 350px;
+      &:hover {
+        transform: translateY(-8px) scale(1.01);
+      }
+    }
+
+    .goal__overlay {
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      background: fade(@brand-primary-black, 10%);
+      opacity: 0;
+      visibility: hidden;
+      transition: 1s all ease;
+      z-index: 9999;
+      &--active {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    .goal__icon {
+
+      position: absolute;
+      top: 0px;
+      right: 15px;
+      height: 50px;
+      width: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &__color {
+        display: none;
+      }
+
+    }
+
+    .goal__text {
+
+      height: 100%;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      .goal__label {
+        font-size: 20px;
+        font-family: @font-family-bold;
+        margin-bottom: 14px;
+      }
+
+      .hr {
+        margin-bottom: 22px;
+      }
+
+      .goal__summary {
+        font-size: 14px;
+        margin-bottom: 33px;
+      }
+
+      .goal__info {
+        justify-self: flex-end;
+        margin-top: auto;
+        height: 14px;
+        font-size: 14px;
+        line-height: 14px;
+        img {
+          margin-left: 7px;
+          vertical-align: top;
+        }
+      }
+
+    }
+
+  }
+
+  &--minimized {
+
+    display: flex;
+    justify-content: space-around;
+    width: 280px;
+    margin: 0 auto;
+    padding: 0px;
+
+    @media @sm {
+      width: 320px;
+    }
+
+    .results__goal {
+
+      position: relative;
+      background: none;
+      border: 0px;
+      padding: 0px;
+      height: 60px;
+      width: 60px;
+      overflow: visible;
+      margin-bottom: 0px;
+      box-shadow: none;
+      transition: 0.5s all ease;
+      cursor: default;
+
+      &:hover {
+        transform: none;
+      }
+
+      @media @sm {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .goal__icon {
+        cursor: pointer;
+        background: white;
+        box-shadow: 0px 0px 10px fade(#DDD8BB, 30%);
+        border: 0px;
+        border-radius: 0px;
+        width: 40px;
+        height: 40px;
+        margin: 0 auto 8px auto;
+        padding: 0px;
+        position: relative;
+        top: auto;
+        right: auto;
+        transition: 0.5s all ease;
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 22px;
+          height: 22px;
+          transform: translateX(-50%) translateY(-50%);
+          pointer-events: none;
+          transition: 0.5s all ease;
+        }
+        &__main {
+          opacity: 1;
+        }
+        &__color {
+          display: block;
+          opacity: 0;
+        }
+        &:hover {
+          box-shadow: 0px 10px 20px fade(#DDD8BB, 50%);
+          transform: translateY(-4px) scale(1.01);
+          .goal__icon__main {
+            opacity: 0;
+          }
+          .goal__icon__color {
+            opacity: 1;
+          }
+        }
+      }
+
+      .goal__text {
+        cursor: pointer;
+        display: block;
+        height: auto;
+        &:hover {
+          & + .goal__icon {
+            box-shadow: 0px 10px 20px fade(#DDD8BB, 50%);
+            transform: translateY(-4px) scale(1.01);
+            .goal__icon__main {
+              opacity: 0;
+            }
+            .goal__icon__color {
+              opacity: 1;
+            }
+          }
+        }
+        .goal__label {
+          position: absolute;
+          top: 50px;
+          left: 50%;
+          transform: translateX(-50%);
+          color: @brand-primary-black !important;
+          font-size: 13px;
+          text-align: center;
+          white-space: nowrap;
+        }
+        .hr {
+          display: none;
+        }
+        .goal__summary {
+          display: none;
+        }
+        .goal__info {
+          display: none;
+        }
+      }
+
+    }
+
+  }
+
+}

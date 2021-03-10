@@ -1,0 +1,72 @@
+<h1 class="heading-2 mb-30">Personal details</h1>
+
+<form novalidate class="form" (ngSubmit)="submit(form)" [formGroup]="form">
+
+  <div class="form mb-30">
+
+    <div class="form__inline mb-15">
+
+      <app-form-text
+        class="form__inline__item"
+        placeholder="First name"
+        formControlName="firstName"
+        whiteMd="true"
+        invalid="{{f.firstName.errors}}"
+      ></app-form-text>
+
+      <app-form-text
+        class="form__inline__item"
+        placeholder="Last name"
+        formControlName="lastName"
+        whiteMd="true"
+        invalid="{{f.lastName.errors}}"
+      ></app-form-text>
+
+    </div>
+
+    <div class="mb-15">
+
+      <app-form-text
+        placeholder="Email"
+        formControlName="email"
+        whiteMd="true"
+        invalid="{{f.email.errors}}"
+        email
+      ></app-form-text>
+
+    </div>
+
+    <div class="mb-15">
+
+      <app-form-password
+          placeholder="Change password"
+          formControlName="password"
+          whiteMd="true"
+      ></app-form-password>
+
+    </div>
+
+    <div class="mb-15">
+
+      <app-form-date
+          placeholder="Date of birth"
+          formControlName="dob"
+          whiteMd="true"
+          manual="true"
+      ></app-form-date>
+
+    </div>
+
+  </div>
+
+  <div class="mb-30">
+    <button class="button button--primary button--fullWidth button--maxWidth">Save</button>
+  </div>
+
+</form>
+
+
+<a class="bold" routerLink="/myvitl/account/communication">
+  Communication preferences
+  <span class="arrow arrow--right"></span>
+</a>

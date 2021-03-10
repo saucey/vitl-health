@@ -1,0 +1,58 @@
+<div class="grid grid--alignTop">
+
+    <div class="grid__item--4 grid__item--order-2 grid__item--start-9 myvitl__sidebar" *ngIf="user?.dnaStatus">
+
+        <div class="myvitl__sidebar__section myvitl__sidebar__section--cream">
+            <app-kit-status [status]="user.dnaStatus"></app-kit-status>
+        </div>
+
+        <div class="myvitl__sectionDivider visible-xs mt-30 mb-30"></div>
+
+    </div>
+
+    <div class="grid__item--order-1" [class.grid__item--7]="user?.dnaStatus" [class.grid__item--12]="!user?.dnaStatus">
+
+        <h1 class="heading font-30 font-md-24 mb-30 mb-md-45">Personalise your nutrition</h1>
+
+        <p class="copy mb-30 mb-md-45 font-20 font-sm-18">How would you like to begin?</p>
+
+        <ul class="myvitl__goals myvitl__goals--accountStyle">
+
+            <li class="myvitl__goalPreview myvitl__goalPreview--accountStyle" [style.outline-color]="'#46BC8F'" (click)="openConsultation()">
+                <div class="myvitl__goalPreview__bar" [style.background]="'#46BC8F'"></div>
+                <div class="myvitl__goalPreview__icon">
+                    <img appImage category="icons" key="consultation" [height]="40" [heightLg]="45" [colorize]="'#46BC8F'" [truecolor]="true" />
+                </div>
+                <div class="myvitl__goalPreview__label">
+                    <div class="myvitl__goalPreview__name mb-0 mb-md-10">Health consultation</div>
+                    <div class="myvitl__goalPreview__tagline hidden-xs hidden-sm">Get your free health report</div>
+                </div>
+            </li>
+
+            <li routerLink="/product/blood" class="myvitl__goalPreview myvitl__goalPreview--accountStyle" [style.outline-color]="'#51AFD5'">
+                <div class="myvitl__goalPreview__bar" [style.background]="'#51AFD5'"></div>
+                <div class="myvitl__goalPreview__icon">
+                    <img appImage category="icons" key="blood" [height]="40" [heightLg]="45" [colorize]="'#51AFD5'" [truecolor]="true" />
+                </div>
+                <div class="myvitl__goalPreview__label">
+                    <div class="myvitl__goalPreview__name mb-0 mb-md-10">Vitamin level test</div>
+                    <div class="myvitl__goalPreview__tagline hidden-xs hidden-sm">Track your health and wellness</div>
+                </div>
+            </li>
+
+            <li routerLink="/product/dna" class="myvitl__goalPreview myvitl__goalPreview--accountStyle" [style.outline-color]="'#9054A2'" *ngIf="!user?.dnaStatus">
+                <div class="myvitl__goalPreview__bar" [style.background]="'#9054A2'"></div>
+                <div class="myvitl__goalPreview__icon">
+                    <img appImage category="icons" key="dna" [height]="40" [heightLg]="45" [colorize]="'#9054A2'" [truecolor]="true" />
+                </div>
+                <div class="myvitl__goalPreview__label">
+                    <div class="myvitl__goalPreview__name mb-0 mb-md-10">DNA Nutrition test</div>
+                    <div class="myvitl__goalPreview__tagline hidden-xs hidden-sm">Unlock the secrets of your DNA</div>
+                </div>
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>

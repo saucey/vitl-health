@@ -1,0 +1,8 @@
+<div class="mb-30">
+  <img src="https://static.vitl.com/assets/images/Pin.png" srcset="https://static.vitl.com/assets/images/Pin%402x.png 2x" />
+</div>
+<p class="copy copy--semiBold font-16">{{data.address.address}}</p>
+<p class="copy copy--semiBold font-16">{{data.address.town}}</p>
+<p class="copy copy--semiBold font-16" *ngIf="data.address.county">{{data.address.county}}</p>
+<p class="copy copy--semiBold font-16">{{data.address.postcode}}</p>
+<p class="copy copy--semiBold font-16 mb-20">{{data.address.country | toCountry}}</p>

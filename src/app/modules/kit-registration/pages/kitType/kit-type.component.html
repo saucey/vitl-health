@@ -1,0 +1,10 @@
+<h5 class="copy copy--large mb-15 text-center">Which kit do you have?</h5>
+<div class="mb-15 form__inline-md">
+    <div class="form__inline__item--small text-center" *ngFor="let kit of kitTypes">
+        <div class="button button--kitType button--blackBorder mt-20"
+             (click)="onKitTypeSelect(kit)">
+            <img class="icon__image lazyload" data-src="{{kit.icon}}">
+        </div>
+        <div class="copy pt-15">{{kit.label}}</div>
+    </div>
+</div>

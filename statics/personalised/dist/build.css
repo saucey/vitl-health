@@ -1,0 +1,537 @@
+body {
+    background: #ffffff;
+    text-align: center;
+    font-family: SofiaProMedium, SofiaPro, Helvetica, Arial, Sans-Serif;
+    font-size: 15px;
+    color: #333333;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-family: HurmeGeometric, SofiaProBold, Helvetica, Arial, Sans-Serif;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+hr {
+    width: 67px;
+    margin: 0 auto 15px;
+    border-top: 1.51px solid #FFD326;
+}
+
+hr.black {
+    border-top: 1.51px solid #333333;
+}
+
+.divider {
+    background: #FEF6DC;
+    padding: 0 20px;
+}
+
+.divider_full {
+    padding: 0;
+}
+
+.divider hr {
+    border-top: 1px solid rgba(51, 51, 51, .05);
+    margin-bottom: 0px;
+    width: 100%;
+}
+
+.mb-6 {
+    margin-bottom: 4rem!important;
+}
+
+.mb-7 {
+    margin-bottom: 5rem!important;
+}
+
+.mb-8 {
+    margin-bottom: 6rem!important;
+}
+
+h2 {
+    font-family: SofiaProMedium, SofiaPro, Helvetica, Arial, Sans-Serif;
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+h3 {
+    font-family: HurmeGeometric, SofiaProBold, Helvetica, Arial, Sans-Serif;
+    font-size: 25px;
+}
+
+p {
+
+}
+
+p.small {
+    color: rgba(51, 51, 51, .85);
+}
+
+p.medium {
+    font-size: 14px;
+}
+
+p.large {
+    font-size: 18px;
+}
+
+strong {
+    font-family: SofiaProBold;
+}
+
+a {
+    position: relative;
+    color: black !important;
+    display: inline-block;
+    font-family: SofiaProSemiBold;
+}
+
+a.underlined:after {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 1px;
+    background: #333333;
+    width: 100%;
+    content: "";
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+    font-size: 16px;
+    background: #FFD326;
+    min-width: 150px;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+.cta:after {
+    display: none;
+}
+
+.cta_white {
+    background: #FFFAF4;
+}
+
+.hero {
+    position: relative;
+    min-height: 80vh;
+    padding-top: 45px;
+    padding-bottom: 30px;
+}
+
+.hero_small {
+    min-height: auto;
+}
+
+.hero_flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 720px) {
+    .hero .container {
+        max-width: 375px;
+    }
+}
+
+.hero .container {
+    margin: 0 auto;
+}
+
+.hero .container > img {
+    width: 100%;
+    max-width: 375px;
+}
+
+.hero_cream {
+    background: #FEF6DC;
+}
+
+header {
+    position: relative;
+    height: 57px;
+    background: #F3EFD4;
+}
+
+header .container {
+    position: relative;
+    height: 57px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+header .logo {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    width: 70px;
+    margin-left: -35px;
+    transition: 0.3s left ease;
+}
+
+header .cta {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s all ease;
+}
+
+body.scrolled {
+    margin-top: 57px;
+}
+
+body.scrolled header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 9999;
+}
+
+body.scrolled header .logo {
+    left: 75px;
+}
+
+body.scrolled header .cta {
+    opacity: 1;
+    visibility: visible;
+}
+
+.carousel {
+
+}
+
+.owl-carousel .owl-item img {
+    width: auto;
+    margin: 0 auto;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+    background: #999;
+    width: 8px;
+    height: 8px;
+    margin: 5px;
+}
+
+.owl-theme .owl-dots .owl-dot.active span {
+    background: #333;
+}
+
+
+.carousel li {
+    width: 250px;
+    margin: 0 auto;
+}
+
+.carousel li img {
+    margin-bottom: 30px !important;
+}
+
+.carousel li h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.carousel li hr {
+    margin-bottom: 35px;
+}
+
+.carousel li p {
+    width: 230px;
+    margin: 0 auto;
+}
+.carousel li .title {
+    font-size: 20px;
+}
+
+.carousel li .subtitle {
+    font-size: 15px;
+    color: rgba(51, 51, 51, .71);
+}
+
+#hero-one-carousel {
+    position: relative;
+    margin-bottom: 0px;
+    width: 100%;
+    height: 350px;
+}
+
+#hero-one-carousel li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    animation: carouselFadeInOut 10s infinite;
+    opacity: 0;
+    background-image: url(https://static-prod.vitl.com/assets/lp/personalised/images/mobile/hero-one-box@2x.png?height=647&compress=1);
+    background-size: 648px 647px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#hero-one-carousel li + li {
+    background-image: url(https://static-prod.vitl.com/assets/lp/personalised/images/mobile/hero-one-hand@2x.png?height=350&compress=1);
+    animation-delay: 3.333s;
+    background-size: 437px 350px;
+}
+
+#hero-one-carousel li + li + li {
+    background-image: url(https://static-prod.vitl.com/assets/lp/personalised/images/mobile/hero-one-girl@2x.png?height=359&compress=1);
+    animation-delay: 6.666s;
+    background-size: 375px 359px;
+}
+
+@keyframes carouselFadeInOut {
+    0% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    35% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.hero_with_floating {
+    margin-top: 150px;
+    padding-top: 175px;
+}
+
+#floating-box {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: auto;
+    max-width: none;
+}
+
+footer {
+    background: #FEF6DC;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer span {
+    padding: 0 5px;
+    border-right: 1px solid rgba(51, 51, 51, .6);
+    line-height: 14px;
+}
+
+footer span:last-child {
+    border-right: 0px;
+}
+
+footer span,
+footer span a {
+    color: rgba(51, 51, 51, .6) !important;
+    font-family: SofiaProMedium;
+    font-size: 14px;
+}
+
+footer span a:after {
+    display:none;
+}
+
+#hero-one,
+#hero-three,
+#hero-six {
+    background-repeat: no-repeat;
+}
+
+#hero-one {
+    background-image: url(https://static-prod.vitl.com/assets/lp/personalised/images/backgrounds/mobile/hero-one.png?compress=1&background=%23FEF6DC);
+    background-position: center bottom;
+    background-size: auto 576px;
+}
+
+#hero-three {
+    background-image: url(https://static-prod.vitl.com/assets/lp/personalised/images/backgrounds/mobile/hero-three.png?compress=1&background=%23FEF6DC);
+    background-position: center;
+    background-size: auto 659px;
+}
+
+#hero-six {
+    background-image: url(https://static-prod.vitl.com/assets/lp/personalised/images/backgrounds/mobile/hero-six.png?compress=1&background=%23FEF6DC);
+    background-position: center top;
+    background-size: auto 598px;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+    body.scrolled {
+        margin-top: 93px;
+    }
+    .hero_small {
+        min-height: 80vh;
+    }
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+    h3 {
+        font-size: 35px;
+    }
+    .cta {
+        height: 58px;
+        font-size: 20px;
+        min-width: 175px;
+        transition: 0.3s background ease;
+    }
+    .cta:hover {
+        background: #FFED40;
+    }
+    .cta_white:hover {
+        background: #F2EDE7;
+    }
+    p.medium {
+        font-size: 17px;
+    }
+    p.large {
+        font-size: 18px;
+    }
+    header {
+        height: 93px;
+    }
+    header .logo {
+        width: 105px;
+        top: 20px;
+    }
+    header .container {
+        height: 93px;
+    }
+    .hero .container > img {
+        width: 100%;
+        max-width: 375px;
+    }
+    .hero_with_floating {
+        margin-top: auto;
+        padding-top: 45px;
+    }
+    #hero-one {
+        padding-top: 0;
+        background-image: url(https://static-prod.vitl.com/assets/lp/personalised/images/backgrounds/desktop/hero-one.png?compress=1&background=%23FEF6DC);
+        background-position: center bottom;
+        background-size: auto 100%;
+    }
+    #hero-one .container {
+        align-self: stretch;
+    }
+    #hero-one .container .row {
+        align-items: center;
+        height: 100%;
+    }
+    #hero-one-carousel-container {
+        height: 100%;
+    }
+
+    #hero-one-carousel {
+        height: 100%;
+    }
+
+    #hero-one-carousel li {
+        width: 140%;
+        margin-left: -20%;
+        background-image: url(https://static-prod.vitl.com/assets/lp/personalised/images/desktop/hero-one-box@2x.png?height=568&compress=1);
+        background-size: auto 80%;
+    }
+
+    #hero-one-carousel li + li {
+
+        background-image: url(https://static-prod.vitl.com/assets/lp/personalised/images/desktop/hero-one-hand@2x.png?height=712&compress=1);
+        background-size: auto 100%;
+        background-position: center bottom;
+    }
+
+    #hero-one-carousel li + li + li {
+        background-image: url(https://static-prod.vitl.com/assets/lp/personalised/images/desktop/hero-one-girl@2x.png?height=708&compress=1);
+        background-size: auto 100%;
+        background-position: bottom center;
+    }
+
+
+    #hero-three {
+        background-image: url(https://static-prod.vitl.com/assets/lp/personalised/images/backgrounds/desktop/hero-three.png?height=896&compress=1&background=%23FEF6DC);
+        background-position: center;
+        background-size: auto 896px;
+    }
+
+    #hero-six {
+        background-image: url(https://static-prod.vitl.com/assets/lp/personalised/images/backgrounds/desktop/hero-six@2x.png?height=636&compress=1&background=%23FEF6DC);
+        background-position: center bottom;
+        background-size: auto 636px;
+    }
+
+    #why-vitl-image {
+        width: 300px;
+    }
+
+    .icon_row {
+        padding: 0 40px;
+    }
+
+    #hero-six .floating-box {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-100%);
+        bottom: 0;
+        height: 100%;
+        width: auto;
+        max-width: none;
+    }
+
+    .carousel li h3 {
+        height: 60px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+}
+
+
+@media screen and (min-width: 992px) {
+    #why-vitl-image {
+        width: 500px;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+    #hero-six .floating-box {
+        height: 115%;
+    }
+
+}

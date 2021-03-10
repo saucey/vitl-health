@@ -1,0 +1,253 @@
+<div class="new-UI">
+    <header class="header">
+
+        <div *ngIf="banner && navType === 'shopfront'" style="position: relative; z-index: 100;">
+            <app-banner [type]="banner"></app-banner>
+        </div>
+
+        <app-utm-popup type="dna" *ngIf="popup && popup === 'dna'"></app-utm-popup>
+
+        <div *ngIf="navType === 'shopfront'">
+
+            <!-- nav mobile -->
+            <nav class="navbar navbar--mobile visible-xs visible-sm visible-md"
+                [class.navbar--scrolled]="scrolled || navMobileIsOpen">
+                <div class="navbar__nav">
+                    <a class="navbar__logo" routerLink="/">
+                        <img src="https://static.vitl.com/images/logo/vitl_logo.svg" alt="Vitl">
+                    </a>
+
+                    <div *ngIf="cart?.count" class="header__cart" (click)="showCart()">
+                        <img width="20" src="https://static.vitl.com/images/icons/icon-cart.svg" alt="">
+                        <span>{{cart?.count}}</span>
+                    </div>
+                    <button class="navbar__toggle" [class.is-open]="navMobileIsOpen" type="button"
+                        (click)="toggleNavMobile()">
+                        <span class="navbar__toggle__inner"></span>
+                    </button>
+                </div>
+
+                <div class="navbar__dropdown" [ngClass]="{
+                        'is-open': navMobileIsOpen,
+                        'is-closed': !navMobileIsOpen && !isNavInit}">
+                    <div class="container">
+                        <a class="button button--xsmall button--primary width--full mb-20"
+                            (click)="openConsultation()">Take Consultation</a>
+
+                        <div *ngFor="let category of navShopCategories; let i = index"
+                            class="expand-content expand-content--pill" [class.is-active]="activeExpandItem === i">
+                            <div class="expand-content__header" (click)="toggleExpand(i)">
+                                <p><strong>{{ category.label }}</strong></p>
+                            </div>
+                            <div class="expand-content__body">
+                                <div *ngFor="let product of category.products" class="dropdown-products__item row">
+                                    <a class="col-xs-4" routerLink="{{ product.route }}"><img [src]="product.imgUrl"
+                                            alt="{{ product.label }}" /></a>
+                                    <div class="col-xs-8 display-flex">
+                                        <p class="text--xsmall mb-5"><strong>{{ product.label }}</strong></p>
+                                        <p class="text--xxsmall mb-5">{{ product.description }}</p>
+                                        <a class="link text--xsmall" routerLink="{{ product.route }}">Learn more</a>
+                                    </div>
+                                </div>
+                                <a *ngIf="category.action" class="button button--small button--ghost width--full mt-25"
+                                    routerLink="{{ category.action.route }}">
+                                    {{ category.action.buttonLabel }}
+                                </a>
+                            </div>
+                        </div>
+
+                        <a class="nav-item nav-item--main" routerLink="kit"><strong>Register Kit</strong></a>
+                        <a class="nav-item nav-item--main" routerLink="myvitl"><strong>Account</strong></a>
+                    </div>
+                </div>
+            </nav>
+            <!-- nav mobile end -->
+
+            <!-- nav desktop -->
+            <nav class="navbar navbar--desktop visible-lg visible-xl"
+                [class.navbar--scrolled]="scrolled || shopButtonIsHover || shopDropdownIsHover">
+                <div class="container">
+                    <!-- main navbar -->
+                    <div class="navbar__nav">
+                        <div class="display-flex flex-center">
+                            <div class="nav-item nav-item--main pl-30 pr-30"
+                                [class.is-active]="shopButtonIsHover || shopDropdownIsHover"
+                                (mouseenter)="toggleShopButton(true)" (mouseleave)="toggleShopButton(false)">
+                                <span class="nav-item__inner">Shop</span>
+                            </div>
+                            <a class="nav-item nav-item--main" (click)="openConsultation()"><span
+                                    class="nav-item__inner">Take Consultation</span></a>
+                        </div>
+
+                        <a class="navbar__logo" routerLink="/">
+                            <img src="https://static.vitl.com/images/logo/vitl_logo.svg" alt="Vitl">
+                        </a>
+
+                        <div class="display-flex flex-center">
+                            <div *ngIf="cart?.count" class="header__cart" (click)="showCart()">
+                                <img width="20" src="https://static.vitl.com/images/icons/icon-cart.svg" alt="">
+                                <span>{{cart?.count}}</span>
+                            </div>
+                            <a class="nav-item nav-item--main" routerLink="kit"><span class="nav-item__inner">Register
+                                    Kit</span></a>
+                            <a class="nav-item nav-item--main mr-15" routerLink="myvitl"><span
+                                    class="nav-item__inner">Account</span></a>
+                        </div>
+                    </div>
+                    <!-- main navbar end -->
+
+                    <!-- dropdown -->
+                    <div class="navbar__dropdown" [class.is-open]="shopButtonIsHover || shopDropdownIsHover"
+                        (mouseenter)="shopDropdownIsHover = true" (mouseleave)="shopDropdownIsHover = false">
+                        <div class="row">
+                            <!-- navbar secondary -->
+                            <div class="col-xs-2">
+                                <div *ngFor="let category of navShopCategories" class="nav-item nav-item--secondary"
+                                    [class.is-active]="navActiveShopCategoryID === category.id"
+                                    (mouseenter)="navActiveShopCategoryID = category.id">
+                                    <span class="nav-item__inner">{{ category.label }}</span>
+                                </div>
+                            </div>
+                            <!-- navbar secondary end -->
+
+                            <!-- dropdown secondary -->
+                            <div *ngFor="let category of navShopCategories" class="dropdown-products col-xs-10"
+                                [ngClass]="{
+                                    'is-active': navActiveShopCategoryID === category.id,
+                                    'dropdown-products--5': category.products.length >= 4
+                                }">
+                                <div *ngFor="let product of category.products" class="dropdown-products__item">
+                                    <p class="mb-15"><strong>{{ product.label }}</strong></p>
+                                    <a class="mb-15" routerLink="{{ product.route }}"><img src="{{product.imgUrl}}?v=1"
+                                            alt="{{ product.label }}" /></a>
+                                    <p class="text--xsmall mb-15">{{ product.description }}</p>
+                                    <a class="link text--xsmall" routerLink="{{ product.route }}">Learn more</a>
+                                </div>
+                                <div *ngIf="category.action"
+                                    class="dropdown-products__item dropdown-products__item--more">
+                                    <p class="text--xsmall">{{ category.action.description }}</p>
+                                    <a class="link text--xsmall" routerLink="{{ category.action.route }}">{{
+                                        category.action.buttonLabel }}</a>
+                                </div>
+                            </div>
+                            <!-- dropdown secondary end -->
+                        </div>
+                    </div>
+                    <!-- dropdown end -->
+                </div>
+            </nav>
+            <!-- nav desktop end -->
+        </div>
+
+        <div *ngIf="navType === 'account'">
+            <!-- nav mobile -->
+            <nav class="navbar navbar--mobile visible-xs visible-sm visible-md"
+                [class.navbar--scrolled]="scrolled || navMobileIsOpen">
+                <div class="navbar__nav">
+                    <a class="navbar__logo" routerLink="/">
+                        <img src="https://static.vitl.com/images/logo/vitl_logo.svg" alt="Vitl">
+                    </a>
+
+                    <div *ngIf="cart?.count" class="header__cart" (click)="showCart()">
+                        <img width="20" src="https://static.vitl.com/images/icons/icon-cart.svg" alt="">
+                        <span>{{cart?.count}}</span>
+                    </div>
+                    <button class="navbar__toggle navbar__toggle--account" [class.is-open]="navMobileIsOpen"
+                        type="button" (click)="toggleNavMobile()">
+                        <img width="20" src="https://static.vitl.com/images/icons/icon-user.svg" alt="">
+                        <span class="arrow ml-5"></span>
+                    </button>
+                </div>
+
+                <div class="navbar__dropdown" [ngClass]="{
+                        'is-open': navMobileIsOpen,
+                        'is-closed': !navMobileIsOpen && !isNavInit}">
+                    <div class="container">
+                        <a class="nav-item nav-item--main" routerLink="myvitl"><strong>My Vitl</strong></a>
+                        <div class="expand-content expand-content--pill nav-divider"
+                            [class.is-active]="activeExpandItem === i">
+                            <div class="expand-content__header" (click)="toggleExpand(i)">
+                                <p><strong>View Results</strong></p>
+                            </div>
+                            <div class="expand-content__body">
+                                <a class="nav-item nav-item--main"
+                                    routerLink="myvitl/result"><strong>Consultation</strong></a>
+                                <a class="nav-item nav-item--main" routerLink="myvitl/result/blood"><strong>Blood
+                                        Test</strong></a>
+                                <a class="nav-item nav-item--main" routerLink="myvitl/result/dna"><strong>DNA
+                                        Test</strong></a>
+                            </div>
+                        </div>
+                        <div *ngFor="let item of navAccountItems" class="nav-item nav-item--main"
+                            [class.nav-divider]="item.hasDivider" (click)="handleMyVitlNavClick(item)">
+                            <strong>{{ item.label }}</strong>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- nav mobile end -->
+
+            <!-- nav desktop -->
+            <nav class="navbar navbar--desktop visible-lg visible-xl" [class.navbar--scrolled]="scrolled">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-10 col-xs-offset-1">
+                            <div class="navbar__nav">
+
+                                <div class="display-flex flex-center">
+                                    <a class="nav-item nav-item--main pl-30 pr-30" routerLink="myvitl"><span
+                                            class="nav-item__inner">My Vitl</span></a>
+                                    <div class="nav-item nav-item--main">
+                                        <span class="nav-item__inner">
+                                            View Results
+                                            <span class="arrow ml-5"></span>
+                                        </span>
+                                        <div class="navbar__dropdown">
+                                            <a class="nav-item nav-item--secondary" routerLink="myvitl/result">
+                                                <span class="nav-item__inner">Consultation</span>
+                                            </a>
+                                            <a class="nav-item nav-item--secondary" routerLink="myvitl/result/blood">
+                                                <span class="nav-item__inner">Blood Test</span>
+                                            </a>
+                                            <a class="nav-item nav-item--secondary" routerLink="myvitl/result/dna">
+                                                <span class="nav-item__inner">DNA Test</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <a class="navbar__logo" routerLink="/">
+                                    <img src="https://static.vitl.com/images/logo/vitl_logo.svg" alt="Vitl">
+                                </a>
+
+                                <div class="display-flex flex-center">
+                                    <div *ngIf="cart?.count" class="header__cart" (click)="showCart()">
+                                        <img width="20" src="https://static.vitl.com/images/icons/icon-cart.svg" alt="">
+                                        <span>{{cart?.count}}</span>
+                                    </div>
+                                    <div class="nav-item nav-item--main nav-item--no-underline mr-15">
+                                        <span class="nav-item__inner">
+                                            <img width="20" src="https://static.vitl.com/images/icons/icon-user.svg"
+                                                alt="">
+                                            <span class="arrow ml-5"></span>
+                                        </span>
+                                        <div class="navbar__dropdown">
+                                            <div *ngFor="let item of navAccountItems; let i = index"
+                                                class="nav-item nav-item--secondary"
+                                                [class.nav-divider]="item.hasDivider && i !== 0"
+                                                (click)="handleMyVitlNavClick(item)">
+                                                <span class="nav-item__inner">{{ item.label }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- nav desktop end -->
+        </div>
+
+    </header>
+</div>

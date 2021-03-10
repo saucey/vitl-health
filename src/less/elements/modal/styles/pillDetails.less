@@ -1,0 +1,72 @@
+&--pill-details {
+
+  .modal2__inner {
+    background-color: #F9F9F4;
+    
+    @media @md {
+      max-height: 600px;
+      width: 800px;
+      text-align: left;
+    }
+  }
+
+  .modal2__ctas {
+    display: none;
+  }
+
+  header {
+    margin: -20px -20px 30px -20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    @media @md {
+      display: flex;
+    }
+  }
+
+  .pill-details__table {
+    border: 1px solid @brand-gray;
+
+    p,
+    ul {
+      padding: 5px 15px;
+      border-top: 1px solid @brand-gray;
+
+      &:first-child {
+        border-top: none;
+      }
+    }
+
+    ul {
+
+      @media @md {
+        padding-top: 0;
+        padding-bottom: 0;
+        column-count: 2;
+        column-gap: 40px;
+        column-rule: 1px solid @brand-gray;
+      }
+    }
+
+    li {
+      padding-bottom: 5px;
+      text-align: left;
+
+      display: flex;
+      justify-content: space-between;
+
+      &:first-child {
+        padding-top: 5px;
+      }
+    }
+
+    span + span {
+      white-space: nowrap;
+    }
+
+    .pill-details__rda {
+      justify-content: center;
+    }
+  }
+}
+  

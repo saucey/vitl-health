@@ -1,0 +1,31 @@
+<div class="new-UI">
+    <header class="background--cream">
+        <img height="90" src="{{ data.icon.url }}" alt="data.label" />
+        <div>
+            <h2 class="heading-2">{{ data.label }}</h2>
+            <div class="divider mt-15 mb-15"></div>
+            <p class="heading-3">{{ data.description }}</p>
+        </div>
+    </header>
+    <p>{{ data.longDescription }}</p>
+    <div class="pill-details__table mt-20">
+        <p><strong>Ingredients</strong></p>
+        <p class="text--small">{{ data.ingredientsList }}</p>
+        <p><strong>Nutritional information</strong></p>
+        <ul>
+            <li *ngFor="let ingredient of data.ingredients"
+                [class.pb-0]="ingredient.quantity === ''"
+                class="text--xsmall">
+                <span>{{ ingredient.name }}</span>
+                <span>
+                    <span *ngIf="ingredient.quantity">{{ ingredient.quantity }}</span>
+                    <span *ngIf="ingredient.rda"> ({{ ingredient.rda }}%)</span>
+                    <span *ngIf="!ingredient.rda"> (&dagger;)</span>
+                </span>
+            </li>
+            <li *ngIf="showRDAInfo" class="text--xsmall pill-details__rda">&dagger; NRV not established</li>
+        </ul>
+        <p><strong>Further information</strong></p>
+        <p class="text--small">Does not contain artificial preservatives, colours, sweeteners or flavourings. Free from gluten, lactose, dairy products, yeast, salt, wheat and maize.</p>
+    </div>
+</div>

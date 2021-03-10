@@ -1,0 +1,22 @@
+<p class="copy copy--small pb-10 pt-5 text-left">{{placeholder}}</p>
+<div class="input__dateInputs">
+
+    <div class="selectfield day" [ngClass]="{'input--invalid': invalid}">
+        <select [(ngModel)]='dobDay'>
+            <option [value]="(('' + day).length == 2 ? '' : '0') + day" *ngFor="let day of days">{{day}}</option>
+        </select>
+    </div>
+
+    <div class="selectfield month" [ngClass]="{'input--invalid': invalid}">
+        <select [(ngModel)]='dobMonth'>
+            <option [value]="((''+(i+1)).length < 2 ? '0' : '') + (i+1)"
+                    *ngFor="let month of months; let i = index">{{month}}</option>
+        </select>
+    </div>
+
+    <div class="selectfield year" [ngClass]="{'input--invalid': invalid}">
+        <select [(ngModel)]="dobYear">
+            <option [value]="year" *ngFor="let year of years">{{year}}</option>
+        </select>
+    </div>
+</div>

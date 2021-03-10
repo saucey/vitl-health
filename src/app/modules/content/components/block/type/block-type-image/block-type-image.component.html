@@ -1,0 +1,5 @@
+<div *ngIf="block.image && block.image.url"
+     class="myvitl__content__block__image myvitl__content__block__image--{{block.image?.display_mode}} myvitl__content__block__image--{{block.style?.item_size}}"
+     [appAction]="block.image.action">
+  <img [appImage]="block.image" [height]="getHeight()" [compress]="true"/>
+</div>

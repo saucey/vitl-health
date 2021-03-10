@@ -1,0 +1,55 @@
+<div *ngIf="displayOptions && product.plans.length > 1" class="max-width-320-wrap">
+
+    <ul class="selector mb-30">
+
+        <li class="selector__option" *ngFor="let plan of product.plans" (click)="setPlan(plan)" [ngClass]="{'selector__option--active':selectedPlan == plan}">
+            <span>{{plan.label}}</span>
+            <span class="price">{{plan.rrp}} <span *ngIf="selectedPlan.priceLabel">{{selectedPlan.priceLabel}}</span></span>
+        </li>
+
+    </ul>
+
+</div>
+
+<div *ngIf="(product.plans.length === 1 || !displayOptions) && !isFreeTrial" class="price-wrapper">
+
+    <p class="copy copy--big copy--rrp" *ngIf="selectedPlan.offerPrice"><del>{{selectedPlan.rrp}}</del></p>
+    <h3 class="copy copy--price">
+        {{selectedPlan.offerPrice ? selectedPlan.offerPrice : selectedPlan.rrp}}
+        <span *ngIf="selectedPlan.priceLabel">{{selectedPlan.priceLabel}}</span>
+        <span *ngIf="isMonthly">/ month</span>
+    </h3>
+
+    <p class="copy copy--small mt-5 mb-25" *ngIf="displayPlanLabel">{{selectedPlan.label}}</p>
+</div>
+
+<button
+    *ngIf="allowAdd && !isFreeTrial"
+    class="button button--primary button--medium button--loader mb-20"
+    (click)="add()">
+    Add to basket
+</button>
+
+<button
+    *ngIf="allowAdd && isFreeTrial"
+    class="button button--primary button--medium button--loader mb-20"
+    (click)="claimFreeTrial()">
+    Claim free trial
+</button>
+
+<p class="copy copy--small" *ngIf="offerCoupon">Limited time offer</p>
+
+<div *ngIf="displayShippingOptions && !isFreeTrial">
+
+    <p class="copy copy--small" *ngIf="showQuarterlyMessage">This is a quarterly subscription</p>
+
+    <p class="copy copy--small"  *ngIf="showFreeDelivery && !showQuarterlyMessage">{{deliveryMessage}}</p>
+
+</div>
+
+<div *ngIf="isFreeTrial">
+    <p class="copy copy--small">
+        £3.95 P&P - free delivery after 1st order<br>
+        Pause or cancel anytime
+    </p>
+</div>

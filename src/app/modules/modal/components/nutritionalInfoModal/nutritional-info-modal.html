@@ -1,0 +1,12 @@
+<p class="modal2__nutrition-info__heading">Nutritional information</p>
+<ul class="modal2__nutrition-info__list">
+    <li>
+        <p class="copy copy--small">Ingredient</p>
+        <p class="copy copy--small">Per capsule<br/>% NRV</p>
+    </li>
+    <li *ngFor="let item of data">
+        <p class="copy copy--small">{{item.name}}</p>
+        <p class="copy copy--small">{{item.quantity}}<br /><span class="nrv">{{item.rda === null ? "†" : item.rda}}</span></p>
+    </li>
+</ul>
+<p class="copy--small text-center pb-30">† NRV not established</p>

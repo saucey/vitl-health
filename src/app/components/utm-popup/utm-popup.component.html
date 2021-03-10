@@ -1,0 +1,38 @@
+<div class="new-UI popup-wrapper" *ngIf="!dismissed()">
+  <div class="popup popup--utm">
+    <div class="popup__dismiss" (click)="dismiss()">
+      <img width="16" height="16" src="https://static.vitl.com/images/icons/cross.svg" alt="" />
+    </div>
+    <div class="popup__header">
+      <img src="https://static.vitl.com/images/christmas/New-Year-2020.jpg" alt="" />
+      <h1>
+        <span>SAVE 25%</span>
+        on a DNA Nutrition Test!
+      </h1>
+    </div>
+    <div class="popup__body">
+      <div>
+        <h2 class="heading-4 mb-10">Get set for 2021 with a DNA Nutrition Test to help you discover how to:</h2>
+        <ul>
+          <li>
+            <img class="mr-10" width="15" height="15"
+              src="https://static.vitl.com/images/icons/icon-compare-check-circle.svg" />
+            Eat smarter
+          </li>
+          <li>
+            <img class="mr-10" width="15" height="15"
+              src="https://static.vitl.com/images/icons/icon-compare-check-circle.svg" />
+            Supplement smarter
+          </li>
+          <li>
+            <img class="mr-10" width="15" height="15"
+              src="https://static.vitl.com/images/icons/icon-compare-check-circle.svg" />
+            Work out smarter
+          </li>
+        </ul>
+        <button class="button button--xsmall button--primary width--full mt-25" (click)="navigate()">Find out
+          more</button>
+      </div>
+    </div>
+  </div>
+</div>

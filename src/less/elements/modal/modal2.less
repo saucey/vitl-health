@@ -1,0 +1,240 @@
+.modal2 {
+
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: fade(@brand-primary-black, 50%);
+  animation: modalFadeIn 0.5s;
+  overflow: hidden;
+
+  .dummyFocus {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    height: 0;
+    width: 0;
+    margin: -99999px;
+  }
+
+  &__inner {
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: @brand-primary-white;
+    padding: 20px;
+    text-align: center;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #F4F2EC;
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #D1CDC1;
+      border-radius: 5px;
+    }
+
+    &--hasCta {
+      .modal2__content {
+        max-height: ~"calc(100vh - 250px)";
+        overflow-y: auto;
+      }
+    }
+
+    @media @md {
+      top: 50%;
+      left: 50%;
+      right: auto;
+      bottom: auto;
+      transform: translateX(-50%) translateY(-50%);
+      width: 475px;
+      max-height: 95vh;
+      &--hasCta {
+        .modal2__content {
+          max-height: 400px;
+        }
+      }
+    }
+
+    @media screen and (min-width: @breakpoint-md) and (max-height: 650px) {
+      &--hasCta {
+        .modal2__content {
+          max-height: 200px;
+        }
+      }
+    }
+
+  }
+
+  &__close {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0px;
+    right: 0px;
+    width: 60px;
+    height: 60px;
+    font-size: 36px;
+    font-family: @font-family-header;
+    color: @brand-primary-faded-cream;
+    cursor: pointer;
+    transition: 0.3s color ease;
+    &:hover {
+      color: @brand-primary-black;
+    }
+
+  }
+
+  &__title {
+
+    &__text {
+      font-family: @font-family-header;
+      font-size: 26px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      &--subtitle {
+        font-size: 16px;
+        font-family: @font-family-semi-bold;
+        line-height: 1.3em;
+      }
+      @media @md {
+        &--subtitle {
+          font-size: 18px;
+          max-width: 70%;
+          margin: 0 auto 30px;
+        }
+      }
+    }
+
+  }
+
+  &__content {
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #F4F2EC;
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #D1CDC1;
+      border-radius: 5px;
+    }
+
+  }
+
+  &__ctas {
+
+    padding-top: 20px;
+
+    &--grid {
+      .modal2__ctas__cta {
+        margin-bottom: 20px;
+      }
+      @media @md {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        .modal2__ctas__cta {
+          margin: 0 10px;
+          &:first-child {
+            margin-left: 0px;
+          }
+          &:last-child {
+            margin-right: 0px;
+          }
+        }
+      }
+    }
+
+    &--stacked {
+      .modal2__ctas__cta {
+        margin-bottom: 20px;
+      }
+    }
+
+    &__cta {
+
+      flex-direction: column;
+
+      @media @sm {
+        max-width: 290px;
+      }
+
+      &--link {
+        background: none;
+        border: 0px;
+        box-shadow: none;
+        span {
+          font-size: 16px;
+          font-family: @font-family-medium;
+          padding-bottom: 2px;
+          border-bottom: 2px solid @brand-primary-yellow;
+          transition: 0.3s color ease;
+          cursor: pointer;
+          &:hover {
+            color: @brand-primary-yellow;
+          }
+        }
+        &:hover {
+          background: none;
+        }
+      }
+
+      &--hollow {
+        border-color: @brand-primary-black;
+        background: @brand-primary-white;
+
+        &:hover {
+          background: @brand-primary-cream;
+          border-color: @brand-primary-black;
+        }
+      }
+
+      &__preText {
+        font-size: 14px;
+        color: @brand-primary-faded-cream;
+        border-bottom: 0px !important;
+        margin-bottom: 5px;
+        &:hover {
+          color: @brand-primary-faded-cream;
+        }
+      }
+
+    }
+
+  }
+
+  @import "styles/alert.less";
+  @import "styles/dna.less";
+  @import "styles/small.less";
+  @import "styles/large.less";
+  @import "styles/halfScreen.less";
+  @import "styles/theone.less";
+  @import "styles/blood.less";
+  @import "styles/nutritionInfo.less";
+  @import "styles/upsell.less";
+  @import "styles/manageGoals.less";
+  @import "styles/pillDetails.less";
+
+
+}
+
+@keyframes modalFadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}

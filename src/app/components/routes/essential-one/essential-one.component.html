@@ -1,0 +1,369 @@
+<div class="outsourced_essentialone">
+
+  <!-- hero section -->
+  <section class="container-fluid lp-s1-fluid">
+    <img src="https://static.vitl.com/assets/images/lp-s1-bg.png" class="lp-s1-bg">
+    <img src="https://static.vitl.com/assets/images/lp-s1-bg-mobile.png" class="lp-s1-bg-mobile">
+    <div class="container lp-s1">
+
+      <div class="row lp-s1-row">
+        <div class="row__col-12 row__col-md-6">
+          <h2 class="lp-h2 lp-s1-h2-mobile d-block d-md-none">
+            The one supplement for the one you
+          </h2>
+          <p class="lp-p d-md-none" *ngIf="freeTrial">
+            <span class="copy--semiBold">Start with a free 30-day trial</span><br />
+            <span *ngIf="partner !== 'essential-one-price-test' && partner !== 'o2priorityjuneoffer2'">Worth {{getPrice()}}</span>
+            <span *ngIf="partner === 'essential-one-price-test' || partner === 'o2priorityjuneoffer2'">Then save 30% a month on your ongoing subscription. (RRP £14.95)</span>
+          </p>
+          <img src="https://static.vitl.com/assets/images/lp-s1-img1.png" class="img-responsive lp-s1-img1"
+               srcset="https://static.vitl.com/assets/images/lp-s1-img1@2x.png 2x, https://static.vitl.com/assets/images/lp-s1-img1@3x.png 3x">
+        </div>
+        <div class="row__col-12 row__col-md-6 vertical-center-flex">
+          <div class="lp-s1-copy">
+            <h1 class="lp-h1 d-none d-md-block">
+              The one supplement for the one you
+            </h1>
+            <div class="lp-divider d-none d-md-inline-block"></div>
+            <p class="lp-p lp-s1-subtitle d-none d-md-block" *ngIf="freeTrial">
+              <span class="copy--semiBold">Start with a free 30-day trial</span><br />
+              <span *ngIf="partner !== 'essential-one-price-test' && partner !== 'o2priorityjuneoffer2'">Worth {{getPrice()}}</span>
+              <span *ngIf="partner === 'essential-one-price-test' || partner === 'o2priorityjuneoffer2'">Then save 30% a month on your ongoing subscription. (RRP £14.95)</span>
+            </p>
+
+            <p class="lp-p" *ngIf="partner == 'essential-one-save-50'">
+              Save 50% and get your first month for just {{get50OffPrice()}}
+            </p>
+            <br />
+            <p class="lp-p">
+              Get your personalised daily multivitamin<br />tailor-made for you in just 2 minutes.
+            </p>
+
+            <div class="lp-s1-cta-wrap">
+              <a class="button button--primary mb-20" (click)="openConsultation()">Take consultation</a>
+
+              <p class="copy copy--darkGrey copy--tiny mb-5">Free delivery <span *ngIf="partner != 'essential-one-save-50'">after your first order</span></p>
+              <p class="copy copy--darkGrey copy--tiny mb-20">Pause or cancel any time</p>
+              <div *ngIf="showLogo()">
+                <p class="copy copy--darkGrey copy--tiny mb-10">Limited time offer especially for</p>
+                <img class="mb-30" src="https://static.vitl.com/assets/images/partners/{{partner}}.png"
+                     srcset="https://static.vitl.com/assets/images/partners/{{partner}}@2x.png 2x"/>
+              </div>
+              <div *ngIf="partner === 'essential-one-save-30'">
+                <p class="copy copy--darkGrey copy--tiny mb-10">Save 30% at checkout using code</p>
+                <p class="copy copy--green font-28 copy--semiBold">MADE4ME30</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- lp section 2 -->
+  <section class="container-fluid lp-s2-fluid">
+    <div class="container lp-s2">
+      <div class="lp-s2-copy">
+        <h2 class="lp-h2">
+          Made for you
+        </h2>
+        <div class="lp-divider"></div>
+        <p class="lp-p lp-s2-p1">Designed for you,
+          <br>based on your body’s needs
+          <br>and your personal health goals</p>
+
+        <div class="lp-carousel-1-wrap">
+          <div class="slide lp-carousel-1-slide-1">
+            <img src="https://static.vitl.com/assets/images/lp-s2-img1.png" class="img-responsive mx-auto lp-carousel-1-img mobile-only"
+                 srcset="https://static.vitl.com/assets/images/lp-s2-img1@2x.png 2x, https://static.vitl.com/assets/images/lp-s2-img1@3x.png 3x">
+            <div class="lp-carousel-1-splitImgs">
+              <img src="https://static.vitl.com/assets/images/lp-s2-img1a.1.png" class="img-responsive mx-auto lp-carousel-1-img desktop-only"
+                   srcset="https://static.vitl.com/assets/images/lp-s2-img1a.1@2x.png 2x, https://static.vitl.com/assets/images/lp-s2-img1a.1@3x.png 3x">
+              <img src="https://static.vitl.com/assets/images/lp-s2-img1a.2.png" class="img-responsive mx-auto lp-carousel-1-img desktop-only"
+                   srcset="https://static.vitl.com/assets/images/lp-s2-img1a.2@2x.png 2x, https://static.vitl.com/assets/images/lp-s2-img1a.2@3x.png 3x">
+            </div>
+          </div>
+          <div class="slide lp-carousel-1-slide-2">
+            <img src="https://static.vitl.com/assets/images/lp-s2-img2.png" class="img-responsive mx-auto lp-carousel-1-img mobile-only"
+                 srcset="https://static.vitl.com/assets/images/lp-s2-img2@2x.png 2x, https://static.vitl.com/assets/images/lp-s2-img2@3x.png 3x">
+            <div class="lp-carousel-1-splitImgs">
+              <img src="https://static.vitl.com/assets/images/lp-s2-img2b.1.png" class="img-responsive mx-auto lp-carousel-1-img desktop-only"
+                   srcset="https://static.vitl.com/assets/images/lp-s2-img2b.1@2x.png 2x, https://static.vitl.com/assets/images/lp-s2-img2b.1@3x.png 3x">
+              <img src="https://static.vitl.com/assets/images/lp-s2-img2b.2.png" class="img-responsive mx-auto lp-carousel-1-img desktop-only"
+                   srcset="https://static.vitl.com/assets/images/lp-s2-img2b.2@2x.png 2x, https://static.vitl.com/assets/images/lp-s2-img2b.2@3x.png 3x">
+            </div>
+          </div>
+          <div class="slide lp-carousel-1-slide-3">
+            <img src="https://static.vitl.com/assets/images/lp-s2-img3.png" class="img-responsive mx-auto lp-carousel-1-img mobile-only"
+                 srcset="https://static.vitl.com/assets/images/lp-s2-img3@2x.png 2x, https://static.vitl.com/assets/images/lp-s2-img3@3x.png 3x">
+            <div class="lp-carousel-1-splitImgs">
+              <img src="https://static.vitl.com/assets/images/lp-s2-img3c.1.png" class="img-responsive mx-auto lp-carousel-1-img desktop-only"
+                   srcset="https://static.vitl.com/assets/images/lp-s2-img3c.1@2x.png 2x, https://static.vitl.com/assets/images/lp-s2-img3c.1@3x.png 3x">
+              <img src="https://static.vitl.com/assets/images/lp-s2-img3c.2.png" class="img-responsive mx-auto lp-carousel-1-img desktop-only"
+                   srcset="https://static.vitl.com/assets/images/lp-s2-img3c.2@2x.png 2x, https://static.vitl.com/assets/images/lp-s2-img3c.2@3x.png 3x">
+            </div>
+          </div>
+
+          <div class="lp-carousel-dots-wrap">
+            <span class="lp-carousel-dot dot-1 active"></span>
+            <span class="lp-carousel-dot dot-2"></span>
+            <span class="lp-carousel-dot dot-3"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- lp section 3 -->
+  <section class="container-fluid lp-s3-fluid">
+    <div class="container-fluid lp-s3-bg-circles">
+      <div class="container lp-s3">
+        <div class="lp-s3-copy">
+          <h2 class="lp-h2 text-center">
+            How it works
+          </h2>
+          <div class="text-center">
+            <div class="lp-divider black"></div>
+          </div>
+
+          <div class="row lp-s3-row">
+            <div class="row__col-12 row__col-md-6 lp-s3-col1">
+              <div class="lp-s3-copy1">
+                <div class="lp-s3-item">
+                  <img src="https://static.vitl.com/assets/images/lp-s3-ico1.png" class="lp-s3-item-ico">
+                  <div class="lp-s3-item-copy">
+                    <p class="lp-s3-item-copy-p1">Got 2 minutes?</p>
+                    <p class="lp-s3-item-copy-p2">Tell us about your diet and lifestyle</p>
+                  </div>
+                </div>
+
+                <div class="lp-s3-item">
+                  <img src="https://static.vitl.com/assets/images/lp-s3-ico2.png" class="lp-s3-item-ico">
+                  <div class="lp-s3-item-copy">
+                    <p class="lp-s3-item-copy-p1">Understand your body</p>
+                    <p class="lp-s3-item-copy-p2">Find out which vitamins and nutrients <br>are best for you</p>
+                  </div>
+                </div>
+
+                <div class="lp-s3-item">
+                  <img src="https://static.vitl.com/assets/images/lp-s3-ico3.png" class="lp-s3-item-ico">
+                  <div class="lp-s3-item-copy">
+                    <p class="lp-s3-item-copy-p1" *ngIf="freeTrial">Start the 30-day free trial</p>
+                    <p class="lp-s3-item-copy-p1" *ngIf="!freeTrial">Start today</p>
+                    <p class="lp-s3-item-copy-p2"><span *ngIf="partner == 'essential-one-save-50'">Save 50% today <br /></span>Your Essential One, delivered to you<br />(cancel anytime, no obligations)</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="row__col-12 row__col-md-6 lp-s3-copy2">
+              <img src="https://static.vitl.com/assets/images/lp-s3-img1.png" class="img-responsive mx-auto">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- lp section 4 -->
+  <section class="container-fluid lp-s4-fluid">
+    <div class="container lp-s4">
+      <div class="lp-s4-copy">
+        <div class="row">
+          <div class="row__col-12 row__col-md-6">
+            <h2 class="lp-h2 text-center">
+              Only the best ingredients
+            </h2>
+            <div class="text-center">
+              <div class="lp-divider"></div>
+            </div>
+            <p class="lp-p lp-s4-p1">
+              Your personalised vitamins give you exactly&nbsp;what&nbsp;your&nbsp;body&nbsp;needs.<br/>Nothing else.
+            </p>
+
+            <div class="lp-s4-labels-wrap">
+
+              <div class="lp-s4-label">
+                <img src="https://static.vitl.com/assets/images/lp-s4-ico1.png" class="img-responsive mx-auto lp-s4-label-ico"
+                     srcset="https://static.vitl.com/assets/images/lp-s4-ico1@2x.png 2x, https://static.vitl.com/assets/images/lp-s4-ico1@3x.png 3x">
+                <p class="lp-s4-label-p">Personalised</p>
+              </div>
+
+              <div class="lp-s4-label">
+                <img src="https://static.vitl.com/assets/images/lp-s4-ico2.png" class="img-responsive mx-auto lp-s4-label-ico"
+                     srcset="https://static.vitl.com/assets/images/lp-s4-ico2@2x.png 2x, https://static.vitl.com/assets/images/lp-s4-ico2@3x.png 3x">
+                <p class="lp-s4-label-p">Vegan friendly</p>
+              </div>
+
+              <div class="lp-s4-label">
+                <img src="https://static.vitl.com/assets/images/lp-s4-ico3.png" class="img-responsive mx-auto lp-s4-label-ico"
+                     srcset="https://static.vitl.com/assets/images/lp-s4-ico3@2x.png 2x, https://static.vitl.com/assets/images/lp-s4-ico3@3x.png 3x">
+                <p class="lp-s4-label-p">Non-GMO</p>
+              </div>
+
+            </div>
+          </div>
+          <div class="row__col-12 row__col-md-6 vertical-center-flex">
+            <div class="lp-s4-freeFrom-list-wrap">
+              <p class="lp-s4-tick-p1">
+                Free from:
+              </p>
+
+              <p class="lp-s4-freeFrom-list-p">Harmful bulking agents</p>
+              <p class="lp-s4-freeFrom-list-p">Anti-caking agents</p>
+              <p class="lp-s4-freeFrom-list-p">Artificial colours and preservatives</p>
+              <p class="lp-s4-freeFrom-list-p">Sugar and gluten</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- lp section 5 -->
+  <section class="container-fluid lp-s5-fluid">
+    <div class="container-fluid lp-s5-bg-circles">
+      <div class="container lp-s5">
+        <div class="lp-s5-copy">
+          <h2 class="lp-h2 text-center">
+            Why Vitl?
+          </h2>
+          <div class="text-center">
+            <div class="lp-divider black"></div>
+          </div>
+
+          <div class="lp-s5-carousel-wrap">
+
+            <div class="lp-carousel2-wrap">
+              <div class="lp-carousel2-items-wrap">
+                <div class="lp-carousel2-item lp-carousel-2-slide-1">
+                  <div class="lp-testi-wrap">
+                    <p class="lp-testi-p1">
+                      “I noticed a huge difference… the quality is excellent. Packaging is good, support and advice is all there. Fairly priced and very responsive team. Treat someone or yourself!”
+                    </p>
+                  </div>
+                  <div class="lp-testi-userinfo-wrap">
+                    <img src="https://static.vitl.com/assets/images/Rebecca.jpg" class="img-responsive mx-auto lp-testi-userpic"
+                         srcset="https://static.vitl.com/assets/images/Rebecca@2x.jpg 2x">
+                    <p class="lp-testi-username">Rebecca E</p>
+                    <!-- <p class="lp-testi-userlocation">London</p> -->
+                  </div>
+                  <img src="https://static.vitl.com/assets/images/lp-stars1.png" class="img-responsive mx-auto"
+                       srcset="https://static.vitl.com/assets/images/lp-stars1@2x.png 2x">
+                </div>
+
+                <div class="lp-carousel2-item lp-carousel-2-slide-2">
+                  <div class="lp-testi-wrap">
+                    <p class="lp-testi-p1">
+                      “Great customer service, and fantastic products. I have already started feeling better!”
+                    </p>
+                  </div>
+                  <div class="lp-testi-userinfo-wrap">
+                    <img src="https://static.vitl.com/assets/images/Simon.jpg" class="img-responsive mx-auto lp-testi-userpic"
+                         srcset="https://static.vitl.com/assets/images/Simon@2x.jpg 2x">
+                    <p class="lp-testi-username">Simon F</p>
+                    <!-- <p class="lp-testi-userlocation">London</p> -->
+                  </div>
+                  <img src="https://static.vitl.com/assets/images/lp-stars1.png" class="img-responsive mx-auto"
+                       srcset="https://static.vitl.com/assets/images/lp-stars1@2x.png 2x">
+                </div>
+
+                <div class="lp-carousel2-item lp-carousel-2-slide-3">
+                  <div class="lp-testi-wrap">
+                    <p class="lp-testi-p1">
+                      “I started to feel and look better after the first week of taking them. Thank you so much. I have now signed on to the monthly plan and hope to continue feeling great!”
+                    </p>
+                  </div>
+                  <div class="lp-testi-userinfo-wrap">
+                    <img src="https://static.vitl.com/assets/images/Nicola.jpg" class="img-responsive mx-auto lp-testi-userpic"
+                         srcset="https://static.vitl.com/assets/images/Nicola@2x.jpg 2x">
+                    <p class="lp-testi-username">Nicola B</p>
+                    <!-- <p class="lp-testi-userlocation">London</p> -->
+                  </div>
+                  <img src="https://static.vitl.com/assets/images/lp-stars1.png" class="img-responsive mx-auto"
+                       srcset="https://static.vitl.com/assets/images/lp-stars1@2x.png 2x">
+                </div>
+
+              </div>
+              <div class="lp-carousel-dots-wrap lp-carousel2-dots-wrap">
+                <span class="lp-carousel-dot dot-1 active"></span>
+                <span class="lp-carousel-dot dot-2"></span>
+                <span class="lp-carousel-dot dot-3"></span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- lp section 6 -->
+  <section class="container-fluid lp-s6-fluid">
+
+    <img src="https://static.vitl.com/assets/images/lp-s6-img1-mobile.png" class="img-responsive lp-s6-img1-mobile"
+         srcset="https://static.vitl.com/assets/images/lp-s6-img1-mobile@2x.png 2x, https://static.vitl.com/assets/images/lp-s6-img1-mobile@3x.png 3x">
+
+    <div class="container lp-s6">
+
+      <div class="row">
+
+        <div class="row__col-12 row__col-md-6">
+          <div class="lp-s6-carousel-1-wrap">
+            <img src="https://static.vitl.com/assets/images/lp-s6-img1.png" class="img-responsive mx-auto lp-s6-img1-desktop"
+                 srcset="https://static.vitl.com/assets/images/lp-s6-img1@2x.png 2x, https://static.vitl.com/assets/images/lp-s6-img1@3x.png 3x">
+          </div>
+        </div>
+
+        <div class="row__col-12 row__col-md-6 vertical-center-flex">
+          <div class="lp-s6-copy">
+            <h2 class="lp-h2 text-center">
+              Feel your personal best more&nbsp;often
+            </h2>
+            <div class="text-center">
+              <div class="lp-divider"></div>
+            </div>
+            <p class="lp-p lp-s6-p1" *ngIf="!freeTrial && partner != 'essential-one-save-50'">
+              Get your tailor-made daily vitamins
+              <br>for {{getPrice()}} per month <span *ngIf="freeDelivery">with FREE delivery</span>
+              <br>and start giving your body what it really needs
+            </p>
+
+            <p class="lp-p lp-s6-p1" *ngIf="!freeTrial && partner == 'essential-one-save-50'">
+              Save 50% on your personalised vitamins today<br />
+              and start giving your body what it really needs.
+            </p>
+            <p class="lp-p lp-s6-p1" *ngIf="freeTrial">
+                Get your FREE 30-day trial of personalised&nbsp;vitamins
+                <br>and start giving your body what&nbsp;it&nbsp;really&nbsp;needs.
+            </p>
+            <a class="button button--primary" (click)="openConsultation()">Take consultation</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer class="lp-footer" *ngIf="partner != 'generic'">
+    <p class="lp-footer-p">
+      © Vitl 2019
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <a routerLink="/terms">Terms</a>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <a routerLink="/privacy">Privacy</a>
+    </p>
+  </footer>
+
+</div>

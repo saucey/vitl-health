@@ -1,0 +1,60 @@
+<section class="hero hero--top">
+
+  <div class="container pt-0 pt-md-80">
+
+    <h1 class="heading heading--medium mb-30">Oops! Something's not&nbsp;right</h1>
+
+    <hr class="hr hr--primary mb-30" />
+
+    <p class="copy copy--darkGrey mb-30 mb-md-80">404 - page not found</p>
+
+    <p class="copy copy--darkGrey mb-30">Were you looking for one of these?</p>
+
+    <div class="list list--horizontal-md">
+
+      <a class="button button--fullWidth button--maxWidth mb-30 mb-md-0 mr-md-10" routerLink="/kit">Register your test kit</a>
+
+      <a class="button button--fullWidth button--maxWidth ml-md-10" routerLink="/consultation">Free consultation</a>
+
+    </div>
+
+    <div class="pt-60">
+
+      <p class="copy copy--darkGrey mb-30">Popular blog posts</p>
+
+      <div class="container container--small text-center article__preview__wrapper">
+
+        <swiper [config]="swiperConfig">
+
+          <div *ngFor="let article of articles">
+
+            <div class="article__preview cursor" routerLink="/blog/article/{{article.slug}}">
+
+              <div class="article__preview__image">
+                <img class="article__preview__image" [appImage]="article.thumbnailImage" [width]="75" [height]="75" [contain]="true" />
+              </div>
+
+              <div class="article__preview__text">
+                <p class="article__preview__title">{{article.title}}</p>
+                <p *ngIf="article.expert && article.expert.name" class="article__preview__expert">by {{article.expert.name}}</p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </swiper>
+
+        <div class="outsourced">
+          <div class="article__preview__pagination">
+            <div class="carousel2__dots-wrap" style="padding:0; display: block"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

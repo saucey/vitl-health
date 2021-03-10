@@ -1,0 +1,25 @@
+<div class="modal2 modal2--{{style}} {{getStyles()}}" (click)="close()">
+    <div class="modal2__inner" [class.modal2__inner--hasCta]="options.ctas.length" (click)="$event.stopPropagation()" #modalInner>
+        <input type="radio" class="dummyFocus" #dummyFocus>
+        <div class="modal2__close" (click)="close()">×</div>
+
+        <div class="modal2__title" *ngIf="options.title">
+            <h3 class="modal2__title__text">{{options.title}}</h3>
+            <h4 class="modal2__title__text modal2__title__text--subtitle" *ngIf="options.subtitle">{{options.subtitle}}</h4>
+            <hr class="hr hr--primary hr--medium mb-30" *ngIf="options.titleDivider" />
+        </div>
+
+        <div class="modal2__content">
+            <ng-template #dynamic></ng-template>
+        </div>
+
+        <div class="modal2__ctas modal2__ctas--{{options.ctaStyle}}">
+            <button class="button button--primary button--fullWidth modal2__ctas__cta modal2__ctas__cta--{{cta.type}}" *ngFor="let cta of options.ctas" (click)="ctaCallback(cta)">
+                <span class="modal2__ctas__cta__preText" *ngIf="cta.preText">{{cta.preText}}</span>
+                <span>{{cta.label}}</span>
+            </button>
+        </div>
+
+    </div>
+
+</div>

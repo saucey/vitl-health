@@ -1,0 +1,438 @@
+<div class="outsourced">
+
+    <div class="dna">
+        <section class="hero hero--beige hero--background dna-s1"
+            style="background-image:url(https://static-prod.vitl.com/assets/images/dna-hero-bg.png?background=%23FBF5E5);">
+
+            <div class="hero__container dna-s1--container">
+
+                <div class="dna-s1--right">
+                    <h1 class="heading-1 dna-s1-heading">{{product.label}}</h1>
+                    <div class="divider"></div>
+                    <h3 class="copy copy--big dna-s1-copy">
+                        Reveal your body’s diet, exercise & lifestyle preferences according to your DNA. Access to 40+
+                        in-depth reports and personalised advice from a qualified nutritionist.
+                    </h3>
+                    <app-plan-selector [product]="product"></app-plan-selector>
+                </div>
+
+                <div class="dna-s1--left">
+                    <img class="dna-s1--box"
+                        src="https://static-prod.vitl.com/images/dna/dna-hero-box.png?width=800&compress=1" alt="" />
+                    <div class="dna-s1--phone-wrapper">
+                        <div class="dna-s1--phone-screen">
+                            <img class=""
+                                src="https://static-prod.vitl.com/images/dna/dna-hero--phone--screen.jpg?compress=1"
+                                alt="" />
+                        </div>
+                        <img class="dna-s1--phone"
+                            src="https://static-prod.vitl.com/images/dna/dna-hero--phone.png?width=534&compress=1"
+                            alt="" />
+                    </div>
+
+                    <img class="dna-s1--tablet-portrait"
+                        src="https://static-prod.vitl.com/images/dna/dna-hero-tablet-portrait.png?width=770&compress=1"
+                        alt="" />
+                    <img class="dna-s1--tablet-landscape"
+                        src="https://static-prod.vitl.com/images/dna/dna-hero-tablet-landscape.png?width=550&compress=1"
+                        alt="" />
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="container-fluid dna-s2">
+            <h2 class="heading-2 dna-s2--heading">Discover</h2>
+            <div class="divider"></div>
+            <p class="copy dna-s2--copy">
+                See how your DNA affects each area of your health to help you make the best choices for your body.
+            </p>
+            <div class="container pb-150">
+
+                <div class="dna-s2--row ">
+
+                    <div class="dna-s2--category" (click)="openCategoryModal(categ.modal)"
+                        *ngFor="let categ of traitCategories">
+                        <div class="dna-s2--category--wrapper">
+                            <img src="{{categ.imgDesktop}}" class="dna-s2--category--img-desktop" />
+                            <img src="{{categ.imgTablet}}" class="dna-s2--category--img-tablet" />
+                            <img src="{{categ.imgMobile}}" class="dna-s2--category--img-mobile" />
+                            <span>
+                                <p class="copy copy--small">{{categ.reportsNumber}} reports</p>
+                                <img class="dna-s2--plus"
+                                    src="https://static-prod.vitl.com/images/blood/blood-s2-plus.png?width=170&background=%fff9e0" />
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- DNA section 3 -->
+        <section class="container-fluid dna-s3">
+            <h2 class="heading-2 dna-s3--heading">What you'll get</h2>
+            <div class="divider divider--mb30"></div>
+            <p class="copy dna-s3--copy">
+                You’ll get a full break down of each genetic trait with specific dietary, fitness and lifestyle advice
+                so you can make the most of what nature gave you.
+            </p>
+
+            <app-image-transition class="dna-s3--imageTransition" [images]="transitionImages"
+                [imagesMobile]="transitionImagesMobile"></app-image-transition>
+
+            <h3 class="heading-3 dna-s3--heading-3">Expert advice</h3>
+            <p class="copy dna-s3--copy">
+                To help you reach your health goals, each report comes with personalised recommendations
+                from our team of in-house nutrition experts, helping you to make smarter and more informed choices when
+                it comes to your diet and lifestyle.
+            </p>
+
+            <div class="dna-s3--experts-wrapper">
+                <div class="dna-s3--expert">
+                    <img appImage category="dna" key="dna-s3-1" [width]="117" background="#ffffff" />
+                    <p class="copy copy--bold pt-10">Georgie Murphy</p>
+                    <p class="copy--small color--dark-cream pt-5">Head of Nutrition</p>
+                    <p class="copy--small color--dark-cream">MSc ANutr</p>
+                </div>
+                <div class="dna-s3--expert">
+                    <img appImage category="dna" key="dna-s3-2" [width]="117" background="#ffffff" />
+                    <p class="copy copy--bold pt-10">Dr Monika Mozere</p>
+                    <p class="copy--small color--dark-cream">Geneticist</p>
+                    <p class="copy--small color--dark-cream">PhD</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DNA section 4 -->
+        <section class="container-fluid dna-s4">
+            <h2 class="heading-2 dna-s4--heading-2">How it works</h2>
+            <div class="container pb-100">
+                <div class="dna-s5--carousel-container">
+                    <img src="https://static-prod.vitl.com/images/dna/dna-s5--arrow.png?width=30" class="dna-s5--arrow"
+                        id="dna-s4--prev-el" alt="" />
+                    <swiper [config]="carouselConfig">
+                        <div class="dna-s4-carousel-slide center-block text-center">
+                            <img src="https://static-prod.vitl.com/images/dna/dna-s4-1.png?width=68" />
+                            <h3 class="heading-3 dna-s4--heading-3 pt-70">1. Order your DNA Nutrition Test</h3>
+                            <div class="divider"></div>
+                            <p class="copy dna-s4-copy">
+                                Your kit will be sent in letterbox-friendly packaging and will typically arrive within
+                                3-5
+                                days.
+                            </p>
+                        </div>
+                        <div class="dna-s4-carousel-slide center-block text-center pt-20">
+                            <img src="https://static-prod.vitl.com/images/dna/dna-s4-2.png?width=82" />
+                            <h3 class="heading-3 dna-s4--heading-3 text-center pt-65">2. Take your saliva sample</h3>
+                            <div class="divider"></div>
+                            <p class="copy dna-s4-copy">
+                                Use the swab to take a saliva sample from inside your cheek then send it back in the
+                                prepaid
+                                post bag.
+                            </p>
+                        </div>
+                        <div class="dna-s4-carousel-slide center-block text-center pt-20">
+                            <img src="https://static-prod.vitl.com/images/dna/dna-s4-3.png?width=84" />
+                            <h3 class="heading-3 dna-s4--heading-3 pt-70">3. Results in just 2-3 weeks</h3>
+                            <div class="divider"></div>
+                            <p class="copy dna-s4-copy">
+                                You’ll get reports on 40+ genes alongside personalised dietary & lifestyle
+                                recommendations
+                                from a qualified nutritionist.
+                            </p>
+                        </div>
+                    </swiper>
+                    <img src="https://static-prod.vitl.com/images/dna/dna-s5--arrow.png?width=30" class="dna-s5--arrow"
+                        id="dna-s4--next-el" alt="" />
+                </div>
+                <div class="dna-s4-carousel-slide-dots">
+                </div>
+            </div>
+
+            <p class="copy dna-s4--more-info">
+                For more information, check the instructions booklet <a
+                    href="https://static.vitl.com/vitl-dna-booklet.pdf" target="_blank">here</a>.
+            </p>
+
+            <p class="text-center">
+                “For more information, check out our 2-minute instruction video below”
+            </p>
+            <div class="dnatestguide--center">
+                <div class="dnatestguide--wrapper">
+                    <iframe src="https://www.youtube.com/embed/pKIwmgHYVQ0?rel=0" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- DNA section 5 -->
+        <section class="container-fluid dna-s5">
+            <div class="container text-center">
+                <h2 class="heading-2 dna-s5-heading">Don’t just take our word for it</h2>
+                <div class="divider divider--mb30 mb-50 mt-30"></div>
+                <div class="dna-s5--carousel-container">
+                    <img src="https://static-prod.vitl.com/images/dna/dna-s5--arrow.png?width=30" class="dna-s5--arrow"
+                        id="dna-s5--prev-el" alt="" />
+                    <swiper [config]="carousel2Config">
+                        <div class="dna-s4-carousel-slide center-block text-center">
+                            <img appImage category="dna" key="dna-s5-trustpilot" [width]="105"
+                                class="dna-s5--trustpilot" />
+                            <div class="dna-s5-content">
+                                <p class="copy dna-s5-quote">
+                                    “Easy to collect and send off the sample with clear instructions on how to do it.
+                                    The
+                                    thorough and detailed results were hugely helpful. Really useful and insightful way
+                                    to
+                                    shape your nutrition and health tailored specifically to you.”
+                                </p>
+                                <div>
+                                    <img src="https://static-prod.vitl.com/images/dna/dna-s5-1.png?width=67" />
+                                    <p class="copy dna-s5--name">Zayna A.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dna-s4-carousel-slide center-block text-center">
+                            <img appImage category="dna" key="dna-s5-trustpilot" [width]="105"
+                                class="dna-s5--trustpilot" />
+                            <div class="dna-s5-content">
+                                <p class="copy dna-s5-quote">
+                                    “The Vitl DNA test kit brought my attention to other aspects of my health and
+                                    fitness
+                                    I’d never even considered and has helped to take control of different variables
+                                    within
+                                    my life for better results.”
+                                </p>
+                                <div>
+                                    <img src="https://static-prod.vitl.com/images/dna/dna-s5-2.png?width=67" />
+                                    <p class="copy dna-s5--name ">Joe F.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dna-s4-carousel-slide center-block text-center">
+                            <img appImage category="dna" key="dna-s5-trustpilot" [width]="105"
+                                class="dna-s5--trustpilot" />
+                            <div class="dna-s5-content">
+                                <p class="copy dna-s5-quote">
+                                    “I think it’s super. You get sent a little package, you swab your cheek and send it
+                                    back, it’s that simple. You find out how likely you are to be low in vitamins, I
+                                    think
+                                    this is just so useful to know. Really thorough and so useful.”
+                                </p>
+                                <div>
+                                    <img src="https://static-prod.vitl.com/images/dna/dna-s5-3.png?width=67" />
+                                    <p class="copy dna-s5--name">Lizzie K.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </swiper>
+                    <img src="https://static-prod.vitl.com/images/dna/dna-s5--arrow.png?width=30" class="dna-s5--arrow"
+                        id="dna-s5--next-el" alt="" />
+                </div>
+                <div class="dna-s5-carousel-slide-dots">
+                </div>
+            </div>
+        </section>
+
+        <!-- DNA section 6 -->
+        <div class="container-fluid dna-s6">
+            <div class="container text-center pb-100">
+                <img appImage category="dna" key="dna-s6" [width]="40" class="dna-s6--icon" />
+
+                <h2 class="heading-2 dna-s6-heading">Data security</h2>
+                <div class="divider divider--mb30 mt-30 mb-30"></div>
+                <p class="copy dna-s6-copy">
+                    We are committed to ensuring you have absolute control over your personal information, which is why
+                    we adhere to the highest security standards and use the latest encryption technology so you never
+                    have to worry about your data.
+                </p>
+                <p class="copy dna-s6-copy">
+                    Check our <a href="/privacy" target="_blank">Data Privacy Policy</a> for more details.
+                </p>
+
+                <div class="dna-s6--icon-wrapper">
+                    <img src="https://static-prod.vitl.com/images/dna/dna-s6-1.png?width=50" alt="" />
+                    <img src="https://static-prod.vitl.com/images/dna/dna-s6-2.png?width=120" alt="" />
+                    <img src="https://static-prod.vitl.com/images/dna/dna-s6-3.png?width=170" alt="" />
+                </div>
+            </div>
+        </div>
+
+        <!-- DNA section 7 -->
+        <div class="container-fluid dna-s7">
+            <div class="text-center">
+                <img appImage category="dna" key="dna-s7-faq" [width]="81" class="dna-s7--icon" />
+                <h3 class="heading-2">Still have questions?</h3>
+                <div class="divider divider--mb30 mt-30 mb-30"></div>
+                <p class="copy dna-s7--copy pb-10">These are things people frequently ask about the DNA Nutrition Test.
+                </p>
+                <p class="copy dna-s7--copy">If you don’t see your question then please get in touch <a
+                        routerLink="/contact">here</a>.
+                </p>
+
+                <div class="">
+                    <div class="dna-s7-masonry">
+                        <div class="faq-wrapper" [class.is-active]="activeFaqs.indexOf(1) > -1" (click)="toggleFaq(1)">
+                            <div class="faq-header">
+                                <h4 class="question copy--big">How will understanding my DNA help me to live life
+                                    better?</h4>
+                            </div>
+                            <div class="faq-content copy">
+                                99.9% of your DNA is the same as everyone else’s, it’s the 0.1% that differs from person
+                                to
+                                person that makes you unique! DNA is not only responsible for aspects such as eye and
+                                hair
+                                colour, but also how we’re likely to respond to certain types of dietary, exercise and
+                                lifestyle
+                                choices. By understanding your specific predispositions to ways of eating and
+                                exercising,
+                                you
+                                can make smarter choices, maximise your potential, and reach your goals more
+                                efficiently.
+                            </div>
+                        </div>
+
+                        <div class="faq-wrapper" [class.is-active]="activeFaqs.indexOf(2) > -1" (click)="toggleFaq(2)">
+                            <div class="faq-header">
+                                <h4 class="question copy--big">How long do I have to wait for my results?</h4>
+                            </div>
+                            <div class="faq-content copy">
+                                Once you’ve sent back your cheek swab sample in the prepaid post bag, it will take our
+                                lab
+                                up to 2&nbsp;-&nbsp;3 weeks to process and analyse. We’ll send you an email once your
+                                sample has
+                                been
+                                received and another when your results are ready to view.
+                            </div>
+                        </div>
+
+                        <div class="faq-wrapper" [class.is-active]="activeFaqs.indexOf(3) > -1" (click)="toggleFaq(3)">
+                            <div class="faq-header">
+                                <h4 class="question copy--big">How often should I take the test?</h4>
+                            </div>
+                            <div class="faq-content copy">
+                                Your DNA never changes, which means one test will last an entire lifetime.
+                            </div>
+                        </div>
+
+                        <div class="faq-wrapper" [class.is-active]="activeFaqs.indexOf(4) > -1" (click)="toggleFaq(4)">
+                            <div class="faq-header">
+                                <h4 class="question copy--big">Can I use my DNA results to personalise my
+                                    vitamins?</h4>
+                            </div>
+                            <div class="faq-content copy">
+                                Yes! Your DNA results will highlight which vitamins you’re likely to have trouble
+                                absorbing
+                                efficiently. This will indicate which nutrients you may need to supplement with. Then,
+                                to
+                                get a clear picture of your current health status, you’ll be asked a few questions about
+                                your diet and lifestyle. We’ll then combine this information with your DNA results to
+                                personalise vitamins based on your nutritional needs and health goals.
+                            </div>
+                        </div>
+
+                        <div class="faq-wrapper" [class.is-active]="activeFaqs.indexOf(5) > -1" (click)="toggleFaq(5)">
+                            <div class="faq-header">
+                                <h4 class="question copy--big">Why choose Vitl?</h4>
+                            </div>
+                            <div class="faq-content copy">
+                                <p><span class="copy--semiBold">Personalised health plan</span>: As industry-leading
+                                    experts
+                                    in the field of personalised
+                                    nutrition,
+                                    we know that your results are only useful if you understand what you can do with
+                                    them.
+                                    So
+                                    not only will you get a breakdown of your genetic traits, you’ll also get
+                                    personalised
+                                    recommendations and actionable insights based on your results from our qualified
+                                    in-house
+                                    experts.</p>
+                                <br />
+                                <p><span class="copy--semiBold">Integrated solution</span>: We’re the first company in
+                                    the
+                                    world to enable the integration
+                                    of your DNA results alongside blood test results and dietary and lifestyle
+                                    information.
+                                    Supplement recommendations cannot be made on DNA information alone, but taken
+                                    alongside
+                                    your
+                                    current blood vitamin levels and diet, we’re able to tailor-make vitamins based on
+                                    your
+                                    needs to ensure you’re getting only what your body really needs.</p>
+                                <br />
+                                <p><span class="copy--semiBold">Reliable results</span>: The genetic traits we cover in
+                                    your
+                                    report go through a rigorous
+                                    selection
+                                    process to ensure
+                                    they’re based on the most credible science. Whilst other brands may test for a
+                                    larger
+                                    number
+                                    of less well-researched traits, we believe in quality over quantity, which is why
+                                    only
+                                    cover
+                                    traits based on the strongest, peer-reviewed evidence to ensure you’re getting the
+                                    most
+                                    reliable results.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-wrapper" [class.is-active]="activeFaqs.indexOf(6) > -1" (click)="toggleFaq(6)">
+                            <div class="faq-header">
+                                <h4 class="question copy--big">What won’t be covered in my DNA report?</h4>
+                            </div>
+                            <div class="faq-content copy">
+                                <span class="copy--semiBold">Ancestry</span>: Whilst we won’t be connecting you with any
+                                long-lost relatives, it does mean we
+                                won’t connect your results to any third parties, so your data will be kept as secure and
+                                private as possible.
+                                <br /><br />
+                                <span class="copy--semiBold">Disease risk</span>: There will be no scary surprises in
+                                your
+                                DNA health
+                                report. Instead, we’ll focus on the genetic traits directly related to daily wellbeing
+                                to
+                                enable you to make the healthiest choices day-to-day, which we believe will have the
+                                greatest benefit to you in the long term.
+                                <br /><br />
+                                <span class="copy--semiBold">Current blood vitamin levels</span>: Your DNA report will
+                                show if you have a predisposition to being unable to absorb certain vitamins
+                                efficiently.
+                                This can indicate which vitamin levels are likely to be low, however, vitamin levels are
+                                affected by many factors, such as diet, sunlight exposure and level of physical
+                                activity. To
+                                find out your current vitamin level status, see our Vitamin & Cholesterol Blood Test <a
+                                    class="link" routerLink="/product/blood">here</a>.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DNA section 8 -->
+        <div class="container-fluid dna-s8">
+            <div class="grid">
+                <div class="grid__item--6 dna-s8--left">
+                    <img src="https://static-prod.vitl.com/images/dna/dna-s8-1.png?width=900&background=%23FFFFFF" />
+                </div>
+                <div class="grid__item--6 dna-s8--right">
+                    <h3 class="heading-3 dna-s8--heading-3">
+                        Live life better with insights<br />
+                        that will last a lifetime
+                    </h3>
+                    <button class="dna-s8--button" (click)="add()">
+                        Add to basket
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

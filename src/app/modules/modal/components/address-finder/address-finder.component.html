@@ -1,0 +1,5 @@
+<ul class="list list--selectable">
+  <li class="list__item" *ngFor="let address of data.addresses" (click)="selectAddress(address)">
+    {{address.Text}}, {{address.Description}}
+  </li>
+</ul>

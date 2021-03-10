@@ -1,0 +1,24 @@
+<section class="hero hero--primary hero--top hero--background hero--backgroundOffset" style="background-image:url(https://static.vitl.com/assets/images/usa-girl-hero.jpg)">
+  <div class="hero__container grid">
+    <div class="hero__item grid__item--6 mb-30 mb-md-0">
+      <h1 class="heading heading--reducedWidth-md heading--centered-md heading mb-40 text-center">
+        You're one step closer<br class="visible-xs visible-sm" /> to your Free&nbsp;Trial
+      </h1>
+      <hr class="hr mb-40 visible-md visible-lg visible-xl" />
+      <h2 class="copy copy--reducedWidth-md copy--centered-md mb-40 text-center">
+        We've just added a Free 2-Week Trial of our Essentials&nbsp;4&nbsp;pack to your basket
+      </h2>
+      <div class="text-center mb-30">
+        <a class="button button--white button--medium-md" (click)="showBasket()">Register for my Free 2-Week Trial</a>
+      </div>
+      <div class="text-center">
+        <p class="copy copy--small">Pause or cancel your subscription anytime</p>
+      </div>
+    </div>
+    <div class="hero__item grid__item--6 hero__item--bottom">
+      <img src="https://static.vitl.com/assets/images/aUs-section1-bg1-mobile.png" class="visible-xs-inline visible-sm-inline hero__image" />
+    </div>
+  </div>
+</section>
+
+<app-product [showHero]="false" [showPopular]="false"></app-product>

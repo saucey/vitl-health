@@ -1,0 +1,145 @@
+&__biomarkerResults {
+
+  padding: 10px 20px;
+
+  @media @sm {
+    padding: 10px 40px;
+  }
+
+  @media @md {
+    padding: 20px 0 30px;
+  }
+
+  ul {
+
+    li {
+
+      position: relative;
+      padding: 10px 0px;
+      font-weight: 600;
+
+      &.hasAction {
+
+        cursor: pointer;
+
+        &:hover {
+
+          background: @brand-primary-light-grey;
+
+        }
+
+      }
+
+      p {
+        padding: 0px;
+        width: auto;
+      }
+
+      &:last-child {
+        border-bottom: 0px;
+      }
+
+      .biomarker_name {
+
+        font-weight: 600;
+        font-size: 1em;
+        position: relative;
+        text-align: left;
+
+      }
+
+      .biomarker_score {
+
+        font-weight: 600;
+        font-size: 1em;
+        float: right;
+        margin-left: 5px;
+
+        &.high {
+          color: #87D841;
+        }
+
+        &.medium {
+          color: #EBD03C;
+        }
+
+        &.low {
+          color: #F28E38;
+        }
+
+        &.verylow {
+          color: #ED4747;
+        }
+
+      }
+
+      .ranges {
+
+        position: relative;
+        margin-top: 5px;
+        height: 10px;
+        width: 100%;
+        background: #e2e2e2;
+        border-radius: 5px;
+        overflow: hidden;
+
+        @media @lg {
+          margin-top: 15px;
+        }
+
+        .range {
+
+          position: absolute;
+          top: 0px;
+          height: 100%;
+          border-radius: 5px;
+
+          &.inactive {
+
+            z-index: -1;
+
+          }
+
+        }
+
+        .marker {
+
+          position: absolute;
+          top: 2px;
+          width: 6px;
+          height: 6px;
+          margin-left: -3px;
+          background:white;
+          border-radius: 100%;
+
+        }
+
+      }
+
+      .value_track {
+
+        position:relative;
+        margin-top: 5px;
+        height: 30px;
+
+        .value {
+
+          position: absolute;
+          top: 0px;
+          height: 30px;
+          width: 300px;
+          margin-left: -150px;
+          line-height: 30px;
+          text-align: center;
+          font-size: 0.7em;
+          color: @brand-primary-grey;
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

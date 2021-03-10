@@ -1,0 +1,126 @@
+<footer class="footer p-15 pt-30" [ngClass]="{'footer--hidden':hideFooter()}">
+
+  <div class="container">
+
+    <div class="grid grid--alignTop">
+
+      <div class="grid__item grid__item--5">
+        <a routerLink="/">
+          <img class="footer__logo mb-20 lazyload" data-src="https://static-prod.vitl.com/assets/images/logo/logo-primary.png?width=200&compress=1" />
+        </a>
+      </div>
+
+      <hr class="hr hr--fullWidth hr--black mb-20 visible-xs visible-sm">
+
+      <div class="grid__item grid__item--2">
+        <ul class="list">
+          <li *ngFor="let nav of getPageLinks()" class="list__item mb-30 mb-md-15">
+            <a routerLink="{{nav.route}}" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="copy copy--small white pb-10 pt-10" *ngIf="nav.route">{{nav.label}}</a>
+            <a href="{{nav.url}}" target="_blank" class="copy copy--small white pb-10 pt-10" *ngIf="nav.url">{{nav.label}}</a>
+          </li>
+        </ul>
+      </div>
+
+      <hr class="hr hr--fullWidth hr--black mb-20 visible-xs visible-sm">
+
+      <div class="grid__item grid__item--2">
+        <ul class="list">
+          <li *ngFor="let nav of getProductLinks()" class="list__item mb-30 mb-md-15">
+            <a routerLink="{{nav.route}}" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="copy copy--small white pb-10 pt-10" *ngIf="nav.route">{{nav.label}}</a>
+            <a href="{{nav.url}}" target="_blank" class="copy copy--small white pb-10 pt-10" *ngIf="nav.url">{{nav.label}}</a>
+          </li>
+          <li class="list__item mb-30 mb-md-15">
+            <a class="cursor copy copy--small white pb-10 pt-10" (click)="addPromoCode()">
+              Add promo code
+            </a>
+          </li>
+          <li class="list__item mb-30 mb-md-15">
+            <a class="cursor copy copy--small white pb-10 pt-10" routerLink="/kit" routerLinkActive="active">
+              Register your kit
+            </a>
+          </li>
+          <li class="list__item mb-30 mb-md-15">
+            <a class="cursor copy copy--small white pb-10 pt-10" routerLink="/practitioners" routerLinkActive="active">
+              Practitioners
+            </a>
+          </li>
+          <li class="list__item mb-30 mb-md-15">
+            <a class="cursor copy copy--small white pb-10 pt-10" routerLink="/blog/article/student-discount" routerLinkActive="active">
+              Student discount
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <hr class="hr hr--fullWidth hr--black mb-20 visible-xs visible-sm">
+
+      <div class="grid__item grid__item--3">
+
+        <p class="copy--small copy--white mb-20">Follow us</p>
+
+        <div class="list list--horizontal list--horizontalLeft mb-30">
+
+          <a href="https://twitter.com/VITLhealth" target="_blank" class="list__item icon icon--action icon--actionWhite icon--bordered icon--whiteBorder icon--tiny mr-15">
+            <div class="icon__image">
+              <img class="lazyload" data-src="https://static-prod.vitl.com/assets/images/twitter-white.png?compress=1`" />
+            </div>
+          </a>
+          <a href="https://www.facebook.com/vitlhealth" target="_blank" class="list__item icon icon--action icon--actionWhite icon--bordered icon--whiteBorder icon--tiny mr-15">
+            <div class="icon__image">
+              <img class="lazyload" data-src="https://static-prod.vitl.com/assets/images/facebook-white.png?compress=1" />
+            </div>
+          </a>
+          <a href="https://www.instagram.com/vitlhealth/" target="_blank" class="list__item icon icon--action icon--actionWhite icon--bordered icon--whiteBorder icon--tiny">
+            <div class="icon__image">
+              <img class="lazyload" data-src="https://static-prod.vitl.com/assets/images/instagram-white.png?compress=1" />
+            </div>
+          </a>
+
+        </div>
+
+        <p class="copy--small copy--white mb-20">Sign up for news & offers</p>
+
+        <form class="mb-20" (submit)="registerNewsletter()">
+          <app-input [(model)]="email" (notify)="email = $event" type="input" [submit]="true" placeholder="Email address"></app-input>
+        </form>
+
+      </div>
+
+    </div>
+
+    <hr class="hr hr--fullWidth hr--black mb-20">
+
+    <div class="grid">
+
+      <div class="grid__item grid__item--6" style="order: 2">
+        <ul class="list list--horizontal-md list--horizontalRight-md mb-20 mb-md-0">
+          <li class="list__item list__item--alignCenter mb-20 mb-md-0 mr-md-30">
+            <img class="lazyload" data-src="https://static-prod.vitl.com/assets/images/hipaa.png?width=110&compress=1" width="110" />
+          </li>
+          <li class="list__item list__item--alignCenter mb-md-0 mr-md-30">
+            <a routerLink="/terms" routerLinkActive="active" class="copy copy--small grey pb-10 pt-10">Terms and Conditions</a>
+          </li>
+          <li class="list__item list__item--alignCenter">
+            <a routerLink="/privacy"routerLinkActive="active" class="copy copy--small grey pb-10 pt-10">Privacy</a>
+          </li>
+        </ul>
+      </div>
+
+      <hr class="hr hr--fullWidth hr--black mb-20 visible-xs visible-sm">
+
+      <div class="grid__item grid__item--6" style="order: 1">
+        <ul class="list list--horizontal-md list--horizontalLeft-md">
+          <li class="list__item list__item--alignCenter mb-20 mb-md-0 mr-md-30">
+            <p class="copy copy--small copy--grey">&copy; {{getYear()}} Vitl. All rights reserved</p>
+          </li>
+          <li class="list__item list__item--alignCenter mb-20 mb-md-0">
+            <a class="copy copy--small copy--grey cursor" (click)="changeCurrency()">Change currency ({{getCurrencySymbol()}})</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>

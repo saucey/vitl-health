@@ -1,0 +1,29 @@
+.account {
+
+  text-align: center;
+
+  @media @md {
+    text-align: left;
+  }
+
+  &__body {
+
+    padding-top: 30px;
+
+    @media @md {
+      padding: 0px 60px;
+    }
+
+    @media @lg {
+      padding: 0px 100px;
+    }
+
+  }
+
+  @import 'sidebar.less';
+  @import 'nav.less';
+  @import 'orders.less';
+  @import 'subscription.less';
+  @import 'offers.less';
+
+}

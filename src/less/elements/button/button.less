@@ -1,0 +1,282 @@
+/*
+ Button block
+ */
+
+.button {
+
+  display: inline-flex;
+  position: relative;
+  font-family: @font-family-semi-bold;
+  background: none;
+  border: 2px solid @brand-primary-faded-cream;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 20px;
+  min-width: 160px;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none !important;
+  transition: 0.2s all @custom-easing;
+
+  &--blackBorder {
+    border-color: @brand-primary-black;
+  }
+
+  &--largeText {
+    font-size: 24px;
+  }
+
+  &:hover {
+    background-color: @brand-primary-cream;
+    color: @brand-primary-black;
+    box-shadow: @box-shadow;
+  }
+
+  &--active {
+    background-color: @brand-primary-yellow !important;
+    border-color: @brand-primary-yellow;
+  }
+
+  &--primary {
+    background-color: @brand-primary-yellow;
+    border: none;
+
+    &:hover {
+      background-color: @brand-primary-yellow;
+    }
+  }
+
+  &--white {
+    background: @brand-primary-bright-white;
+
+    &:hover {
+      color: @brand-gray-light;
+    }
+  }
+
+  &--green {
+    background: @brand-secondary-green;
+    border-color: @brand-secondary-green;
+    color: @brand-primary-white;
+    &:hover {
+      border-color: fade(@brand-secondary-green, 75%);
+      background-color: fade(@brand-secondary-green, 75%);
+      color: @brand-primary-white !important;
+    }
+  }
+
+  &:disabled,
+  &--disabled {
+    cursor: default;
+    border-color: fade(@brand-primary-black, 30%);
+    color: fade(@brand-primary-black, 30%) !important;
+    background: none !important;
+    &.button--loading {
+      color: transparent !important;
+    }
+  }
+
+  &--loader {
+    &:before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 30px;
+      height: 30px;
+      margin-top: -15px;
+      margin-left: -15px;
+      left: 50%;
+      top: 50%;
+      border-radius: 100%;
+      box-shadow: 0 2px 0 0 @brand-primary-yellow;
+      animation: uil-ring-anim .8s linear infinite;
+      opacity: 0;
+      transition: 0.3s opacity;
+      pointer-events: none;
+    }
+    &.button--primary {
+      &:before {
+        box-shadow: 0 2px 0 0 @brand-primary-white;
+      }
+    }
+  }
+
+  &--loading {
+    color: transparent !important;
+    &:before {
+      opacity: 1;
+    }
+    &:after {
+      opacity: 0;
+    }
+  }
+
+  &--inactive {
+    background: none !important;
+    cursor: default;
+  }
+
+  &--fullWidth {
+    width: 100%;
+  }
+
+  &--fullWidthXs {
+    width: 100%;
+    @media @md {
+      width: auto;
+    }
+  }
+
+  &--maxWidth {
+    @media @md {
+      max-width: 250px;
+    }
+  }
+
+  &--xsmall {
+    height: 40px;
+  }
+
+  &--small {
+    min-width: auto;
+
+    &:hover {
+      box-shadow: @box-shadow-small;
+    }
+  }
+
+  &--smallHeight {
+    height: 52px;
+    &-md {
+      @media @md {
+        height: 52px;
+      }
+    }
+  }
+
+  &--mediumWidth {
+    min-width: 120px;
+  }
+
+  &--medium {
+    height: 60px;
+    &-md {
+      @media @md {
+        height: 60px;
+      }
+    }
+  }
+
+  &--large {
+    height: 75px;
+    &-md {
+      @media @md {
+        height: 75px;
+      }
+    }
+  }
+
+  &--withIcon {
+    width: 50px;
+    min-width: auto;
+  }
+
+  &--arrowLeft,
+  &--arrowRight {
+    justify-content: flex-end;
+    padding-left: 100px;
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 0px;
+      left: 20px;
+      height: 100%;
+      width: 100px;
+      background: url("https://static.vitl.com/assets/images/arrow-left.png") center left no-repeat;
+    }
+  }
+
+  &--arrowRight {
+    justify-content: flex-start;
+    padding-left: 20px;
+    padding-right: 100px;
+    &:after {
+      background: url("https://static.vitl.com/assets/images/arrow-right.png") center right no-repeat;
+      left: auto;
+      right: 20px;
+    }
+  }
+
+  &--noBorder {
+    border: 0px;
+    &:hover {
+      background: none;
+    }
+  }
+
+  &--block {
+    display: flex;
+  }
+
+  &__icon {
+    width: 18px;
+  }
+
+  &__badge {
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background: @brand-primary-black;
+    height: 15px;
+    width: 15px;
+    color: @brand-primary-white;
+    font-size: 12px;
+    font-family: @font-family-regular;
+    text-align: center;
+    line-height: 15px;
+  }
+
+  &--hasMenu {
+    &:hover {
+      .button__menu {
+        display: block;
+      }
+    }
+  }
+
+  &__menu {
+
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    width: ~"calc(100% + 4px)";
+    background: @brand-primary-yellow;
+    border: 2px solid @brand-primary-faded-cream;
+    border-top: 0px;
+    margin-left: -2px;
+    z-index: 99;
+
+    &__item {
+      height: 50px;
+      line-height: 50px;
+      &:hover {
+        background: @brand-primary-light-grey;
+      }
+    }
+
+  }
+
+}
+
+@keyframes uil-ring-anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,124 @@
+<style>
+
+    #maintenance {
+        position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgb(255, 211, 38);
+      z-index: 999999;
+    }
+  
+  #maintenance header {
+      background: #fff;
+      padding: 10px;
+      text-align: center;
+      -webkit-box-shadow: 0 0 10px 0 rgba(50,50,50,.1);
+              box-shadow: 0 0 10px 0 rgba(50,50,50,.1);
+  }
+
+  #maintenance p {
+      margin-bottom: 20px;
+  }
+
+  
+  #maintenance header > div img {
+      height: 30px;
+  }
+  
+  #maintenance section {
+      text-align: center;
+      padding: 30px;
+  }
+  
+  #maintenance h1 {
+      display: inline-block;
+      padding-bottom: 5px;
+      margin: 0px;
+      margin-bottom: 30px;
+      font-size: 1.4em;
+  }
+
+  #maintenance a {
+    text-decoration: underline !important;
+  }
+  #maintenance  a:hover {
+    color: black !important;
+  }
+  
+  @media screen and (min-width: 480px) {
+      
+    #maintenance header {
+          height: 80px;
+          padding: 0px;
+      }
+      
+      #maintenance header > div {
+          text-align: center;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          -webkit-box-pack: start;
+              -ms-flex-pack: start;
+                  justify-content: flex-start;
+          height: 100%;
+      }
+      
+      #maintenance header > div img {
+          height: 37px;
+              margin: 0 auto;
+      }
+                  
+      #maintenance section {
+          text-align: left;
+          position:relative;
+          padding-top: 100px;
+      }
+      
+      #maintenance section .copy {
+          padding: 50px 25% 50px 0px;
+      }
+                  
+  }
+  
+  @media screen and (min-width: 900px) {
+      
+    #maintenance header > div,
+    #maintenance section {
+          width: 900px;
+          margin: 0 auto;
+      }
+      
+  }
+  
+  @media screen and (min-width: 1200px) {
+   
+    #maintenance header > div,
+    #maintenance section {
+          width: 1200px;
+      }
+
+  }
+  
+</style>
+
+<div id="maintenance">
+    <header>
+    <div style="text-align: center">
+        <img src="https://static.vitl.com/images/logo/vitl_logo.svg" alt="VITL" title="" id="vitl_logo">
+    </div>
+    </header>
+
+    <section>
+    <h1 style="font-size: 40px" class="heading heading--reducedWidth-md heading--centered-md heading mb-20 text-center">We’re upgrading!</h1>
+    <div class="copy">            
+        <p>Thanks for visiting Vitl, we’re currently upgrading our servers to provide an even better experience and will be back online within an hour.</p>
+        <p>If your query is urgent please do contact us on <a href="mailto:info@vitl.com">info@vitl.com</a> or call <a href="tel:+442034880747">+44&nbsp;(0)&nbsp;203&nbsp;488&nbsp;0747</a> and we’ll be happy to help.</p>
+        <p>Many thanks,<br>The Vitl team</p>
+    </div>
+    </section>
+</div>

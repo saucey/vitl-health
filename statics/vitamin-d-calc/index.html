@@ -1,0 +1,237 @@
+<html lang="en">
+
+<head>
+    <title>The Vitamin D Calculator</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description"
+        content="It is estimated that 50% of the entire global population is vitamin D deficient. This calculator will help you work out roughly how much vitamin D you need daily.">
+
+    <meta property="og:url" content="https://10ystaging.co.uk/vitamin-d-calc/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="The Vitamin D Calculator">
+    <meta property="og:description"
+        content="It is estimated that 50% of the entire global population is vitamin D deficient. This calculator will help you work out roughly how much vitamin D you need daily.">
+    <meta property="og:image" content="https://10ystaging.co.uk/vitamin-d-calc/assets/share-imageFB.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@VITLhealth">
+    <meta name="twitter:title" content="The Vitamin D Calculator">
+    <meta name="twitter:description"
+        content="It is estimated that 50% of the entire global population is vitamin D deficient. This calculator will help you work out roughly how much vitamin D you need daily.">
+    <meta name="twitter:image" content="https://10ystaging.co.uk/vitamin-d-calc/assets/share-imageTW.png">
+
+    <link rel="stylesheet" href="assets/main.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.typekit.net/tto5wny.css">
+
+    <!-- Google Tag Manager -->
+    <script>
+        let subdomain = window.location.host.split('.')[0];
+
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = (subdomain === 'vitl')
+                ? 'https://www.googletagmanager.com/gtm.js?id=' + i + dl + '&gtm_auth=qZ5l_OqIsMkSViP8ILdEVw&gtm_preview=env-2&gtm_cookies_win=x'
+                : 'https://www.googletagmanager.com/gtm.js?id=' + i + dl + '&gtm_auth=ZhjD4lWhCbUk149YFX6wwg&gtm_preview=env-50&gtm_cookies_win=x';
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MSH5P7');
+    </script>
+    <!--  end Google Tag Manager -->
+
+</head>
+
+<body>
+    <div id="logo"><img src="assets/image/vitl_logo.svg" alt="Vitl logo"></div>
+    <div id="home" class="row">
+        <div class="header">
+            <div class="header-container" class="container">
+                <h1>How much vitamin D do you need daily?</h1>
+                <div class="separator"></div>
+                <h2>Vitamin D deficiency is common during the winter months as the hours of sunlight are reduced.</h2>
+            </div>
+        </div>
+        <div class="row">
+            <p>It is estimated that <strong>50%</strong> of the entire global population is vitamin D deficient. This
+                calculator will help you work out roughly how much vitamin D you need daily and which vitamin D rich
+                foods you should include in your diet.</p>
+            <button id="start">Start</button>
+        </div>
+    </div>
+    <div id="questions" class="row">
+        <div class="header">
+            <div class="header-container">
+                <h3>Answer these questions to find out how much vitamin D your body needs each day</h3>
+                <div class="separator"></div>
+            </div>
+        </div>
+        <div>
+            <form id="main-form" class="row">
+                <label for="stones">How much do you weigh?</label>
+                <div id="question-1-options">
+                    <select name="stones" id="stones" required>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                    </select>
+                    <span>st.</span>
+                    <select name="pounds" id="pounds" required="">
+                        <option value="0" default>0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                    </select>
+                    <span>lbs</span>
+                </div>
+                <p for="less">How long do you currently spend in <strong>strong direct</strong> sunlight each day, on
+                    average?</p>
+                <p class="error">Answer required</p>
+                <div id="question-2-options">
+                    <label for="less">
+                        <div class="radio-buttons">
+                            <input type="radio" name="sunlight" id="less" value="less">
+                            < 15 minutes </div>
+                    </label>
+                    <label for="more">
+                        <div class="radio-buttons">
+                            <input type="radio" name="sunlight" id="more" value="more">> 15 minutes
+                        </div>
+                    </label>
+                </div>
+                <p>How much of your skin is exposed to <strong>strong direct</strong> sunlight on an average day?</p>
+                <p class="error">Answer required</p>
+                <div id="question-3-options">
+                    <label for="10">
+                        <div class="radio-buttons large">
+                            <input type="radio" name="exposure" id="10" value="10"><span>10%</span> - sun on hands
+                        </div>
+                    </label>
+                    <label for="20">
+                        <div class="radio-buttons large">
+                            <input type="radio" name="exposure" id="20" value="20"><span>20%</span> - sun on arms and
+                            hands
+                        </div>
+                    </label>
+                    <label for="35">
+                        <div class="radio-buttons large">
+                            <input type="radio" name="exposure" id="35" value="35"><span>35%</span> - sun on face, neck,
+                            arms and hands
+                        </div>
+                    </label>
+                    <label for="45">
+                        <div class="radio-buttons large">
+                            <input type="radio" name="exposure" id="45" value="45"><span>45%</span> - sun on face, neck,
+                            arms, hands, and lower legs
+                        </div>
+                    </label>
+                    <label for="55">
+                        <div class="radio-buttons large">
+                            <input type="radio" name="exposure" id="55" value="55"><span>55%</span> - sun on top half of
+                            body
+                        </div>
+                    </label>
+                    <label for="75">
+                        <div class="radio-buttons large">
+                            <input type="radio" name="exposure" id="75" value="75"><span>75%</span> - sun on whole body
+                            except for one-piece swimming costume
+                        </div>
+                    </label>
+                    <label for="85">
+                        <div class="radio-buttons large">
+                            <input type="radio" name="exposure" id="85" value="85"><span>85%+</span> - sun on whole body
+                            except for swimming costume or bikini
+                        </div>
+                    </label>
+                </div>
+                <input type="submit" value="Get Results">
+            </form>
+        </div>
+    </div>
+    <div id="results" class="row">
+        <div class="header">
+            <div class="header-container" class="container">
+                <h3>Your results<br> are in</h3>
+                <div class="separator"></div>
+            </div>
+        </div>
+        <div id="results-main" class="row">
+            <img src="assets/image/pill.svg" alt="pill icon - results page">
+            <h4>You need <span id="iu" class="yellow-text"></span> IU / <span id="ug" class='yellow-text'></span> ug of
+                <br>vitamin D each day.</h4>
+            <div class="separator tac"></div>
+            <div id="efficient">
+                <h5>This equates to...</h5>
+                <p><span id="salmon" class="yellow-text"></span> servings of salmon</p>
+                <p><span id="tuna" class="yellow-text"></span> servings of canned tuna</p>
+                <p><span id="milk" class="yellow-text"></span> cups of whole milk</p>
+                <p><span id="soymilk" class="yellow-text"></span> cups of soy milk</p>
+                <p><span id="almondmilk" class="yellow-text"></span> cups of almond milk</p>
+                <p><span id="juice" class="yellow-text"></span> cups of orange juice</p>
+                <p><span id="mushrooms" class="yellow-text"></span> servings of portobello mushrooms</p>
+                <p><span id="pork" class="yellow-text"></span> servings of pork</p>
+                <p><span id="eggs" class="yellow-text"></span> hard-boiled eggs</p>
+                <p><a href="https://vitl.com/product/vitamin-d?utm_source=PR&utm_medium=landing page&utm_campaign=VitaminD"
+                        target="_blank"><span class="yellow-text">1 Vitl</span> supplement</a></p>
+            </div>
+            <button id="start-again">Start Again</button>
+            <p id="note">Your personal vitamin D dosage is based on a set of averages and estimates which should only be
+                used as an approximation
+                rather than an accurate quantity as there are several limitations to this calculator. These are
+                guidelines only and may
+                not be an accurate representation of your vitamin and mineral levels. In accordance with NHS guidelines
+                do not take more
+                than 100 micrograms (4,000 IU) of vitamin D a day as it could be harmful. This applies to adults,
+                including pregnant and
+                breastfeeding women and the elderly, and children aged 11 to 17 years. Supplements should not be used to
+                replace a
+                healthy diet. Always contact a GP or medical professional for advice.</p>
+        </div>
+    </div>
+</body>
+<!-- JQuery -->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<!-- js -->
+<script src="assets/main.js"></script>
+
+</html>

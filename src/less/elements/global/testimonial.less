@@ -1,0 +1,43 @@
+.testimonial {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height:100%;
+
+
+  &__image {
+
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 100%;
+    border: 1px solid fade(@brand-primary-grey, 50%);
+
+    &--large {
+      width: 120px;
+      height: 120px;
+    }
+
+  }
+
+  &__quote {
+    padding: 0 15px;
+    background: @brand-primary-cream-darker;
+    border-radius: 20px;
+    line-height: 1.5em;
+
+    @media @md {
+      padding: 0 30px;
+    }
+
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+  }
+
+}

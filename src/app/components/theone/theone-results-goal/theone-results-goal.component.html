@@ -1,0 +1,17 @@
+<div class="results__goal" (click)="showGoalDescription()" *ngIf="this.claims.length > 0">
+
+  <div class="goal__text">
+    <p class="goal__label">{{goal.pillar}}</p>
+    <hr class="hr hr--medium hr--left" />
+    <p class="goal__summary">
+      {{goal.summary}}
+    </p>
+    <p class="goal__info">Learn more<img src="https://static-prod.vitl.com/new/images/source/1547733160-t1-m-res-learn-more-arrow-3x@1x.png?height=14" /></p>
+  </div>
+
+  <div class="goal__icon" [style.background]="(minimized ? null : goal.color)">
+    <img class="goal__icon__main" [appImage]="goal.icon" [height]="32" [colorize]="(minimized ? '#333333' : '#FFFFFF')" truecolor="true" />
+    <img class="goal__icon__color" [appImage]="goal.icon" [height]="32" [colorize]="goal.color" truecolor="true" />
+  </div>
+
+</div>

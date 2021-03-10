@@ -1,0 +1,152 @@
+<div class="new-UI">
+  <section>
+    <div class="container pt-60">
+      <div class="row">
+        <div class="col-xs-12 col-lg-10 col-lg-offset-1">
+          <div *ngIf="!hasIntegratedResult" class="row">
+            <div class="col-xs-4 position-relative background--blue">
+              <div class="section-visual-inner">
+                <img class="visible-xs" src="https://static-prod.vitl.com/images/my-vitl/consultation_upgrade.jpg?compress=1" />
+                <img class="visible-sm visible-md visible-lg visible-xl" src="https://static-prod.vitl.com/images/my-vitl/consultation_upgrade_desktop.jpg?compress=1&v=1" />
+              </div>
+            </div>
+            <div class="col-xs-8 background--violet text-left text--white p-20 p-sm-30">
+              <p><strong>Discover your NEW personalised insights!</strong></p>
+              <p class="text--xsmall">Get your updated expert recommendations with our <a class="link" (click)="openConsultation()">new consultation.</a></p>
+            </div>
+          </div>
+
+          <div class="myvitl__goals">
+            <h1 class="heading-2 pt-45 pt-md-60 pb-30 text-center text-md-left">Your goals</h1>
+            <app-goals [goals]="goals" [hasGoalsChanged]="hasGoalsChanged" (handleGoalsChange)="handleGoalsChange()"></app-goals>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section *ngIf="subscriptions.length > 0">
+    <div class="container pt-45 pt-md-100">
+      <div class="row">
+        <div class="col-xs-12 col-lg-10 col-lg-offset-1">
+
+          <h2 class="heading-2 pb-45">Your plans</h2>
+
+          <ul class="product-list row">
+            <li *ngFor="let subscription of subscriptions"
+              class="product-list__item col-xs-12 col-md-4 mb-40 cursor--pointer" routerLink="/myvitl/account/orders">
+              <div class="product-list__image background--cream">
+                <img [appImage]="subscription.image" [height]="160" />
+              </div>
+              <div class="product-list__content">
+                <div class="mb-15">
+                  <h3 class="heading-4 mt-20">{{ subscription.productName }}</h3>
+                  <div class="divider divider--thin divider--black width--full mt-10 mb-15"></div>
+                  <p class="text--small">
+                    <strong>{{ subscription.displayLabel }}</strong>
+                    <span *ngIf="subscription.displayDate">
+                      <strong>: </strong>
+                      <span class="text--gray-light">{{ subscription.displayDate | toDate }}</span>
+                    </span>
+                  </p>
+                </div>
+                <div class="product-list__actions">
+                  <!-- <button class="button button--small button--accent">Update pack</button> -->
+                </div>
+              </div>
+            </li>
+            <li *ngIf="dnaKit" class="product-list__item col-xs-12 col-md-4 mb-40 cursor--pointer" routerLink="/myvitl/account/orders">
+              <div class="product-list__image background--cream">
+                <img [appImage]="dnaKit.image" [height]="160" />
+              </div>
+              <div class="product-list__content">
+                <div class="mb-15">
+                  <h3 class="heading-4 mt-20">{{ dnaKit.productName }}</h3>
+                  <div class="divider divider--thin divider--black width--full mt-10 mb-15"></div>
+                  <p class="text--small">
+                    <strong>{{ dnaKit.status.label }} {{ dnaKit.status.description ? ': ' : '' }}</strong>
+                    <span *ngIf="dnaKit.status.label !== 'Register kit'" class="text--gray-light">{{ dnaKit.status.description }}</span>
+                    <a *ngIf="dnaKit.status.label === 'Register kit'" class="link" routerLink="/kit">here</a>
+                  </p>
+                </div>
+                <div class="product-list__actions">
+                  <!-- <button class="button button--small button--accent">Update pack</button> -->
+                </div>
+              </div>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <section *ngIf="activeSubscriptions.length > 0">
+    <div class="container pt-20 pt-md-60 pb-40 pb-md-100 text-center">
+      <h2 class="heading-2">Complete your health profile</h2>
+      <div class="divider"></div>
+      <p class="pb-40 pb-md-60">Unlock further insights with our at-home nutrition tests.</p>
+      <app-products-carousel type="custom" enableAddToBasket="true" [productIDs]="similarProducts">
+      </app-products-carousel>
+    </div>
+  </section>
+  <section>
+    <div class="container pt-45 pt-md-60 pb-45 pb-md-60">
+      <div class="row">
+        <div class="col-xs-12 col-lg-10 col-lg-offset-1">
+          <h2 class="heading-2 pb-45">{{ activeSubscriptions.length > 0 ? 'You might also be interested in' : 'Recommended for you' }}</h2>
+          <ul class="product-list product-list--card row">
+            <li *ngFor="let recommendation of recommendations; let i = index"
+              class="product-list__item col-xs-12 col-md-4 mb-20 mb-md-40"
+              [appAction]="recommendation.action">
+              <div *ngIf="i === 0" class="label-popular label-popular--center">Most popular</div>
+              <div class="product-list__image background--cream" [class.product-list__image--full]="recommendation.action.value.includes('mealplan')">
+                <img [appImage]="recommendation.icon" [height]="recommendation.action.value.includes('mealplan') ? 280 : 160" />
+              </div>
+              <div class="product-list__content background--cream">
+                <div class="mb-15">
+                  <h3 class="heading-3 mt-15 mb-20">{{recommendation.label}}</h3>
+                  <p class="text--small">{{recommendation.tagline}}</p>
+                </div>
+                <div class="product-list__actions">
+                  <a class="button button--small button--primary">Learn more</a>
+                  <!-- <a class="button button--small button--primary" routerLink="/myvitl/select-plan/">Add to cart</a>   -->
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <section *ngIf="activeSubscriptions.length === 0">
+    <div class="container pt-20 pt-md-60 pb-40 pb-md-100 text-center">
+      <h2 class="heading-2">Complete your health profile</h2>
+      <div class="divider"></div>
+      <p class="pb-40 pb-md-60">Unlock further insights with our at-home nutrition tests.</p>
+      <app-products-carousel type="custom" enableAddToBasket="true" [productIDs]="similarProducts">
+      </app-products-carousel>
+    </div>
+  </section>
+  <div class="container pb-45 pb-md-60">
+    <div class="row">
+      <div class="col-xs-12 col-lg-10 col-lg-offset-1">
+        <h1 class="heading-2 mb-30">Rewards</h1>
+        <div class="box box--white mb-30">
+          <h3 class="heading-3 mb-15">Refer a friend, get {{currencySymbol}}5 off</h3>
+          <p>Share a 30-day free trial with someone you know and we’ll credit your account with {{currencySymbol}}5 to use on a subscription. <a [routerLink]="['/myvitl/account/referral']">Learnmore</a></p>
+        </div>
+        <h3 class="copy--mediumWeight text-left mb-15">Refer a friend</h3>
+        <form class="form mb-30" (submit)="referFriend()" #referralForm="ngForm">
+          <div class="mb-15">
+            <div class="myvitl-ref-input">
+              <app-form-text name="email" placeholder="Enter your friends email" email ngModel required whiteMd="true">
+              </app-form-text>
+            </div>
+            <button class="myvitl-ref-button button button--primary button--medium">Refer</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

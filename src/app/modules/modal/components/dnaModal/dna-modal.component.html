@@ -1,0 +1,14 @@
+<p class="modal2__dna_body">{{data.text}}</p>
+<div class="modal2__divider"></div>
+<div class="modal2__dna_list__wrapper">
+    <ul>
+        <li *ngFor="let item of data.list1">
+            <p class="copy copy--small">{{item}}</p>
+        </li>
+    </ul>
+    <ul *ngIf="data.list2">
+        <li *ngFor="let item of data.list2">
+            <p class="copy copy--small">{{item}}</p>
+        </li>
+    </ul>
+</div>

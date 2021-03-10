@@ -1,0 +1,49 @@
+.graphicDevice {
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-20%);
+  width: 1000px;
+  height: 1000px;
+  background-repeat: no-repeat;
+  pointer-events:none;
+  z-index: -1;
+  opacity: 0.2;
+  display: none;
+
+  @media @sm {
+    display: block;
+  }
+
+  &--fixed {
+
+    position: fixed;
+
+  }
+
+  &--vitamins {
+
+    background-image: url('https://static.vitl.com/assets/images/vitamin-graphic-device.jpg');
+
+  }
+
+  &--alignRight {
+
+    margin-left: calc(100vw / 2);
+
+    @media @md {
+      margin-left: (@breakpoint-md / 2) - 75;
+    }
+
+    @media @lg {
+      margin-left: (@breakpoint-lg / 2) - 75;
+    }
+
+    @media @xl {
+      margin-left: (@breakpoint-xl / 2) - 75;
+    }
+
+  }
+
+}

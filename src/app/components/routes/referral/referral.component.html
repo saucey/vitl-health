@@ -1,0 +1,98 @@
+<div class="new-UI page--referral">
+    <section class="hero hero--referral">
+        <img class="hero__bg visible-md visible-lg visible-xl" src="https://static-prod.vitl.com/images/referral/referral-hero.jpg?v=3&compress=1" alt="" />
+        <img class="hero__bg hidden-md hidden-lg hidden-xl" src="https://static-prod.vitl.com/images/referral/referral-hero-mobile.jpg?v=3&compress=1" alt="" />
+        <div class="container pt-100 pt-md-0">
+            <div class="row">
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-0">
+                    <div class="hero__content">
+                        <h1 class="heading-2">Give your friends free vitamins!</h1>
+                        <div class="divider"></div>
+                        <p class="mb-25 mb-sm-50">
+                            Introduce your friends to Vitl with a free trial of <a routerLink="/product/essential-one" class="link">The Essential One</a>, and for each one that signs up, we’ll give you £5 credit to say thank you!
+                        </p>
+                        <a routerLink="/myvitl/account/referral" class="button button--white">Refer now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container text-center pt-40 pt-sm-75 pb-55 pb-sm-100">
+            <h2 class="heading-2 mb-25 mb-sm-75">How it works</h2>
+            <div class="carousel carousel--hiw">
+                <swiper [config]="carouselConfig">
+                    <div class="carousel__slide center-block">
+                        <img class="lazyload" data-src="https://static.vitl.com/images/icons/icon-envelope.svg" />
+                        <h3 class="heading-3 mt-10 mt-sm-20">Surprise your friends</h3>
+                        <div class="divider"></div>
+                        <p class="text--small">
+                            Enter their details and we will send them an email with a link to get their free vitamins.
+                        </p>
+                    </div>
+                    <div class="carousel__slide center-block">
+                        <img class="lazyload" data-src="https://static.vitl.com/images/icons/icon-chat.svg" />
+                        <h3 class="heading-3 mt-10 mt-sm-20">Spread the wellness</h3>
+                        <div class="divider"></div>
+                        <p class="text--small">
+                            They follow the link to redeem the offer and we’ll send them a 30-day trial.
+                        </p>
+                    </div>
+                    <div class="carousel__slide center-block">
+                        <img class="lazyload" data-src="https://static.vitl.com/images/icons/icon-gift.svg" />
+                        <h3 class="heading-3 mt-10 mt-sm-20">It’s a win-win!</h3>
+                        <div class="divider"></div>
+                        <p class="text--small">
+                            As soon as they’ve placed their order, £5 credit will be automatically added to your account.
+                        </p>
+                    </div>
+                </swiper>
+                <div class="carousel-dots carousel-dots--hiw"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="background--cream">
+        <div class="container pt-55 pt-sm-75 pb-55 pb-sm-75">
+            <div class="row">
+                <div class="col-xs-12 col-lg-10 col-lg-offset-1">
+                    <div class="text-center mb-50 mb-sm-35">
+                        <h2 class="heading-2 mb-25">Still have questions?</h2>
+                        <p>If you don’t see your question, then please get in touch <a class="link" routerLink="/contact">here</a>.
+                        </p>
+                    </div>
+
+                    <div *ngFor="let faq of faqs; let i = index"
+                        class="expand-content expand-content--pill"
+                        [class.is-active]="activeExpandItem === i">
+                        <div class="expand-content__header" (click)="toggleExpand(i)">
+                        <h3>{{faq.question}}</h3>
+                        </div>
+                        <div class="expand-content__body" [innerHtml]="faq.answer | nl2br"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-visual visible-xs visible-sm">
+            <img class="lazyload" data-src="https://static-prod.vitl.com/images/referral/refer-friend-mobile.jpg?v=4&compress=1" />
+        </div>
+        <div class="container">
+            <div class="row flex-center">
+                <div class="section-visual col-xs-12 col-md-6 hidden-xs hidden-sm">
+                    <div class="section-visual-inner">
+                        <img class="lazyload" data-src="https://static-prod.vitl.com/images/referral/refer-friend.jpg?v=4&compress=1"/>
+                    </div>
+                </div>
+                <div
+                    class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-5 col-md-offset-1 section-content text-center mt-50 mb-50 mt-md-0 mb-md-0">
+                    <h2 class="heading-3 mb-25 ml-md-40 mr-md-40">Give the gift of better health</h2>
+                    <a routerLink="/myvitl/account/referral" class="button button--primary">Refer now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

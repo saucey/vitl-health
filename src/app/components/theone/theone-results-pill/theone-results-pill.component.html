@@ -1,0 +1,51 @@
+<div class="results__pill">
+
+  <div class="results__pill__graph mb-30" [class.results__pill__graph--gummy]="gummy">
+    <span *ngFor="let goal of goals" [style.background]="goal.color"></span>
+    <img class="mb-15" appImage category="icons" key="theone-pill-graph" [height]="100" *ngIf="!gummy" />
+    <img class="mb-15" appImage category="icons" key="theone-gummy-graph" [height]="100" *ngIf="gummy" />
+  </div>
+
+  <div class="mb-40">
+      <table>
+          <thead>
+          <tr>
+              <th>Ingredient</th>
+              <th>NRV</th>
+              <th>Quantity</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let ingredient of pill.ingredients">
+              <td>{{ingredient.name}}</td>
+              <td><strong>{{ingredient.rda}}%</strong></td>
+              <td>{{ingredient.quantity}}</td>
+          </tr>
+          </tbody>
+      </table>
+  </div>
+
+  <hr class="hr hr--medium mt-30 mb-30" />
+
+  <h4 class="mb-30">What you won’t get</h4>
+
+  <ul class="pill__fillerfree">
+
+    <li>
+        <img appImage category="icons" key="no-preservatives" [height]="45" [heightLg]="55" />
+        <p>No preservatives</p>
+    </li>
+
+    <li>
+        <img appImage category="icons" key="non-gmo" [height]="45" [heightLg]="55" />
+        <p>Non-GMO</p>
+    </li>
+
+    <li>
+        <img appImage category="icons" key="no-nasties" [height]="45" [heightLg]="55" />
+        <p>No nasties</p>
+    </li>
+
+  </ul>
+
+</div>
